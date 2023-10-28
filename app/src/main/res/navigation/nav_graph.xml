@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.appnat3.tutoratplus.MainActivity"
+        android:label="fragment_menu_principal"
+        tools:layout="@layout/fragment_menu_principal" />
+    <fragment
+        android:id="@+id/liste_des_cours"
+        android:name="com.appnat3.tutoratplus.liste_des_cours"
+        android:label="fragment_liste_des_cours"
+        tools:layout="@layout/fragment_liste_des_cours" />
+    <fragment
+        android:id="@+id/page_information"
+        android:name="com.appnat3.tutoratplus.page_information"
+        android:label="fragment_page_information"
+        tools:layout="@layout/fragment_page_information" />
+</navigation>
