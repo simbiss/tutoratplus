@@ -37,7 +37,7 @@
         app:cornerRadius="70px" />
 
     <Button
-        android:id="@+id/main_btn_about"
+        android:id="@+id/btn_a_propos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="100px"
