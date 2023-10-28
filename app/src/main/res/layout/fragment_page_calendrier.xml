@@ -19,7 +19,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background=""
             android:text="@string/arriere"
             android:textColor="@color/bleu"
             android:textSize="20sp"
@@ -42,7 +41,6 @@
             android:layout_weight="1"
             android:text="@string/avant"
             android:textColor="@color/bleu"
-            android:background=""
             android:textStyle="bold"
             android:onClick="btn_avant"
             android:textSize="20sp"/>
