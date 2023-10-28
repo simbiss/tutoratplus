@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundGravity="center_vertical|center"
-            android:text="Choisissez un cours"
+            android:text="Choisissez un tuteur"
             android:textSize="34sp" />
     </LinearLayout>
 
@@ -46,14 +46,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_retour_cours"
+            android:id="@+id/btn_retour_tuteur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Retour" />
 
         <Button
-            android:id="@+id/btn_suivant_cours"
+            android:id="@+id/btn_suivant_tuteur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
