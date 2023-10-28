@@ -3,21 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/menu_principal2">
 
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.appnat3.tutoratplus.MainActivity"
-        android:label="fragment_menu_principal"
-        tools:layout="@layout/fragment_menu_principal" />
     <fragment
         android:id="@+id/liste_des_cours"
-        android:name="com.appnat3.tutoratplus.liste_des_cours"
+        android:name="com.appnat3.tutoratplus.vue.liste_des_cours"
         android:label="fragment_liste_des_cours"
-        tools:layout="@layout/fragment_liste_des_cours" />
+        tools:layout="@layout/fragment_liste_des_cours" >
+        <action
+            android:id="@+id/action_liste_des_cours_to_menu_principal2"
+            app:destination="@id/menu_principal2" />
+    </fragment>
     <fragment
         android:id="@+id/page_information"
-        android:name="com.appnat3.tutoratplus.page_information"
+        android:name="com.appnat3.tutoratplus.vue.page_information"
         android:label="fragment_page_information"
-        tools:layout="@layout/fragment_page_information" />
+        tools:layout="@layout/fragment_page_information" >
+        <action
+            android:id="@+id/action_page_information_to_menu_principal2"
+            app:destination="@id/menu_principal2" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_principal2"
+        android:name="com.appnat3.tutoratplus.vue.menu_principal"
+        android:label="menu_principal" >
+        <action
+            android:id="@+id/action_menu_principal2_to_liste_des_cours"
+            app:destination="@id/liste_des_cours" />
+        <action
+            android:id="@+id/action_menu_principal2_to_page_information"
+            app:destination="@id/page_information" />
+    </fragment>
 </navigation>
