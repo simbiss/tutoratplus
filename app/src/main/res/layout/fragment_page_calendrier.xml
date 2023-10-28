@@ -137,11 +137,32 @@
         android:textColor="@color/bleu"
         android:textSize="20sp" />
 
-
     <ListView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_retour_calendrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Retour" />
+
+        <Button
+            android:id="@+id/btn_suivant_calendrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Suivant" />
+    </LinearLayout>
 
 
 </LinearLayout>
