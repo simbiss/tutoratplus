@@ -15,9 +15,4 @@
         android:name="com.appnat3.tutoratplus.liste_des_cours"
         android:label="fragment_liste_des_cours"
         tools:layout="@layout/fragment_liste_des_cours" />
-    <fragment
-        android:id="@+id/page_information"
-        android:name="com.appnat3.tutoratplus.page_information"
-        android:label="fragment_page_information"
-        tools:layout="@layout/fragment_page_information" />
 </navigation>
