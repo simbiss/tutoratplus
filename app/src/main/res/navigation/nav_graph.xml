@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/menu_principal2"
+    app:startDestination="@id/informationPersonnlle"
     tools:ignore="ExtraText">
 
     <fragment
@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_page_calendrier_to_liste_tuteur"
             app:destination="@id/liste_tuteur" />
+        <action
+            android:id="@+id/action_page_calendrier_to_informationPersonnlle"
+            app:destination="@id/informationPersonnlle" />
     </fragment>
 
 
@@ -66,7 +69,14 @@
         android:id="@+id/informationPersonnlle"
         android:name="com.appnat3.tutoratplus.InformationPersonnlle"
         android:label="fragment_information_personnlle"
-        tools:layout="@layout/fragment_information_personnlle" />
+        tools:layout="@layout/fragment_information_personnlle" >
+        <action
+            android:id="@+id/action_informationPersonnlle_to_page_calendrier"
+            app:destination="@id/page_calendrier" />
+        <action
+            android:id="@+id/action_informationPersonnlle_to_menu_principal2"
+            app:destination="@id/menu_principal2" />
+    </fragment>
 </navigation>
 
 

@@ -1,14 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InformationPersonnlle">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+
+    <!-- ################################ Titre  ########################################## -->
+
+    <TextView
+        android:id="@+id/sujetPage"
+        android:layout_width="304dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="45dp"
+        android:text="Information Personnelle"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ligneNoire"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/buttonRetour"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/sujetPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/flecheback" />
+
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Retour" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textTitre"
+        android:layout_width="67dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Tutorat+"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/buttonRetour"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textAcceuil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Acceuil"
+        android:textColor="@color/bleu"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toEndOf="@+id/textTitre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ligneNoire"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="43dp"
+        android:background="#000000"
+        android:paddingBottom="2dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sujetPage"
+        app:layout_constraintTop_toBottomOf="@+id/textTitre"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <!-- ################################ Titre  ########################################## -->
+
+    <!-- ################################ Ligne  ########################################## -->
+
+    <TextView
+        android:id="@+id/ligneHaut2"
+        android:layout_width="335sp"
+        android:layout_height="1dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        android:background="#000000"
+        android:paddingBottom="2dp"
+
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sujetPage"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/ligneGauche"
+        android:layout_width="1sp"
+        android:layout_height="350dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="200dp"
+        android:background="#000000"
+        android:paddingBottom="2dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitre"
+        app:layout_constraintVertical_bias="0.977"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/lignedroite"
+        android:layout_width="1sp"
+        android:layout_height="350dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="28dp"
+        android:background="#000000"
+        android:paddingBottom="2dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toEndOf="@+id/ligneGauche"
+        app:layout_constraintTop_toBottomOf="@+id/textAcceuil"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/ligneBas"
+        android:layout_width="335dp"
+        android:layout_height="1dp"
+
+
+        android:layout_marginBottom="50dp"
+
+        android:background="#000000"
+        android:paddingBottom="2dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
+        app:layout_constraintVertical_bias="0.694"
+        tools:ignore="MissingConstraints" />
+
+    <!-- ################################ Ligne  ########################################## -->
+
+    <Button
+        android:id="@+id/buttonContinuer"
+        android:layout_width="222dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="56dp"
+        android:text="Continuer"
+        android:background="@color/bleu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ligneBas"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
