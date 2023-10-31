@@ -8,9 +8,8 @@
 
     <fragment
         android:id="@+id/liste_des_cours"
-        android:name="com.appnat3.tutoratplus.présentation.vue.liste_des_cours"
-        android:label="fragment_liste_des_cours"
-        tools:layout="@layout/fragment_liste_des_cours" >
+        android:name="com.appnat3.tutoratplus.présentation.listeCours.VueListeCours"
+        android:label="fragment_liste_des_cours">
         <action
             android:id="@+id/action_liste_des_cours_to_menu_principal2"
             app:destination="@id/menu_principal2" />
@@ -57,7 +56,7 @@
     <fragment
         android:id="@+id/menu_principal2"
         android:name="com.appnat3.tutoratplus.présentation.vue.menu_principal"
-        android:label="menu_principal" >
+        android:label="menu_principal">
         <action
             android:id="@+id/action_menu_principal2_to_liste_des_cours"
             app:destination="@id/liste_des_cours" />
@@ -67,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
-        android:name="com.appnat3.tutoratplus.InformationPersonnlle"
+        android:name="com.appnat3.tutoratplus.présentation.vue.InformationPersonnlle"
         android:label="fragment_information_personnlle"
         tools:layout="@layout/fragment_information_personnlle" >
         <action

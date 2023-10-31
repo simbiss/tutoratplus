@@ -1,8 +1,7 @@
-package com.appnat3.tutoratplus.ui.active
+package com.appnat3.tutoratplus
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.appnat3.tutoratplus.R
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
