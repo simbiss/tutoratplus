@@ -5,8 +5,6 @@ import com.appnat3.tutoratplus.domaine.entité.Cours
 
 class Modele{
     var listeDesCours = mutableListOf<Cours>()
-
-
     /**
      * initialisation des different cours de tutorat
      */
@@ -56,4 +54,6 @@ class Modele{
             return listeDesCours
         }
     }
+
+    var listeTuteur = mutableListOf<Cours>()
 }

@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_page_information" />
     <fragment
         android:id="@+id/liste_tuteur"
-        android:name="com.appnat3.tutoratplus.présentation.vue.liste_tuteur"
+        android:name="com.appnat3.tutoratplus.présentation.listeTuteur.liste_tuteur"
         android:label="fragment_liste_tuteur"
         tools:layout="@layout/fragment_liste_tuteur" >
         <action
