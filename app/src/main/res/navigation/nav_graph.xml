@@ -11,7 +11,7 @@
         android:name="com.appnat3.tutoratplus.présentation.listeCours.VueListeCours"
         android:label="fragment_liste_des_cours">
         <action
-            android:id="@+id/action_liste_des_cours_to_menu_principal2"
+            android:id="@+id/action_liste_des_cours_menu_principal"
             app:destination="@id/menu_principal2" />
         <action
             android:id="@+id/action_liste_des_cours_to_liste_tuteur"
