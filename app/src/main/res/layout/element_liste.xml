@@ -5,9 +5,10 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/img_liste"
+        android:id="@+id/img_item"
         android:layout_width="60dp"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:src="@drawable/logo_2"/>
 
     <TextView
         android:id="@+id/nom_item"
@@ -18,8 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/img_liste"
-        android:layout_toEndOf="@+id/img_liste"
+        android:layout_toRightOf="@+id/img_item"
+        android:layout_toEndOf="@+id/img_item"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp" />
 

@@ -20,7 +20,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/titreTuteur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundGravity="center_vertical|center"
@@ -29,7 +29,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/liste_cours"
+        android:id="@+id/liste_tuteur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/header"
