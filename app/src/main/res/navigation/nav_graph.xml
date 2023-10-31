@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/page_information"
-        android:name="com.appnat3.tutoratplus.presentation.vue.page_information"
+        android:name="com.appnat3.tutoratplus.presentation.pageInformation.page_information"
         android:label="fragment_page_information"
         tools:layout="@layout/fragment_page_information" />
     <fragment
@@ -55,7 +55,7 @@
 
     <fragment
         android:id="@+id/menu_principal"
-        android:name="com.appnat3.tutoratplus.presentation.vue.menu_principal"
+        android:name="com.appnat3.tutoratplus.presentation.menu.menu_principal"
         android:label="menu_principal">
         <action
             android:id="@+id/action_menu_principal2_to_liste_des_cours"
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
-        android:name="com.appnat3.tutoratplus.presentation.vue.InformationPersonnlle"
+        android:name="com.appnat3.tutoratplus.presentation.informationPersonnelle.InformationPersonnlle"
         android:label="fragment_information_personnlle"
         tools:layout="@layout/fragment_information_personnlle" >
         <action

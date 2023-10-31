@@ -40,7 +40,6 @@ class VueConfirmation : Fragment(){
         } else {
             txtNomCours.text = "Aucun cours sélectionné"
         }
-
         return vue
     }
 }

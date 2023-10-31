@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.presentation.vue
+package com.appnat3.tutoratplus.presentation.pageInformation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.presentation.presentateur.PresentateurPageInformation
 
 class page_information : Fragment() {
     //Déclaration de variables

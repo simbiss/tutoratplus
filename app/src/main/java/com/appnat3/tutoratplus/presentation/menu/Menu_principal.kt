@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.presentation.vue
+package com.appnat3.tutoratplus.presentation.menu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.presentation.presentateur.PresentateurMenu
+import com.appnat3.tutoratplus.presentation.menu.PresentateurMenu
 
 
 class menu_principal : Fragment() {
