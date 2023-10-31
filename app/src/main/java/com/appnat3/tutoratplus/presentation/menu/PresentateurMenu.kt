@@ -1,6 +1,4 @@
-package com.appnat3.tutoratplus.presentation.presentateur
-
-import com.appnat3.tutoratplus.presentation.vue.menu_principal
+package com.appnat3.tutoratplus.presentation.menu
 
 class PresentateurMenu(var vue: menu_principal) {
 
