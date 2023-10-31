@@ -1,8 +1,8 @@
-package com.appnat3.tutoratplus.présentation.présentateur
+package com.appnat3.tutoratplus.presentation.presentateur
 
-import com.appnat3.tutoratplus.présentation.vue.menu_principal
+import com.appnat3.tutoratplus.presentation.vue.menu_principal
 
-class PrésentateurMenu(var vue: menu_principal) {
+class PresentateurMenu(var vue: menu_principal) {
 
     // Méthode pour effectuer la navigation vers l'écran des listes des cours
     fun effectuerNavigationChoixCours() {

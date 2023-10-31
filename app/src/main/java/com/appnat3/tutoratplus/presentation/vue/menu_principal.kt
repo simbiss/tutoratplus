@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.présentation.vue
+package com.appnat3.tutoratplus.presentation.vue
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.présentation.présentateur.PrésentateurMenu
+import com.appnat3.tutoratplus.presentation.presentateur.PresentateurMenu
 
 
 class menu_principal : Fragment() {
@@ -17,7 +17,7 @@ class menu_principal : Fragment() {
     lateinit var navController: NavController
     lateinit var btnPriseRendezVous: Button
     lateinit var btnApropos: Button
-    var présentateur = PrésentateurMenu(this)
+    var présentateur = PresentateurMenu(this)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

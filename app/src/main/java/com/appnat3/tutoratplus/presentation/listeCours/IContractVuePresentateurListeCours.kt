@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.présentation.listeCours
+package com.appnat3.tutoratplus.presentation.listeCours
 
 import com.appnat3.tutoratplus.domaine.entité.Cours
 

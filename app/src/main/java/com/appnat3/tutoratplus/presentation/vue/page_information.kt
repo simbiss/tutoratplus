@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.présentation.vue
+package com.appnat3.tutoratplus.presentation.vue
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.présentation.présentateur.PrésentateurPageInformation
+import com.appnat3.tutoratplus.presentation.presentateur.PresentateurPageInformation
 
 class page_information : Fragment() {
     //Déclaration de variables
     lateinit var navController: NavController
     lateinit var btnRetour: Button
-    var présentateur = PrésentateurPageInformation(this)
+    var présentateur = PresentateurPageInformation(this)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

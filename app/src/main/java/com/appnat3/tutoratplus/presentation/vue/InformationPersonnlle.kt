@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.présentation.vue
+package com.appnat3.tutoratplus.presentation.vue
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.présentation.présentateur.PrésentateurInfosPersonnelle
+import com.appnat3.tutoratplus.presentation.presentateur.PresentateurInfosPersonnelle
 
 
 class InformationPersonnlle : Fragment() {
@@ -20,7 +20,7 @@ class InformationPersonnlle : Fragment() {
     lateinit var btnSuivant: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
-    var présentateur = PrésentateurInfosPersonnelle(this)
+    var présentateur = PresentateurInfosPersonnelle(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,8 +57,8 @@ class InformationPersonnlle : Fragment() {
         navController.navigate(R.id.action_informationPersonnlle_to_page_calendrier)
     }
 
-    fun naviguerVersmenu_principal() {
-        navController.navigate(R.id.action_informationPersonnlle_to_menu_principal2)
+    fun naviguerVerspage_confirmation() {
+        navController.navigate(R.id.action_informationPersonnlle_to_page_confirmation)
     }
 
 }
