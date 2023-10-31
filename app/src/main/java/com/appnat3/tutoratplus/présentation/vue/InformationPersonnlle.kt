@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus
+package com.appnat3.tutoratplus.présentation.vue
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,8 +10,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.présentation.présentateur.PrésentateurInfosPersonnelle
-import com.appnat3.tutoratplus.présentation.présentateur.PrésentateurListeCours
 
 
 class InformationPersonnlle : Fragment() {

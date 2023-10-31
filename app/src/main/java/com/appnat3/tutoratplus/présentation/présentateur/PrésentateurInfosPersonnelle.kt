@@ -1,6 +1,6 @@
 package com.appnat3.tutoratplus.présentation.présentateur
 
-import com.appnat3.tutoratplus.InformationPersonnlle
+import com.appnat3.tutoratplus.présentation.vue.InformationPersonnlle
 
 
 class PrésentateurInfosPersonnelle(var vue: InformationPersonnlle) {

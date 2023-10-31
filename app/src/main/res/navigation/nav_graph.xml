@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/menu_principal2"
+    app:startDestination="@id/page_calendrier"
     tools:ignore="ExtraText">
 
     <fragment
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
-        android:name="com.appnat3.tutoratplus.InformationPersonnlle"
+        android:name="com.appnat3.tutoratplus.présentation.vue.InformationPersonnlle"
         android:label="fragment_information_personnlle"
         tools:layout="@layout/fragment_information_personnlle" >
         <action
