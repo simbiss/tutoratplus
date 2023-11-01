@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
+import com.google.android.material.textfield.TextInputEditText
 
 
 class InformationPersonnlle : Fragment() {
@@ -45,9 +47,7 @@ class InformationPersonnlle : Fragment() {
             présentateur.effectuerNaviguationAcceuil()
         }
         btnSuivant = vue.findViewById(R.id.buttonContinuer)
-        btnSuivant.setOnClickListener {
-            présentateur.effectuerNaviguationPageConfirmation()
-        }
+        collectInformationPersonnelle(vue)
         return  vue
     }
 
@@ -56,6 +56,29 @@ class InformationPersonnlle : Fragment() {
 
         // Obtient le NavController pour la navigation
         navController = Navigation.findNavController(view)
+    }
+
+
+    fun collectInformationPersonnelle(vue:View){
+        btnSuivant.setOnClickListener {
+            var da = vue.findViewById<TextInputEditText>(R.id.champDAConfirmation).toString()
+            var prenom = vue.findViewById<TextInputEditText>(R.id.champPrenomConfirmation).toString()
+            var nom = vue.findViewById<TextInputEditText>(R.id.champNomConfirmation).toString()
+            var courriel = vue.findViewById<TextInputEditText>(R.id.champCourrielConfirmation).toString()
+
+            if(da == ""){
+                vue.findViewById<TextInputEditText>(R.id.champDAConfirmation).error = "Invalide"
+            }else if(prenom == ""){
+                vue.findViewById<TextInputEditText>(R.id.champPrenomConfirmation).error = "Invalide"
+            }else if(nom == ""){
+                vue.findViewById<TextInputEditText>(R.id.champNomConfirmation).error = "Invalide"
+            }else if(courriel == ""){
+                vue.findViewById<TextInputEditText>(R.id.champCourrielConfirmation).error = "Invalide"
+            }else{
+                présentateur?.traiterCreationInfoPerso(da, prenom, nom, courriel)               //ajout des donnees entrez dans la model
+                présentateur.effectuerNaviguationPageConfirmation()                     //changement de page vers pageConfirmation
+            }
+        }
     }
 
     fun naviguerVerspage_calendrier() {
