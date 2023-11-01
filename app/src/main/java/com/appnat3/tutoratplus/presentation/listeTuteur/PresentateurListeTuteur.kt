@@ -9,7 +9,8 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs){
 
     fun traiterListeTuteurs():Array<Tuteur>{
         for(tuteur in Modele.retourListeTuteur()) {
-            listeTuteurs += tuteur
+            if (tuteur.programme == Modele.coursSelectionne?.programme)
+                listeTuteurs += tuteur
         }
         return listeTuteurs
     }

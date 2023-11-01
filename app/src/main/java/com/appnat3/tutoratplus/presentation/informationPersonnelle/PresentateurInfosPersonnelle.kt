@@ -4,6 +4,12 @@ import com.appnat3.tutoratplus.presentation.informationPersonnelle.InformationPe
 
 
 class PresentateurInfosPersonnelle(var vue: InformationPersonnlle) {
+
+
+    fun traiterCreationInfoPerso(da:Int, prenom:String, nom:String, courriel:String){
+
+    }
+
     fun effectuerNaviguationCalendrier() {
         vue.naviguerVerspage_calendrier()
     }

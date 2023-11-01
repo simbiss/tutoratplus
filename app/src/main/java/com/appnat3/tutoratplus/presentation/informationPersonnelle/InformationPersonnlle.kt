@@ -15,11 +15,12 @@ import com.appnat3.tutoratplus.R
 
 class InformationPersonnlle : Fragment() {
     //Déclaration de variables
+    var présentateur = PresentateurInfosPersonnelle(this)
     lateinit var navController: NavController
     lateinit var btnSuivant: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
-    var présentateur = PresentateurInfosPersonnelle(this)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,8 @@ class InformationPersonnlle : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-         val vue = inflater.inflate(R.layout.fragment_information_personnlle, container, false)
+        val vue = inflater.inflate(R.layout.fragment_information_personnlle, container, false)
+
 
         btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
