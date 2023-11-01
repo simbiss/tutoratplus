@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.CalendarView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -40,10 +41,12 @@ class PageCalendrier: Fragment() {
             présentateur.effectuerNaviguationlisteTuteurs()
         }
 
-        calendarView = vue.findViewById(R.id.calendar)
+        /*calendarView = vue.findViewById(R.id.calendar)
         myDate = vue.findViewById(R.id.textDate)
-        /*calendarView.setOnDateChangeListener(CalendarView.OnDateChangeListener() {
+        calendarView.setOnDateChangeListener(CalendarView.OnDateChangeListener() {
+            override fun onSelectedDayChange(@NonNull CalendarView CalendarView, int i1, int i2) {
 
+            }
         })*/
 
         btnAcceuil = vue.findViewById(R.id.textAcceuil)
