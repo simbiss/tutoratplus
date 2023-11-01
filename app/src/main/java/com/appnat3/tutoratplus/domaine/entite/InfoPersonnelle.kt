@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.domaine.entité
+package com.appnat3.tutoratplus.domaine.entite
 
 class InfoPersonnelle(val da:String, val prenom:String, val nom:String, val courriel:String) {
 

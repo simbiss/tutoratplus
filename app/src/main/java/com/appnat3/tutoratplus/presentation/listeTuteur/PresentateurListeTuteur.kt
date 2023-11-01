@@ -1,6 +1,6 @@
 package com.appnat3.tutoratplus.presentation.listeTuteur
 
-import com.appnat3.tutoratplus.domaine.entité.Tuteur
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 
 class PresentateurListeTuteur(var vue: VueListeTuteurs){

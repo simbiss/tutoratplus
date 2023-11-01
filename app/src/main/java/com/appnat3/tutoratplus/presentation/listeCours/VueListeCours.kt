@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.domaine.entité.Cours
+import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.presentation.listeCours.IContractVuePresentateurListeCours.IVueListeCours
 
 

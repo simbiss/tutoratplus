@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.domaine.entité
+package com.appnat3.tutoratplus.domaine.entite
 
 class Cours(val nomCours:String, val programme:String) {
 

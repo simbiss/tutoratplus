@@ -11,8 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.domaine.entité.Cours
-import com.appnat3.tutoratplus.domaine.entité.Tuteur
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 
 class VueListeTuteurs  : Fragment() {
     var présentateur: PresentateurListeTuteur? = null

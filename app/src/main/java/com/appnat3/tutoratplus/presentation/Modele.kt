@@ -1,7 +1,7 @@
 package com.appnat3.tutoratplus.presentation
 
-import com.appnat3.tutoratplus.domaine.entité.Cours
-import com.appnat3.tutoratplus.domaine.entité.Tuteur
+import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 
 
 object Modele{

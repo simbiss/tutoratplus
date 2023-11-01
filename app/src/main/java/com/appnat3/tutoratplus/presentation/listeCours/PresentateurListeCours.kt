@@ -1,6 +1,6 @@
 package com.appnat3.tutoratplus.presentation.listeCours
 
-import com.appnat3.tutoratplus.domaine.entité.Cours
+import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.listeCours.IContractVuePresentateurListeCours.IPresentateurListeCours
 
