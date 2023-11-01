@@ -35,8 +35,8 @@
             android:id="@+id/action_liste_tuteur_to_liste_des_cours"
             app:destination="@id/liste_des_cours" />
         <action
-            android:id="@+id/action_liste_tuteur_to_page_calendrier"
-            app:destination="@id/page_confirmation"/>
+            android:id="@+id/action_liste_tuteur_to_pageCalendrier"
+            app:destination="@id/pageCalendrier" />
     </fragment><![CDATA[
 
 

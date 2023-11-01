@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CalendarView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -18,6 +19,8 @@ class PageCalendrier: Fragment() {
     lateinit var btnSuivant: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
+    lateinit var calendarView: CalendarView
+    lateinit var myDate: TextView
     var présentateur = PresentateurPageCalendrier(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +39,12 @@ class PageCalendrier: Fragment() {
         btnRetour.setOnClickListener {
             présentateur.effectuerNaviguationlisteTuteurs()
         }
+
+        calendarView = vue.findViewById(R.id.calendar)
+        myDate = vue.findViewById(R.id.textDate)
+        /*calendarView.setOnDateChangeListener(CalendarView.OnDateChangeListener() {
+
+        })*/
 
         btnAcceuil = vue.findViewById(R.id.textAcceuil)
         btnAcceuil.setOnClickListener {

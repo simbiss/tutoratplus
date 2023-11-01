@@ -70,7 +70,7 @@ class VueListeTuteurs  : Fragment() {
     }
 
     fun navigationVersCalendrier() {
-        navController.navigate(R.id.action_liste_tuteur_to_page_calendrier)
+        navController.navigate(R.id.action_liste_tuteur_to_pageCalendrier)
     }
 
     fun navigationVersListeCours(){
