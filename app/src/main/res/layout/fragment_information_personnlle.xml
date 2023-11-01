@@ -10,30 +10,30 @@
 
     <!-- ################################ Titre  ########################################## -->
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/champCourriel"
-        android:layout_width="191dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="160dp"
-        app:layout_constraintBottom_toTopOf="@+id/ligneBas"
+    <EditText
+        android:id="@+id/champNomInfo"
+        android:hint="Nom"
+        android:layout_width="202dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintEnd_toEndOf="@+id/champPrenomInfo"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="122dp" />
+        tools:layout_editor_absoluteY="282dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/champNom"
-        android:layout_width="191dp"
-        android:layout_height="24dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="299dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/champPrenom"
-        android:layout_width="191dp"
-        android:layout_height="24dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="252dp" />
+    <EditText
+        android:id="@+id/champPrenomInfo"
+        android:hint="Prenom"
+        android:layout_width="198dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/champNomInfo"
+        app:layout_constraintEnd_toEndOf="@+id/champDAInfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/champDAInfo"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/sujetPage"
@@ -205,7 +205,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="28dp"
         android:text="DA : "
         app:layout_constraintStart_toStartOf="parent"
@@ -216,7 +216,7 @@
         android:id="@+id/textView4"
         android:layout_width="59dp"
         android:layout_height="15dp"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="24dp"
         android:text="Prenom : "
         app:layout_constraintStart_toStartOf="parent"
@@ -227,7 +227,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="32dp"
         android:text="Nom : "
         app:layout_constraintStart_toStartOf="parent"
@@ -238,29 +238,42 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="256dp"
         android:text="Courriel : "
         app:layout_constraintBottom_toTopOf="@+id/buttonContinuer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintVertical_bias="0.729"
         tools:ignore="MissingConstraints" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/champDAConfirmation"
-        android:layout_width="191dp"
-        android:layout_height="24dp"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="202dp"
-        android:hint="DA"
-        tools:ignore="MissingConstraints" >
+    <EditText
+        android:id="@+id/champCourrielInfo"
+        android:hint="Courriel"
+        android:layout_width="201dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="156dp"
+        app:layout_constraintBottom_toTopOf="@+id/ligneBas"
+        app:layout_constraintEnd_toEndOf="@+id/champNomInfo"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/champNomInfo"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText
+        android:id="@+id/champDAInfo"
+        android:layout_width="197dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:hint="DA"
+        app:layout_constraintBottom_toTopOf="@+id/champNomInfo"
+        app:layout_constraintEnd_toEndOf="@+id/ligneHaut2"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="@+id/ligneHaut2"
+        app:layout_constraintTop_toTopOf="@+id/ligneHaut2"
+        app:layout_constraintVertical_bias="0.078"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

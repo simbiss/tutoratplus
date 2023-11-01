@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -61,11 +62,20 @@ class InformationPersonnlle : Fragment() {
 
     fun collectInformationPersonnelle(vue:View){
         btnSuivant.setOnClickListener {
-            var da = vue.findViewById<TextInputEditText>(R.id.champDAConfirmation).toString()
-            var prenom = vue.findViewById<TextInputEditText>(R.id.champPrenomConfirmation).toString()
-            var nom = vue.findViewById<TextInputEditText>(R.id.champNomConfirmation).toString()
-            var courriel = vue.findViewById<TextInputEditText>(R.id.champCourrielConfirmation).toString()
+            var da = vue.findViewById<EditText>(R.id.champDAInfo)
+            var prenom = vue.findViewById<EditText>(R.id.champPrenomInfo)
+            var nom = vue.findViewById<EditText>(R.id.champNomInfo)
+            var courriel = vue.findViewById<EditText>(R.id.champCourrielInfo)
 
+            var txtDa = da.text.toString()
+            var txtprenom = prenom.text.toString()
+            var txtnom = nom.text.toString()
+            var txtcourriel = courriel.text.toString()
+
+            présentateur.traiterCreationInfoPerso(txtDa, txtprenom, txtnom, txtcourriel)               //ajout des donnees entrez dans la model
+            présentateur.effectuerNaviguationPageConfirmation()                     //changement de page vers pageConfirmation
+
+/**
             if(da == ""){
                 vue.findViewById<TextInputEditText>(R.id.champDAConfirmation).error = "Invalide"
             }else if(prenom == ""){
@@ -77,7 +87,9 @@ class InformationPersonnlle : Fragment() {
             }else{
                 présentateur?.traiterCreationInfoPerso(da, prenom, nom, courriel)               //ajout des donnees entrez dans la model
                 présentateur.effectuerNaviguationPageConfirmation()                     //changement de page vers pageConfirmation
-            }
+            }*/
+
+
         }
     }
 

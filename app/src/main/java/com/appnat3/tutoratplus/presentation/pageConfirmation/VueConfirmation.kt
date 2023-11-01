@@ -70,39 +70,37 @@ class VueConfirmation : Fragment(){
         if(tuteurSelectionne!= null){
             txtNomTuteur.text = "Tuteur sélectionné : ${tuteurSelectionne.nom}"
         }else{
-            txtNomCours.text = "Aucun tuteur sélectionné"
+            txtNomTuteur.text = "Aucun tuteur sélectionné"
         }
 
         txtDA = vue.findViewById(R.id.champDAConfirmation)
         val daInfoPerso = Modele.daInfoPerso
         if (daInfoPerso != null) {
-            txtDA.text = "DA : $daInfoPerso"
+            txtDA.text = "DA : ${Modele.daInfoPerso}"
         } else {
             txtDA.text = "Aucun DA entrez"
         }
         txtPrenom = vue.findViewById(R.id.champPrenomConfirmation)
         val prenomInfoPerso = Modele.prenomInfoPerso
         if (prenomInfoPerso != null) {
-            txtPrenom.text = "DA : $prenomInfoPerso"
+            txtPrenom.text = "Prenom : ${Modele.prenomInfoPerso}"
         } else {
             txtPrenom.text = "Aucun prenom entrez"
         }
         txtNom = vue.findViewById(R.id.champNomConfirmation)
         val nomInfoPerso = Modele.nomInfoPerso
         if (nomInfoPerso != null) {
-            txtNom.text = "DA : $nomInfoPerso"
+            txtNom.text = "Nom : ${Modele.nomInfoPerso}"
         } else {
             txtNom.text = "Aucun nom entrez"
         }
         txtCourriel = vue.findViewById(R.id.champCourrielConfirmation)
         val courrielInfoPerso = Modele.courrielInfoPerso
         if (courrielInfoPerso != null) {
-            txtCourriel.text = "Courriel : $courrielInfoPerso"
+            txtCourriel.text = "Courriel : ${Modele.courrielInfoPerso}"
         } else {
             txtCourriel.text = "Aucun courriel entrez"
         }
-
-
         return vue
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
