@@ -62,5 +62,11 @@ object Modele{
         return listeTuteurs
     }
 
-
+    /**
+     * initialisation des variable d'informations personnelles
+     */
+    val daInfoPerso:Int? = null
+    val prenomInfoPerso:String? = null
+    val nomInfoPerso:String? = null
+    val courrielInfoPerso:String?=null
 }
