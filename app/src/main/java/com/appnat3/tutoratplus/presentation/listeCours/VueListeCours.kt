@@ -37,7 +37,7 @@ class VueListeCours : Fragment(), IVueListeCours{
     ): View? {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_liste_des_cours, container, false)
-        val vueItem = inflater.inflate(R.layout.element_liste, container, false)
+        //val vueItem = inflater.inflate(R.layout.element_liste, container, false)
         présentateur = PresentateurListeCours(this)
 
 
@@ -52,8 +52,8 @@ class VueListeCours : Fragment(), IVueListeCours{
             }
         }
 
-        imgCours = vueItem.findViewById(R.id.img_item)
-        nomCours = vueItem.findViewById(R.id.nom_item)
+        //imgCours = vueItem.findViewById(R.id.img_item)
+        //nomCours = vueItem.findViewById(R.id.nom_item)
 
         btnRetour = vue.findViewById(R.id.btn_retour_cours)
         btnRetour.setOnClickListener {
@@ -70,9 +70,9 @@ class VueListeCours : Fragment(), IVueListeCours{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Obtient le NavController pour la navigation
-        navController = Navigation.findNavController(view)
-        initialiserListeCours(présentateur?.traiterListeCours())//lister les cours
+
+        navController = Navigation.findNavController(view)          // Obtient le NavController pour la navigation
+        initialiserListeCours(présentateur?.traiterListeCours())        //lister les cours
     }
 
     override fun initialiserListeCours(liste: Array<Cours>?){
@@ -89,8 +89,4 @@ class VueListeCours : Fragment(), IVueListeCours{
     fun naviguerVersTuteurs() {
         navController.navigate(R.id.action_liste_des_cours_to_liste_tuteur)
     }
-
-
-
-
 }
