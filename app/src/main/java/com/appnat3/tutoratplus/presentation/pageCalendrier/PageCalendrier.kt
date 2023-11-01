@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.pageCalendrier
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,9 @@ class PageCalendrier: Fragment() {
     //Déclaration de variables
     lateinit var navController: NavController
     lateinit var btnSuivant: Button
+    lateinit var btnDisponibilite1: Button
+    lateinit var btnDisponibilite2: Button
+    lateinit var btnDisponibilite3: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
     lateinit var calendarView: CalendarView
@@ -40,11 +44,30 @@ class PageCalendrier: Fragment() {
             présentateur.effectuerNaviguationlisteTuteurs()
         }
 
+        btnDisponibilite1 = vue.findViewById(R.id.buttonDisponibilite1)
+        btnDisponibilite2 = vue.findViewById(R.id.buttonDisponibilite2)
+        btnDisponibilite3 = vue.findViewById(R.id.buttonDisponibilite3)
+
         calendarView = vue.findViewById(R.id.calendar)
         myDate = vue.findViewById(R.id.textDate)
-        /*calendarView.setOnDateChangeListener(CalendarView.OnDateChangeListener() {
+        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            val selectedDate = "$dayOfMonth/${month + 1}/$year"
+            myDate.text = selectedDate
+            btnDisponibilite1.setText("10:00")
+            btnDisponibilite1.setTextColor(Color.WHITE)
+            btnDisponibilite1.setBackgroundColor(Color.BLUE)
+            btnDisponibilite1.visibility = View.VISIBLE
 
-        })*/
+            btnDisponibilite2.setText("10:30")
+            btnDisponibilite2.setTextColor(Color.WHITE)
+            btnDisponibilite2.setBackgroundColor(Color.BLUE)
+            btnDisponibilite2.visibility = View.VISIBLE
+
+            btnDisponibilite3.setText("11:30")
+            btnDisponibilite3.setTextColor(Color.WHITE)
+            btnDisponibilite3.setBackgroundColor(Color.BLUE)
+            btnDisponibilite3.visibility = View.VISIBLE
+        }
 
         btnAcceuil = vue.findViewById(R.id.textAcceuil)
         btnAcceuil.setOnClickListener {
