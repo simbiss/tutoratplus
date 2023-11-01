@@ -22,16 +22,15 @@ class VueConfirmation : Fragment(){
     lateinit var txtNomTuteur: TextView
     lateinit var txtDate: TextView
 
-    lateinit var btnAjoutCalendrier: Button
-    lateinit var btnAcceuil: TextView
-    lateinit var btnRetour: LinearLayout
-    var présentateur = PresentateurConfirmation(this)
-
     lateinit var txtDA: TextView
     lateinit var txtPrenom: TextView
     lateinit var txtNom: TextView
     lateinit var txtCourriel: TextView
 
+    lateinit var btnAjoutCalendrier: Button
+    lateinit var btnAcceuil: TextView
+    lateinit var btnRetour: LinearLayout
+    var présentateur = PresentateurConfirmation(this)
 
     @SuppressLint("MissingInflatedId", "CutPasteId")
     override fun onCreateView(
