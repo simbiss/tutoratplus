@@ -59,7 +59,6 @@ class VueListeTuteurs  : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         navController = Navigation.findNavController(view)              // Obtient le NavController pour la navigation
         initialiserListeTuteurs(présentateur?.traiterListeTuteurs())        //lister les tuteurs
     }

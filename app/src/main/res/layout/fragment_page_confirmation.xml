@@ -204,5 +204,41 @@
         tools:layout_editor_absoluteY="287dp"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/champDAConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="332dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/champPrenomConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="376dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/champNomConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="420dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/champCourrielConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="462dp"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
