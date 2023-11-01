@@ -14,8 +14,8 @@ object Modele{
 
     init {
         var cours1 = Cours("Programmation 1", "programmation")
-        var cours2 = Cours("Programmation 2", "reseau")
-        var cours3 = Cours("Programmation 2", "programmation")
+        var cours2 = Cours("Programmation 2 (Java)", "programmation")
+        var cours3 = Cours("Programmation 2 (Python)", "reseau")
         var cours4 = Cours("Programmation Autre et BD", "programmation")
         var cours5 = Cours("Réseautique", "reseau")
 
