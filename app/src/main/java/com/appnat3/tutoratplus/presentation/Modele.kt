@@ -65,8 +65,8 @@ object Modele{
     /**
      * initialisation des variable d'informations personnelles
      */
-    val daInfoPerso:Int? = null
-    val prenomInfoPerso:String? = null
-    val nomInfoPerso:String? = null
-    val courrielInfoPerso:String?=null
+    var daInfoPerso:String? = null
+    var prenomInfoPerso:String? = null
+    var nomInfoPerso:String? = null
+    var courrielInfoPerso:String?=null
 }
