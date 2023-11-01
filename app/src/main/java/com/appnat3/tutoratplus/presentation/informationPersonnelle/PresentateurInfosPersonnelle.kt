@@ -9,6 +9,10 @@ class PresentateurInfosPersonnelle(var vue: InformationPersonnlle) {
     }
 
     fun effectuerNaviguationAcceuil() {
+        vue.naviguerVersmenu_principal()
+    }
+
+    fun effectuerNaviguationPageConfirmation() {
         vue.naviguerVerspage_confirmation()
     }
 }

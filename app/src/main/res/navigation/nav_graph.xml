@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/menu_principal"
+    app:startDestination="@id/page_confirmation"
     tools:ignore="ExtraText">
 
     <fragment
@@ -21,7 +21,11 @@
         android:id="@+id/page_information"
         android:name="com.appnat3.tutoratplus.presentation.pageInformation.page_information"
         android:label="fragment_page_information"
-        tools:layout="@layout/fragment_page_information" />
+        tools:layout="@layout/fragment_page_information" >
+        <action
+            android:id="@+id/action_page_information_to_menu_principal"
+            app:destination="@id/menu_principal" />
+    </fragment>
     <fragment
         android:id="@+id/liste_tuteur"
         android:name="com.appnat3.tutoratplus.presentation.listeTuteur.VueListeTuteurs"
@@ -33,26 +37,13 @@
         <action
             android:id="@+id/action_liste_tuteur_to_page_calendrier"
             app:destination="@id/page_confirmation"/>
-    </fragment>
-    <fragment
-        android:id="@+id/page_calendrier"
-        android:name="com.appnat3.tutoratplus.presentation.vue.page_calendrier"
-        android:label="fragment_page_calendrier"
-        tools:layout="@layout/fragment_page_calendrier" >
-        <action
-            android:id="@+id/action_page_calendrier_to_liste_tuteur"
-            app:destination="@id/liste_tuteur" />
-        <action
-            android:id="@+id/action_page_calendrier_to_informationPersonnlle"
-            app:destination="@id/informationPersonnlle" />
-    </fragment>
+    </fragment><![CDATA[
 
 
         tools:layout="@layout/fragment_page_information" >
-        <action
-            android:id="@+id/action_page_information_to_menu_principal2"
-            app:destination="@id/menu_principal" />
 
+
+    ]]>
     <fragment
         android:id="@+id/menu_principal"
         android:name="com.appnat3.tutoratplus.presentation.menu.menu_principal"
@@ -70,17 +61,41 @@
         android:label="fragment_information_personnlle"
         tools:layout="@layout/fragment_information_personnlle" >
         <action
-            android:id="@+id/action_informationPersonnlle_to_page_calendrier"
-            app:destination="@id/page_calendrier" />
-        <action
             android:id="@+id/action_informationPersonnlle_to_page_confirmation"
             app:destination="@id/page_confirmation" />
+        <action
+            android:id="@+id/action_informationPersonnlle_to_pageCalendrier"
+            app:destination="@id/pageCalendrier" />
+        <action
+            android:id="@+id/action_informationPersonnlle_to_menu_principal"
+            app:destination="@id/menu_principal" />
     </fragment>
     <fragment
         android:id="@+id/page_confirmation"
         android:name="com.appnat3.tutoratplus.presentation.pageConfirmation.VueConfirmation"
         android:label="fragment_page_confirmation"
-        tools:layout="@layout/fragment_page_confirmation" />
+        tools:layout="@layout/fragment_page_confirmation" >
+        <action
+            android:id="@+id/action_page_confirmation_to_menu_principal"
+            app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_page_confirmation_to_informationPersonnlle4"
+            app:destination="@id/informationPersonnlle" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageCalendrier"
+        android:name="com.appnat3.tutoratplus.presentation.pageCalendrier.PageCalendrier"
+        android:label="PageCalendrier" >
+        <action
+            android:id="@+id/action_pageCalendrier_to_informationPersonnlle"
+            app:destination="@id/informationPersonnlle" />
+        <action
+            android:id="@+id/action_pageCalendrier_to_liste_tuteur"
+            app:destination="@id/liste_tuteur" />
+        <action
+            android:id="@+id/action_pageCalendrier_to_menu_principal"
+            app:destination="@id/menu_principal" />
+    </fragment>
 </navigation>
 
 

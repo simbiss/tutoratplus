@@ -1,4 +1,4 @@
-package com.appnat3.tutoratplus.presentation.informationPersonnelle
+package com.appnat3.tutoratplus.presentation.pageCalendrier
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,18 +12,17 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 
-
-class InformationPersonnlle : Fragment() {
+class PageCalendrier: Fragment() {
     //Déclaration de variables
     lateinit var navController: NavController
     lateinit var btnSuivant: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
-    var présentateur = PresentateurInfosPersonnelle(this)
+    var présentateur = PresentateurPageCalendrier(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        }
+    }
 
 
     override fun onCreateView(
@@ -31,20 +30,21 @@ class InformationPersonnlle : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-         val vue = inflater.inflate(R.layout.fragment_information_personnlle, container, false)
+        val vue = inflater.inflate(R.layout.fragment_page_calendrier, container, false)
 
         btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
-            présentateur.effectuerNaviguationCalendrier()
+            présentateur.effectuerNaviguationlisteTuteurs()
         }
 
         btnAcceuil = vue.findViewById(R.id.textAcceuil)
         btnAcceuil.setOnClickListener {
             présentateur.effectuerNaviguationAcceuil()
         }
+
         btnSuivant = vue.findViewById(R.id.buttonContinuer)
         btnSuivant.setOnClickListener {
-            présentateur.effectuerNaviguationPageConfirmation()
+            présentateur.effectuerNaviguationInformationPersonnelle()
         }
         return  vue
     }
@@ -56,16 +56,15 @@ class InformationPersonnlle : Fragment() {
         navController = Navigation.findNavController(view)
     }
 
-    fun naviguerVerspage_calendrier() {
-       navController.navigate(R.id.action_informationPersonnlle_to_pageCalendrier)
+    fun naviguerVerspagesInfosPersonnelle() {
+        navController.navigate(R.id.action_pageCalendrier_to_informationPersonnlle)
     }
 
-    fun naviguerVerspage_confirmation() {
-        navController.navigate(R.id.action_informationPersonnlle_to_page_confirmation)
+    fun naviguerVersliste_tuteurs() {
+        navController.navigate(R.id.action_pageCalendrier_to_liste_tuteur)
     }
 
-    fun naviguerVersmenu_principal() {
-       navController.navigate(R.id.action_informationPersonnlle_to_menu_principal)
+    fun naviguerVersmenu() {
+        navController.navigate(R.id.action_pageCalendrier_to_menu_principal)
     }
-
 }

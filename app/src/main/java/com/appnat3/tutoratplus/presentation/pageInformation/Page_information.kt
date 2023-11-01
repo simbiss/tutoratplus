@@ -37,6 +37,6 @@ class page_information : Fragment() {
     }
 
     fun naviguerVersmenu_principal() {
-        navController.navigate(R.id.action_page_information_to_menu_principal2)
+        navController.navigate(R.id.action_page_information_to_menu_principal)
     }
 }
