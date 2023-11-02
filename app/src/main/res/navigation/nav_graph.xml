@@ -96,6 +96,11 @@
             android:id="@+id/action_pageCalendrier_to_menu_principal"
             app:destination="@id/menu_principal" />
     </fragment>
+    <fragment
+        android:id="@+id/login_tuteur"
+        android:name="com.appnat3.tutoratplus.presentation.loginTuteur.login_tuteur"
+        android:label="fragment_login_tuteur"
+        tools:layout="@layout/fragment_login_tuteur" />
 </navigation>
 
 

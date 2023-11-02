@@ -19,6 +19,11 @@ class MainActivity : AppCompatActivity() {
  *
  * -mettre image dans les liste cours et liste tuteur
  *
+ * - page login pour tuteur
+ * - page principale tuteur
+ * - page confirmation séance tutorat
+ * -
+ *
  *
  * (Calendrier)
  * -entité classe calendrier
@@ -27,14 +32,11 @@ class MainActivity : AppCompatActivity() {
  *
  * -Ajouter session de tutorat dans le calendrier du cellulaire
  *
- *
- *
- *
- *
- * (login tuteur)
+ * (cession tuteur)
  * - creer modele / classe login tuteur
- *
- *
- *
+ * (fonctionnalité tuteur une fois login)
+ *  - heure total tutorer
+ *  - confirmation séance tutorat
+
  *
  */
