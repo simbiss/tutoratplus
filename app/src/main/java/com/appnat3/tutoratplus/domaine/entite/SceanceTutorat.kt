@@ -1,8 +1,8 @@
 package com.appnat3.tutoratplus.domaine.entite
 
-import com.appnat3.tutoratplus.presentation.informationPersonnelle.InformationPersonnlle
+import com.appnat3.tutoratplus.presentation.informationPersonnelle.VueInformationPersonnlle
 
-class SceanceTutorat(var infoEtudiant : InformationPersonnlle, var tuteurChoisi:Tuteur, /**var dateHeure: Calendrier*/) {
+class SceanceTutorat(val infoEtudiant : VueInformationPersonnlle, val tuteurChoisi:Tuteur, /**var dateHeure: Calendrier*/) {
 
 
 }

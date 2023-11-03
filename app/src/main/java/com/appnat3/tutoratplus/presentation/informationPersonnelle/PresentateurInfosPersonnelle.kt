@@ -1,10 +1,9 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
 import com.appnat3.tutoratplus.presentation.Modele
-import com.appnat3.tutoratplus.presentation.informationPersonnelle.InformationPersonnlle
 
 
-class PresentateurInfosPersonnelle(var vue: InformationPersonnlle) {
+class PresentateurInfosPersonnelle(var vue: VueInformationPersonnlle) {
 
 
     fun traiterCreationInfoPerso(da:String, prenom:String, nom:String, courriel:String){

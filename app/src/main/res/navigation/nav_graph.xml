@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
-        android:name="com.appnat3.tutoratplus.presentation.informationPersonnelle.InformationPersonnlle"
+        android:name="com.appnat3.tutoratplus.presentation.informationPersonnelle.VueInformationPersonnlle"
         android:label="fragment_information_personnlle"
         tools:layout="@layout/fragment_information_personnlle" >
         <action
@@ -101,6 +101,11 @@
         android:name="com.appnat3.tutoratplus.presentation.loginTuteur.login_tuteur"
         android:label="fragment_login_tuteur"
         tools:layout="@layout/fragment_login_tuteur" />
+    <fragment
+        android:id="@+id/page_principal_tuteur"
+        android:name="com.appnat3.tutoratplus.page_principal_tuteur"
+        android:label="fragment_page_principal_tuteur"
+        tools:layout="@layout/fragment_page_principal_tuteur" />
 </navigation>
 
 

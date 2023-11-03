@@ -13,7 +13,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.presentation.Modele
-import com.appnat3.tutoratplus.presentation.informationPersonnelle.PresentateurInfosPersonnelle
 
 class VueConfirmation : Fragment(){
 
@@ -68,7 +67,7 @@ class VueConfirmation : Fragment(){
         txtNomTuteur = vue.findViewById(R.id.champNomTuteur)
         val tuteurSelectionne = Modele.tuteurSelectionne
         if(tuteurSelectionne!= null){
-            txtNomTuteur.text = "Tuteur sélectionné : ${tuteurSelectionne.nom}"
+            txtNomTuteur.text = "Tuteur sélectionné : ${tuteurSelectionne.nomTuteur}"
         }else{
             txtNomTuteur.text = "Aucun tuteur sélectionné"
         }

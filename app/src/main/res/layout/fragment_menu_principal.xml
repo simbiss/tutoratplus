@@ -42,9 +42,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="100px"
         android:fontFamily="sans-serif-medium"
-        android:onClick="aboutUs"
         android:text="À PROPOS"
         app:cornerRadius="70px" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connection"
+        android:layout_marginLeft="100px"
+        />
 
 
 </LinearLayout>

@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +12,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.google.android.material.textfield.TextInputEditText
 
 
-class InformationPersonnlle : Fragment() {
+class VueInformationPersonnlle : Fragment() {
     //Déclaration de variables
     var présentateur = PresentateurInfosPersonnelle(this)
     lateinit var navController: NavController
@@ -28,7 +26,6 @@ class InformationPersonnlle : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

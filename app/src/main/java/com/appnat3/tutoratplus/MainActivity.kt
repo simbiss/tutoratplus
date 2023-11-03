@@ -14,8 +14,10 @@ class MainActivity : AppCompatActivity() {
  * À FAIRE POUR SPRINT 3(semaine 12 mercredi)
  *
  * (interface)
- * -rendre les interfaces plus belle (style de texte, entete retour acceuil) (option)
- * -mettre problematique dans page information personnelle (option)
+ * -mettre problematique dans page information personnelle
+ * -rendre les interfaces plus belle (style de texte, entete retour acceuil) (optionnel)
+ * -transformer TOUT les fragment en landscape (optionnel)
+ * -Internationnalisation -> tout les texte en ANGLAIS (optionnel)
  *
  * -mettre image dans les liste cours et liste tuteur
  *
