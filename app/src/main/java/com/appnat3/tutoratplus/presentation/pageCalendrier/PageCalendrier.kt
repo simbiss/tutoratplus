@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CalendarView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -26,6 +23,7 @@ class PageCalendrier: Fragment() {
     lateinit var btnAcceuil: TextView
     lateinit var calendarView: CalendarView
     lateinit var myDate: TextView
+
     var présentateur = PresentateurPageCalendrier(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,24 +50,7 @@ class PageCalendrier: Fragment() {
 
         calendarView = vue.findViewById(R.id.calendar)
         myDate = vue.findViewById(R.id.textDate)
-        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val selectedDate = "$dayOfMonth/${month + 1}/$year"
-            myDate.text = selectedDate
-            btnDisponibilite1.setText("10:00")
-            btnDisponibilite1.setTextColor(Color.WHITE)
-            btnDisponibilite1.setBackgroundColor(Color.BLUE)
-            btnDisponibilite1.visibility = View.VISIBLE
-
-            btnDisponibilite2.setText("10:30")
-            btnDisponibilite2.setTextColor(Color.WHITE)
-            btnDisponibilite2.setBackgroundColor(Color.BLUE)
-            btnDisponibilite2.visibility = View.VISIBLE
-
-            btnDisponibilite3.setText("11:30")
-            btnDisponibilite3.setTextColor(Color.WHITE)
-            btnDisponibilite3.setBackgroundColor(Color.BLUE)
-            btnDisponibilite3.visibility = View.VISIBLE
-        }
+        collectdateRendezVous()
 
 
         btnAcceuil = vue.findViewById(R.id.textAcceuil)
@@ -84,12 +65,42 @@ class PageCalendrier: Fragment() {
         return  vue
     }
 
+    fun collectdateRendezVous(){
+        //Après une action
+            //Chercher le composant
+            //Obtenir texte du composant
+        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            val selectedDate = "$dayOfMonth/${month + 1}/$year"
+            myDate.text = selectedDate
+
+            //Ajouter le texte au boutton
+            btnDisponibilite1.setText("10:00")
+            btnDisponibilite1.setTextColor(Color.WHITE)
+            btnDisponibilite1.setBackgroundColor(Color.BLUE)
+            btnDisponibilite1.visibility = View.VISIBLE
+
+            btnDisponibilite2.setText("10:30")
+            btnDisponibilite2.setTextColor(Color.WHITE)
+            btnDisponibilite2.setBackgroundColor(Color.BLUE)
+            btnDisponibilite2.visibility = View.VISIBLE
+
+            btnDisponibilite3.setText("11:30")
+            btnDisponibilite3.setTextColor(Color.WHITE)
+            btnDisponibilite3.setBackgroundColor(Color.BLUE)
+            btnDisponibilite3.visibility = View.VISIBLE
+            présentateur.traiterAjoutdelaDate(selectedDate)
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // Obtient le NavController pour la navigation
         navController = Navigation.findNavController(view)
     }
+
+
+
 
     fun naviguerVerspagesInfosPersonnelle() {
         navController.navigate(R.id.action_pageCalendrier_to_informationPersonnlle)

@@ -73,6 +73,14 @@ class VueConfirmation : Fragment(){
             txtNomTuteur.text = "Aucun tuteur sélectionné"
         }
 
+        txtDate = vue.findViewById(R.id.champDate)
+        val dateSelectionnee = Modele.dateSelected
+        if(tuteurSelectionne!= null){
+            txtNomTuteur.text = "Date sélectionné : ${dateSelectionnee}"
+        }else{
+            txtNomTuteur.text = "Aucun tuteur sélectionné"
+        }
+
         txtDA = vue.findViewById(R.id.champDAConfirmation)
         val daInfoPerso = Modele.daInfoPerso
         if (daInfoPerso != null) {

@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.pageCalendrier
 
+import com.appnat3.tutoratplus.presentation.Modele
 
 
 class PresentateurPageCalendrier (var vue: PageCalendrier) {
@@ -13,5 +14,9 @@ class PresentateurPageCalendrier (var vue: PageCalendrier) {
 
     fun effectuerNaviguationAcceuil() {
         vue.naviguerVersmenu()
+    }
+
+    fun traiterAjoutdelaDate(selectedDate: String) {
+        Modele.dateSelected = selectedDate
     }
 }

@@ -69,4 +69,5 @@ object Modele{
     var prenomInfoPerso:String? = null
     var nomInfoPerso:String? = null
     var courrielInfoPerso:String?=null
+    var dateSelected:String?=null
 }
