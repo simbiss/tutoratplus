@@ -45,11 +45,11 @@ object Modele{
     var tuteurSelectionne: Tuteur? = null
 
     init {
-        var tuteur1 = Tuteur("Mohamed Fatene", "programmation")
-        var tuteur2 = Tuteur("Raphaël Beyrouthy", "reseau")
-        var tuteur3 = Tuteur("Lakhdar Amine Ouzou", "programmation")
-        var tuteur4 = Tuteur("Elliott Fournier-Robert", "programmation")
-        var tuteur5 = Tuteur("Antoine Lépine", "reseau")
+        var tuteur1 = Tuteur("Mohamed Fatene", "programmation", "Mohamed456")
+        var tuteur2 = Tuteur("Raphaël Beyrouthy", "reseau", "Raphael123")
+        var tuteur3 = Tuteur("Lakhdar Amine Ouzou", "programmation", "LakhdarOuzou")
+        var tuteur4 = Tuteur("Elliott Fournier-Robert", "programmation", "RobertMr")
+        var tuteur5 = Tuteur("Antoine Lépine", "reseau", "LepinA")
 
         listeTuteurs.add(tuteur1)
         listeTuteurs.add(tuteur2)
