@@ -79,7 +79,7 @@ class PageCalendrier: Fragment() {
             //Chercher le composant
             //Obtenir texte du composant
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val selectedDate = LocalDate.of(year,month + 1, dayOfMonth, )
+            val selectedDate = LocalDate.of(year,month + 1, dayOfMonth )
             myDate.text = selectedDate.toString()
 
             //Ajouter le texte au boutton

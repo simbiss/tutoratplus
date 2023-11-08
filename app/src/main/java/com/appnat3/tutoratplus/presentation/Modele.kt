@@ -1,10 +1,15 @@
 package com.appnat3.tutoratplus.presentation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.Disponibilites
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import java.time.LocalDate
+import java.time.LocalTime
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 object Modele{
 
 
@@ -44,7 +49,36 @@ object Modele{
     /**
      * initialisation des different disponibilités
      */
-    
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date1 = LocalDate.of(2023,11, 9 )
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date2 = LocalDate.of(2023,11, 9 )
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date3 = LocalDate.of(2023,11, 9 )
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date4 = LocalDate.of(2023,11, 9 )
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date5 = LocalDate.of(2023,11, 9 )
+
+
+    var listeDisponibiliteHeure1 = mutableListOf<LocalTime>(
+        LocalTime.of(10,30),
+        LocalTime.of(11,0),
+        LocalTime.of(11,30)
+    )
+
+        var disponibilite1 = Disponibilites( date1, listeDisponibiliteHeure1)
+        /*
+        var disponibilite2 = Disponibilites(date2)
+        var disponibilite3 = Disponibilites(date3)
+        var disponibilite4 = Disponibilites(date4)
+        var disponibilite5 = Disponibilites(date5)
+        */
+
+
 
     /**
      * initialisation des different cours de tutorat
@@ -53,11 +87,11 @@ object Modele{
     var tuteurSelectionne: Tuteur? = null
 
     init {
-        var tuteur1 = Tuteur("Mohamed Fatene", "programmation", "Mohamed456")
-        var tuteur2 = Tuteur("Raphaël Beyrouthy", "reseau", "Raphael123")
-        var tuteur3 = Tuteur("Lakhdar Amine Ouzou", "programmation", "LakhdarOuzou")
-        var tuteur4 = Tuteur("Elliott Fournier-Robert", "programmation", "RobertMr")
-        var tuteur5 = Tuteur("Antoine Lépine", "reseau", "LepinA")
+        var tuteur1 = Tuteur("Mohamed Fatene", "programmation", "Mohamed456", disponibilite1)
+        var tuteur2 = Tuteur("Raphaël Beyrouthy", "reseau", "Raphael123", disponibilite1)
+        var tuteur3 = Tuteur("Lakhdar Amine Ouzou", "programmation", "LakhdarOuzou", disponibilite1)
+        var tuteur4 = Tuteur("Elliott Fournier-Robert", "programmation", "RobertMr", disponibilite1)
+        var tuteur5 = Tuteur("Antoine Lépine", "reseau", "LepinA", disponibilite1)
 
         listeTuteurs.add(tuteur1)
         listeTuteurs.add(tuteur2)
