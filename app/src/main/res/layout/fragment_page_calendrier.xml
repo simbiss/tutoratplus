@@ -156,7 +156,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/textProbleme"
         style="@android:style/Widget.Material.EditText"
         android:layout_width="322dp"
         android:layout_height="108dp"
@@ -202,7 +202,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/textProbleme"
         app:layout_constraintStart_toEndOf="@+id/buttonDisponibilite1"
         app:layout_constraintTop_toBottomOf="@+id/calendar"
         app:layout_constraintVertical_bias="0.0"
@@ -216,7 +216,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/textProbleme"
         app:layout_constraintStart_toEndOf="@+id/buttonDisponibilite2"
         app:layout_constraintTop_toBottomOf="@+id/calendar"
         app:layout_constraintVertical_bias="0.0"
@@ -230,7 +230,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/textProbleme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toEndOf="@+id/buttonDisponibilite3"

@@ -1,16 +1,19 @@
 package com.appnat3.tutoratplus.presentation.pageCalendrier
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.NonNull
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
+import java.time.LocalDate
 
 class PageCalendrier: Fragment() {
     //Déclaration de variables
@@ -21,6 +24,7 @@ class PageCalendrier: Fragment() {
     lateinit var btnDisponibilite3: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
+    lateinit var textProbleme: TextView   //Variable de test
     lateinit var calendarView: CalendarView
     lateinit var myDate: TextView
 
@@ -31,6 +35,7 @@ class PageCalendrier: Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,6 +47,9 @@ class PageCalendrier: Fragment() {
         btnRetour.setOnClickListener {
             présentateur.effectuerNaviguationlisteTuteurs()
         }
+
+        textProbleme = vue.findViewById(R.id.textProbleme)
+        textProbleme.setText(présentateur.retournerNomTuteur())
 
 
         btnDisponibilite1 = vue.findViewById(R.id.buttonDisponibilite1)
@@ -65,13 +73,14 @@ class PageCalendrier: Fragment() {
         return  vue
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun collectdateRendezVous(){
         //Après une action
             //Chercher le composant
             //Obtenir texte du composant
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val selectedDate = "$dayOfMonth/${month + 1}/$year"
-            myDate.text = selectedDate
+            val selectedDate = LocalDate.of(year,month + 1, dayOfMonth, )
+            myDate.text = selectedDate.toString()
 
             //Ajouter le texte au boutton
             btnDisponibilite1.setText("10:00")

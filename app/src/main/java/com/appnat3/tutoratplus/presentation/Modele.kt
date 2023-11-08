@@ -2,9 +2,11 @@ package com.appnat3.tutoratplus.presentation
 
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
+import java.time.LocalDate
 
 
 object Modele{
+
 
     /**
      * initialisation des different cours de tutorat
@@ -38,6 +40,12 @@ object Modele{
     }
 
 
+
+    /**
+     * initialisation des different disponibilités
+     */
+    
+
     /**
      * initialisation des different cours de tutorat
      */
@@ -69,5 +77,5 @@ object Modele{
     var prenomInfoPerso:String? = null
     var nomInfoPerso:String? = null
     var courrielInfoPerso:String?=null
-    var dateSelected:String?=null
+    var dateSelected:LocalDate?=null
 }
