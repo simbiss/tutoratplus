@@ -34,7 +34,6 @@ class VueInformationPersonnlle : Fragment() {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_information_personnlle, container, false)
 
-
         btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
             présentateur.effectuerNaviguationCalendrier()

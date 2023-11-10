@@ -1,6 +1,7 @@
 package com.appnat3.tutoratplus.presentation
 
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 
 
@@ -45,11 +46,11 @@ object Modele{
     var tuteurSelectionne: Tuteur? = null
 
     init {
-        var tuteur1 = Tuteur("Mohamed Fatene","mohamed", "programmation","abc1")
-        var tuteur2 = Tuteur("Raphaël Beyrouthy","raphael",  "reseau","abc2")
-        var tuteur3 = Tuteur("Lakhdar Amine Ouzou","lakhdar",  "programmation","abc3")
-        var tuteur4 = Tuteur("Elliott Fournier-Robert","elliott",  "programmation","abc4")
-        var tuteur5 = Tuteur("Antoine Lépine","antoine",  "reseau","abc5")
+        var tuteur1 = Tuteur(1,"Mohamed Fatene","programmation")
+        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau")
+        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation")
+        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation")
+        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau")
 
         listeTuteurs.add(tuteur1)
         listeTuteurs.add(tuteur2)
@@ -57,9 +58,32 @@ object Modele{
         listeTuteurs.add(tuteur4)
         listeTuteurs.add(tuteur5)
     }
-
     fun retourListeTuteur():List<Tuteur>{
         return listeTuteurs
+    }
+
+    /**
+     * initialisation information login tuteur
+     */
+
+    var listeInfoLogin = mutableListOf<InfoLogin>()
+    //var loginEntree = InfoLogin("","")
+
+    init {
+        var infoLogin1 = InfoLogin("mohamed", "abc1")
+        var infoLogin2 = InfoLogin("raphael", "abc2")
+        var infoLogin3 = InfoLogin("lakhdar", "abc3")
+        var infoLogin4 = InfoLogin("elliott", "abc4")
+        var infoLogin5 = InfoLogin("antoine", "abc5")
+
+        listeInfoLogin.add(infoLogin1)
+        listeInfoLogin.add(infoLogin2)
+        listeInfoLogin.add(infoLogin3)
+        listeInfoLogin.add(infoLogin4)
+        listeInfoLogin.add(infoLogin5)
+    }
+    fun retourListInfoLogin(): List<InfoLogin>{
+        return listeInfoLogin
     }
 
     /**
@@ -69,4 +93,26 @@ object Modele{
     var prenomInfoPerso:String? = null
     var nomInfoPerso:String? = null
     var courrielInfoPerso:String?=null
+
+    fun retourDaInfoPerso(): String? {
+        return daInfoPerso
+    }
+    fun retourPrenomInfoPerso():String?{
+        return prenomInfoPerso
+    }
+
+    fun retourNomInfoPerso():String?{
+        return nomInfoPerso
+    }
+
+    fun retourCourrielInfoPerso():String?{
+        return courrielInfoPerso
+    }
+
+
+
+
+
+
+
 }

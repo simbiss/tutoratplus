@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
 /**
  * À FAIRE POUR SPRINT 3(semaine 12 mercredi)
  *
+ *git s
+ *
  * (interface)
  * -mettre problematique dans page information personnelle
  * -rendre les interfaces plus belle (style de texte, entete retour acceuil) (optionnel)
