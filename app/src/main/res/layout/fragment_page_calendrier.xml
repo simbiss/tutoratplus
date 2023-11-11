@@ -238,4 +238,13 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtAucuneDisponibilite"
+        android:layout_width="194dp"
+        android:layout_height="24dp"
+        android:text=""
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="506dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

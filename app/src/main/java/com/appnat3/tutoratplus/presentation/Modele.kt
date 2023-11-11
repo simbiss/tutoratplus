@@ -70,13 +70,36 @@ object Modele{
         LocalTime.of(11,30)
     )
 
+    var listeDisponibiliteHeure2 = mutableListOf<LocalTime>(
+        LocalTime.of(10,30),
+        LocalTime.of(11,0),
+        LocalTime.of(11,30)
+    )
+
+    var listeDisponibiliteHeure3 = mutableListOf<LocalTime>(
+        LocalTime.of(11,30),
+        LocalTime.of(12,0),
+        LocalTime.of(12,30)
+    )
+
+    var listeDisponibiliteHeure4 = mutableListOf<LocalTime>(
+        LocalTime.of(13,0),
+        LocalTime.of(13,30),
+        LocalTime.of(14,0)
+    )
+
+    var listeDisponibiliteHeure5 = mutableListOf<LocalTime>(
+        LocalTime.of(16,0),
+        LocalTime.of(16,30)
+    )
+
         var disponibilite1 = Disponibilites( date1, listeDisponibiliteHeure1)
-        /*
-        var disponibilite2 = Disponibilites(date2)
-        var disponibilite3 = Disponibilites(date3)
-        var disponibilite4 = Disponibilites(date4)
-        var disponibilite5 = Disponibilites(date5)
-        */
+
+        var disponibilite2 = Disponibilites(date2, listeDisponibiliteHeure2)
+        var disponibilite3 = Disponibilites(date3, listeDisponibiliteHeure3)
+        var disponibilite4 = Disponibilites(date4, listeDisponibiliteHeure4)
+        var disponibilite5 = Disponibilites(date5, listeDisponibiliteHeure5)
+
 
 
 

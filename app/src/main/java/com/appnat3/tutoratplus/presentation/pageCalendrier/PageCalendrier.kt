@@ -27,6 +27,7 @@ class PageCalendrier: Fragment() {
     lateinit var textProbleme: TextView   //Variable de test
     lateinit var calendarView: CalendarView
     lateinit var myDate: TextView
+    lateinit var txtdisponibiliteVide: TextView
 
     var présentateur = PresentateurPageCalendrier(this)
 
@@ -51,6 +52,9 @@ class PageCalendrier: Fragment() {
         textProbleme = vue.findViewById(R.id.textProbleme)
         textProbleme.setText(présentateur.retournerNomTuteur())
 
+        txtdisponibiliteVide = vue.findViewById(R.id.txtAucuneDisponibilite)
+
+
 
         btnDisponibilite1 = vue.findViewById(R.id.buttonDisponibilite1)
         btnDisponibilite2 = vue.findViewById(R.id.buttonDisponibilite2)
@@ -58,6 +62,7 @@ class PageCalendrier: Fragment() {
 
         calendarView = vue.findViewById(R.id.calendar)
         myDate = vue.findViewById(R.id.textDate)
+        myDate.text = LocalDate.now().toString()
         collectdateRendezVous()
 
 
@@ -81,8 +86,14 @@ class PageCalendrier: Fragment() {
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val selectedDate = LocalDate.of(year,month + 1, dayOfMonth )
             myDate.text = selectedDate.toString()
+            if (présentateur.date_exites(selectedDate)) {
 
-            //Ajouter le texte au boutton
+            } else {
+
+            }
+
+
+            /*//Ajouter le texte au boutton
             btnDisponibilite1.setText("10:00")
             btnDisponibilite1.setTextColor(Color.WHITE)
             btnDisponibilite1.setBackgroundColor(Color.BLUE)
@@ -97,7 +108,7 @@ class PageCalendrier: Fragment() {
             btnDisponibilite3.setTextColor(Color.WHITE)
             btnDisponibilite3.setBackgroundColor(Color.BLUE)
             btnDisponibilite3.visibility = View.VISIBLE
-            présentateur.traiterAjoutdelaDate(selectedDate)
+            présentateur.traiterAjoutdelaDate(selectedDate)*/
         }
     }
 
