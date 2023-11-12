@@ -24,8 +24,9 @@ class PresentateurPageCalendrier (var vue: PageCalendrier) {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun traiterAjoutdelaDate(selectedDate: LocalDate) {
+    fun traiterAjoutdelaDate(selectedDate: LocalDate, p_heureSelectionne:LocalTime) {
         Modele.dateSelected = selectedDate
+        Modele.heureSelectionne = p_heureSelectionne
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -39,62 +40,28 @@ class PresentateurPageCalendrier (var vue: PageCalendrier) {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun date_exites(date:LocalDate) : Boolean {
+    fun retournerDateTuteur() : LocalDate? {
+        val dateTuteur = Modele.tuteurSelectionne?.disponibilites?.date
+        return dateTuteur
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun retournerDateDisponibilités(date:LocalDate): MutableList<LocalTime>?{
         //Déclaration de variables
         val tuteurSelectionne = Modele.tuteurSelectionne
         val disponibilites = tuteurSelectionne?.disponibilites
-
+        val listeHeuresTuteurs : MutableList<LocalTime>? = null
         //Traitements-------------
 
         if (disponibilites != null) {
                 /*Si la date selectionne == la date du tuteur*/
             if (date.toString().equals(disponibilites.date.toString())) {
-                retournerListesDisposHeuresTuteur(date, disponibilites)
-                return true
+                return disponibilites.heures
+
             }
 
         }
-        return false
-
-    }
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun retournerListesDisposHeuresTuteur(date: LocalDate, disponibilites:Disponibilites) {
-            /*alors pour chaque heure de disponibilités*/
-            var cpt = disponibilites.heures.count()
-            if(cpt > 0) {
-                for(heure in disponibilites.heures) {
-                    /*le mettre dans le boutton invisible chaque heure et minutes*/
-                    //Ajouter le texte au boutton
-                    if (cpt == disponibilites.heures.count()) {
-                        vue.btnDisponibilite1.setText(heure.toString())
-                        vue.btnDisponibilite1.setTextColor(Color.WHITE)
-                        vue.btnDisponibilite1.setBackgroundColor(Color.BLUE)
-                        vue.btnDisponibilite1.visibility = View.VISIBLE
-                    }
-                    else if (cpt == disponibilites.heures.count()-1) {
-                        vue.btnDisponibilite2.setText(heure.toString())
-                        vue.btnDisponibilite2.setTextColor(Color.WHITE)
-                        vue.btnDisponibilite2.setBackgroundColor(Color.BLUE)
-                        vue.btnDisponibilite2.visibility = View.VISIBLE
-                    }
-
-                    else if (cpt == disponibilites.heures.count()-2) {
-                        vue.btnDisponibilite3.setText(heure.toString())
-                        vue.btnDisponibilite3.setTextColor(Color.WHITE)
-                        vue.btnDisponibilite3.setBackgroundColor(Color.BLUE)
-                        vue.btnDisponibilite3.visibility = View.VISIBLE
-                    }
-                    cpt -= disponibilites.heures.count()
-                }
-                traiterAjoutdelaDate(date)
-            } else {
-                vue.txtdisponibiliteVide.setText("Aucune disponibilités")
-            }
-
-
-
-
-
+        return listeHeuresTuteurs
     }
 
 }

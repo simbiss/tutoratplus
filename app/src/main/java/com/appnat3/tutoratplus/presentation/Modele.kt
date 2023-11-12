@@ -47,21 +47,21 @@ object Modele{
 
 
     /**
-     * initialisation des different disponibilités
+     * Création des different disponibilités
      */
 
     @RequiresApi(Build.VERSION_CODES.O)
-    val date1 = LocalDate.of(2023,11, 9 )
+    val date1 = LocalDate.of(2023,11, 15 )
     @RequiresApi(Build.VERSION_CODES.O)
-    val date2 = LocalDate.of(2023,11, 9 )
+    val date2 = LocalDate.of(2023,11, 16 )
 
     @RequiresApi(Build.VERSION_CODES.O)
-    val date3 = LocalDate.of(2023,11, 9 )
+    val date3 = LocalDate.of(2023,11, 17 )
     @RequiresApi(Build.VERSION_CODES.O)
-    val date4 = LocalDate.of(2023,11, 9 )
+    val date4 = LocalDate.of(2023,11, 18 )
 
     @RequiresApi(Build.VERSION_CODES.O)
-    val date5 = LocalDate.of(2023,11, 9 )
+    val date5 = LocalDate.of(2023,11, 19 )
 
 
     var listeDisponibiliteHeure1 = mutableListOf<LocalTime>(
@@ -94,7 +94,6 @@ object Modele{
     )
 
         var disponibilite1 = Disponibilites( date1, listeDisponibiliteHeure1)
-
         var disponibilite2 = Disponibilites(date2, listeDisponibiliteHeure2)
         var disponibilite3 = Disponibilites(date3, listeDisponibiliteHeure3)
         var disponibilite4 = Disponibilites(date4, listeDisponibiliteHeure4)
@@ -111,10 +110,10 @@ object Modele{
 
     init {
         var tuteur1 = Tuteur("Mohamed Fatene", "programmation", "Mohamed456", disponibilite1)
-        var tuteur2 = Tuteur("Raphaël Beyrouthy", "reseau", "Raphael123", disponibilite1)
-        var tuteur3 = Tuteur("Lakhdar Amine Ouzou", "programmation", "LakhdarOuzou", disponibilite1)
-        var tuteur4 = Tuteur("Elliott Fournier-Robert", "programmation", "RobertMr", disponibilite1)
-        var tuteur5 = Tuteur("Antoine Lépine", "reseau", "LepinA", disponibilite1)
+        var tuteur2 = Tuteur("Raphaël Beyrouthy", "reseau", "Raphael123", disponibilite2)
+        var tuteur3 = Tuteur("Lakhdar Amine Ouzou", "programmation", "LakhdarOuzou", disponibilite3)
+        var tuteur4 = Tuteur("Elliott Fournier-Robert", "programmation", "RobertMr", disponibilite4)
+        var tuteur5 = Tuteur("Antoine Lépine", "reseau", "LepinA", disponibilite5)
 
         listeTuteurs.add(tuteur1)
         listeTuteurs.add(tuteur2)
@@ -135,4 +134,5 @@ object Modele{
     var nomInfoPerso:String? = null
     var courrielInfoPerso:String?=null
     var dateSelected:LocalDate?=null
+    var heureSelectionne:LocalTime?=null
 }

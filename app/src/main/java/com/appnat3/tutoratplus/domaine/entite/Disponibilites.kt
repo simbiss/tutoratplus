@@ -4,7 +4,7 @@ import java.time.LocalDate
 import java.time.LocalTime
 import java.util.Date
 
-class Disponibilites(val date: LocalDate, val heures: MutableList<LocalTime>) {
+class Disponibilites(val date: LocalDate, val heures: MutableList<LocalTime> = MutableList(4) { LocalTime.NOON }) {
 
     override fun toString(): String {
 

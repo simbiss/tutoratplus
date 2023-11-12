@@ -1,6 +1,7 @@
 package com.appnat3.tutoratplus.presentation.pageConfirmation
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -32,6 +34,7 @@ class VueConfirmation : Fragment(){
     lateinit var btnRetour: LinearLayout
     var présentateur = PresentateurConfirmation(this)
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("MissingInflatedId", "CutPasteId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -75,8 +78,9 @@ class VueConfirmation : Fragment(){
 
         txtDate = vue.findViewById(R.id.champDate)
         val dateSelectionnee = Modele.dateSelected
+        val heureChoisie = Modele.heureSelectionne
         if(tuteurSelectionne!= null){
-            txtNomTuteur.text = "Date sélectionné : ${dateSelectionnee}"
+            txtNomTuteur.text = "Date sélectionné : ${dateSelectionnee} à ${heureChoisie}"
         }else{
             txtNomTuteur.text = "Aucun tuteur sélectionné"
         }
