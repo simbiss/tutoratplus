@@ -4,7 +4,7 @@ import android.graphics.Color
 import android.os.Build
 import android.view.View
 import androidx.annotation.RequiresApi
-import com.appnat3.tutoratplus.domaine.entite.Disponibilites
+import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.presentation.Modele
 import java.time.LocalDate
 import java.time.LocalTime
