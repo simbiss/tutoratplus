@@ -8,7 +8,7 @@ class Disponibilites(val date: LocalDate, val heures: MutableList<LocalTime> = M
 
     override fun toString(): String {
 
-        return date.toString()
+        return this.toString()
     }
 
 }
