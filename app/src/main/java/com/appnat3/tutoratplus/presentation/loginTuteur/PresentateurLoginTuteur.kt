@@ -28,6 +28,23 @@ class PresentateurLoginTuteur(var vue : VueLoginTuteur) {
         return false
     }
 
+    fun traiterCollectInformationLogin(username: String){
+
+        for ((key, InfoLogin) in Modele.mapInfoLogin){
+            if(InfoLogin.nomUtilisateur == username){       //condition pour trouver la position de la clée du tuteur a logger
+                var idOuvertureSessionLogin = key
+
+                for ((key, Tuteur) in Modele.mapListTuteur){
+                    if(key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
+                        Modele.ouvertureSessionTuteur = Tuteur
+                    }
+                }
+            }
+        }
+
+
+    }
+
     fun effectuerNavigationAcceuil(){
         vue.naviguerVersmenu_principal()
     }

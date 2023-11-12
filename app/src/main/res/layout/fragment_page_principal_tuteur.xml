@@ -5,10 +5,18 @@
     android:layout_height="match_parent">
     <!--tools:context=".page_principal_tuteur"-->
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/afficherNomTuteur"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="112dp"
+        android:layout_marginBottom="60px"
+        android:background="#9F9F9F"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="20px"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
 </FrameLayout>

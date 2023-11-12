@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 /**
  * À FAIRE POUR SPRINT 3(semaine 12 mercredi)
  *
- *git s
+ *
  *
  * (interface)
  * -mettre problematique dans page information personnelle
@@ -42,5 +42,8 @@ class MainActivity : AppCompatActivity() {
  *  - heure total tutorer
  *  - confirmation séance tutorat
 
+ *
+ * IDÉE POUR SPRINT 4
+ * -etre capable d'ajouter et supprimer des disponibilité (TUTEUR)
  *
  */

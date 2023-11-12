@@ -87,6 +87,18 @@ object Modele{
     }
 
     /**
+     * information sur l'utilisateur qui login
+     */
+
+    var ouvertureSessionTuteur: Tuteur? = null
+
+
+    var mapInfoLogin = mapOf<Int, InfoLogin>(1 to listeInfoLogin[0],2 to listeInfoLogin[1],3 to listeInfoLogin[2],4 to listeInfoLogin[3],5 to listeInfoLogin[4])
+    var mapListTuteur = mapOf<Int, Tuteur>(1 to listeTuteurs[0], 2 to listeTuteurs[1], 3 to listeTuteurs[2], 4 to listeTuteurs[3], 5 to listeTuteurs[4])
+
+
+
+    /**
      * initialisation des variable d'informations personnelles
      */
     var daInfoPerso:String? = null

@@ -49,8 +49,9 @@ class VueLoginTuteur : Fragment() {
         btnConnection.setOnClickListener {
             val username = vue.findViewById<EditText>(R.id.entreeUsername).text.toString()
             val motDePasse = vue.findViewById<EditText>(R.id.entreePassword).text.toString()
+            présentateur?.traiterCollectInformationLogin(username)                              //ajouter dans le modele la le id du tuteur à logger
 
-            val validationResult = présentateur?.traiterValidationInfoLogin(username,motDePasse)
+            val validationResult = présentateur?.traiterValidationInfoLogin(username,motDePasse)        //validation des information login
 
             //print(Modele.listeInfoLogin)
             if(validationResult == true) {
@@ -65,6 +66,8 @@ class VueLoginTuteur : Fragment() {
             }
         }
     }
+
+
 
 
 
