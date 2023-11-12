@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.informationPersonnelle.InformationPersonnlle">
 
-    <!-- ################################ Titre  ########################################## -->
+
 
     <TextView
         android:id="@+id/sujetPage"
@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ligneNoire"
         tools:ignore="MissingConstraints" />
-
+    <!-- ################################ Titre  ########################################## -->
     <LinearLayout
         android:id="@+id/buttonRetour"
         android:layout_width="80dp"

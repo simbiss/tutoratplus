@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -13,7 +14,7 @@ import com.appnat3.tutoratplus.R
 class page_information : Fragment() {
     //Déclaration de variables
     lateinit var navController: NavController
-    lateinit var btnRetour: Button
+    lateinit var btnRetour: LinearLayout
     var présentateur = PresentateurPageInformation(this)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,7 +23,7 @@ class page_information : Fragment() {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_page_information, container, false)
 
-        btnRetour = vue.findViewById(R.id.btn_retour_information)
+        btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
             présentateur.effectuerNavigationMenu()
         }
