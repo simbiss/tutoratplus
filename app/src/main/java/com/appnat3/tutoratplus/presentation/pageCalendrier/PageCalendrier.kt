@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.pageCalendrier
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -67,6 +68,7 @@ class PageCalendrier: Fragment() {
         calendarView = vue.findViewById(R.id.calendar)
         myDate = vue.findViewById(R.id.textDate)
         myDate.text = LocalDate.now().toString()
+        afficherDisponibilites(LocalDate.now())
         collectdateRendezVous()
 
 
@@ -81,7 +83,80 @@ class PageCalendrier: Fragment() {
         }
         return  vue
     }
+    // Fonction pour récupérer et afficher les disponibilités quand la page du calendrier s'affiche directement
+    @SuppressLint("NewApi")
+    fun afficherDisponibilites(dateSelectionnee: LocalDate) {
+        val listeHeuresTuteurs = présentateur.retournerDateDisponibilités(dateSelectionnee)
 
+        if (présentateur.retournerDateTuteur(dateSelectionnee) != null) {
+            txtdisponibiliteVide.setText("")
+            //Mettre tous les bouttons invisible pour afficher de nouveaux
+            btnDisponibilite1.visibility = View.INVISIBLE
+            btnDisponibilite2.visibility = View.INVISIBLE
+            btnDisponibilite3.visibility = View.INVISIBLE
+            btnDisponibilite4.visibility = View.INVISIBLE
+            if (listeHeuresTuteurs != null) {
+                var cpt= listeHeuresTuteurs.count()
+                if (listeHeuresTuteurs.count() > 0) {
+                    for (i in 0 until cpt ) {
+                        if(i == 0) {
+                            btnDisponibilite1.setText(listeHeuresTuteurs[i].toString())
+                            btnDisponibilite1.setTextColor(Color.WHITE)
+                            btnDisponibilite1.setBackgroundColor(Color.BLUE)
+                            btnDisponibilite1.visibility = View.VISIBLE
+                            btnDisponibilite1.setOnClickListener {
+                                var heureSelectectionne = listeHeuresTuteurs[i]
+                                présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
+                            }
+                        }
+
+                        else if(i == 1) {
+                            btnDisponibilite2.setText(listeHeuresTuteurs[i].toString())
+                            btnDisponibilite2.setTextColor(Color.WHITE)
+                            btnDisponibilite2.setBackgroundColor(Color.BLUE)
+                            btnDisponibilite2.visibility = View.VISIBLE
+                            btnDisponibilite2.setOnClickListener {
+                                var heureSelectectionne = listeHeuresTuteurs[i]
+                                présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
+                            }
+
+                        }
+                        else if(i == 2) {
+                            btnDisponibilite3.setText(listeHeuresTuteurs[i].toString())
+                            btnDisponibilite3.setTextColor(Color.WHITE)
+                            btnDisponibilite3.setBackgroundColor(Color.BLUE)
+                            btnDisponibilite3.visibility = View.VISIBLE
+                            btnDisponibilite3.setOnClickListener {
+                                var heureSelectectionne = listeHeuresTuteurs[i]
+                                présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
+                            }
+                        }
+                        else if(i == 3) {
+                            btnDisponibilite4.setText(listeHeuresTuteurs[i].toString())
+                            btnDisponibilite4.setTextColor(Color.WHITE)
+                            btnDisponibilite4.setBackgroundColor(Color.BLUE)
+                            btnDisponibilite4.visibility = View.VISIBLE
+                            btnDisponibilite4.setOnClickListener {
+                                var heureSelectectionne = listeHeuresTuteurs[i]
+                                présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        } else {
+            btnDisponibilite1.visibility = View.INVISIBLE
+            btnDisponibilite2.visibility = View.INVISIBLE
+            btnDisponibilite3.visibility = View.INVISIBLE
+            btnDisponibilite4.visibility = View.INVISIBLE
+
+            txtdisponibiliteVide.setText("Aucune disponibolinité")
+            val couleurInt = ResourcesCompat.getColor(resources, R.color.gris, null)
+            txtdisponibiliteVide.setTextColor(couleurInt)
+        }
+    }
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectdateRendezVous(){
         //Déclaration de variables
@@ -92,71 +167,7 @@ class PageCalendrier: Fragment() {
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val dateSelectionnee = LocalDate.of(year,month + 1, dayOfMonth )
             myDate.text = dateSelectionnee.toString()
-            val listeHeuresTuteurs = présentateur.retournerDateDisponibilités(dateSelectionnee)
-            if (dateSelectionnee ==  présentateur.retournerDateTuteur()) {
-                txtdisponibiliteVide.setText("")
-                if (listeHeuresTuteurs != null) {
-                    var cpt= listeHeuresTuteurs.count()
-                    if (listeHeuresTuteurs.count() > 0) {
-                        for (i in 0 until cpt ) {
-                            if(i == 0) {
-                                btnDisponibilite1.setText(listeHeuresTuteurs[i].toString())
-                                btnDisponibilite1.setTextColor(Color.WHITE)
-                                btnDisponibilite1.setBackgroundColor(Color.BLUE)
-                                btnDisponibilite1.visibility = View.VISIBLE
-                                btnDisponibilite1.setOnClickListener {
-                                    var heureSelectectionne = listeHeuresTuteurs[i]
-                                    présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
-                                }
-                            }
-
-                            else if(i == 1) {
-                                btnDisponibilite2.setText(listeHeuresTuteurs[i].toString())
-                                btnDisponibilite2.setTextColor(Color.WHITE)
-                                btnDisponibilite2.setBackgroundColor(Color.BLUE)
-                                btnDisponibilite2.visibility = View.VISIBLE
-                                btnDisponibilite2.setOnClickListener {
-                                    var heureSelectectionne = listeHeuresTuteurs[i]
-                                    présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
-                                }
-
-                            }
-                            else if(i == 2) {
-                                btnDisponibilite3.setText(listeHeuresTuteurs[i].toString())
-                                btnDisponibilite3.setTextColor(Color.WHITE)
-                                btnDisponibilite3.setBackgroundColor(Color.BLUE)
-                                btnDisponibilite3.visibility = View.VISIBLE
-                                btnDisponibilite3.setOnClickListener {
-                                    var heureSelectectionne = listeHeuresTuteurs[i]
-                                    présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
-                                }
-                            }
-                            else if(i == 3) {
-                                btnDisponibilite4.setText(listeHeuresTuteurs[i].toString())
-                                btnDisponibilite4.setTextColor(Color.WHITE)
-                                btnDisponibilite4.setBackgroundColor(Color.BLUE)
-                                btnDisponibilite4.visibility = View.VISIBLE
-                                btnDisponibilite4.setOnClickListener {
-                                    var heureSelectectionne = listeHeuresTuteurs[i]
-                                    présentateur.traiterAjoutdelaDate(dateSelectionnee,heureSelectectionne)
-                                }
-                            }
-                        }
-
-
-                    }
-                }
-            } else {
-                btnDisponibilite1.visibility = View.INVISIBLE
-                btnDisponibilite2.visibility = View.INVISIBLE
-                btnDisponibilite3.visibility = View.INVISIBLE
-                btnDisponibilite4.visibility = View.INVISIBLE
-
-
-                txtdisponibiliteVide.setText("Aucune disponibolinité")
-                val couleurInt = ResourcesCompat.getColor(resources, R.color.gris, null)
-                txtdisponibiliteVide.setTextColor(couleurInt)
-            }
+            afficherDisponibilites(dateSelectionnee)
 
 
 
