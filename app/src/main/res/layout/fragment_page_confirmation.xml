@@ -213,7 +213,7 @@
 
     <TextView
         android:id="@+id/champDate"
-        android:layout_width="188dp"
+        android:layout_width="315dp"
         android:layout_height="30dp"
         android:layout_marginTop="76dp"
         android:text=""
