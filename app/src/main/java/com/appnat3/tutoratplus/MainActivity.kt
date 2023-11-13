@@ -13,11 +13,20 @@ class MainActivity : AppCompatActivity() {
 /**
  * À FAIRE POUR SPRINT 3(semaine 12 mercredi)
  *
+ *
+ *
  * (interface)
- * -rendre les interfaces plus belle (style de texte, entete retour acceuil) (option)
- * -mettre problematique dans page information personnelle (option)
+ * -mettre problematique dans page information personnelle
+ * -rendre les interfaces plus belle (style de texte, entete retour acceuil) (optionnel)
+ * -transformer TOUT les fragment en landscape (optionnel)
+ * -Internationnalisation -> tout les texte en ANGLAIS (optionnel)
  *
  * -mettre image dans les liste cours et liste tuteur
+ *
+ * - page login pour tuteur
+ * - page principale tuteur
+ * - page confirmation séance tutorat
+ * -
  *
  *
  * (Calendrier)
@@ -27,14 +36,14 @@ class MainActivity : AppCompatActivity() {
  *
  * -Ajouter session de tutorat dans le calendrier du cellulaire
  *
- *
- *
- *
- *
- * (login tuteur)
+ * (cession tuteur)
  * - creer modele / classe login tuteur
+ * (fonctionnalité tuteur une fois login)
+ *  - heure total tutorer
+ *  - confirmation séance tutorat
+
  *
- *
- *
+ * IDÉE POUR SPRINT 4
+ * -etre capable d'ajouter et supprimer des disponibilité (TUTEUR)
  *
  */

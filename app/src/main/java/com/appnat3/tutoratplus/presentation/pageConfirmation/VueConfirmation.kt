@@ -15,7 +15,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.presentation.Modele
-import com.appnat3.tutoratplus.presentation.informationPersonnelle.PresentateurInfosPersonnelle
 
 class VueConfirmation : Fragment(){
 
@@ -52,11 +51,11 @@ class VueConfirmation : Fragment(){
         btnAcceuil.setOnClickListener {
             présentateur.effectuerNaviguationAcceuil()
         }
+
         btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
             présentateur.effectuerNaviguationInformationPersonnelle()
         }
-
 
         txtNomCours = vue.findViewById(R.id.champNomCours)
         // Accédez à la VueListeCours parente pour obtenir le présentateur et le cours sélectionné
@@ -68,13 +67,15 @@ class VueConfirmation : Fragment(){
             txtNomCours.text = "Aucun cours sélectionné"
         }
 
+
         txtNomTuteur = vue.findViewById(R.id.champNomTuteur)
         val tuteurSelectionne = Modele.tuteurSelectionne
         if(tuteurSelectionne!= null){
-            txtNomTuteur.text = "Tuteur sélectionné : ${tuteurSelectionne.nom}"
+            txtNomTuteur.text = "Tuteur sélectionné : ${tuteurSelectionne.nomTuteur}"
         }else{
             txtNomTuteur.text = "Aucun tuteur sélectionné"
         }
+
 
         txtDate = vue.findViewById(R.id.champDate)
         val dateSelectionnee = Modele.dateSelected
@@ -83,30 +84,32 @@ class VueConfirmation : Fragment(){
 
 
         txtDA = vue.findViewById(R.id.champDAConfirmation)
-        val daInfoPerso = Modele.daInfoPerso
+        val daInfoPerso = présentateur.collectionDaInfoPerso()
         if (daInfoPerso != null) {
-            txtDA.text = "DA : ${Modele.daInfoPerso}"
+            txtDA.text = "DA : $daInfoPerso"
         } else {
             txtDA.text = "Aucun DA entrez"
         }
+
+
         txtPrenom = vue.findViewById(R.id.champPrenomConfirmation)
-        val prenomInfoPerso = Modele.prenomInfoPerso
+        val prenomInfoPerso = présentateur.collectionPrenomInfoPerso()
         if (prenomInfoPerso != null) {
-            txtPrenom.text = "Prenom : ${Modele.prenomInfoPerso}"
+            txtPrenom.text = "Prenom : $prenomInfoPerso"
         } else {
             txtPrenom.text = "Aucun prenom entrez"
         }
         txtNom = vue.findViewById(R.id.champNomConfirmation)
-        val nomInfoPerso = Modele.nomInfoPerso
+        val nomInfoPerso = présentateur.collectionNomInfoPerso()
         if (nomInfoPerso != null) {
-            txtNom.text = "Nom : ${Modele.nomInfoPerso}"
+            txtNom.text = "Nom : $nomInfoPerso"
         } else {
             txtNom.text = "Aucun nom entrez"
         }
         txtCourriel = vue.findViewById(R.id.champCourrielConfirmation)
-        val courrielInfoPerso = Modele.courrielInfoPerso
+        val courrielInfoPerso = présentateur.collectionCourrielInfoPerso()
         if (courrielInfoPerso != null) {
-            txtCourriel.text = "Courriel : ${Modele.courrielInfoPerso}"
+            txtCourriel.text = "Courriel : $courrielInfoPerso"
         } else {
             txtCourriel.text = "Aucun courriel entrez"
         }

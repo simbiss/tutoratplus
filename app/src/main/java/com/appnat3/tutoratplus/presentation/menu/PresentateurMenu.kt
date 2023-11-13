@@ -12,4 +12,8 @@ class PresentateurMenu(var vue: menu_principal) {
         vue.naviguerVerspage_information()
     }
 
+    fun effectuerNavigationPageTuteur(){
+        vue.naviguerVerslogin_tuteur()
+    }
+
 }

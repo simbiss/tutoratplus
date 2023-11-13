@@ -3,10 +3,9 @@ package com.appnat3.tutoratplus.presentation.informationPersonnelle
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.presentation.Modele
-import com.appnat3.tutoratplus.presentation.informationPersonnelle.InformationPersonnlle
 
 
-class PresentateurInfosPersonnelle(var vue: InformationPersonnlle) {
+class PresentateurInfosPersonnelle(var vue: VueInformationPersonnlle) {
 
 
     @RequiresApi(Build.VERSION_CODES.O)

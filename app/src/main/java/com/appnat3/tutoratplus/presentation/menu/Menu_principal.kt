@@ -17,6 +17,7 @@ class menu_principal : Fragment() {
     lateinit var navController: NavController
     lateinit var btnPriseRendezVous: Button
     lateinit var btnApropos: Button
+    lateinit var btnLoginTuteur: Button
     var présentateur = PresentateurMenu(this)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +34,11 @@ class menu_principal : Fragment() {
         btnApropos = vue.findViewById(R.id.btn_a_propos)
         btnApropos.setOnClickListener {
             présentateur.effectuerNavigationPageInformation()
+        }
+
+        btnLoginTuteur = vue.findViewById(R.id.btn_login)
+        btnLoginTuteur.setOnClickListener {
+            présentateur.effectuerNavigationPageTuteur()
         }
 
         return vue
@@ -53,4 +59,7 @@ class menu_principal : Fragment() {
         navController.navigate(R.id.action_menu_principal2_to_page_information)
     }
 
+    fun naviguerVerslogin_tuteur(){
+        navController.navigate(R.id.action_menu_principal2_to_login_tuteur)
+    }
 }

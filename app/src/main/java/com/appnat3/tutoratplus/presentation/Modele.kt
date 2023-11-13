@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
+import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import java.time.LocalDate
 import java.time.LocalTime
@@ -11,7 +12,6 @@ import java.time.LocalTime
 
 @RequiresApi(Build.VERSION_CODES.O)
 object Modele{
-
 
     /**
      * initialisation des different cours de tutorat
@@ -138,11 +138,12 @@ object Modele{
     var tuteurSelectionne: Tuteur? = null
 
     init {
-        var tuteur1 = Tuteur("Mohamed Fatene", "programmation", "Mohamed456", ListedisponibiliteTuteur1)
-        var tuteur2 = Tuteur("Raphaël Beyrouthy", "reseau", "Raphael123", ListedisponibiliteTuteur2)
-        var tuteur3 = Tuteur("Lakhdar Amine Ouzou", "programmation", "LakhdarOuzou", ListedisponibiliteTuteur3)
-        var tuteur4 = Tuteur("Elliott Fournier-Robert", "programmation", "RobertMr", ListedisponibiliteTuteur4)
-        var tuteur5 = Tuteur("Antoine Lépine", "reseau", "LepinA", ListedisponibiliteTuteur5)
+
+        var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", ListedisponibiliteTuteur1)
+        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", ListedisponibiliteTuteur2)
+        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", ListedisponibiliteTuteur3)
+        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", ListedisponibiliteTuteur4)
+        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau", ListedisponibiliteTuteur5)
 
         listeTuteurs.add(tuteur1)
         listeTuteurs.add(tuteur2)
@@ -150,10 +151,43 @@ object Modele{
         listeTuteurs.add(tuteur4)
         listeTuteurs.add(tuteur5)
     }
-
     fun retourListeTuteur():List<Tuteur>{
         return listeTuteurs
     }
+
+    /**
+     * initialisation information login tuteur
+     */
+
+    var listeInfoLogin = mutableListOf<InfoLogin>()
+    //var loginEntree = InfoLogin("","")
+
+    init {
+        var infoLogin1 = InfoLogin("mohamed", "abc1")
+        var infoLogin2 = InfoLogin("raphael", "abc2")
+        var infoLogin3 = InfoLogin("lakhdar", "abc3")
+        var infoLogin4 = InfoLogin("elliott", "abc4")
+        var infoLogin5 = InfoLogin("antoine", "abc5")
+
+        listeInfoLogin.add(infoLogin1)
+        listeInfoLogin.add(infoLogin2)
+        listeInfoLogin.add(infoLogin3)
+        listeInfoLogin.add(infoLogin4)
+        listeInfoLogin.add(infoLogin5)
+    }
+    fun retourListInfoLogin(): List<InfoLogin>{
+        return listeInfoLogin
+    }
+
+    /**
+     * information sur l'utilisateur qui login
+     */
+
+    var ouvertureSessionTuteur: Tuteur? = null
+
+    var mapInfoLogin = mapOf<Int, InfoLogin>(1 to listeInfoLogin[0],2 to listeInfoLogin[1],3 to listeInfoLogin[2],4 to listeInfoLogin[3],5 to listeInfoLogin[4])
+    var mapListTuteur = mapOf<Int, Tuteur>(1 to listeTuteurs[0], 2 to listeTuteurs[1], 3 to listeTuteurs[2], 4 to listeTuteurs[3], 5 to listeTuteurs[4])
+
 
     /**
      * initialisation des variable d'informations personnelles
@@ -162,6 +196,34 @@ object Modele{
     var prenomInfoPerso:String? = null
     var nomInfoPerso:String? = null
     var courrielInfoPerso:String?=null
+
+
+    fun retourDaInfoPerso(): String? {
+        return daInfoPerso
+    }
+    fun retourPrenomInfoPerso():String?{
+        return prenomInfoPerso
+    }
+
+    fun retourNomInfoPerso():String?{
+        return nomInfoPerso
+    }
+
+    fun retourCourrielInfoPerso():String?{
+        return courrielInfoPerso
+    }
+
+    /**
+     * initialisation des variable pour selection de date (Calendrier)
+     */
     var dateSelected:LocalDate?=null
     var heureSelectionne:LocalTime?=null
+
+
+
+
+
+
+
+
 }

@@ -54,10 +54,13 @@
         <action
             android:id="@+id/action_menu_principal2_to_page_information"
             app:destination="@id/page_information" />
+        <action
+            android:id="@+id/action_menu_principal2_to_login_tuteur"
+            app:destination="@id/login_tuteur" />
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
-        android:name="com.appnat3.tutoratplus.presentation.informationPersonnelle.InformationPersonnlle"
+        android:name="com.appnat3.tutoratplus.presentation.informationPersonnelle.VueInformationPersonnlle"
         android:label="fragment_information_personnlle"
         tools:layout="@layout/fragment_information_personnlle" >
         <action
@@ -96,6 +99,23 @@
             android:id="@+id/action_pageCalendrier_to_menu_principal"
             app:destination="@id/menu_principal" />
     </fragment>
+    <fragment
+        android:id="@+id/login_tuteur"
+        android:name="com.appnat3.tutoratplus.presentation.loginTuteur.VueLoginTuteur"
+        android:label="fragment_login_tuteur"
+        tools:layout="@layout/fragment_login_tuteur" >
+        <action
+            android:id="@+id/action_login_tuteur_to_page_principal_tuteur"
+            app:destination="@id/page_principal_tuteur" />
+        <action
+            android:id="@+id/action_login_tuteur_to_menu_principal"
+            app:destination="@id/menu_principal" />
+    </fragment>
+    <fragment
+        android:id="@+id/page_principal_tuteur"
+        android:name="com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.VuePagePrincipalTuteur"
+        android:label="fragment_page_principal_tuteur"
+        tools:layout="@layout/fragment_page_principal_tuteur" />
 </navigation>
 
 
