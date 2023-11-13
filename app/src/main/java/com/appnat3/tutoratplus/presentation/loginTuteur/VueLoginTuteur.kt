@@ -56,16 +56,13 @@ class VueLoginTuteur : Fragment() {
             //print(Modele.listeInfoLogin)
             if(validationResult == true) {
                 présentateur?.effectuerNavigationPageTuteur()
-
-            }else{
-                if (validationResult == false) {
-                    mesgErreur.text = "TEST MSG FALSE"
-                }else{
-                    mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide ... $username et $motDePasse"
+            }
+            else{
+                    mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
                 }
             }
         }
-    }
+
 
 
 

@@ -33,7 +33,7 @@ class PresentateurPageCalendrier (var vue: PageCalendrier) {
     fun retournerNomTuteur() : String{
         val tuteurSelectionne = Modele.tuteurSelectionne
         if(tuteurSelectionne!= null){
-            return "Tuteur sélectionné : ${tuteurSelectionne.nom}"
+            return "Tuteur sélectionné : ${tuteurSelectionne.nomTuteur}"
         }else{
             return "Aucun tuteur sélectionné"
         }
