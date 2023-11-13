@@ -38,7 +38,7 @@ class VueListeCours : Fragment(), IVueListeCours{
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_liste_des_cours, container, false)
         //val vueItem = inflater.inflate(R.layout.element_liste, container, false)
-        présentateur = PresentateurListeCours(this)
+        présentateur = PresentateurListeCours(this, /**Modèle()*/)
 
 
         liste_des_cours = vue.findViewById(R.id.liste_des_cours)
@@ -57,12 +57,12 @@ class VueListeCours : Fragment(), IVueListeCours{
 
         btnRetour = vue.findViewById(R.id.btn_retour_cours)
         btnRetour.setOnClickListener {
-            présentateur!!.effectuerNavigationMenu()
+            présentateur?.effectuerNavigationMenu()
         }
 
         btnSuivant = vue.findViewById(R.id.btn_suivant_cours)
         btnSuivant.setOnClickListener {
-            présentateur!!.effectuerNavigationTuteur()
+            présentateur?.effectuerNavigationTuteur()
         }
         return vue
     }

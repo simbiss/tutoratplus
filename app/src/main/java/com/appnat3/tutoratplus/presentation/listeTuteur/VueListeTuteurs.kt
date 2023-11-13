@@ -35,7 +35,7 @@ class VueListeTuteurs  : Fragment() {
         liste_tuteurs.setOnItemClickListener { parent, view, position, id ->
             val tuteurSelectionne=adapter.getItem(position)
 
-            présentateur!!.effectuerNavigationCalendrier()
+            présentateur?.effectuerNavigationCalendrier()
             if (tuteurSelectionne != null) {
                 présentateur?.recuperationTuteur(tuteurSelectionne)
             }
@@ -44,12 +44,12 @@ class VueListeTuteurs  : Fragment() {
 
         btnRetour = vue.findViewById(R.id.btn_retour_tuteur)
         btnRetour.setOnClickListener {
-            présentateur!!.effectuerNavigationCours()
+            présentateur?.effectuerNavigationCours()
         }
 
         btnSuivant = vue.findViewById(R.id.btn_suivant_tuteur)
         btnSuivant.setOnClickListener {
-            présentateur!!.effectuerNavigationCalendrier()
+            présentateur?.effectuerNavigationCalendrier()
         }
         return vue
 
