@@ -5,14 +5,15 @@ import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 
-class PresentateurListeTuteur(var vue: VueListeTuteurs, private val modele:Modele){
+class PresentateurListeTuteur(var vue: VueListeTuteurs, private val modele:Modele):
+    IContractVuePresentateurListeTuteur.IPresentateurListeTuteur {
 
     @RequiresApi(Build.VERSION_CODES.O)
 
     var listeTuteurs = arrayOf<Tuteur>()
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun traiterListeTuteurs():Array<Tuteur>{
+    override fun traiterListeTuteurs():Array<Tuteur>{
         for(tuteur in modele.retourListeTuteur()) {
             if (tuteur.programme == modele.coursSelectionne?.programme)
                 listeTuteurs += tuteur
@@ -21,7 +22,7 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs, private val modele:Model
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun recuperationTuteur(item:Tuteur){
+    override fun recuperationTuteur(item:Tuteur){
         modele.tuteurSelectionne = item
     }
 

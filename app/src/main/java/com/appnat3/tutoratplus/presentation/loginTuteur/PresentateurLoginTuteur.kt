@@ -56,8 +56,6 @@ class PresentateurLoginTuteur(var vue : VueLoginTuteur, private val modele : Mod
                 }
             }
         }
-
-
     }
 
     fun effectuerNavigationAcceuil(){

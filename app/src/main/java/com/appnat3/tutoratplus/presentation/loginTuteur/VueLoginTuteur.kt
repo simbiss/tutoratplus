@@ -68,15 +68,11 @@ class VueLoginTuteur : Fragment() {
 
             val validationResult = présentateur?.traiterValidationInfoLogin(username,motDePasse)        //validation des information login
 
-            //print(Modele.listeInfoLogin)
             if(validationResult == true) {
                 présentateur?.effectuerNavigationPageTuteur()
             }
             else{
-
                 mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
-
-                    mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
                 }
 
             }

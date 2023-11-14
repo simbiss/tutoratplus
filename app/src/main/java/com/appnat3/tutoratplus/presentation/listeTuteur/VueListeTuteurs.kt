@@ -19,7 +19,7 @@ import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 
-class VueListeTuteurs  : Fragment() {
+class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueListeTuteur {
     var présentateur: PresentateurListeTuteur? = null
     lateinit var navController: NavController
     lateinit var adapter: ArrayAdapter<Tuteur>
@@ -43,7 +43,7 @@ class VueListeTuteurs  : Fragment() {
         liste_tuteurs.setOnItemClickListener { parent, view, position, id ->
             val tuteurSelectionne=adapter.getItem(position)
 
-            présentateur?.effectuerNavigationCalendrier()
+            présentateur!!.effectuerNavigationCalendrier()
             if (tuteurSelectionne != null) {
                 présentateur?.recuperationTuteur(tuteurSelectionne)
             }
@@ -71,7 +71,7 @@ class VueListeTuteurs  : Fragment() {
         initialiserListeTuteurs(présentateur?.traiterListeTuteurs())        //lister les tuteurs
     }
 
-    fun initialiserListeTuteurs(liste: Array<Tuteur>?){
+    override fun initialiserListeTuteurs(liste: Array<Tuteur>?){
         adapter = ArrayAdapter<Tuteur>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
         this.liste_tuteurs.setAdapter(adapter)
     }
