@@ -31,7 +31,8 @@ class VueConfirmation : Fragment(){
     lateinit var btnAjoutCalendrier: Button
     lateinit var btnAcceuil: TextView
     lateinit var btnRetour: LinearLayout
-    var présentateur = PresentateurConfirmation(this)
+    val modele: Modele = Modele()
+    var présentateur = PresentateurConfirmation(this, modele)
 
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("MissingInflatedId", "CutPasteId", "SuspiciousIndentation")

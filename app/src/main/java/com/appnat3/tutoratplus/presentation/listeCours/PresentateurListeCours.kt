@@ -7,13 +7,12 @@ import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.listeCours.IContractVuePresentateurListeCours.IPresentateurListeCours
 
 
-class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
+class PresentateurListeCours(var vue: VueListeCours, private val modele: Modele): IPresentateurListeCours {
 
     var listeCours = arrayOf<Cours>()
     @RequiresApi(Build.VERSION_CODES.O)
-    private val modele = Modele()
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun traiterListeCours(): Array<Cours> {
         for (cours in modele.retourListeDesCours()){
             listeCours+=cours

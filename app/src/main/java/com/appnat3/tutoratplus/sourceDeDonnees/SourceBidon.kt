@@ -1,8 +1,13 @@
 package com.appnat3.tutoratplus.sourceDeDonnees
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
+import java.time.LocalDate
+import java.time.LocalTime
 
 
 class SourceBidon : SourceDeDonnees {
@@ -33,8 +38,87 @@ class SourceBidon : SourceDeDonnees {
     /**
      * Création des different disponibilités
      */
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date1 = LocalDate.of(2023, 11, 12)
 
-        /// HELLO WORLD
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date2 = LocalDate.of(2023, 11, 16)
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date3 = LocalDate.of(2023, 11, 17)
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date4 = LocalDate.of(2023, 11, 18)
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    val date5 = LocalDate.of(2023, 11, 19)
+
+
+    var listeDisponibiliteHeure1 = mutableListOf<LocalTime>(
+        LocalTime.of(10, 30),
+        LocalTime.of(11, 0),
+        LocalTime.of(11, 30)
+    )
+
+    var listeDisponibiliteHeure2 = mutableListOf<LocalTime>(
+        LocalTime.of(10, 30),
+        LocalTime.of(11, 0),
+        LocalTime.of(11, 30)
+    )
+
+    var listeDisponibiliteHeure3 = mutableListOf<LocalTime>(
+        LocalTime.of(11, 30),
+        LocalTime.of(12, 0),
+        LocalTime.of(12, 30)
+    )
+
+    var listeDisponibiliteHeure4 = mutableListOf<LocalTime>(
+        LocalTime.of(13, 0),
+        LocalTime.of(13, 30),
+        LocalTime.of(14, 0)
+    )
+
+    var listeDisponibiliteHeure5 = mutableListOf<LocalTime>(
+        LocalTime.of(16, 0),
+        LocalTime.of(16, 30)
+    )
+
+    val ListedisponibiliteTuteur1: Array<Disponibilite> = arrayOf(
+        Disponibilite(date1, listeDisponibiliteHeure1),
+        Disponibilite(date2, listeDisponibiliteHeure2),
+        Disponibilite(date3, listeDisponibiliteHeure3),
+        Disponibilite(date4, listeDisponibiliteHeure4),
+        Disponibilite(date5, listeDisponibiliteHeure5)
+    )
+    val ListedisponibiliteTuteur2: Array<Disponibilite> = arrayOf(
+        Disponibilite(date1, listeDisponibiliteHeure1),
+        Disponibilite(date2, listeDisponibiliteHeure2),
+        Disponibilite(date3, listeDisponibiliteHeure3),
+        Disponibilite(date4, listeDisponibiliteHeure4),
+        Disponibilite(date5, listeDisponibiliteHeure5)
+    )
+
+    val ListedisponibiliteTuteur3: Array<Disponibilite> = arrayOf(
+        Disponibilite(date1, listeDisponibiliteHeure1),
+        Disponibilite(date2, listeDisponibiliteHeure2),
+        Disponibilite(date3, listeDisponibiliteHeure3),
+        Disponibilite(date4, listeDisponibiliteHeure4),
+        Disponibilite(date5, listeDisponibiliteHeure5)
+    )
+    val ListedisponibiliteTuteur4: Array<Disponibilite> = arrayOf(
+        Disponibilite(date1, listeDisponibiliteHeure1),
+        Disponibilite(date2, listeDisponibiliteHeure2),
+        Disponibilite(date3, listeDisponibiliteHeure3),
+        Disponibilite(date4, listeDisponibiliteHeure4),
+        Disponibilite(date5, listeDisponibiliteHeure5)
+    )
+    val ListedisponibiliteTuteur5: Array<Disponibilite> = arrayOf(
+        Disponibilite(date1, listeDisponibiliteHeure1),
+        Disponibilite(date2, listeDisponibiliteHeure2),
+        Disponibilite(date3, listeDisponibiliteHeure3),
+        Disponibilite(date4, listeDisponibiliteHeure4),
+        Disponibilite(date5, listeDisponibiliteHeure5)
+    )
 
     /**
      * initialisation des different cours de tutorat
@@ -42,7 +126,6 @@ class SourceBidon : SourceDeDonnees {
     var listeTuteurs = mutableListOf<Tuteur>()
 
     init {
-
         var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", ListedisponibiliteTuteur1)
         var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", ListedisponibiliteTuteur2)
         var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", ListedisponibiliteTuteur3)

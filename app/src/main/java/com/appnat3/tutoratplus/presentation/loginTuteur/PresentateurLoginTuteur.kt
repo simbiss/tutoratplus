@@ -12,10 +12,7 @@ import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import kotlin.collections.mapOf as hashMap
 
-class PresentateurLoginTuteur(var vue : VueLoginTuteur) {
-    @RequiresApi(Build.VERSION_CODES.O)
-    private val modele = Modele()
-
+class PresentateurLoginTuteur(var vue : VueLoginTuteur, private val modele : Modele) {
     @RequiresApi(Build.VERSION_CODES.O)
     fun traiterValidationInfoLogin(username:String, password:String):Boolean{
 

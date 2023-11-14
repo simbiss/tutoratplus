@@ -5,10 +5,10 @@ import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 
-class PresentateurListeTuteur(var vue: VueListeTuteurs){
+class PresentateurListeTuteur(var vue: VueListeTuteurs, private val modele:Modele){
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private val modele = Modele()
+
     var listeTuteurs = arrayOf<Tuteur>()
 
     @RequiresApi(Build.VERSION_CODES.O)

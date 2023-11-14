@@ -44,7 +44,7 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
         return _source.obtenirListeDesCours()
     }
 
-
+    /*
     /**
      * Création des different disponibilités
      */
@@ -129,7 +129,7 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
         Disponibilite(date4, listeDisponibiliteHeure4),
         Disponibilite(date5, listeDisponibiliteHeure5)
     )
-
+*/
 
     /**
      * initialisation des different cours de tutorat

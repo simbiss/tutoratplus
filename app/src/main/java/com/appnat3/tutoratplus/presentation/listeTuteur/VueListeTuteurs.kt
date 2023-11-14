@@ -17,6 +17,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
+import com.appnat3.tutoratplus.presentation.Modele
 
 class VueListeTuteurs  : Fragment() {
     var présentateur: PresentateurListeTuteur? = null
@@ -25,6 +26,7 @@ class VueListeTuteurs  : Fragment() {
     lateinit var btnAccueil: TextView
     lateinit var btnRetour: LinearLayout
     lateinit var liste_tuteurs: ListView
+    val modele: Modele = Modele()
 
 
 
@@ -35,7 +37,7 @@ class VueListeTuteurs  : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_liste_tuteur, container, false)
-        présentateur = PresentateurListeTuteur(this)
+        présentateur = PresentateurListeTuteur(this, modele)
 
         liste_tuteurs = vue.findViewById(R.id.liste_tuteur)
         liste_tuteurs.setOnItemClickListener { parent, view, position, id ->

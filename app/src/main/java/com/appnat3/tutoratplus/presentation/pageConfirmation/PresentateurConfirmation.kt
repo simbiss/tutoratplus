@@ -7,16 +7,13 @@ import java.time.LocalDate
 import java.time.LocalTime
 import java.util.Date
 
-class PresentateurConfirmation(var vue: VueConfirmation) {
+class PresentateurConfirmation(var vue: VueConfirmation, private val modele: Modele) {
     @RequiresApi(Build.VERSION_CODES.O)
-    private val modele = Modele()
 
 
     /**
      * Méthode qui permet de retourner les choisies de l'utilisateur
      */
-
-    @RequiresApi(Build.VERSION_CODES.O)
     fun collectionDaInfoPerso():String?{
         return modele.retourDaInfoPerso()
     }
