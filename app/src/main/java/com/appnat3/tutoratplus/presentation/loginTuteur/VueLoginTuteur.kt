@@ -66,10 +66,15 @@ class VueLoginTuteur : Fragment() {
                 présentateur?.effectuerNavigationPageTuteur()
             }
             else{
+
                 mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
+
+                    mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
+                }
+
             }
         }
-    }
+
 
 
 

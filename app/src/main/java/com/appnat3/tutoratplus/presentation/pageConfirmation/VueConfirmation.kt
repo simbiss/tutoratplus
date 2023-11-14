@@ -60,26 +60,26 @@ class VueConfirmation : Fragment(){
         txtNomCours = vue.findViewById(R.id.champNomCours)
         // Accédez à la VueListeCours parente pour obtenir le présentateur et le cours sélectionné
 
-        val coursSelectionne = Modele.coursSelectionne
+        val coursSelectionne = présentateur.collectionCoursSelectionne()
         if (coursSelectionne != null) {
-            txtNomCours.text = "Cours sélectionné : ${coursSelectionne.nomCours}"
+            txtNomCours.text = "Cours sélectionné : $coursSelectionne"
         } else {
             txtNomCours.text = "Aucun cours sélectionné"
         }
 
 
         txtNomTuteur = vue.findViewById(R.id.champNomTuteur)
-        val tuteurSelectionne = Modele.tuteurSelectionne
-        if(tuteurSelectionne!= null){
-            txtNomTuteur.text = "Tuteur sélectionné : ${tuteurSelectionne.nomTuteur}"
+        val tuteurSelectionne = présentateur.collectionTuteurSelectionne()
+            if(tuteurSelectionne!= null){
+            txtNomTuteur.text = "Tuteur sélectionné : $tuteurSelectionne"
         }else{
             txtNomTuteur.text = "Aucun tuteur sélectionné"
         }
 
 
         txtDate = vue.findViewById(R.id.champDate)
-        val dateSelectionnee = Modele.dateSelected
-        val heureChoisie = Modele.heureSelectionne
+        val dateSelectionnee = présentateur.collectionDateSelectionne()
+        val heureChoisie = présentateur.collectionHeureSelectionne()
         txtDate.text = "Date sélectionné : ${dateSelectionnee} à ${heureChoisie}"
 
 

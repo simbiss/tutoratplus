@@ -8,6 +8,7 @@ import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import java.time.LocalDate
 import java.time.LocalTime
+import java.util.Date
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -198,6 +199,9 @@ object Modele{
     var courrielInfoPerso:String?=null
 
 
+    /**
+     * méthode pour retourner les informations entrées choisies par l'utilisateur
+     */
     fun retourDaInfoPerso(): String? {
         return daInfoPerso
     }
@@ -211,6 +215,20 @@ object Modele{
 
     fun retourCourrielInfoPerso():String?{
         return courrielInfoPerso
+    }
+
+    fun retourCoursChoisi():String?{
+        return coursSelectionne?.nomCours
+    }
+    fun retourTuteurChoisi():String?{
+        return tuteurSelectionne?.nomTuteur
+    }
+    fun retourDateChoisie(): LocalDate? {
+        return dateSelected
+    }
+
+    fun retourHeureSelectionne():LocalTime?{
+        return heureSelectionne
     }
 
     /**
