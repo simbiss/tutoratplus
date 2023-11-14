@@ -1,7 +1,6 @@
 
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
-import android.graphics.ColorSpace.Model
 import android.os.Build
 
 import android.os.Bundle
@@ -18,9 +17,8 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.presentation.Modele
-import com.appnat3.tutoratplus.presentation.loginTuteur.PresentateurLoginTuteur
 
-class VueLoginTuteur2 : Fragment() {
+class VueLoginTuteur : Fragment() {
     var présentateur: PresentateurLoginTuteur? = null
     lateinit var navController: NavController
     lateinit var btnAcceuil: TextView
@@ -91,10 +89,10 @@ class VueLoginTuteur2 : Fragment() {
 
 
     fun naviguerVersmenu_principal(){
-        navController.navigate(R.id.action_vueLoginTuteur2_to_menu_principal)
+        navController.navigate(R.id.action_vueLoginTuteur_to_menu_principal)
     }
 
     fun navigationVerspage_principal_tuteur(){
-        navController.navigate(R.id.action_vueLoginTuteur2_to_page_principal_tuteur)
+        navController.navigate(R.id.action_vueLoginTuteur_to_page_principal_tuteur)
     }
 }

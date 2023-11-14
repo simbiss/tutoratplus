@@ -1,9 +1,6 @@
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
-import android.icu.text.IDNA.Info
 import android.os.Build
-import android.util.Log
-import android.view.Display.Mode
 import androidx.annotation.RequiresApi
 
 
