@@ -37,7 +37,11 @@ class VuePagePrincipalTuteur : Fragment() {
         val nomTuteurLogger = présentateur?.traiderNomTuteurLogger()
         if (nomTuteurLogger != null) {
             txtNomTuteurLogger.text = "Bienvenue : $nomTuteurLogger"
-        } else {
+        }else if(nomTuteurLogger == null) {
+            txtNomTuteurLogger.text = "null  "
+        }
+
+        else {
             txtNomTuteurLogger.text = "Erreur! Tuteur introuvable :/"
         }
 

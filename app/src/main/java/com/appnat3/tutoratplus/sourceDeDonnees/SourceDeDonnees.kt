@@ -18,6 +18,7 @@ interface SourceDeDonnees {
         return obtenirListeInfoLogin()
     }
 
+    @Throws(SourceDeDonneesException::class)
     fun obtenirlisteTuteur():List<Tuteur>{
         return obtenirlisteTuteur()
     }
