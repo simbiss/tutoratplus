@@ -8,7 +8,8 @@ import java.time.LocalTime
 import java.util.Date
 
 class PresentateurConfirmation(var vue: VueConfirmation) {
-
+    @RequiresApi(Build.VERSION_CODES.O)
+    private val modele = Modele()
 
 
     /**
@@ -17,39 +18,39 @@ class PresentateurConfirmation(var vue: VueConfirmation) {
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionDaInfoPerso():String?{
-        return Modele.retourDaInfoPerso()
+        return modele.retourDaInfoPerso()
     }
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionPrenomInfoPerso(): String?{
-        return Modele.retourPrenomInfoPerso()
+        return modele.retourPrenomInfoPerso()
     }
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionNomInfoPerso():String?{
-        return Modele.retourNomInfoPerso()
+        return modele.retourNomInfoPerso()
     }
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionCourrielInfoPerso():String?{
-        return Modele.retourCourrielInfoPerso()
+        return modele.retourCourrielInfoPerso()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionCoursSelectionne(): String?{
-        return Modele.retourCoursChoisi()
+        return modele.retourCoursChoisi()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionTuteurSelectionne():String?{
-        return Modele.retourTuteurChoisi()
+        return modele.retourTuteurChoisi()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionDateSelectionne(): LocalDate?{
-        return Modele.retourDateChoisie()
+        return modele.retourDateChoisie()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectionHeureSelectionne(): LocalTime?{
-        return Modele.retourHeureSelectionne()
+        return modele.retourHeureSelectionne()
     }
 
 

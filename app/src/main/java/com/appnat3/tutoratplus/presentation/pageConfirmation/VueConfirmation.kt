@@ -34,7 +34,7 @@ class VueConfirmation : Fragment(){
     var présentateur = PresentateurConfirmation(this)
 
     @RequiresApi(Build.VERSION_CODES.O)
-    @SuppressLint("MissingInflatedId", "CutPasteId")
+    @SuppressLint("MissingInflatedId", "CutPasteId", "SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

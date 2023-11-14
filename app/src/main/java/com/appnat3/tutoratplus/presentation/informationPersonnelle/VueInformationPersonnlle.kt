@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -56,6 +58,7 @@ class VueInformationPersonnlle : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun collectInformationPersonnelle(vue:View){
         btnSuivant.setOnClickListener {
             var da = vue.findViewById<EditText>(R.id.champDAInfo)

@@ -6,14 +6,16 @@ import com.appnat3.tutoratplus.presentation.Modele
 
 
 class PresentateurInfosPersonnelle(var vue: VueInformationPersonnlle) {
+    @RequiresApi(Build.VERSION_CODES.O)
+    private val modele = Modele()
 
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun traiterCreationInfoPerso(da:String, prenom:String, nom:String, courriel:String){
-        Modele.daInfoPerso = da
-        Modele.prenomInfoPerso = prenom
-        Modele.nomInfoPerso = nom
-        Modele.courrielInfoPerso = courriel
+        modele.daInfoPerso = da
+        modele.prenomInfoPerso = prenom
+        modele.nomInfoPerso = nom
+        modele.courrielInfoPerso = courriel
     }
 
     fun effectuerNaviguationCalendrier() {

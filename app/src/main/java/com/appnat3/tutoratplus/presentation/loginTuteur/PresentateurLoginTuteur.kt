@@ -1,23 +1,23 @@
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
 import android.icu.text.IDNA.Info
+import android.os.Build
 import android.util.Log
 import android.view.Display.Mode
+import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import kotlin.collections.mapOf as hashMap
 
 class PresentateurLoginTuteur(var vue : VueLoginTuteur) {
+    @RequiresApi(Build.VERSION_CODES.O)
+    private val modele = Modele()
 
-
-
-                //private var listeInfoLogin = arrayListOf<InfoLogin>()
-
-
+    @RequiresApi(Build.VERSION_CODES.O)
     fun traiterValidationInfoLogin(username:String, password:String):Boolean{
 
-        var listeInfoLogin = Modele.listeInfoLogin
-
-
+        var listeInfoLogin = modele.retourListInfoLogin()
         for (item in listeInfoLogin){
             if(item.nomUtilisateur == username) {
                 if (item.motDePasse == password) {
@@ -28,15 +28,34 @@ class PresentateurLoginTuteur(var vue : VueLoginTuteur) {
         return false
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun traiterCollectInformationLogin(username: String){
 
-        for ((key, InfoLogin) in Modele.mapInfoLogin){
+        val listeInfoLogin = modele.retourListInfoLogin()
+        val mapInfoLogin = hashMap<Int, InfoLogin>(
+            1 to listeInfoLogin[0],
+            2 to listeInfoLogin[1],
+            3 to listeInfoLogin[2],
+            4 to listeInfoLogin[3],
+            5 to listeInfoLogin[4]
+        )
+
+        val listeTuteurs = modele.retourListeTuteur()
+        var mapListTuteur = hashMap<Int, Tuteur>(
+            1 to listeTuteurs[0],
+            2 to listeTuteurs[1],
+            3 to listeTuteurs[2],
+            4 to listeTuteurs[3],
+            5 to listeTuteurs[4]
+        )
+
+        for ((key, InfoLogin) in mapInfoLogin){
             if(InfoLogin.nomUtilisateur == username){       //condition pour trouver la position de la clée du tuteur a logger
                 var idOuvertureSessionLogin = key
 
-                for ((key, Tuteur) in Modele.mapListTuteur){
+                for ((key, Tuteur) in mapListTuteur){
                     if(key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
-                        Modele.ouvertureSessionTuteur = Tuteur
+                        modele.ouvertureSessionTuteur = Tuteur
                     }
                 }
             }
