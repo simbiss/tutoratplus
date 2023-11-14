@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 }
 
 /**
- * À FAIRE POUR SPRINT 3(semaine 12 mercredi)
+ * À FAIRE POUR SPRINT 3(semaine 15 mercredi)
  *
  *
  *

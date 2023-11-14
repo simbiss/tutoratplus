@@ -1,8 +1,6 @@
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
-import android.icu.text.IDNA.Info
-import android.util.Log
-import android.view.Display.Mode
+import VueLoginTuteur
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.presentation.Modele
 

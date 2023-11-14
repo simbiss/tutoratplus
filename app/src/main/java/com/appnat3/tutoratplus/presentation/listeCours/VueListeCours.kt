@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -23,8 +24,8 @@ class VueListeCours : Fragment(), IVueListeCours{
     var présentateur: PresentateurListeCours? = null
     lateinit var liste_des_cours: ListView
     lateinit var navController: NavController
-    lateinit var btnSuivant: Button
-    lateinit var btnRetour: Button
+    lateinit var btnAcceuil: TextView
+    lateinit var btnRetour: LinearLayout
     lateinit var adapter: ArrayAdapter<Cours>
     lateinit var nomCours: TextView
     lateinit var imgCours: ImageView
@@ -55,14 +56,14 @@ class VueListeCours : Fragment(), IVueListeCours{
         //imgCours = vueItem.findViewById(R.id.img_item)
         //nomCours = vueItem.findViewById(R.id.nom_item)
 
-        btnRetour = vue.findViewById(R.id.btn_retour_cours)
+        btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
             présentateur?.effectuerNavigationMenu()
         }
 
-        btnSuivant = vue.findViewById(R.id.btn_suivant_cours)
-        btnSuivant.setOnClickListener {
-            présentateur?.effectuerNavigationTuteur()
+        btnAcceuil = vue.findViewById(R.id.textAcceuil)
+        btnAcceuil.setOnClickListener {
+            présentateur?.effectuerNavigationMenu()
         }
         return vue
     }

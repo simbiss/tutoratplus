@@ -1,23 +1,22 @@
-package com.appnat3.tutoratplus.presentation.loginTuteur
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.presentation.Modele
-import com.appnat3.tutoratplus.presentation.listeCours.PresentateurListeCours
-import com.appnat3.tutoratplus.presentation.listeTuteur.PresentateurListeTuteur
+import com.appnat3.tutoratplus.presentation.loginTuteur.PresentateurLoginTuteur
 
 class VueLoginTuteur : Fragment() {
     var présentateur: PresentateurLoginTuteur? = null
     lateinit var navController: NavController
+    lateinit var btnAcceuil: TextView
+    lateinit var btnRetour: LinearLayout
     lateinit var btnConnection : Button
     lateinit var mesgErreur : TextView
 
@@ -28,11 +27,20 @@ class VueLoginTuteur : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val vue = inflater.inflate(R.layout.fragment_login_tuteur, container, false)
+        val vue = inflater.inflate(R.layout.fragment_vue_login_tuteur, container, false)
         présentateur = PresentateurLoginTuteur(this)
         mesgErreur = vue.findViewById(R.id.msgErreurEntre)
         btnConnection = vue.findViewById(R.id.btnLogin)
         collectInformationLogin(vue)
+        btnRetour = vue.findViewById(R.id.buttonRetour)
+        btnRetour.setOnClickListener {
+            présentateur?.effectuerNavigationAcceuil()
+        }
+
+        btnAcceuil = vue.findViewById(R.id.textAcceuil)
+        btnAcceuil.setOnClickListener {
+            présentateur?.effectuerNavigationAcceuil()
+        }
 
         return vue
 
@@ -56,13 +64,9 @@ class VueLoginTuteur : Fragment() {
             //print(Modele.listeInfoLogin)
             if(validationResult == true) {
                 présentateur?.effectuerNavigationPageTuteur()
-
-            }else{
-                if (validationResult == false) {
-                    mesgErreur.text = "TEST MSG FALSE"
-                }else{
-                    mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide ... $username et $motDePasse"
-                }
+            }
+            else{
+                mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
             }
         }
     }
@@ -71,11 +75,12 @@ class VueLoginTuteur : Fragment() {
 
 
 
+
     fun naviguerVersmenu_principal(){
-        navController.navigate(R.id.action_login_tuteur_to_menu_principal)
+        navController.navigate(R.id.action_vueLoginTuteur2_to_menu_principal)
     }
 
     fun navigationVerspage_principal_tuteur(){
-        navController.navigate(R.id.action_login_tuteur_to_page_principal_tuteur)
+        navController.navigate(R.id.action_vueLoginTuteur2_to_page_principal_tuteur)
     }
 }

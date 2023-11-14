@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.ListView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -17,8 +19,8 @@ class VueListeTuteurs  : Fragment() {
     var présentateur: PresentateurListeTuteur? = null
     lateinit var navController: NavController
     lateinit var adapter: ArrayAdapter<Tuteur>
-    lateinit var btnSuivant: Button
-    lateinit var btnRetour: Button
+    lateinit var btnAccueil: TextView
+    lateinit var btnRetour: LinearLayout
     lateinit var liste_tuteurs: ListView
 
 
@@ -42,14 +44,14 @@ class VueListeTuteurs  : Fragment() {
         }
 
 
-        btnRetour = vue.findViewById(R.id.btn_retour_tuteur)
+        btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
             présentateur?.effectuerNavigationCours()
         }
 
-        btnSuivant = vue.findViewById(R.id.btn_suivant_tuteur)
-        btnSuivant.setOnClickListener {
-            présentateur?.effectuerNavigationCalendrier()
+        btnAccueil = vue.findViewById(R.id.textAcceuil)
+        btnAccueil.setOnClickListener {
+            présentateur?.effectuerNavigationAccueil()
         }
         return vue
 
@@ -73,6 +75,10 @@ class VueListeTuteurs  : Fragment() {
 
     fun navigationVersListeCours(){
         navController.navigate(R.id.action_liste_tuteur_to_liste_des_cours)
+    }
+
+    fun navigationVersAcceuil() {
+        navController.navigate(R.id.action_liste_tuteur_to_menu_principal)
     }
 
 
