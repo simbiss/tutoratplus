@@ -33,4 +33,8 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs){
         vue.navigationVersCalendrier()
     }
 
+    fun effectuerNavigationAccueil(){
+        vue.navigationVersAcceuil()
+    }
+
 }

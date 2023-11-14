@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_liste_tuteur_to_pageCalendrier"
             app:destination="@id/pageCalendrier" />
+        <action
+            android:id="@+id/action_liste_tuteur_to_menu_principal"
+            app:destination="@id/menu_principal" />
     </fragment><![CDATA[
 
 
@@ -55,8 +58,8 @@
             android:id="@+id/action_menu_principal2_to_page_information"
             app:destination="@id/page_information" />
         <action
-            android:id="@+id/action_menu_principal2_to_login_tuteur"
-            app:destination="@id/login_tuteur" />
+            android:id="@+id/action_menu_principal_to_vueLoginTuteur2"
+            app:destination="@id/vueLoginTuteur2" />
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
@@ -100,22 +103,22 @@
             app:destination="@id/menu_principal" />
     </fragment>
     <fragment
-        android:id="@+id/login_tuteur"
-        android:name="com.appnat3.tutoratplus.presentation.loginTuteur.VueLoginTuteur"
-        android:label="fragment_login_tuteur"
-        tools:layout="@layout/fragment_login_tuteur" >
-        <action
-            android:id="@+id/action_login_tuteur_to_page_principal_tuteur"
-            app:destination="@id/page_principal_tuteur" />
-        <action
-            android:id="@+id/action_login_tuteur_to_menu_principal"
-            app:destination="@id/menu_principal" />
-    </fragment>
-    <fragment
         android:id="@+id/page_principal_tuteur"
         android:name="com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.VuePagePrincipalTuteur"
         android:label="fragment_page_principal_tuteur"
         tools:layout="@layout/fragment_page_principal_tuteur" />
+    <fragment
+        android:id="@+id/vueLoginTuteur2"
+        android:name="VueLoginTuteur"
+        android:label="fragment_vue_login_tuteur"
+        tools:layout="@layout/fragment_vue_login_tuteur" >
+        <action
+            android:id="@+id/action_vueLoginTuteur2_to_menu_principal"
+            app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_vueLoginTuteur2_to_page_principal_tuteur"
+            app:destination="@id/page_principal_tuteur" />
+    </fragment>
 </navigation>
 
 

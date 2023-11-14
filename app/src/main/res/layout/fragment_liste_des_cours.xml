@@ -1,69 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="20dp"
     android:orientation="horizontal">
 
+    <!-- ################################ Titre  ########################################## -->
 
-    <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
-
-    </RelativeLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:orientation="horizontal">
+        android:id="@+id/buttonRetour"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/flecheback" />
 
         <TextView
-            android:id="@+id/titreCours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:foregroundGravity="center_vertical|center"
-            android:text="Choisissez un cours"
-            android:textSize="34sp" />
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Retour" />
+
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textTitre"
+        android:layout_width="67dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Tutorat+"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/buttonRetour"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textAcceuil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Acceuil"
+        android:textColor="@color/bleu"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toEndOf="@+id/textTitre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ligneNoire"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="43dp"
+        android:background="#000000"
+        android:paddingBottom="2dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textTitre"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+    <!-- ################################ Titre  ########################################## -->
+
+    <TextView
+        android:id="@+id/titreCours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:foregroundGravity="center_vertical|center"
+        android:text="Choisissez un cours"
+        android:textSize="34sp"
+        app:layout_constraintTop_toBottomOf="@+id/textTitre"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="51dp" />
 
     <ListView
         android:id="@+id/liste_des_cours"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="110dp"
+        android:layout_width="389dp"
+        android:layout_height="582dp"
+        android:layout_marginTop="24dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/titreCours"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="15dp"
         tools:listitem="@layout/element_liste">
 
     </ListView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_retour_cours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Retour" />
-
-        <Button
-            android:id="@+id/btn_suivant_cours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Suivant" />
-    </LinearLayout>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
