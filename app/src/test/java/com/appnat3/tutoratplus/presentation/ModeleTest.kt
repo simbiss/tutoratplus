@@ -1,6 +1,7 @@
 package com.appnat3.tutoratplus
 
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 
@@ -10,6 +11,8 @@ import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
+import java.time.LocalDate
+import java.time.LocalTime
 
 @RunWith(MockitoJUnitRunner::class)
 class ModeleTest {
@@ -83,9 +86,6 @@ class ModeleTest {
             assertEquals(retourDeListeCours_obtenu[itemListe].nomTuteur, retourDeListeCours_obtenu[itemListe].nomTuteur)
         }
     }
-
-
-
 
     @Test
     fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour vérifier le nom d'utilisateur pour se logger, on obtient les différente "username" des tuteurs`(){
