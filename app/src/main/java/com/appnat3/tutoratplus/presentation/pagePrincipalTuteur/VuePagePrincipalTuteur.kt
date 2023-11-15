@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.pagePrincipalTuteur
 
-import android.graphics.ColorSpace.Model
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -35,10 +34,13 @@ class VuePagePrincipalTuteur : Fragment() {
 
         txtNomTuteurLogger = vue.findViewById(R.id.afficherNomTuteur)
         val nomTuteurLogger = présentateur?.traiderNomTuteurLogger()
+
+        val test = présentateur?.testprint()
+
         if (nomTuteurLogger != null) {
-            txtNomTuteurLogger.text = "Bienvenue : $nomTuteurLogger"
+            txtNomTuteurLogger.text = "Bienvenue : ${nomTuteurLogger.nomTuteur}"
         }else if(nomTuteurLogger == null) {
-            txtNomTuteurLogger.text = "null  "
+            txtNomTuteurLogger.text = "null ...$nomTuteurLogger .. $test"
         }
 
         else {

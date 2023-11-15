@@ -3,7 +3,6 @@ package com.appnat3.tutoratplus.presentation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
-import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceBidon
@@ -60,6 +59,7 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
      */
 
     var ouvertureSessionTuteur: Tuteur? = null
+    var test:String? = null
 
 
     /**

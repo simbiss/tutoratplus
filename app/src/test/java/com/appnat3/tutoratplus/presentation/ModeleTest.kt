@@ -62,6 +62,8 @@ class ModeleTest {
         //Mise en place
         val modele = Modele()
         val listeDesTuteurs_attendu = mutableListOf<Tuteur>()
+
+
         var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", arrayOf())
         var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", arrayOf())
         var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", arrayOf())
@@ -130,7 +132,6 @@ class ModeleTest {
         listeInfoLogin_attendu.add(infoLogin3)
         listeInfoLogin_attendu.add(infoLogin4)
         listeInfoLogin_attendu.add(infoLogin5)
-
         val retourInfoLogin_obtenu = modele.retourListInfoLogin()
 
 
@@ -143,5 +144,4 @@ class ModeleTest {
             )
         }
     }
-
 }
