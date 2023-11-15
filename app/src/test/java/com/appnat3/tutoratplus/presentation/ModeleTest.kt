@@ -2,6 +2,7 @@ package com.appnat3.tutoratplus
 
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
+
 import com.appnat3.tutoratplus.presentation.Modele
 import kotlinx.coroutines.newSingleThreadContext
 import org.junit.Assert.*
@@ -18,15 +19,20 @@ class ModeleTest {
         Dispatchers.setMain(mainThreadSurrogate)
     }
 
+    Mockito.`when`( model.coursSelectionne ).thenReturn( cours )
+        val modèle = Modele( source = source )
+
     @After
     fun tearDown() {
         Dispatchers.resetMain() // reset the main dispatcher to the original Main dispatcher
         mainThreadSurrogate.close()
 */
 
+
     @Test
     fun `Étant donné un modèle nouvellement instancié, losqu'on veux afficher la liste des noms des différent cours, alors on obtient la liste des noms différent cours`(){
-
+        //Mise en place
+        val modele = Modele()
         val listeDesCours_attendu = mutableListOf<Cours>()
         var cours1 = Cours("Programmation 1", "programmation")
         var cours2 = Cours("Programmation 2 (Java)", "programmation")
@@ -40,11 +46,11 @@ class ModeleTest {
         listeDesCours_attendu.add(cours4)
         listeDesCours_attendu.add(cours5)
 
-        val modele = Modele()
-
         val retourDeListeCours_obtenu = modele.retourListeDesCours()
-        //assertEquals(listeDesCours_attendu, retourDeListeCours_obtenu  )
 
+
+        // Appel de la méthode à tester
+        //assertEquals(listeDesCours_attendu, retourDeListeCours_obtenu  )
         for (itemListe in retourDeListeCours_obtenu.indices) {
             assertEquals(listeDesCours_attendu[itemListe].nomCours, retourDeListeCours_obtenu[itemListe].nomCours)
         }
@@ -86,7 +92,8 @@ class ModeleTest {
 */
     @Test
     fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour vérifier le nom d'utilisateur pour se logger, on obtient les différente "username" des tuteurs`(){
-
+        //Mise en place
+        val modele = Modele()
         val listeInfoLogin_attendu = mutableListOf<InfoLogin>()
         var infoLogin1 = InfoLogin("mohamed", "abc1")
         var infoLogin2 = InfoLogin("raphael", "abc2")
@@ -100,19 +107,20 @@ class ModeleTest {
         listeInfoLogin_attendu.add(infoLogin4)
         listeInfoLogin_attendu.add(infoLogin5)
 
-        val modele = Modele()
-
         val retourInfoLogin_obtenu = modele.retourListInfoLogin()
-        //assertEquals( listeInfoLogin_attendu, retourInfoLogin_obtenu )
 
+
+        // Appel de la méthode à tester
+        //assertEquals( listeInfoLogin_attendu, retourInfoLogin_obtenu )
         for (itemListe in retourInfoLogin_obtenu.indices) {
             assertEquals(listeInfoLogin_attendu[itemListe].nomUtilisateur, retourInfoLogin_obtenu[itemListe].nomUtilisateur)
         }
     }
 
     @Test
-    fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour vérifier un mot de passe pour se logger, on obtient les différente "password" des tuteurs`(){
-
+    fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour vérifier un mot de passe pour se logger, on obtient les différente "password" des tuteurs`() {
+        //Mise en place
+        val modele = Modele()
         val listeInfoLogin_attendu = mutableListOf<InfoLogin>()
         var infoLogin1 = InfoLogin("mohamed", "abc1")
         var infoLogin2 = InfoLogin("raphael", "abc2")
@@ -126,15 +134,17 @@ class ModeleTest {
         listeInfoLogin_attendu.add(infoLogin4)
         listeInfoLogin_attendu.add(infoLogin5)
 
-        val modele = Modele()
-
         val retourInfoLogin_obtenu = modele.retourListInfoLogin()
-        //assertEquals( listeInfoLogin_attendu, retourInfoLogin_obtenu )
 
+
+        // Appel de la méthode à tester
+        //assertEquals( listeInfoLogin_attendu, retourInfoLogin_obtenu )
         for (itemListe in retourInfoLogin_obtenu.indices) {
-            assertEquals(listeInfoLogin_attendu[itemListe].motDePasse, retourInfoLogin_obtenu[itemListe].motDePasse)
+            assertEquals(
+                listeInfoLogin_attendu[itemListe].motDePasse,
+                retourInfoLogin_obtenu[itemListe].motDePasse
+            )
         }
     }
-
 
 }
