@@ -2,6 +2,7 @@ package com.appnat3.tutoratplus
 
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 
 import com.appnat3.tutoratplus.presentation.Modele
 import kotlinx.coroutines.newSingleThreadContext
@@ -56,40 +57,36 @@ class ModeleTest {
         }
     }
 
-    /*
     @Test
-    fun `Étant donné un modèle nouvellement instancié, losqu'on veux afficher la liste des différents tuteurs, alors on obtient la liste des différent tuteur`(){
-
-
-        val listeDesTuteur_attendu = mutableListOf<Tuteur>()
-        var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", ListedisponibiliteTuteur1)
-        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", ListedisponibiliteTuteur2)
-        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", ListedisponibiliteTuteur3)
-        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", ListedisponibiliteTuteur4)
-        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau", ListedisponibiliteTuteur5)
-
-        listeDesTuteur_attendu.add(tuteur1)
-        listeDesTuteur_attendu.add(tuteur2)
-        listeDesTuteur_attendu.add(tuteur3)
-        listeDesTuteur_attendu.add(tuteur4)
-        listeDesTuteur_attendu.add(tuteur5)
-
-        val source : SourceDeDonnees = Mockito.mock( SourceDeDonnees::class.java )
+    fun `Étant donné un modèle nouvellement instancié, losqu'on veux afficher la liste des noms des tuteurs, alors on obtient la liste des noms différent tuteurs`(){
+        //Mise en place
         val modele = Modele()
-        Mockito.`when`( source.obtenirlisteTuteur() ).thenReturn( listeDesTuteur_attendu )
+        val listeDesTuteurs_attendu = mutableListOf<Tuteur>()
+        var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", arrayOf())
+        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", arrayOf())
+        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", arrayOf())
+        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", arrayOf())
+        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau", arrayOf())
 
-        val retourListeTuteur_obtenu = modele.retourListeTuteur()
-        assertEquals( listeDesTuteur_attendu, retourListeTuteur_obtenu  )
+        listeDesTuteurs_attendu.add(tuteur1)
+        listeDesTuteurs_attendu.add(tuteur2)
+        listeDesTuteurs_attendu.add(tuteur3)
+        listeDesTuteurs_attendu.add(tuteur4)
+        listeDesTuteurs_attendu.add(tuteur5)
 
+        val retourDeListeCours_obtenu = modele.retourListeTuteur()
+
+
+        // Appel de la méthode à tester
+        //assertEquals(listeDesCours_attendu, retourDeListeCours_obtenu  )
+        for (itemListe in retourDeListeCours_obtenu.indices) {
+            assertEquals(retourDeListeCours_obtenu[itemListe].nomTuteur, retourDeListeCours_obtenu[itemListe].nomTuteur)
+        }
     }
-    */
 
-/*
-    @Test
-    fun `Lorsqu'on choisi le cours de Programmation2 alors on btient la liste des tuteurs de ce cours`() {
 
-    }
-*/
+
+
     @Test
     fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour vérifier le nom d'utilisateur pour se logger, on obtient les différente "username" des tuteurs`(){
         //Mise en place

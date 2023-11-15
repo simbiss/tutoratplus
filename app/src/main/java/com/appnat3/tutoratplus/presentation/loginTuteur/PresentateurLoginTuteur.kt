@@ -14,9 +14,11 @@ class PresentateurLoginTuteur(var vue : VueLoginTuteur, private val modele : Mod
     fun traiterValidationInfoLogin(username:String, password:String):Boolean{
 
         var listeInfoLogin = modele.retourListInfoLogin()
+        val listTuteur = modele.retourListeTuteur()
         for (item in listeInfoLogin){
             if(item.nomUtilisateur == username) {
                 if (item.motDePasse == password) {
+                    modele.ouvertureSessionTuteur = listTuteur.find { it.nomTuteur == item.nomUtilisateur }
                     return true
                 }
             }
