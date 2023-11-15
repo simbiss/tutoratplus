@@ -37,5 +37,4 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs, private val modele:Model
     fun effectuerNavigationAccueil(){
         vue.navigationVersAcceuil()
     }
-
 }
