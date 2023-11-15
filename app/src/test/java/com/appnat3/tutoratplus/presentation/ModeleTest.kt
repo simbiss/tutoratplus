@@ -1,4 +1,7 @@
-package com.appnat3.tutoratplus
+package com.appnat3.tutoratplus.presentation
+import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.Disponibilite
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonnees
 import kotlinx.coroutines.Dispatchers
@@ -24,25 +27,24 @@ class ModeleTest {
         Dispatchers.setMain(mainThreadSurrogate)
     }
 
+    Mockito.`when`( model.coursSelectionne ).thenReturn( cours )
+        val modèle = Modele( source = source )
+
+
     @After
     fun tearDown() {
         Dispatchers.resetMain() // reset the main dispatcher to the original Main dispatcher
         mainThreadSurrogate.close()
 */
-    @Test
-    fun `Lorsqu'on choisi le cours de Programmation2 alors on btient la liste des tuteurs de ce cours`() {
-        // Mise en place
-
-        // Prévoit l'entrée à saisir
-        /*
-        val source : SourceDeDonnees = Mockito.mock( SourceDeDonnees::class.java )
-        Mockito.`when`( source.obtenirlisteTuteur() ).thenReturn(  )
-        val modèle = Modele( source = source )
-
-        val pourcentage_données = modele.
-        assertEquals( 99, pourcentage_données )
-        */
 
 
-    }
+
+
+
+
+
+
+
+
+
 }
