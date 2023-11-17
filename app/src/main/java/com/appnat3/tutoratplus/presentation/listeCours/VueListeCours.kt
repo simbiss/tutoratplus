@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ListView
@@ -43,7 +42,7 @@ class VueListeCours : Fragment(), IVueListeCours{
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_liste_des_cours, container, false)
         //val vueItem = inflater.inflate(R.layout.element_liste, container, false)
-        présentateur = PresentateurListeCours(this,modele)
+        présentateur = PresentateurListeCours(this)
 
 
         liste_des_cours = vue.findViewById(R.id.liste_des_cours)

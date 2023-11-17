@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
-import android.graphics.ColorSpace.Model
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,7 +24,7 @@ class VueInformationPersonnlle : Fragment() {
     lateinit var btnSuivant: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
-    var présentateur = PresentateurInfosPersonnelle(this,modele)
+    var présentateur = PresentateurInfosPersonnelle(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

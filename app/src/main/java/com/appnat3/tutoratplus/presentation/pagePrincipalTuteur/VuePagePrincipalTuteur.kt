@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.presentation.Modele
 
 
 class VuePagePrincipalTuteur : Fragment() {
@@ -19,7 +18,7 @@ class VuePagePrincipalTuteur : Fragment() {
     var présentateur: PresentateurPagePrincipalTuteur? = null
     lateinit var navController: NavController
     lateinit var txtNomTuteurLogger: TextView
-    val modele:Modele = Modele()
+
 
 
 
@@ -30,17 +29,19 @@ class VuePagePrincipalTuteur : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_page_principal_tuteur, container, false)
-        présentateur = PresentateurPagePrincipalTuteur(this, modele)
+        présentateur = PresentateurPagePrincipalTuteur(this)
 
         txtNomTuteurLogger = vue.findViewById(R.id.afficherNomTuteur)
         val nomTuteurLogger = présentateur?.traiderNomTuteurLogger()
 
-        val test = présentateur?.testprint()
+
+        //val test = présentateur?.testprint()//test
+        //val test2 = présentateur?.testHellow()//test
 
         if (nomTuteurLogger != null) {
             txtNomTuteurLogger.text = "Bienvenue : ${nomTuteurLogger.nomTuteur}"
         }else if(nomTuteurLogger == null) {
-            txtNomTuteurLogger.text = "null ...$nomTuteurLogger .. $test"
+            txtNomTuteurLogger.text = "null ...$nomTuteurLogger"
         }
 
         else {

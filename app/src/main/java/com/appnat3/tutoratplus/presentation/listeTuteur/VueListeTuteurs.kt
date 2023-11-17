@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ListView
-
-import androidx.annotation.RequiresApi
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -37,7 +35,7 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
     ): View? {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_liste_tuteur, container, false)
-        présentateur = PresentateurListeTuteur(this, modele)
+        présentateur = PresentateurListeTuteur(this)
 
         liste_tuteurs = vue.findViewById(R.id.liste_tuteur)
         liste_tuteurs.setOnItemClickListener { parent, view, position, id ->

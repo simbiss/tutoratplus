@@ -9,7 +9,10 @@ import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import kotlin.collections.mapOf as hashMap
 
-class PresentateurLoginTuteur(var vue : VueLoginTuteur, private val modele : Modele) {
+class PresentateurLoginTuteur(var vue: VueLoginTuteur ) {
+
+    val modele = Modele.Companion
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun traiterValidationInfoLogin(username:String, password:String):Boolean{
 
@@ -52,7 +55,7 @@ class PresentateurLoginTuteur(var vue : VueLoginTuteur, private val modele : Mod
                 for ((key, Tuteur) in mapListTuteur){
                     if(key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
                         modele.ouvertureSessionTuteur = Tuteur
-                        modele.test = "testlogin ici"
+
                     }
                 }
             }

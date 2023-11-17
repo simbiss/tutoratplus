@@ -1,16 +1,16 @@
 package com.appnat3.tutoratplus.presentation.pageCalendrier
 
-import android.graphics.Color
 import android.os.Build
-import android.view.View
 import androidx.annotation.RequiresApi
-import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.presentation.Modele
 import java.time.LocalDate
 import java.time.LocalTime
 
 
-class PresentateurPageCalendrier (var vue: PageCalendrier, val modele: Modele) {
+class PresentateurPageCalendrier (var vue: PageCalendrier ) {
+
+
+    val modele = Modele.Companion
     fun effectuerNaviguationInformationPersonnelle() {
         vue.naviguerVerspagesInfosPersonnelle()
     }

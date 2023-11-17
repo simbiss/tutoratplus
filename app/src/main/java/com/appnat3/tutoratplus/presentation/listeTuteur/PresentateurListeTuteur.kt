@@ -5,8 +5,11 @@ import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 
-class PresentateurListeTuteur(var vue: VueListeTuteurs, private val modele:Modele):
+class PresentateurListeTuteur(var vue: VueListeTuteurs):
     IContractVuePresentateurListeTuteur.IPresentateurListeTuteur {
+
+    val modele = Modele.Companion
+
 
     @RequiresApi(Build.VERSION_CODES.O)
 

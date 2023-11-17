@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -35,7 +34,7 @@ class PageCalendrier: Fragment() {
     lateinit var txtdisponibiliteVide: TextView
     val modele:Modele = Modele()
 
-    var présentateur = PresentateurPageCalendrier(this, modele)
+    var présentateur = PresentateurPageCalendrier(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -5,9 +5,10 @@ import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.presentation.Modele
 import java.time.LocalDate
 import java.time.LocalTime
-import java.util.Date
 
-class PresentateurConfirmation(var vue: VueConfirmation, private val modele: Modele) {
+class PresentateurConfirmation(var vue: VueConfirmation) {
+
+    val modele =Modele.Companion
     @RequiresApi(Build.VERSION_CODES.O)
 
 

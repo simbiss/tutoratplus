@@ -2,7 +2,6 @@
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
 import android.os.Build
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +15,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.presentation.Modele
 
 class VueLoginTuteur : Fragment() {
     var présentateur: PresentateurLoginTuteur? = null
@@ -25,7 +23,7 @@ class VueLoginTuteur : Fragment() {
     lateinit var btnRetour: LinearLayout
     lateinit var btnConnection : Button
     lateinit var mesgErreur : TextView
-    val modele: Modele = Modele()
+    //val modele = Modele.Companion //singleton - companion object
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -34,7 +32,7 @@ class VueLoginTuteur : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_vue_login_tuteur, container, false)
-        présentateur = PresentateurLoginTuteur(this, modele)
+        présentateur = PresentateurLoginTuteur(this)
         mesgErreur = vue.findViewById(R.id.msgErreurEntre)
         btnConnection = vue.findViewById(R.id.btnLogin)
         collectInformationLogin(vue)
