@@ -58,8 +58,8 @@
             android:id="@+id/action_menu_principal2_to_page_information"
             app:destination="@id/page_information" />
         <action
-            android:id="@+id/action_menu_principal_to_vueLoginTuteur2"
-            app:destination="@id/vueLoginTuteur2" />
+            android:id="@+id/action_menu_principal_to_vueLoginTuteur"
+            app:destination="@id/vueLoginTuteur" />
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
@@ -106,19 +106,31 @@
         android:id="@+id/page_principal_tuteur"
         android:name="com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.VuePagePrincipalTuteur"
         android:label="fragment_page_principal_tuteur"
-        tools:layout="@layout/fragment_page_principal_tuteur" />
+        tools:layout="@layout/fragment_page_principal_tuteur" >
+        <action
+            android:id="@+id/action_page_principal_tuteur_to_vueLoginTuteur"
+            app:destination="@id/vueLoginTuteur" />
+        <action
+            android:id="@+id/action_page_principal_tuteur_to_tuteur_page_dispo"
+            app:destination="@id/tuteur_page_dispo" />
+    </fragment>
     <fragment
-        android:id="@+id/vueLoginTuteur2"
-        android:name="VueLoginTuteur"
+        android:id="@+id/vueLoginTuteur"
+        android:name="com.appnat3.tutoratplus.presentation.loginTuteur.VueLoginTuteur"
         android:label="fragment_vue_login_tuteur"
         tools:layout="@layout/fragment_vue_login_tuteur" >
         <action
-            android:id="@+id/action_vueLoginTuteur2_to_menu_principal"
-            app:destination="@id/menu_principal" />
-        <action
-            android:id="@+id/action_vueLoginTuteur2_to_page_principal_tuteur"
+            android:id="@+id/action_vueLoginTuteur_to_page_principal_tuteur"
             app:destination="@id/page_principal_tuteur" />
+        <action
+            android:id="@+id/action_vueLoginTuteur_to_menu_principal"
+            app:destination="@id/menu_principal" />
     </fragment>
+    <fragment
+        android:id="@+id/tuteur_page_dispo"
+        android:name="com.appnat3.tutoratplus.presentation.pageTuteurDispo.VuePageTuteurDispo"
+        android:label="fragment_tuteur_page_dispo"
+        tools:layout="@layout/fragment_tuteur_page_dispo" />
 </navigation>
 
 

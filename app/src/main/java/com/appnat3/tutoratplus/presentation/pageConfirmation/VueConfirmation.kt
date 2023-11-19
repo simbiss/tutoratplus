@@ -31,10 +31,11 @@ class VueConfirmation : Fragment(){
     lateinit var btnAjoutCalendrier: Button
     lateinit var btnAcceuil: TextView
     lateinit var btnRetour: LinearLayout
+    val modele = Modele.Companion
     var présentateur = PresentateurConfirmation(this)
 
     @RequiresApi(Build.VERSION_CODES.O)
-    @SuppressLint("MissingInflatedId", "CutPasteId")
+    @SuppressLint("MissingInflatedId", "CutPasteId", "SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
  * -mettre problematique dans page information personnelle
  * -rendre les interfaces plus belle (style de texte, entete retour acceuil) (optionnel)
  * -transformer TOUT les fragment en landscape (optionnel)
- * -Internationnalisation -> tout les texte en ANGLAIS (optionnel)
+ * -
  *
  * -mettre image dans les liste cours et liste tuteur
  *
@@ -45,5 +45,5 @@ class MainActivity : AppCompatActivity() {
  *
  * IDÉE POUR SPRINT 4
  * -etre capable d'ajouter et supprimer des disponibilité (TUTEUR)
- *
+ *- Internationnalisation -> tout les texte en ANGLAIS
  */

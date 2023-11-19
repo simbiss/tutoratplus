@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,20 +9,22 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
+import com.appnat3.tutoratplus.presentation.Modele
 
 
 class VueInformationPersonnlle : Fragment() {
     //Déclaration de variables
-    var présentateur = PresentateurInfosPersonnelle(this)
+     val modele :Modele = Modele()
     lateinit var navController: NavController
     lateinit var btnSuivant: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
-
+    var présentateur = PresentateurInfosPersonnelle(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +59,7 @@ class VueInformationPersonnlle : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun collectInformationPersonnelle(vue:View){
         btnSuivant.setOnClickListener {
             var da = vue.findViewById<EditText>(R.id.champDAInfo)

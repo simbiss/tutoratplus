@@ -1,5 +1,7 @@
 package com.appnat3.tutoratplus.presentation.listeCours
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.listeCours.IContractVuePresentateurListeCours.IPresentateurListeCours
@@ -7,10 +9,14 @@ import com.appnat3.tutoratplus.presentation.listeCours.IContractVuePresentateurL
 
 class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
 
+    val modele = Modele.Companion
+
     var listeCours = arrayOf<Cours>()
+    @RequiresApi(Build.VERSION_CODES.O)
+
 
     override fun traiterListeCours(): Array<Cours> {
-        for (cours in Modele.retourListeDesCours()){
+        for (cours in modele.retourListeDesCours()){
             listeCours+=cours
         }
         return listeCours
@@ -27,7 +33,8 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
         vue.naviguerVersTuteurs()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun recuperationCours(item:Cours){
-        Modele.coursSelectionne = item
+        modele.coursSelectionne = item
     }
 }

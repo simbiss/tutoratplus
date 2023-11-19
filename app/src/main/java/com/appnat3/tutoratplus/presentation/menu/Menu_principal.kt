@@ -60,6 +60,6 @@ class menu_principal : Fragment() {
     }
 
     fun naviguerVerslogin_tuteur(){
-        navController.navigate(R.id.action_menu_principal_to_vueLoginTuteur2)
+        navController.navigate(R.id.action_menu_principal_to_vueLoginTuteur)
     }
 }

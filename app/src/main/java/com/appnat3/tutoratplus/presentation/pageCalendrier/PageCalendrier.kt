@@ -8,13 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
+import com.appnat3.tutoratplus.presentation.Modele
 import java.time.LocalDate
 import java.time.LocalTime
 
@@ -32,6 +32,7 @@ class PageCalendrier: Fragment() {
     lateinit var calendarView: CalendarView
     lateinit var myDate: TextView
     lateinit var txtdisponibiliteVide: TextView
+    val modele:Modele = Modele()
 
     var présentateur = PresentateurPageCalendrier(this)
 

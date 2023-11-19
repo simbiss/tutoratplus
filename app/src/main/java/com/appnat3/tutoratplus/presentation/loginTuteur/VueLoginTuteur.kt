@@ -1,3 +1,7 @@
+
+package com.appnat3.tutoratplus.presentation.loginTuteur
+
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -6,11 +10,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.presentation.loginTuteur.PresentateurLoginTuteur
 
 class VueLoginTuteur : Fragment() {
     var présentateur: PresentateurLoginTuteur? = null
@@ -19,9 +23,9 @@ class VueLoginTuteur : Fragment() {
     lateinit var btnRetour: LinearLayout
     lateinit var btnConnection : Button
     lateinit var mesgErreur : TextView
+    //val modele = Modele.Companion //singleton - companion object
 
-
-
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,25 +57,21 @@ class VueLoginTuteur : Fragment() {
     }
 
     //
+    @RequiresApi(Build.VERSION_CODES.O)
     fun collectInformationLogin(vue :View){
         btnConnection.setOnClickListener {
             val username = vue.findViewById<EditText>(R.id.entreeUsername).text.toString()
             val motDePasse = vue.findViewById<EditText>(R.id.entreePassword).text.toString()
-            présentateur?.traiterCollectInformationLogin(username)                              //ajouter dans le modele la le id du tuteur à logger
+            présentateur?.traiterCollectInformationLogin(username)                              //ajouter dans le modele le id du tuteur à logger
 
             val validationResult = présentateur?.traiterValidationInfoLogin(username,motDePasse)        //validation des information login
 
-            //print(Modele.listeInfoLogin)
             if(validationResult == true) {
                 présentateur?.effectuerNavigationPageTuteur()
             }
             else{
-
                 mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
-
-                    mesgErreur.text = "Nom d'utilisateur et/ou mot de passe invalide"
                 }
-
             }
         }
 
@@ -82,10 +82,10 @@ class VueLoginTuteur : Fragment() {
 
 
     fun naviguerVersmenu_principal(){
-        navController.navigate(R.id.action_vueLoginTuteur2_to_menu_principal)
+        navController.navigate(R.id.action_vueLoginTuteur_to_menu_principal)
     }
 
     fun navigationVerspage_principal_tuteur(){
-        navController.navigate(R.id.action_vueLoginTuteur2_to_page_principal_tuteur)
+        navController.navigate(R.id.action_vueLoginTuteur_to_page_principal_tuteur)
     }
 }

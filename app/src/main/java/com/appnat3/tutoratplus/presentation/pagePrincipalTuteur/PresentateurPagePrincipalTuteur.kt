@@ -1,15 +1,24 @@
 package com.appnat3.tutoratplus.presentation.pagePrincipalTuteur
 
-import android.os.Build
-import androidx.annotation.RequiresApi
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 
 class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur){
+    val modele= Modele.Companion
 
+    fun traiderNomTuteurLogger(): Tuteur? {
+        return modele.ouvertureSessionTuteur
+    }
+    //fun testprint():String?{
+    //    return modele.test
+    //}
+    //fun testHellow():String?{
+    //    return modele.testhardCode
+    //}
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun traiderNomTuteurLogger(): String?{
-        return Modele.ouvertureSessionTuteur?.nomTuteur
+    fun effectuerNavigationPageDispo(){
+
+        vue.navigationVerstuteur_page_dispo()
     }
 
 }
