@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".tuteur_page_dispo">
+
+    <Button
+        android:id="@+id/btn_choisirDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Ajouter Disponibilité" />
+
+    <TextView
+        android:id="@+id/txt_tempsChoisi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_choisirDate"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@tools:sample/date/ddmmyy"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

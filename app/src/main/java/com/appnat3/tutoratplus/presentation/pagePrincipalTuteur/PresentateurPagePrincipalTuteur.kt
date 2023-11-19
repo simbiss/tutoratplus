@@ -16,4 +16,9 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur){
     //    return modele.testhardCode
     //}
 
+    fun effectuerNavigationPageDispo(){
+
+        vue.navigationVerstuteur_page_dispo()
+    }
+
 }

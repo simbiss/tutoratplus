@@ -110,6 +110,9 @@
         <action
             android:id="@+id/action_page_principal_tuteur_to_vueLoginTuteur"
             app:destination="@id/vueLoginTuteur" />
+        <action
+            android:id="@+id/action_page_principal_tuteur_to_tuteur_page_dispo"
+            app:destination="@id/tuteur_page_dispo" />
     </fragment>
     <fragment
         android:id="@+id/vueLoginTuteur"
@@ -123,6 +126,11 @@
             android:id="@+id/action_vueLoginTuteur_to_menu_principal"
             app:destination="@id/menu_principal" />
     </fragment>
+    <fragment
+        android:id="@+id/tuteur_page_dispo"
+        android:name="com.appnat3.tutoratplus.presentation.pageTuteurDispo.VuePageTuteurDispo"
+        android:label="fragment_tuteur_page_dispo"
+        tools:layout="@layout/fragment_tuteur_page_dispo" />
 </navigation>
 
 

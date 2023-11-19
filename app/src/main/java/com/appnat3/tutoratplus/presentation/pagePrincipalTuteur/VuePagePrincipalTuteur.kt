@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
@@ -18,6 +19,7 @@ class VuePagePrincipalTuteur : Fragment() {
     var présentateur: PresentateurPagePrincipalTuteur? = null
     lateinit var navController: NavController
     lateinit var txtNomTuteurLogger: TextView
+    lateinit var btn_rdv: Button
 
 
 
@@ -33,6 +35,11 @@ class VuePagePrincipalTuteur : Fragment() {
 
         txtNomTuteurLogger = vue.findViewById(R.id.afficherNomTuteur)
         val nomTuteurLogger = présentateur?.traiderNomTuteurLogger()
+
+        btn_rdv = vue.findViewById(R.id.btn_rdv)
+        btn_rdv.setOnClickListener {
+            présentateur?.effectuerNavigationPageDispo()
+        }
 
 
         //val test = présentateur?.testprint()//test
@@ -58,6 +65,10 @@ class VuePagePrincipalTuteur : Fragment() {
     }
 
     //fun naviguerVersmenu_principal(){}
+
+    fun navigationVerstuteur_page_dispo(){
+        navController.navigate(R.id.action_page_principal_tuteur_to_tuteur_page_dispo)
+    }
 
 
 }
