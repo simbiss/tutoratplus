@@ -15,6 +15,8 @@ class SourceBidon : SourceDeDonnees {
     /**
      * initialisation des different cours de tutorat
      */
+
+    /*
     var listeDesCours = mutableListOf<Cours>()
 
     init {
@@ -34,6 +36,7 @@ class SourceBidon : SourceDeDonnees {
     override fun obtenirListeDesCours():List<Cours>{
         return listeDesCours
     }
+    */
 
     /**
      * Création des different disponibilités

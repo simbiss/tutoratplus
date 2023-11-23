@@ -1,18 +1,14 @@
 package com.appnat3.tutoratplus
 
 import com.appnat3.tutoratplus.domaine.entite.Cours
-import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
-
 import com.appnat3.tutoratplus.presentation.Modele
 import kotlinx.coroutines.newSingleThreadContext
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
-import java.time.LocalDate
-import java.time.LocalTime
 
 @RunWith(MockitoJUnitRunner::class)
 class ModeleTest {
@@ -36,7 +32,7 @@ class ModeleTest {
     @Test
     fun `Étant donné un modèle nouvellement instancié, losqu'on veux afficher la liste des noms des différent cours, alors on obtient la liste des noms différent cours`(){
         //Mise en place
-        val modele = Modele()
+        val modele = Modele.Companion
         val listeDesCours_attendu = mutableListOf<Cours>()
         var cours1 = Cours("Programmation 1", "programmation")
         var cours2 = Cours("Programmation 2 (Java)", "programmation")
@@ -63,7 +59,7 @@ class ModeleTest {
     @Test
     fun `Étant donné un modèle nouvellement instancié, losqu'on veux afficher la liste des noms des tuteurs, alors on obtient la liste des noms différent tuteurs`(){
         //Mise en place
-        val modele = Modele()
+        val modele = Modele.Companion
         val listeDesTuteurs_attendu = mutableListOf<Tuteur>()
 
 
@@ -92,7 +88,7 @@ class ModeleTest {
     @Test
     fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour vérifier le nom d'utilisateur pour se logger, on obtient les différente "username" des tuteurs`(){
         //Mise en place
-        val modele = Modele()
+        val modele = Modele.Companion
         val listeInfoLogin_attendu = mutableListOf<InfoLogin>()
         var infoLogin1 = InfoLogin("mohamed", "abc1")
         var infoLogin2 = InfoLogin("raphael", "abc2")
@@ -119,7 +115,7 @@ class ModeleTest {
     @Test
     fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour vérifier un mot de passe pour se logger, on obtient les différente "password" des tuteurs`() {
         //Mise en place
-        val modele = Modele()
+        val modele = Modele.Companion
         val listeInfoLogin_attendu = mutableListOf<InfoLogin>()
         var infoLogin1 = InfoLogin("mohamed", "abc1")
         var infoLogin2 = InfoLogin("raphael", "abc2")
