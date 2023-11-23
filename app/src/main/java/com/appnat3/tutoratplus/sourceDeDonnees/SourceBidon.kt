@@ -42,7 +42,7 @@ class SourceBidon : SourceDeDonnees {
 
     var listeDispo = mutableListOf<Cours>()
 
-    init {
+    /*init {
         var dispo1 = DispoTuteur(1)
         var dispo2 = DispoTuteur(1)
         var dispo3 = DispoTuteur(1)
@@ -50,7 +50,7 @@ class SourceBidon : SourceDeDonnees {
         var dispo5 = DispoTuteur(3)
         var dispo6 = DispoTuteur(3)
         var dispo7 = DispoTuteur(4)
-    }
+    }*/
 
     /**
      * Création des different disponibilités

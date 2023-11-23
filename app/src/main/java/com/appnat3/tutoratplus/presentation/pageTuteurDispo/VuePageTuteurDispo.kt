@@ -26,6 +26,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
     lateinit var navController: NavController
     lateinit var btn_rdv : Button
     lateinit var txt_rdv:TextView
+    lateinit var btn_retour:Button
 
     var jour = 0
     var mois = 0
@@ -48,6 +49,10 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         présentateur = PresentateurPageTuteurDispo(this)
         btn_rdv = vue.findViewById(R.id.btn_choisirDate)
         txt_rdv = vue.findViewById(R.id.txt_tempsChoisi)
+        btn_retour = vue.findViewById(R.id.btnRetourMenuTuteur)
+        btn_retour.setOnClickListener {
+            présentateur?.effectuerNavigationPageTuteur()
+        }
         dateChoisi()
 
 
@@ -67,6 +72,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         annee = cal.get(Calendar.YEAR)
         heure = cal.get(Calendar.HOUR)
         minute = cal.get(Calendar.MINUTE)
+
     }
 
     fun dateChoisi(){
@@ -92,7 +98,10 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         sauvegardeMinute = minute
 
         txt_rdv.text="$sauvegardeJour-$sauvegardeMois-$sauvegardeAnnee \n Heure: $sauvegardeHeure Minute: $sauvegardeMinute"
+        présentateur?.recuperationTuteur(sauvegardeJour,sauvegardeMois,sauvegardeAnnee,sauvegardeHeure,sauvegardeMinute)
     }
 
-    //fun naviguerVersmenu_principal(){}
+    fun naviguerVerspage_principal_tuteur(){
+        navController.navigate(R.id.action_tuteur_page_dispo_to_page_principal_tuteur)
+    }
 }

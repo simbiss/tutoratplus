@@ -130,7 +130,11 @@
         android:id="@+id/tuteur_page_dispo"
         android:name="com.appnat3.tutoratplus.presentation.pageTuteurDispo.VuePageTuteurDispo"
         android:label="fragment_tuteur_page_dispo"
-        tools:layout="@layout/fragment_tuteur_page_dispo" />
+        tools:layout="@layout/fragment_tuteur_page_dispo" >
+        <action
+            android:id="@+id/action_tuteur_page_dispo_to_page_principal_tuteur"
+            app:destination="@id/page_principal_tuteur" />
+    </fragment>
 </navigation>
 
 
