@@ -15,7 +15,6 @@ import java.time.LocalTime
 class Modele(source: SourceDeDonnees = SourceBidon()) {
 
 
-
     companion object {
         /*var instance: Modele? = null
         fun getInstance(): Modele {
