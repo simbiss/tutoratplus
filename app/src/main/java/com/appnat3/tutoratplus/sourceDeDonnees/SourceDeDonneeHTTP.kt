@@ -1,16 +1,15 @@
 package com.appnat3.tutoratplus.sourceDeDonnees
 
+import android.util.JsonReader
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.presentation.Modele
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import java.lang.Exception
-import android.util.JsonReader
-import com.appnat3.tutoratplus.presentation.Modele
 import java.io.StringReader
 
 class SourceDeDonneeHTTP(var context: Modele.Companion){
 
-    //var listeCourt = mutableListOf<Cours>()
+    var listeCourt = mutableListOf<Cours>()
 
     fun connectionHttpRequest(url:String):String{
         val client = OkHttpClient()
@@ -30,22 +29,18 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         val url = "https://8ecb8b23-ca98-4584-8a0d-0dccfa014a81.mock.pstmn.io/listeCours"
 
         val result = connectionHttpRequest(url)
-        try {
-            println("HTTP Request Result : $result")
-        }catch (e: Exception){
-            println("ERREUR: ${e.message}")
-        }
+       try {
+           println("HTTP Request Result : $result")
+       }catch (e: Exception){
+           println("ERREUR: ${e.message}")
+       }
         return retourLiseCours(result)
     }
-
-
 
     private fun retourLiseCours(json : String):List<Cours>{
         var jsonRead = JsonReader(StringReader(json))
         return lectureListeCoursJson(jsonRead)
     }
-
-
 
     private fun lectureListeCoursJson(jsonRead:JsonReader):List<Cours>{
         var listeDesCours = mutableListOf<Cours>()
