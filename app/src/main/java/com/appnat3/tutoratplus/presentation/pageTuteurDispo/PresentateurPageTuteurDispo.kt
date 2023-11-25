@@ -6,6 +6,18 @@ import com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.VuePagePrincipal
 
 class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
     val modele= Modele.Companion
+    fun effectuerNavigationPagePrincipalTuteur() {
+        vue.navigationVersPagePrincipalTuteur()
+    }
+
+    fun effectuerNavigationAccueil() {
+        vue.navigationVersAcceuil()
+    }
+
+
+
+
+
 
 
 

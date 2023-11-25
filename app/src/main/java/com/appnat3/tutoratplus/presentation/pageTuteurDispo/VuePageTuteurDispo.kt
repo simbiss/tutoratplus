@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.TimePicker
 import androidx.fragment.app.Fragment
@@ -25,6 +26,8 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
     var présentateur: PresentateurPageTuteurDispo? = null
     lateinit var navController: NavController
     lateinit var btn_rdv : Button
+    lateinit var btn_retour : LinearLayout
+    lateinit var btn_acceuil:TextView
     lateinit var txt_rdv:TextView
 
     var jour = 0
@@ -46,6 +49,18 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_tuteur_page_dispo, container, false)
         présentateur = PresentateurPageTuteurDispo(this)
+
+        btn_retour = vue.findViewById(R.id.buttonRetour)
+        btn_retour.setOnClickListener {
+            présentateur?.effectuerNavigationPagePrincipalTuteur()
+        }
+
+        btn_acceuil = vue.findViewById(R.id.textAcceuil)
+        btn_acceuil.setOnClickListener {
+            présentateur?.effectuerNavigationAccueil()
+        }
+
+
         btn_rdv = vue.findViewById(R.id.btn_choisirDate)
         txt_rdv = vue.findViewById(R.id.txt_tempsChoisi)
         dateChoisi()
@@ -77,6 +92,8 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         }
     }
 
+
+
     override fun onDateSet(view: DatePicker?, annee: Int, mois: Int, jour: Int) {
         sauvegardeAnnee = annee
         sauvegardeMois = mois
@@ -94,5 +111,13 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         txt_rdv.text="$sauvegardeJour-$sauvegardeMois-$sauvegardeAnnee \n Heure: $sauvegardeHeure Minute: $sauvegardeMinute"
     }
 
-    //fun naviguerVersmenu_principal(){}
+    fun navigationVersAcceuil() {
+        navController.navigate(R.id.action_tuteur_page_dispo_to_menu_principal)
+    }
+
+    fun navigationVersPagePrincipalTuteur() {
+        navController.navigate(R.id.action_tuteur_page_dispo_to_page_principal_tuteur)
+    }
+
+
 }
