@@ -3,7 +3,7 @@ package com.appnat3.tutoratplus.sourceDeDonnees
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import java.lang.Exception
+import okio.IOException
 import android.util.JsonReader
 import com.appnat3.tutoratplus.presentation.Modele
 import java.io.StringReader
@@ -37,6 +37,9 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         }
         return retourLiseCours(result)
     }
+
+    // Méthode pour créer l'OkHttpClient afin de pouvoir la mocker dans les tests
+
 
 
 

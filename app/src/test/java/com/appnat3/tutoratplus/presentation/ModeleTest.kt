@@ -4,10 +4,12 @@ import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonneeHTTP
 import kotlinx.coroutines.newSingleThreadContext
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -32,7 +34,7 @@ class ModeleTest {
     @Test
     fun `Étant donné un modèle nouvellement instancié, losqu'on veux afficher la liste des noms des différent cours, alors on obtient la liste des noms différent cours`(){
         //Mise en place
-        val modele = Modele.Companion
+        val modele : Modele.Companion = Mockito.mock( Modele.Companion::class.java )
         val listeDesCours_attendu = mutableListOf<Cours>()
         var cours1 = Cours("Programmation 1", "programmation")
         var cours2 = Cours("Programmation 2 (Java)", "programmation")
