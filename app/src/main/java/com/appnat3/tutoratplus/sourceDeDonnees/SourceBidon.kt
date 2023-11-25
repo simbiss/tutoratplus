@@ -3,6 +3,7 @@ package com.appnat3.tutoratplus.sourceDeDonnees
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
@@ -34,6 +35,22 @@ class SourceBidon : SourceDeDonnees {
     override fun obtenirListeDesCours():List<Cours>{
         return listeDesCours
     }
+
+    /**
+     * initialisation et création dispo (Test)
+     */
+
+    var listeDispo = mutableListOf<Cours>()
+
+    /*init {
+        var dispo1 = DispoTuteur(1)
+        var dispo2 = DispoTuteur(1)
+        var dispo3 = DispoTuteur(1)
+        var dispo4 = DispoTuteur(2)
+        var dispo5 = DispoTuteur(3)
+        var dispo6 = DispoTuteur(3)
+        var dispo7 = DispoTuteur(4)
+    }*/
 
     /**
      * Création des different disponibilités

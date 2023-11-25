@@ -2,7 +2,6 @@ package com.appnat3.tutoratplus.presentation.pageTuteurDispo
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,9 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.PresentateurPagePrincipalTuteur
 import java.util.Calendar
-import kotlin.math.min
 
 class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
@@ -29,6 +26,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
     lateinit var btn_retour : LinearLayout
     lateinit var btn_acceuil:TextView
     lateinit var txt_rdv:TextView
+    lateinit var btn_retourMenu:Button
 
     var jour = 0
     var mois = 0
@@ -63,6 +61,10 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
 
         btn_rdv = vue.findViewById(R.id.btn_choisirDate)
         txt_rdv = vue.findViewById(R.id.txt_tempsChoisi)
+        btn_retourMenu = vue.findViewById(R.id.btnRetourMenuTuteur)
+        btn_retourMenu.setOnClickListener {
+            présentateur?.effectuerNavigationPageTuteur()
+        }
         dateChoisi()
 
 
@@ -82,6 +84,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         annee = cal.get(Calendar.YEAR)
         heure = cal.get(Calendar.HOUR)
         minute = cal.get(Calendar.MINUTE)
+
     }
 
     fun dateChoisi(){
@@ -109,6 +112,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         sauvegardeMinute = minute
 
         txt_rdv.text="$sauvegardeJour-$sauvegardeMois-$sauvegardeAnnee \n Heure: $sauvegardeHeure Minute: $sauvegardeMinute"
+        présentateur?.recuperationTuteur(sauvegardeJour,sauvegardeMois,sauvegardeAnnee,sauvegardeHeure,sauvegardeMinute)
     }
 
     fun navigationVersAcceuil() {
@@ -119,5 +123,8 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         navController.navigate(R.id.action_tuteur_page_dispo_to_page_principal_tuteur)
     }
 
+    fun naviguerVerspage_principal_tuteur(){
+        navController.navigate(R.id.action_tuteur_page_dispo_to_page_principal_tuteur)
+    }
 
 }

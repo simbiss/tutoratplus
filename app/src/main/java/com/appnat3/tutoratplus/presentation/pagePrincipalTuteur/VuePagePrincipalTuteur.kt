@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ListView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
+import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 
 
 class VuePagePrincipalTuteur : Fragment() {
@@ -20,9 +23,8 @@ class VuePagePrincipalTuteur : Fragment() {
     lateinit var navController: NavController
     lateinit var txtNomTuteurLogger: TextView
     lateinit var btn_rdv: Button
-
-
-
+    lateinit var adapter: ArrayAdapter<DispoTuteur>
+    lateinit var listeDispo: ListView
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -33,6 +35,7 @@ class VuePagePrincipalTuteur : Fragment() {
         val vue = inflater.inflate(R.layout.fragment_page_principal_tuteur, container, false)
         présentateur = PresentateurPagePrincipalTuteur(this)
 
+        listeDispo = vue.findViewById(R.id.listeDispoTuteur)
         txtNomTuteurLogger = vue.findViewById(R.id.afficherNomTuteur)
         val nomTuteurLogger = présentateur?.traiderNomTuteurLogger()
 
@@ -40,10 +43,6 @@ class VuePagePrincipalTuteur : Fragment() {
         btn_rdv.setOnClickListener {
             présentateur?.effectuerNavigationPageDispo()
         }
-
-
-        //val test = présentateur?.testprint()//test
-        //val test2 = présentateur?.testHellow()//test
 
         if (nomTuteurLogger != null) {
             txtNomTuteurLogger.text = "Bienvenue : ${nomTuteurLogger.nomTuteur}"
@@ -54,14 +53,18 @@ class VuePagePrincipalTuteur : Fragment() {
         else {
             txtNomTuteurLogger.text = "Erreur! Tuteur introuvable :/"
         }
-
         return vue
-
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)              // Obtient le NavController pour la navigation
+        initialiserListeDispo(présentateur?.traiderListeDispo())
+    }
 
+    fun initialiserListeDispo(liste: List<DispoTuteur>?) {
+        adapter = ArrayAdapter<DispoTuteur>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
+        this.listeDispo.setAdapter(adapter)
     }
 
     //fun naviguerVersmenu_principal(){}

@@ -3,6 +3,7 @@ package com.appnat3.tutoratplus.presentation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceBidon
@@ -36,7 +37,18 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
         var courrielInfoPerso: String? = null
 
 
+        /**
+         * sauvegarde date et heure dispo tuteur
+         */
+        var idtuteurDispo:Int = 0
+        var jour:Int = 0
+        var mois:Int = 0
+        var annee:Int = 0
+        var heure:Int = 0
+        var minute:Int = 0
 
+        // id jj mm aaaa hh mm
+        var listeDispoTuteur = mutableListOf<DispoTuteur>()
 
 
         /**
