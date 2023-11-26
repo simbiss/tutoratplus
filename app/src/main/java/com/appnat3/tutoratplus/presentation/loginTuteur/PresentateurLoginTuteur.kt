@@ -2,19 +2,18 @@ package com.appnat3.tutoratplus.presentation.loginTuteur
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-
-
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.presentation.loginTuteur.IConractVuePresentateurLoginTuteur.IPresentateurLoginTuteur
 import kotlin.collections.mapOf as hashMap
 
-class PresentateurLoginTuteur(var vue: VueLoginTuteur ) {
+class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteur {
 
     val modele = Modele.Companion
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun traiterValidationInfoLogin(username:String, password:String):Boolean{
+    override fun traiterValidationInfoLogin(username:String, password:String):Boolean{
 
         var listeInfoLogin = modele.retourListInfoLogin()
         for (item in listeInfoLogin){
@@ -28,7 +27,7 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ) {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun traiterCollectInformationLogin(username: String){
+    override fun traiterCollectInformationLogin(username: String){
 
         val listeInfoLogin = modele.retourListInfoLogin()
         val mapInfoLogin = hashMap<Int, InfoLogin>(

@@ -17,8 +17,9 @@ import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.presentation.Modele
 import java.time.LocalDate
 import java.time.LocalTime
+import com.appnat3.tutoratplus.presentation.pageCalendrier.IContractVuePresentateurPageCalendrier.IVuePageCalendrier
 
-class PageCalendrier: Fragment() {
+class PageCalendrier: Fragment(), IVuePageCalendrier{
     //Déclaration de variables
     lateinit var navController: NavController
     lateinit var btnSuivant: Button

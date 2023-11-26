@@ -3,8 +3,9 @@ package com.appnat3.tutoratplus.presentation.pagePrincipalTuteur
 import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.IContractVuePresentateurPagePrincipalTuteur.IPresentateurPagePrincipalTuteur
 
-class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur){
+class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresentateurPagePrincipalTuteur{
     val modele= Modele.Companion
     private var idTuteurLogger = modele.ouvertureSessionTuteur?.id
 
@@ -14,7 +15,7 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur){
         return modele.ouvertureSessionTuteur
     }
 
-    fun traiderListeDispo():List<DispoTuteur>{
+    override fun traiderListeDispo():List<DispoTuteur>{
         for (item in modele.listeDispoTuteur){
             if (idTuteurLogger == item.id){
                 listeDispoTuteur+=item

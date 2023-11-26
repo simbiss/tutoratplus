@@ -15,9 +15,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
+import com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.IContractVuePresentateurPagePrincipalTuteur.IVuePagePrincipalTuteur
 
 
-class VuePagePrincipalTuteur : Fragment() {
+class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
 
     var présentateur: PresentateurPagePrincipalTuteur? = null
     lateinit var navController: NavController
@@ -62,7 +63,7 @@ class VuePagePrincipalTuteur : Fragment() {
         initialiserListeDispo(présentateur?.traiderListeDispo())
     }
 
-    fun initialiserListeDispo(liste: List<DispoTuteur>?) {
+    override fun initialiserListeDispo(liste: List<DispoTuteur>?) {
         adapter = ArrayAdapter<DispoTuteur>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
         this.listeDispo.setAdapter(adapter)
     }

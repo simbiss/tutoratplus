@@ -3,11 +3,13 @@ package com.appnat3.tutoratplus.presentation.pageCalendrier
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.presentation.pageCalendrier.IContractVuePresentateurPageCalendrier.IPresentateurPageCalendrier
 import java.time.LocalDate
 import java.time.LocalTime
 
 
-class PresentateurPageCalendrier (var vue: PageCalendrier ) {
+
+class PresentateurPageCalendrier (var vue: PageCalendrier ): IPresentateurPageCalendrier {
 
 
     val modele = Modele.Companion
