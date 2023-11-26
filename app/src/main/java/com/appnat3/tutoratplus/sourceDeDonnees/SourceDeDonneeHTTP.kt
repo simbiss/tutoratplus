@@ -38,9 +38,6 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         return retourLiseCours(result)
     }
 
-    // Méthode pour créer l'OkHttpClient afin de pouvoir la mocker dans les tests
-
-
 
 
     private fun retourLiseCours(json : String):List<Cours>{
@@ -54,24 +51,23 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         var listeDesCours = mutableListOf<Cours>()
         var nomCours: String = ""
         var nomProgramme : String = ""
-        jsonRead.beginObject()
-        while (jsonRead.hasNext()){
-            var cle = jsonRead.nextName()
-            when (cle){
-                "nomCours" -> {
-                    nomCours = jsonRead.nextString()
+        jsonRead.beginArray()
+            while (jsonRead.hasNext()){
+                jsonRead.beginObject()
+                while (jsonRead.hasNext()) {
+                    val name = jsonRead.nextName()
+                    when (name) {
+                        "nomCours" -> nomCours = jsonRead.nextString()
+                        "programme" -> nomProgramme = jsonRead.nextString()
+                        else -> jsonRead.skipValue()
+                    }
                 }
-                "programme"-> {
-                    nomProgramme = jsonRead.nextString()
-                }
-                else ->{
-                    jsonRead.skipValue()
-                }
+                jsonRead.endObject()
+                var nouveauCours = Cours(nomCours,nomProgramme)
+                listeDesCours.add(nouveauCours)
             }
-            var nouveauCours = Cours(nomCours,nomProgramme)
-            listeDesCours.add(nouveauCours)
-        }
-        jsonRead.endObject()
+
+        jsonRead.endArray()
         return listeDesCours
     }
 

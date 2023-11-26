@@ -4,11 +4,11 @@ import com.appnat3.tutoratplus.domaine.entite.Cours
 
 interface IContractVuePresentateurListeCours {
     interface IVueListeCours{
-        fun initialiserListeCours(liste: Array<Cours>?)
+           fun initialiserListeCours(liste: Array<Cours>?)
     }
 
     interface IPresentateurListeCours{
-        fun traiterListeCours():Array<Cours>
+        suspend fun traiterListeCours():Array<Cours>
 
 
     }

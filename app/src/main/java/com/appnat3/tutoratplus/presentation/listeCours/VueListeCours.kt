@@ -77,10 +77,11 @@ class VueListeCours : Fragment(), IVueListeCours{
 
 
         navController = Navigation.findNavController(view)          // Obtient le NavController pour la navigation
-        initialiserListeCours(présentateur?.traiterListeCours())        //lister les cours
+        //initialiserListeCours(présentateur?.traiterListeCours())        //lister les cours
+        présentateur?.traiter_démarrage()
     }
 
-    override fun initialiserListeCours(liste: Array<Cours>?){
+    override  fun initialiserListeCours(liste: Array<Cours>?){
         adapter = ArrayAdapter<Cours>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
         this.liste_des_cours.setAdapter(adapter)
     }
