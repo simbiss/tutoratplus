@@ -10,6 +10,7 @@ import com.appnat3.tutoratplus.presentation.Modele
 import java.io.StringReader
 import java.time.LocalDate
 import java.time.LocalTime
+import java.util.Date
 
 class SourceDeDonneeHTTP(var context: Modele.Companion){
 
@@ -23,10 +24,14 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
             .build()
         val response = client.newCall(request).execute()
         if(response.isSuccessful){
+            client.dispatcher.executorService.shutdown() // Fermeture de la session
+            client.connectionPool.evictAll() // Éviter les fuites de ressources
             return response.body?.string()?:""
+
         }else{
             throw Exception("HTTP request Failed : ${response.code}")
         }
+
     }
 
     //ListeCours------------------------------------------------------------------------------------
@@ -76,6 +81,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     }
 
     //ListeTuteurs------------------------------------------------------------------------------------
+
     fun obtenirListeTuteurs():List<Tuteur>{
         val url = "https://8ecb8b23-ca98-4584-8a0d-0dccfa014a81.mock.pstmn.io/listeTuteur"
 
@@ -85,6 +91,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         }catch (e: Exception){
             println("ERREUR: ${e.message}")
         }
+        println(result)
         return retourListeTuteurs(result)
     }
 
@@ -95,30 +102,30 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         return lectureListeTuteursJson(jsonRead)
     }
 
-
-
     private fun lectureListeTuteursJson(jsonRead:JsonReader):List<Tuteur>{
+
         //Déclaration de variables---------------------------
         var listeTuteur = mutableListOf<Tuteur>()
-        var nomTuteur: String = ""
-        var programme : String = ""
-        var id: Int = 0
-        lateinit var tuteur:Tuteur
-        var date: LocalDate = LocalDate.now()
-        var heures: MutableList<LocalTime> = mutableListOf<LocalTime>()
-        var disponibilite:Disponibilite = Disponibilite(date, heures)
-        var heure :LocalTime = LocalTime.NOON
-        var listedisponibilites = mutableListOf<Disponibilite>()
-        var year:Int = 0
-        var month:Int = 0
-        var dayOfMonth:Int = 0
-        var hour:Int = 0
-        var minutes:Int = 0
+        //println(jsonRead)
 
         //Traitements---------------------------
         jsonRead.beginArray()
         while (jsonRead.hasNext()){
-            jsonRead.beginArray()
+            var nomTuteur: String = ""
+            var programme : String = ""
+            var id: Int = 0
+            lateinit var tuteur:Tuteur
+            var date: LocalDate = LocalDate.now()
+            var heures: MutableList<LocalTime> = mutableListOf<LocalTime>()
+            var disponibilite:Disponibilite = Disponibilite(date, heures)
+            var heure :LocalTime = LocalTime.NOON
+            var listedisponibilites = mutableListOf<Disponibilite>()
+            var year:Int = 0
+            var month:Int = 0
+            var dayOfMonth:Int = 0
+            var hour:Int = 0
+            var minutes:Int = 0
+            jsonRead.beginObject()
             while (jsonRead.hasNext()) {
                 val cle = jsonRead.nextName()
                 when (cle) {
@@ -127,48 +134,49 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
                     "programme" -> programme = jsonRead.nextString()
                     "disponibilites" -> {
                         jsonRead.beginArray()
+                        while (jsonRead.hasNext()) {
+                            heures = mutableListOf() // Nouvelle liste d'heures pour chaque disponibilité
+                            jsonRead.beginObject()
                             while (jsonRead.hasNext()) {
-                                jsonRead.beginObject()
-                                while (jsonRead.hasNext()) {
-                                    val cleDisponibilite = jsonRead.nextName()
-                                    when (cleDisponibilite) {
-                                        "date" -> {
+                                val cleDisponibilite = jsonRead.nextName()
+                                when (cleDisponibilite) {
+                                    "date" -> {
+                                        jsonRead.beginObject()
+                                        val cleDate = jsonRead.nextName()
+                                        when (cleDate) {
+                                            "year" -> year = jsonRead.nextInt()
+                                            "month" -> month = jsonRead.nextInt()
+                                            "dayOfMonth" -> dayOfMonth = jsonRead.nextInt()
+                                            else -> jsonRead.skipValue()
+                                        }
+                                        jsonRead.endObject()
+                                        date = LocalDate.of(year, month, dayOfMonth)
+                                    }
+                                    "heures" -> {
+                                        jsonRead.beginArray()
+                                        while (jsonRead.hasNext()) {
                                             jsonRead.beginObject()
-                                            val cleDate = jsonRead.nextName()
-                                            when (cleDate) {
-                                                "year" -> year = jsonRead.nextInt()
-                                                "month" -> month = jsonRead.nextInt()
-                                                "dayOfMonth" -> dayOfMonth = jsonRead.nextInt()
-                                                else -> jsonRead.skipValue()
+                                            while (jsonRead.hasNext()) {
+                                                val cleHeures = jsonRead.nextName()
+                                                when (cleHeures) {
+                                                    "hour" -> hour = jsonRead.nextInt()
+                                                    "minutes" -> minutes = jsonRead.nextInt()
+                                                    else -> jsonRead.skipValue()
+                                                }
                                             }
                                             jsonRead.endObject()
-                                            date = LocalDate.of(year, month, dayOfMonth)
+                                            heure = LocalTime.of(hour, minutes)
+                                            heures.add(heure)
                                         }
-                                        "heures" -> {
-                                            jsonRead.beginArray()
-                                            while (jsonRead.hasNext()) {
-                                                jsonRead.beginObject()
-                                                while (jsonRead.hasNext()) {
-                                                    val cleHeures = jsonRead.nextName()
-                                                    when (cleHeures) {
-                                                        "hour" -> hour = jsonRead.nextInt()
-                                                        "minutes" -> minutes = jsonRead.nextInt()
-                                                        else -> jsonRead.skipValue()
-                                                    }
-                                                }
-                                                jsonRead.endObject()
-                                                heure = LocalTime.of(hour, minutes)
-                                                heures.add(heure)
-                                            }
-                                            jsonRead.endArray()
+                                        jsonRead.endArray()
 
-                                        }
                                     }
-
                                 }
-                                jsonRead.endObject()
-                                disponibilite = Disponibilite(date, heures)
-                                listedisponibilites.add(disponibilite)
+
+                            }
+                            jsonRead.endObject()
+                            disponibilite = Disponibilite(date, heures)
+                            listedisponibilites.add(disponibilite)
                         }
                         jsonRead.endArray()
 
@@ -181,8 +189,14 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
             listeTuteur.add(tuteur)
         }
         jsonRead.endArray()
+        println(listeTuteur)
+
         return listeTuteur
     }
+
+
+
+
 
 
 

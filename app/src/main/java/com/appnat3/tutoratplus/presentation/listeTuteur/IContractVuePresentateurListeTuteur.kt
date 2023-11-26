@@ -9,8 +9,9 @@ interface IContractVuePresentateurListeTuteur {
     }
 
     interface IPresentateurListeTuteur{
-        fun traiterListeTuteurs():Array<Tuteur>
+         suspend fun traiterListeTuteurs():Array<Tuteur>
         fun recuperationTuteur(item:Tuteur)
+        fun traiter_affichageListeTuteur()
     }
 
 }

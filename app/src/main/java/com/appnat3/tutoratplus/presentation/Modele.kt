@@ -71,7 +71,7 @@ class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
         /**
          * initialisation des different cours de tutorat
          */
-//    var listeTuteurs = mutableListOf<Tuteur>()
+        var listeTuteurs = mutableListOf<Tuteur>()
 
         /*
         fun retourListeTuteur(): List<Tuteur> {
@@ -79,7 +79,8 @@ class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
         }
          */
         fun retourListeTuteur(): List<Tuteur> {
-            return sourceHttp.obtenirListeTuteurs()
+            listeTuteurs =  sourceHttp.obtenirListeTuteurs().toMutableList()
+            return  listeTuteurs
         }
 
 

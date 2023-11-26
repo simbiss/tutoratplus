@@ -4,11 +4,15 @@ import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonneeHTTP
 import kotlinx.coroutines.newSingleThreadContext
+import okhttp3.OkHttpClient
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.Mockito.mock
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -65,10 +69,10 @@ class ModeleTest {
 
 
         var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", mutableListOf())
-        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", mutableListOf())
+        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "réseau", mutableListOf())
         var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", mutableListOf())
         var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", mutableListOf())
-        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau", mutableListOf())
+        var tuteur5 = Tuteur(5,"Antoine Lépine", "réseau", mutableListOf())
 
         listeDesTuteurs_attendu.add(tuteur1)
         listeDesTuteurs_attendu.add(tuteur2)
@@ -76,13 +80,15 @@ class ModeleTest {
         listeDesTuteurs_attendu.add(tuteur4)
         listeDesTuteurs_attendu.add(tuteur5)
 
-        val retourDeListeCours_obtenu = modele.retourListeTuteur()
+        val retourDeListeTuteurs_obtenu = modele.retourListeTuteur()
+
+
 
 
         // Appel de la méthode à tester
         //assertEquals(listeDesCours_attendu, retourDeListeCours_obtenu  )
-        for (itemListe in retourDeListeCours_obtenu.indices) {
-            assertEquals(retourDeListeCours_obtenu[itemListe].nomTuteur, retourDeListeCours_obtenu[itemListe].nomTuteur)
+        for (itemListe in retourDeListeTuteurs_obtenu.indices) {
+            assertEquals(retourDeListeTuteurs_obtenu[itemListe].nomTuteur, listeDesTuteurs_attendu[itemListe].nomTuteur)
         }
     }
 
@@ -141,4 +147,5 @@ class ModeleTest {
             )
         }
     }
+
 }
