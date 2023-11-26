@@ -3,10 +3,13 @@ package com.appnat3.tutoratplus.sourceDeDonnees
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okio.IOException
 import android.util.JsonReader
+import com.appnat3.tutoratplus.domaine.entite.Disponibilite
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import java.io.StringReader
+import java.time.LocalDate
+import java.time.LocalTime
 
 class SourceDeDonneeHTTP(var context: Modele.Companion){
 
@@ -26,6 +29,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         }
     }
 
+    //ListeCours------------------------------------------------------------------------------------
     fun obtenirListeCours():List<Cours>{
         val url = "https://8ecb8b23-ca98-4584-8a0d-0dccfa014a81.mock.pstmn.io/listeCours"
 
@@ -69,6 +73,115 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
         jsonRead.endArray()
         return listeDesCours
+    }
+
+    //ListeTuteurs------------------------------------------------------------------------------------
+    fun obtenirListeTuteurs():List<Tuteur>{
+        val url = "https://8ecb8b23-ca98-4584-8a0d-0dccfa014a81.mock.pstmn.io/listeTuteur"
+
+        val result = connectionHttpRequest(url)
+        try {
+            println("HTTP Request Result : $result")
+        }catch (e: Exception){
+            println("ERREUR: ${e.message}")
+        }
+        return retourListeTuteurs(result)
+    }
+
+
+
+    private fun retourListeTuteurs(json : String):List<Tuteur>{
+        var jsonRead = JsonReader(StringReader(json))
+        return lectureListeTuteursJson(jsonRead)
+    }
+
+
+
+    private fun lectureListeTuteursJson(jsonRead:JsonReader):List<Tuteur>{
+        //Déclaration de variables---------------------------
+        var listeTuteur = mutableListOf<Tuteur>()
+        var nomTuteur: String = ""
+        var programme : String = ""
+        var id: Int = 0
+        lateinit var tuteur:Tuteur
+        var date: LocalDate = LocalDate.now()
+        var heures: MutableList<LocalTime> = mutableListOf<LocalTime>()
+        var disponibilite:Disponibilite = Disponibilite(date, heures)
+        var heure :LocalTime = LocalTime.NOON
+        var listedisponibilites = mutableListOf<Disponibilite>()
+        var year:Int = 0
+        var month:Int = 0
+        var dayOfMonth:Int = 0
+        var hour:Int = 0
+        var minutes:Int = 0
+
+        //Traitements---------------------------
+        jsonRead.beginArray()
+        while (jsonRead.hasNext()){
+            jsonRead.beginArray()
+            while (jsonRead.hasNext()) {
+                val cle = jsonRead.nextName()
+                when (cle) {
+                    "id" -> id = jsonRead.nextInt()
+                    "nomTuteur" -> nomTuteur = jsonRead.nextString()
+                    "programme" -> programme = jsonRead.nextString()
+                    "disponibilites" -> {
+                        jsonRead.beginArray()
+                            while (jsonRead.hasNext()) {
+                                jsonRead.beginObject()
+                                while (jsonRead.hasNext()) {
+                                    val cleDisponibilite = jsonRead.nextName()
+                                    when (cleDisponibilite) {
+                                        "date" -> {
+                                            jsonRead.beginObject()
+                                            val cleDate = jsonRead.nextName()
+                                            when (cleDate) {
+                                                "year" -> year = jsonRead.nextInt()
+                                                "month" -> month = jsonRead.nextInt()
+                                                "dayOfMonth" -> dayOfMonth = jsonRead.nextInt()
+                                                else -> jsonRead.skipValue()
+                                            }
+                                            jsonRead.endObject()
+                                            date = LocalDate.of(year, month, dayOfMonth)
+                                        }
+                                        "heures" -> {
+                                            jsonRead.beginArray()
+                                            while (jsonRead.hasNext()) {
+                                                jsonRead.beginObject()
+                                                while (jsonRead.hasNext()) {
+                                                    val cleHeures = jsonRead.nextName()
+                                                    when (cleHeures) {
+                                                        "hour" -> hour = jsonRead.nextInt()
+                                                        "minutes" -> minutes = jsonRead.nextInt()
+                                                        else -> jsonRead.skipValue()
+                                                    }
+                                                }
+                                                jsonRead.endObject()
+                                                heure = LocalTime.of(hour, minutes)
+                                                heures.add(heure)
+                                            }
+                                            jsonRead.endArray()
+
+                                        }
+                                    }
+
+                                }
+                                jsonRead.endObject()
+                                disponibilite = Disponibilite(date, heures)
+                                listedisponibilites.add(disponibilite)
+                        }
+                        jsonRead.endArray()
+
+                    }
+                    else -> jsonRead.skipValue()
+                }
+            }
+            jsonRead.endObject()
+            tuteur = Tuteur(id, nomTuteur, programme, listedisponibilites)
+            listeTuteur.add(tuteur)
+        }
+        jsonRead.endArray()
+        return listeTuteur
     }
 
 

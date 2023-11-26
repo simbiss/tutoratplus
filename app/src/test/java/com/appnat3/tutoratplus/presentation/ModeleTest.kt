@@ -4,7 +4,6 @@ import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
-import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonneeHTTP
 import kotlinx.coroutines.newSingleThreadContext
 import org.junit.Assert.*
 import org.junit.Test
@@ -61,15 +60,15 @@ class ModeleTest {
     @Test
     fun `Étant donné un modèle nouvellement instancié, losqu'on veux afficher la liste des noms des tuteurs, alors on obtient la liste des noms différent tuteurs`(){
         //Mise en place
-        val modele = Modele.Companion
+        val modele : Modele.Companion = Mockito.mock( Modele.Companion::class.java )
         val listeDesTuteurs_attendu = mutableListOf<Tuteur>()
 
 
-        var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", arrayOf())
-        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", arrayOf())
-        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", arrayOf())
-        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", arrayOf())
-        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau", arrayOf())
+        var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", mutableListOf())
+        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", mutableListOf())
+        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", mutableListOf())
+        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", mutableListOf())
+        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau", mutableListOf())
 
         listeDesTuteurs_attendu.add(tuteur1)
         listeDesTuteurs_attendu.add(tuteur2)

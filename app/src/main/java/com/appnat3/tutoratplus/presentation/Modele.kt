@@ -73,10 +73,16 @@ class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
          */
 //    var listeTuteurs = mutableListOf<Tuteur>()
 
-
+        /*
         fun retourListeTuteur(): List<Tuteur> {
             return _source.obtenirlisteTuteur()
         }
+         */
+        fun retourListeTuteur(): List<Tuteur> {
+            return sourceHttp.obtenirListeTuteurs()
+        }
+
+
 
         /**
          * initialisation information login tuteur
