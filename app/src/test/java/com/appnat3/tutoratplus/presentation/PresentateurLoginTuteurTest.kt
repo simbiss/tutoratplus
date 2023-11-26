@@ -38,4 +38,18 @@ class PresentateurLoginTuteurTest {
         //appel de la méthode à tester
         assertEquals(reponseAttandu, reponseObtenu)
     }
+
+    @Test
+    fun `étant donné un présentateur nouvellement instancié pour une connexion d'un utilisateur, lorsqu'on saisit un nom d'utilisateur valide et un mot de passe non valide, on obtient la réponse false`() {
+        //mise en place
+        val mockVue = Mockito.mock(VueLoginTuteur::class.java)
+        val presentateur = PresentateurLoginTuteur(mockVue)
+        val reponseAttandu = false
+
+        //prévoit l'entrée à saisir
+        val reponseObtenu = presentateur.traiterValidationInfoLogin("mohamed", "nonValide123")
+
+        //appel de la méthode à tester
+        assertEquals(reponseAttandu, reponseObtenu)
+    }
 }
