@@ -39,6 +39,24 @@ class PresentteurListeTuteurTest {
         }
     }
 
+    @Test
+    fun `étant donné un présentateur nouvellement instancié, losqu'on choisi le tuteur "Mohamed Fatene" le présentateur prend le choix de selection et le transmet au modèle`(){
+        //Mise en place
+        val mockVue = mock(VueListeTuteurs::class.java)
+        val presentateur = PresentateurListeTuteur(mockVue)
+        val modele = Modele.Companion
+        val recuperationAttandu = Tuteur(1,"Mohamed Fatene", "programmation", arrayOf())
+        var recuperationObtenus :Tuteur? = null
+
+        // Prévoit l'entrée à saisir
+        presentateur.recuperationTuteur(Tuteur(1,"Mohamed Fatene", "programmation", arrayOf()))
+        recuperationObtenus = modele.tuteurSelectionne
+
+        // Appel de la méthode à tester
+        assertEquals(recuperationAttandu.nomTuteur, recuperationObtenus?.nomTuteur)
+
+    }
+
 
 
 }
