@@ -36,7 +36,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
     //ListeCours------------------------------------------------------------------------------------
     fun obtenirListeCours():List<Cours>{
-        val url = "https://8ecb8b23-ca98-4584-8a0d-0dccfa014a81.mock.pstmn.io/listeCours"
+        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/listeCours"
 
         val result = connectionHttpRequest(url)
         try {
@@ -83,7 +83,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     //ListeTuteurs------------------------------------------------------------------------------------
 
     fun obtenirListeTuteurs():List<Tuteur>{
-        val url = "https://8ecb8b23-ca98-4584-8a0d-0dccfa014a81.mock.pstmn.io/listeTuteur"
+        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/listeTuteurs"
 
         val result = connectionHttpRequest(url)
         try {
