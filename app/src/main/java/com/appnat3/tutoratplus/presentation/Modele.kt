@@ -13,41 +13,46 @@ import java.time.LocalTime
 
 
 @RequiresApi(Build.VERSION_CODES.O)
-class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
+class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _source:  SourceDeDonnees = SourceBidon()) {
+    fun retourListeDesCoursHttpTest(): List<Cours> {
+        return source.obtenirListeCours()
+    }
 
+    fun retourListeTuteurHTTPTest(): List<Tuteur> {
+        return source.obtenirListeTuteurs()
+    }
+
+    fun retourListInfoLoginTest(): List<InfoLogin> {
+        return _source.obtenirListeInfoLogin()
+    }
 
 
     companion object {
-        /*var instance: Modele? = null
-        fun getInstance(): Modele {
-            if (instance == null) {
-                instance = Modele()
-            }
-            return instance as Modele
-        }*/
-
-        val sourceHttp = SourceDeDonneeHTTP (this)
-
-        val source: SourceDeDonnees = SourceBidon()
-        private var _source: SourceDeDonnees = source
-
+        //Déclaration de variables----------------------------------
+        var instance = Modele()
+        val sourceHttp = instance.source
+        private val _source = instance._source
         var ouvertureSessionTuteur: Tuteur? = null
         var tuteurSelectionne: Tuteur? = null
-
         var daInfoPerso: String? = null
         var prenomInfoPerso: String? = null
         var nomInfoPerso: String? = null
         var courrielInfoPerso: String? = null
+        var coursSelectionne: Cours? = null
+        var listeDesCours = mutableListOf<Cours>()
+        var listeTuteurs = mutableListOf<Tuteur>()
+        var dateSelected: LocalDate? = null
+        var heureSelectionne: LocalTime? = null
 
 
 
-
+        //Méthodes  ----------------------------------
 
         /**
          * initialisation des different cours de tutorat
          */
 
-        var coursSelectionne: Cours? = null
+
 
         fun retourCoursSelectionne(): Cours? {
             return coursSelectionne
@@ -61,7 +66,7 @@ class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
       //      return _source.obtenirListeDesCours()
       //  }
 
-        var listeDesCours = mutableListOf<Cours>()
+
         fun retourListeDesCours(): List<Cours>{
             listeDesCours = sourceHttp.obtenirListeCours().toMutableList()
             return listeDesCours
@@ -71,13 +76,13 @@ class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
         /**
          * initialisation des different cours de tutorat
          */
-        var listeTuteurs = mutableListOf<Tuteur>()
 
-        /*
-        fun retourListeTuteur(): List<Tuteur> {
+
+
+        fun retourListeTuteurBidon(): List<Tuteur> {
             return _source.obtenirlisteTuteur()
         }
-         */
+
         fun retourListeTuteur(): List<Tuteur> {
             listeTuteurs =  sourceHttp.obtenirListeTuteurs().toMutableList()
             return  listeTuteurs
@@ -93,18 +98,6 @@ class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
             return _source.obtenirListeInfoLogin()
         }
 
-        /**
-         * information sur l'utilisateur qui login
-         */
-
-        //var ouvertureSessionTuteur: Tuteur? = null  // a d.placer dans la source bonfd
-        var test: String? = null
-        var testhardCode = "Hellow"
-
-
-        /**
-         * initialisation des variable d'informations personnelles
-         */
 
 
         /**
@@ -142,11 +135,8 @@ class Modele(source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
             return heureSelectionne
         }
 
-        /**
-         * initialisation des variable pour selection de date (Calendrier)
-         */
-        var dateSelected: LocalDate? = null
-        var heureSelectionne: LocalTime? = null
+
+
 
     }
 }
