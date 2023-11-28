@@ -41,7 +41,6 @@ class VuePagePrincipalTuteur : Fragment() {
             présentateur?.effectuerNavigationPageDispo()
         }
 
-
         //val test = présentateur?.testprint()//test
         //val test2 = présentateur?.testHellow()//test
 

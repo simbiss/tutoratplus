@@ -2,7 +2,6 @@ package com.appnat3.tutoratplus.sourceDeDonnees
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
@@ -15,6 +14,8 @@ class SourceBidon : SourceDeDonnees {
     /**
      * initialisation des different cours de tutorat
      */
+
+    /*
     var listeDesCours = mutableListOf<Cours>()
 
     init {
@@ -34,6 +35,7 @@ class SourceBidon : SourceDeDonnees {
     override fun obtenirListeDesCours():List<Cours>{
         return listeDesCours
     }
+    */
 
     /**
      * Création des different disponibilités
@@ -83,14 +85,14 @@ class SourceBidon : SourceDeDonnees {
         LocalTime.of(16, 30)
     )
 
-    val ListedisponibiliteTuteur1: Array<Disponibilite> = arrayOf(
+    val ListedisponibiliteTuteur1: MutableList<Disponibilite> = mutableListOf<Disponibilite>(
         Disponibilite(date1, listeDisponibiliteHeure1),
         Disponibilite(date2, listeDisponibiliteHeure2),
         Disponibilite(date3, listeDisponibiliteHeure3),
         Disponibilite(date4, listeDisponibiliteHeure4),
         Disponibilite(date5, listeDisponibiliteHeure5)
     )
-    val ListedisponibiliteTuteur2: Array<Disponibilite> = arrayOf(
+    val ListedisponibiliteTuteur2: MutableList<Disponibilite> = mutableListOf<Disponibilite>(
         Disponibilite(date1, listeDisponibiliteHeure1),
         Disponibilite(date2, listeDisponibiliteHeure2),
         Disponibilite(date3, listeDisponibiliteHeure3),
@@ -98,21 +100,21 @@ class SourceBidon : SourceDeDonnees {
         Disponibilite(date5, listeDisponibiliteHeure5)
     )
 
-    val ListedisponibiliteTuteur3: Array<Disponibilite> = arrayOf(
+    val ListedisponibiliteTuteur3: MutableList<Disponibilite> = mutableListOf<Disponibilite>(
         Disponibilite(date1, listeDisponibiliteHeure1),
         Disponibilite(date2, listeDisponibiliteHeure2),
         Disponibilite(date3, listeDisponibiliteHeure3),
         Disponibilite(date4, listeDisponibiliteHeure4),
         Disponibilite(date5, listeDisponibiliteHeure5)
     )
-    val ListedisponibiliteTuteur4: Array<Disponibilite> = arrayOf(
+    val ListedisponibiliteTuteur4: MutableList<Disponibilite> = mutableListOf<Disponibilite>(
         Disponibilite(date1, listeDisponibiliteHeure1),
         Disponibilite(date2, listeDisponibiliteHeure2),
         Disponibilite(date3, listeDisponibiliteHeure3),
         Disponibilite(date4, listeDisponibiliteHeure4),
         Disponibilite(date5, listeDisponibiliteHeure5)
     )
-    val ListedisponibiliteTuteur5: Array<Disponibilite> = arrayOf(
+    val ListedisponibiliteTuteur5: MutableList<Disponibilite> = mutableListOf<Disponibilite>(
         Disponibilite(date1, listeDisponibiliteHeure1),
         Disponibilite(date2, listeDisponibiliteHeure2),
         Disponibilite(date3, listeDisponibiliteHeure3),
@@ -127,10 +129,10 @@ class SourceBidon : SourceDeDonnees {
 
     init {
         var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", ListedisponibiliteTuteur1)
-        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "reseau", ListedisponibiliteTuteur2)
+        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "réseau", ListedisponibiliteTuteur2)
         var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", ListedisponibiliteTuteur3)
         var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", ListedisponibiliteTuteur4)
-        var tuteur5 = Tuteur(5,"Antoine Lépine", "reseau", ListedisponibiliteTuteur5)
+        var tuteur5 = Tuteur(5,"Antoine Lépine", "réseau", ListedisponibiliteTuteur5)
 
         listeTuteurs.add(tuteur1)
         listeTuteurs.add(tuteur2)
