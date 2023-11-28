@@ -3,6 +3,7 @@ package com.appnat3.tutoratplus.presentation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceBidon
@@ -42,10 +43,22 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         var listeTuteurs = mutableListOf<Tuteur>()
         var dateSelected: LocalDate? = null
         var heureSelectionne: LocalTime? = null
+        var listeDispoTuteur = mutableListOf<DispoTuteur>()
 
+
+        /**
+         * sauvegarde date et heure dispo tuteur
+         */
+        var idtuteurDispo:Int = 0
+        var jour:Int = 0
+        var mois:Int = 0
+        var annee:Int = 0
+        var heure:Int = 0
+        var minute:Int = 0
 
 
         //Méthodes  ----------------------------------
+
 
         /**
          * initialisation des different cours de tutorat

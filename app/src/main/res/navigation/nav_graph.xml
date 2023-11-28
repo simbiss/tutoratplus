@@ -40,13 +40,7 @@
         <action
             android:id="@+id/action_liste_tuteur_to_menu_principal"
             app:destination="@id/menu_principal" />
-    </fragment><![CDATA[
-
-
-        tools:layout="@layout/fragment_page_information" >
-
-
-    ]]>
+    </fragment>
     <fragment
         android:id="@+id/menu_principal"
         android:name="com.appnat3.tutoratplus.presentation.menu.menu_principal"

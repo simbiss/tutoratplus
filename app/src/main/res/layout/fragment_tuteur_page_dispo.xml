@@ -19,11 +19,20 @@
         app:layout_constraintTop_toBottomOf="@+id/ligneNoire"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/btnRetourMenuTuteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_choisirDate"
+        android:text="Retour"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/txt_tempsChoisi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="376dp"
+        android:layout_centerInParent="true"
         android:gravity="center_horizontal|center_vertical"
         android:text="@tools:sample/date/ddmmyy"
         android:textSize="22sp"
