@@ -44,11 +44,11 @@ class PresentateurListeCoursTest {
         val mockVue = mock(VueListeCours::class.java)
         val presentateur = PresentateurListeCours(mockVue)
         val modele = Modele.Companion
-        val recuperationAttandu = listeDesCours[0]
+        val recuperationAttandu = listeDesCours[3]
         var recuperationObtenus :Cours? = null
 
         // Prévoit l'entrée à saisir
-        presentateur.recuperationCours(listeDesCours[0])
+        presentateur.recuperationCours(listeDesCours[3])
         recuperationObtenus = modele.coursSelectionne
 
         // Appel de la méthode à tester

@@ -15,8 +15,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
+import com.appnat3.tutoratplus.presentation.loginTuteur.IConractVuePresentateurLoginTuteur.IVueLoginTuteur
 
-class VueLoginTuteur : Fragment() {
+class VueLoginTuteur : Fragment(), IVueLoginTuteur{
     var présentateur: PresentateurLoginTuteur? = null
     lateinit var navController: NavController
     lateinit var btnAcceuil: TextView

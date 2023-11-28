@@ -15,9 +15,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.presentation.informationPersonnelle.IContractVuePresentateurInfoPersonnelle.IVueInfoPersonnelle
 
 
-class VueInformationPersonnlle : Fragment() {
+class VueInformationPersonnlle : Fragment(), IVueInfoPersonnelle{
     //Déclaration de variables
      val modele :Modele = Modele()
     lateinit var navController: NavController
