@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.pageTuteurDispo
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
@@ -40,6 +41,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
     var sauvegardeHeure = 0
     var sauvegardeMinute = 0
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,10 +63,8 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
 
         btn_rdv = vue.findViewById(R.id.btn_choisirDate)
         txt_rdv = vue.findViewById(R.id.txt_tempsChoisi)
-        btn_retourMenu = vue.findViewById(R.id.btnRetourMenuTuteur)
-        btn_retourMenu.setOnClickListener {
-            présentateur?.effectuerNavigationPageTuteur()
-        }
+
+
         dateChoisi()
 
 
@@ -123,8 +123,6 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         navController.navigate(R.id.action_tuteur_page_dispo_to_page_principal_tuteur)
     }
 
-    fun naviguerVerspage_principal_tuteur(){
-        navController.navigate(R.id.action_tuteur_page_dispo_to_page_principal_tuteur)
-    }
+
 
 }

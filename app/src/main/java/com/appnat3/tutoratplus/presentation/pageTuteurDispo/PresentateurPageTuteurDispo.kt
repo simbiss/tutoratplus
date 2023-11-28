@@ -25,9 +25,7 @@ class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
         //modele.minute = minute
         modele.listeDispoTuteur.add(DispoTuteur(idTuteurLogger!!, jour,mois,annee,heure,minute))
     }
-    fun effectuerNavigationPageTuteur(){
-        vue.naviguerVerspage_principal_tuteur()
-    }
+
 }
 
 
