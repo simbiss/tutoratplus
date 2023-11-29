@@ -8,7 +8,6 @@ import com.appnat3.tutoratplus.sourceDeDonnees.SourceBidon
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonneeHTTP
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonnees
 import kotlinx.coroutines.newSingleThreadContext
-import okhttp3.OkHttpClient
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith

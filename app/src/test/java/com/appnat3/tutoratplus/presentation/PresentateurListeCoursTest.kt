@@ -24,7 +24,7 @@ class PresentateurListeCoursTest {
     }
 
     @Test
-    fun `étant donné un présentateur nouvellement instancié, lorsqu'on veux choisir un cours pour faire un demande de tutotat, la liste de cours s'affiche`(){
+    suspend fun `étant donné un présentateur nouvellement instancié, lorsqu'on veux choisir un cours pour faire un demande de tutotat, la liste de cours s'affiche`(){
         //Mise en place
         val mockVue = mock(VueListeCours::class.java)
         val presentateur = PresentateurListeCours(mockVue)
