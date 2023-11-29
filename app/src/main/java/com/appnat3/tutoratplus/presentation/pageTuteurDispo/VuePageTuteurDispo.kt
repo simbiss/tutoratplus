@@ -39,7 +39,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
     var sauvegardeAnnee = 0
     var sauvegardeHeure = 0
     var sauvegardeMinute = 0
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

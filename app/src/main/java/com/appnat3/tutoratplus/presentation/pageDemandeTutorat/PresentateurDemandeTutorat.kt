@@ -9,13 +9,21 @@ class PresentateurDemandeTutorat(var vue: VueDemandeTutorat) :IPresentateurDeman
     var modele = Modele.Companion
     var listeDemandeTutorat = mutableListOf<DemandeTutorat>()
 
-    fun traiterListeTuteur():List<DemandeTutorat>{
+    override fun traiterListeTuteur():List<DemandeTutorat>{
 
         for (item in modele.listeDemandeTutorat){
             if(item.tuteurChoisi == modele.tuteurSelectionne)
                 listeDemandeTutorat += item
         }
         return listeDemandeTutorat
+    }
+
+    fun effectuerNaviguationAcceuil(){
+        vue.navigationVersAcceuil()
+    }
+
+    fun effectuerNavigationPagePrincipalTuteur(){
+        vue.navigationVersVersPagePrincipalTuteur()
     }
 
 }

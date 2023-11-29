@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.ListView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -21,7 +23,8 @@ class VueDemandeTutorat : Fragment(),IVueDemandeTutorat {
     lateinit var adapter: ArrayAdapter<DemandeTutorat>
     lateinit var navController: NavController
     lateinit var listeDemandeTutorat : ListView
-
+    lateinit var btn_retour : LinearLayout
+    lateinit var btn_acceuil: TextView
 
 
     override fun onCreateView(
@@ -31,6 +34,15 @@ class VueDemandeTutorat : Fragment(),IVueDemandeTutorat {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_demande_tutorat, container, false)
         présentateur = PresentateurDemandeTutorat(this)
+        btn_retour = vue.findViewById(R.id.buttonRetour)
+        btn_retour.setOnClickListener{
+            présentateur?.effectuerNavigationPagePrincipalTuteur()
+        }
+
+        btn_acceuil = vue.findViewById(R.id.textAcceuil)
+        btn_acceuil.setOnClickListener {
+            présentateur?.effectuerNaviguationAcceuil()
+        }
 
         listeDemandeTutorat = vue.findViewById(R.id.listeDemandeTutorat)
 
@@ -44,8 +56,16 @@ class VueDemandeTutorat : Fragment(),IVueDemandeTutorat {
 
     }
 
-    fun initialiserListeDemandeTuteur(liste: List<DemandeTutorat>?){
+    override fun initialiserListeDemandeTuteur(liste: List<DemandeTutorat>?){
         adapter = ArrayAdapter<DemandeTutorat>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
         this.listeDemandeTutorat.setAdapter(adapter)
+    }
+
+    fun navigationVersAcceuil(){
+        navController.navigate(R.id.action_demande_tutorat_to_menu_principal)
+    }
+
+    fun navigationVersVersPagePrincipalTuteur() {
+        navController.navigate(R.id.action_demande_tutorat_to_page_principal_tuteur)
     }
 }

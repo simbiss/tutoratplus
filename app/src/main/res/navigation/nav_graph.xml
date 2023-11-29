@@ -139,7 +139,14 @@
         android:id="@+id/demande_tutorat"
         android:name="com.appnat3.tutoratplus.presentation.pageDemandeTutorat.VueDemandeTutorat"
         android:label="fragment_demande_tutorat"
-        tools:layout="@layout/fragment_demande_tutorat" />
+        tools:layout="@layout/fragment_demande_tutorat" >
+        <action
+            android:id="@+id/action_demande_tutorat_to_menu_principal"
+            app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_demande_tutorat_to_page_principal_tuteur"
+            app:destination="@id/page_principal_tuteur" />
+    </fragment>
 </navigation>
 
 
