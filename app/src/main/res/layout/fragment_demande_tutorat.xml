@@ -12,9 +12,11 @@
         android:id="@+id/buttonRetour"
         android:layout_width="80dp"
         android:layout_height="28dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:layout_width="32dp"
@@ -33,23 +35,27 @@
         android:id="@+id/textTitre"
         android:layout_width="72dp"
         android:layout_height="19dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
         android:text="Tutorat+"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="19dp" />
+        app:layout_constraintStart_toEndOf="@+id/buttonRetour"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textAcceuil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:text="Acceuil"
         android:textColor="@color/bleu"
         android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="343dp"
-        tools:layout_editor_absoluteY="19dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ligneNoire"
@@ -68,21 +74,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="32dp"
         android:paddingTop="0dp"
         android:paddingBottom="20dp"
         android:text="Demande Tutorat"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitre"
+        tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/listeDemandeTutorat"
         android:layout_width="412dp"
         android:layout_height="579dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Demande"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="151dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
