@@ -80,7 +80,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     }
 
     fun navigationVers_demande_tutorat(){
-        navController.navigate(R.id.action_page_principal_tuteur_to_demande_tutorat)
+        navController.navigate(R.id.action_page_principal_tuteur_to_demande_tutorat2)
     }
 
 

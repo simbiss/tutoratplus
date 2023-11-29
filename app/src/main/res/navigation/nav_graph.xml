@@ -108,7 +108,7 @@
             android:id="@+id/action_page_principal_tuteur_to_tuteur_page_dispo"
             app:destination="@id/tuteur_page_dispo" />
         <action
-            android:id="@+id/action_page_principal_tuteur_to_demande_tutorat"
+            android:id="@+id/action_page_principal_tuteur_to_demande_tutorat2"
             app:destination="@id/demande_tutorat" />
     </fragment>
     <fragment
@@ -137,7 +137,7 @@
     </fragment>
     <fragment
         android:id="@+id/demande_tutorat"
-        android:name="com.appnat3.tutoratplus.demande_tutorat"
+        android:name="com.appnat3.tutoratplus.presentation.pageDemandeTutorat.VueDemandeTutorat"
         android:label="fragment_demande_tutorat"
         tools:layout="@layout/fragment_demande_tutorat" />
 </navigation>

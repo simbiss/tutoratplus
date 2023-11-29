@@ -3,6 +3,7 @@ package com.appnat3.tutoratplus.presentation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.DemandeTutorat
 import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
@@ -93,8 +94,8 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
          */
 
         //var ouvertureSessionTuteur: Tuteur? = null  // a d.placer dans la source bonfd
-        var test: String? = null
-        var testhardCode = "Hellow"
+
+
 
 
         /**
@@ -142,6 +143,12 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
          */
         var dateSelected: LocalDate? = null
         var heureSelectionne: LocalTime? = null
+
+
+        /**
+         * initialisation des variable pour les demandes de tutorat
+         */
+        var listeDemandeTutorat = mutableListOf<DemandeTutorat>()
 
     }
 }

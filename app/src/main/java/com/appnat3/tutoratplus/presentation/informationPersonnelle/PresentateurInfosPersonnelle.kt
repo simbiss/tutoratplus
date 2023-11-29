@@ -2,6 +2,8 @@ package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import com.appnat3.tutoratplus.domaine.entite.DemandeTutorat
+import com.appnat3.tutoratplus.domaine.entite.InfoPersonnelle
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.informationPersonnelle.IContractVuePresentateurInfoPersonnelle.IPresentateurInfoPersonnelle
 
@@ -19,6 +21,11 @@ class PresentateurInfosPersonnelle(var vue: VueInformationPersonnlle): IPresenta
         modele.prenomInfoPerso = prenom
         modele.nomInfoPerso = nom
         modele.courrielInfoPerso = courriel
+
+        var tuteurSelect= modele.tuteurSelectionne
+        var infoPersonnelle = InfoPersonnelle(da, prenom, nom, courriel)
+        var nouvelleDemande = DemandeTutorat(infoPersonnelle, tuteurSelect!!)
+        modele.listeDemandeTutorat.add(nouvelleDemande)
     }
 
     fun effectuerNaviguationCalendrier() {
