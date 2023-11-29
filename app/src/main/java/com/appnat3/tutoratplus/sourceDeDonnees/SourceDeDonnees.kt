@@ -22,12 +22,4 @@ interface SourceDeDonnees {
     fun obtenirlisteTuteur():List<Tuteur>{
         return obtenirlisteTuteur()
     }
-
-
-
-
-
-
-
-
 }

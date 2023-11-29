@@ -66,7 +66,8 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)              // Obtient le NavController pour la navigation
-        initialiserListeTuteurs(présentateur?.traiterListeTuteurs())        //lister les tuteurs
+        //initialiserListeTuteurs(présentateur?.traiterListeTuteurs())        //lister les tuteurs
+        présentateur?.traiter_affichageListeTuteur()
     }
 
     override fun initialiserListeTuteurs(liste: Array<Tuteur>?){

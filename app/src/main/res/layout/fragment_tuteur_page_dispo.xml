@@ -72,36 +72,29 @@
         tools:ignore="MissingConstraints" />
     <!-- ################################ Titre  ########################################## -->
 
+
     <Button
         android:id="@+id/btn_choisirDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
         android:text="Ajouter Disponibilité"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ligneNoire"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnRetourMenuTuteur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_choisirDate"
-        android:text="Retour"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/txt_tempsChoisi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="376dp"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="200dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@tools:sample/date/ddmmyy"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ligneNoire"
         tools:ignore="MissingConstraints" />

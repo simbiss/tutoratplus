@@ -50,6 +50,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
             présentateur?.effectuerNavigationDemandeTutorat()
         }
 
+
         if (nomTuteurLogger != null) {
             txtNomTuteurLogger.text = "Bienvenue : ${nomTuteurLogger.nomTuteur}"
         }else if(nomTuteurLogger == null) {

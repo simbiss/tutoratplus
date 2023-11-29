@@ -8,34 +8,43 @@ import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceBidon
+import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonneeHTTP
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonnees
 import java.time.LocalDate
 import java.time.LocalTime
 
 
 @RequiresApi(Build.VERSION_CODES.O)
-class Modele(source: SourceDeDonnees = SourceBidon()) {
+class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _source:  SourceDeDonnees = SourceBidon()) {
+    fun retourListeDesCoursHttpTest(): List<Cours> {
+        return source.obtenirListeCours()
+    }
 
+    fun retourListeTuteurHTTPTest(): List<Tuteur> {
+        return source.obtenirListeTuteurs()
+    }
+
+    fun retourListInfoLoginTest(): List<InfoLogin> {
+        return _source.obtenirListeInfoLogin()
+    }
 
     companion object {
-        /*var instance: Modele? = null
-        fun getInstance(): Modele {
-            if (instance == null) {
-                instance = Modele()
-            }
-            return instance as Modele
-        }*/
-
-        val source: SourceDeDonnees = SourceBidon()
-        private var _source: SourceDeDonnees = source
-
+        //Déclaration de variables----------------------------------
+        var instance = Modele()
+        val sourceHttp = instance.source
+        private val _source = instance._source
         var ouvertureSessionTuteur: Tuteur? = null
         var tuteurSelectionne: Tuteur? = null
-
         var daInfoPerso: String? = null
         var prenomInfoPerso: String? = null
         var nomInfoPerso: String? = null
         var courrielInfoPerso: String? = null
+        var coursSelectionne: Cours? = null
+        var listeDesCours = mutableListOf<Cours>()
+        var listeTuteurs = mutableListOf<Tuteur>()
+        var dateSelected: LocalDate? = null
+        var heureSelectionne: LocalTime? = null
+        var listeDispoTuteur = mutableListOf<DispoTuteur>()
 
 
         /**
@@ -48,15 +57,15 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
         var heure:Int = 0
         var minute:Int = 0
 
-        // id jj mm aaaa hh mm
-        var listeDispoTuteur = mutableListOf<DispoTuteur>()
+
+        //Méthodes  ----------------------------------
 
 
         /**
          * initialisation des different cours de tutorat
          */
-        //var listeDesCours = mutableListOf<Cours>()
-        var coursSelectionne: Cours? = null
+
+
 
         fun retourCoursSelectionne(): Cours? {
             return coursSelectionne
@@ -66,20 +75,33 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
         /**
          * Méthode pour retourner tout les cours de tutorat
          */
-        fun retourListeDesCours(): List<Cours> {
-            return _source.obtenirListeDesCours()
+      //  fun retourListeDesCours(): List<Cours> {
+      //      return _source.obtenirListeDesCours()
+      //  }
+
+
+        fun retourListeDesCours(): List<Cours>{
+            listeDesCours = sourceHttp.obtenirListeCours().toMutableList()
+            return listeDesCours
         }
 
 
         /**
          * initialisation des different cours de tutorat
          */
-//    var listeTuteurs = mutableListOf<Tuteur>()
 
 
-        fun retourListeTuteur(): List<Tuteur> {
+
+        fun retourListeTuteurBidon(): List<Tuteur> {
             return _source.obtenirlisteTuteur()
         }
+
+        fun retourListeTuteur(): List<Tuteur> {
+            listeTuteurs =  sourceHttp.obtenirListeTuteurs().toMutableList()
+            return  listeTuteurs
+        }
+
+
 
         /**
          * initialisation information login tuteur
@@ -88,20 +110,6 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
         fun retourListInfoLogin(): List<InfoLogin> {
             return _source.obtenirListeInfoLogin()
         }
-
-        /**
-         * information sur l'utilisateur qui login
-         */
-
-        //var ouvertureSessionTuteur: Tuteur? = null  // a d.placer dans la source bonfd
-
-
-
-
-        /**
-         * initialisation des variable d'informations personnelles
-         */
-
 
         /**
          * méthode pour retourner les informations entrées choisies par l'utilisateur
@@ -137,12 +145,6 @@ class Modele(source: SourceDeDonnees = SourceBidon()) {
         fun retourHeureSelectionne(): LocalTime? {
             return heureSelectionne
         }
-
-        /**
-         * initialisation des variable pour selection de date (Calendrier)
-         */
-        var dateSelected: LocalDate? = null
-        var heureSelectionne: LocalTime? = null
 
 
         /**

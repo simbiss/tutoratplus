@@ -46,10 +46,9 @@ class VueLoginTuteur : Fragment(), IVueLoginTuteur{
         btnAcceuil.setOnClickListener {
             présentateur?.effectuerNavigationAcceuil()
         }
-
         return vue
-
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -57,7 +56,6 @@ class VueLoginTuteur : Fragment(), IVueLoginTuteur{
 
     }
 
-    //
     @RequiresApi(Build.VERSION_CODES.O)
     fun collectInformationLogin(vue :View){
         btnConnection.setOnClickListener {
@@ -75,12 +73,6 @@ class VueLoginTuteur : Fragment(), IVueLoginTuteur{
                 }
             }
         }
-
-
-
-
-
-
 
     fun naviguerVersmenu_principal(){
         navController.navigate(R.id.action_vueLoginTuteur_to_menu_principal)
