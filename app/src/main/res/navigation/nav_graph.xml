@@ -107,6 +107,9 @@
         <action
             android:id="@+id/action_page_principal_tuteur_to_tuteur_page_dispo"
             app:destination="@id/tuteur_page_dispo" />
+        <action
+            android:id="@+id/action_page_principal_tuteur_to_demande_tutorat"
+            app:destination="@id/demande_tutorat" />
     </fragment>
     <fragment
         android:id="@+id/vueLoginTuteur"
@@ -132,6 +135,11 @@
             android:id="@+id/action_tuteur_page_dispo_to_page_principal_tuteur"
             app:destination="@id/page_principal_tuteur" />
     </fragment>
+    <fragment
+        android:id="@+id/demande_tutorat"
+        android:name="com.appnat3.tutoratplus.demande_tutorat"
+        android:label="fragment_demande_tutorat"
+        tools:layout="@layout/fragment_demande_tutorat" />
 </navigation>
 
 

@@ -24,6 +24,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     lateinit var navController: NavController
     lateinit var txtNomTuteurLogger: TextView
     lateinit var btn_rdv: Button
+    lateinit var btn_demandeTutorat: Button
     lateinit var adapter: ArrayAdapter<DispoTuteur>
     lateinit var listeDispo: ListView
 
@@ -43,6 +44,10 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
         btn_rdv = vue.findViewById(R.id.btn_rdv)
         btn_rdv.setOnClickListener {
             présentateur?.effectuerNavigationPageDispo()
+        }
+        btn_demandeTutorat = vue.findViewById(R.id.btn_demande)
+        btn_demandeTutorat.setOnClickListener {
+            présentateur?.effectuerNavigationDemandeTutorat()
         }
 
         if (nomTuteurLogger != null) {
@@ -72,6 +77,10 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
 
     fun navigationVerstuteur_page_dispo(){
         navController.navigate(R.id.action_page_principal_tuteur_to_tuteur_page_dispo)
+    }
+
+    fun navigationVers_demande_tutorat(){
+        navController.navigate(R.id.action_page_principal_tuteur_to_demande_tutorat)
     }
 
 

@@ -28,4 +28,8 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresent
         vue.navigationVerstuteur_page_dispo()
     }
 
+    fun effectuerNavigationDemandeTutorat(){
+        vue.navigationVers_demande_tutorat()
+    }
+
 }
