@@ -2,11 +2,8 @@ package com.appnat3.tutoratplus.sourceDeDonnees
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-
 import com.appnat3.tutoratplus.domaine.entite.Cours
-import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
-import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import java.time.LocalDate
 import java.time.LocalTime
@@ -167,6 +164,7 @@ class SourceBidon : SourceDeDonnees {
     /**
      * initialisation information login tuteur
      */
+    /*
     var listeInfoLogin = mutableListOf<InfoLogin>()
 
     init {
@@ -184,7 +182,7 @@ class SourceBidon : SourceDeDonnees {
     }
     override fun obtenirListeInfoLogin(): List<InfoLogin>{
         return listeInfoLogin
-    }
+    }*/
 
 
 
