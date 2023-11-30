@@ -5,6 +5,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import android.util.JsonReader
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
+import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import java.io.StringReader
@@ -196,6 +197,49 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     }
 
 
+    //ListeInfoLogin---------------------------------------------------------------------
+    fun obtenirListeInfoLogin():List<InfoLogin>{
+        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/listeInfoLogin"
+
+        val result = connectionHttpRequest(url)
+        try {
+            println("HTTP Request Result : $result")
+        }catch (e: Exception){
+            println("ERREUR: ${e.message}")
+        }
+        return retourListeInfoLogin(result)
+    }
+
+
+    private fun retourListeInfoLogin(json : String):List<InfoLogin>{
+        var jsonRead = JsonReader(StringReader(json))
+        return lectureInfoLogin(jsonRead)
+    }
+
+    private fun lectureInfoLogin(jsonRead:JsonReader): List<InfoLogin>{
+
+        var listeInfoLogin = mutableListOf<InfoLogin>()
+        var nomUtilisateur: String = ""
+        var motDePasse : String = ""
+        jsonRead.beginArray()
+        while (jsonRead.hasNext()){
+            jsonRead.beginObject()
+            while (jsonRead.hasNext()) {
+                val name = jsonRead.nextName()
+                when (name) {
+                    "nomUtilisateur" -> nomUtilisateur = jsonRead.nextString()
+                    "motDePasse" -> motDePasse = jsonRead.nextString()
+                    else -> jsonRead.skipValue()
+                }
+            }
+            jsonRead.endObject()
+            var nouveauLogin = InfoLogin(nomUtilisateur,motDePasse)
+            listeInfoLogin.add(nouveauLogin)
+        }
+        jsonRead.endArray()
+
+        return listeInfoLogin
+    }
 
 
 
