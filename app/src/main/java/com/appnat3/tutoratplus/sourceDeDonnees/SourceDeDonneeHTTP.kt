@@ -15,7 +15,6 @@ import java.time.LocalTime
 
 class SourceDeDonneeHTTP(var context: Modele.Companion){
 
-    //var listeCourt = mutableListOf<Cours>()
 
     fun connectionHttpRequest(url:String):String{
         val client = OkHttpClient()
@@ -59,8 +58,8 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
     private fun lectureListeCoursJson(jsonRead:JsonReader):List<Cours>{
         var listeDesCours = mutableListOf<Cours>()
-        var nomCours: String = ""
-        var nomProgramme : String = ""
+        var nomCours = ""
+        var nomProgramme = ""
         jsonRead.beginArray()
             while (jsonRead.hasNext()){
                 jsonRead.beginObject()
@@ -107,25 +106,24 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
         //Déclaration de variables---------------------------
         var listeTuteur = mutableListOf<Tuteur>()
-        //println(jsonRead)
 
         //Traitements---------------------------
         jsonRead.beginArray()  //listeDisponibilités
         while (jsonRead.hasNext()){
-            var nomTuteur: String = ""
-            var programme : String = ""
-            var id: Int = 0
+            var nomTuteur = ""
+            var programme = ""
+            var id = 0
             lateinit var tuteur:Tuteur
             var date: LocalDate = LocalDate.now()
-            var heures: MutableList<LocalTime> = mutableListOf<LocalTime>()
-            var disponibilite:Disponibilite = Disponibilite(date, heures)
-            var heure :LocalTime = LocalTime.NOON
+            var heures: MutableList<LocalTime>
+            var disponibilite:Disponibilite
+            var heure :LocalTime
             var listedisponibilites = mutableListOf<Disponibilite>()
-            var year:Int = 0
-            var month:Int = 0
-            var dayOfMonth:Int = 0
-            var hour:Int = 0
-            var minutes:Int = 0
+            var year = 0
+            var month = 0
+            var dayOfMonth = 0
+            var hour = 0
+            var minutes = 0
             jsonRead.beginObject()  //Tuteur
             while (jsonRead.hasNext()) {
                 val cle = jsonRead.nextName()
@@ -219,8 +217,8 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     private fun lectureInfoLogin(jsonRead:JsonReader): List<InfoLogin>{
 
         var listeInfoLogin = mutableListOf<InfoLogin>()
-        var nomUtilisateur: String = ""
-        var motDePasse : String = ""
+        var nomUtilisateur = ""
+        var motDePasse = ""
         jsonRead.beginArray()
         while (jsonRead.hasNext()){
             jsonRead.beginObject()
