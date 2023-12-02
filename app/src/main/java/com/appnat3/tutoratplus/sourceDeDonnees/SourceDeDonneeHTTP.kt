@@ -196,9 +196,4 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     }
 
 
-
-
-
-
-
 }

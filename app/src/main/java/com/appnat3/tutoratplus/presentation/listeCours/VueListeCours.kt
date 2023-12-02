@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.listeCours
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -34,7 +32,7 @@ class VueListeCours : Fragment(), IVueListeCours{
     val modele: Modele = Modele()
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,10 +69,9 @@ class VueListeCours : Fragment(), IVueListeCours{
         return vue
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         navController = Navigation.findNavController(view)          // Obtient le NavController pour la navigation
         //initialiserListeCours(présentateur?.traiterListeCours())        //lister les cours
