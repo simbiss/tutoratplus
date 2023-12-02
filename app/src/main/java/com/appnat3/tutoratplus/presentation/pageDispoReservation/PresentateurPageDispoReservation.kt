@@ -9,8 +9,22 @@ class PresentateurPageDispoReservation(var vue : VuePageDispoReservation): IPres
 
     val modele = Modele.Companion
     private var job: Job? = null
-    var listeDisponibiliteTuteur = arrayOf<DispoTuteur>()
+    var listeDisponibiliteTuteurSelectionnee = arrayListOf<DispoTuteur>()
 
+    override fun traiterAffichageTuteurselectionner(): String {
+        val tuteurSelectionnee = modele.tuteurSelectionne
+        return tuteurSelectionnee!!.nomTuteur
+    }
+
+    fun traiterAffichageDispoTuteurSelectionnee(): List<DispoTuteur> {
+        var idTuteur = modele.tuteurSelectionne?.id
+        for(item in modele.listeDispoTuteur){
+            if (item.idTuteur == idTuteur){
+                listeDisponibiliteTuteurSelectionnee+=item
+            }
+        }
+        return listeDisponibiliteTuteurSelectionnee
+    }
 
 
 

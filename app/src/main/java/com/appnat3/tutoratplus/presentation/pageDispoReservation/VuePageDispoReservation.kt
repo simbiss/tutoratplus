@@ -20,8 +20,9 @@ class VuePageDispoReservation : Fragment(), IVuePageDispoReservation{
     //Déclaration de variables
     var présentateur: PresentateurPageDispoReservation? = null
     val modele = Modele.Companion
-    lateinit var liste_des_dispo: ListView
     lateinit var navController: NavController
+    lateinit var liste_des_dispo: ListView
+    lateinit var nomTuteurSelectionnee:TextView
     lateinit var btnAcceuil: TextView
     lateinit var btnRetour: LinearLayout
     lateinit var adapter: ArrayAdapter<DispoTuteur>
@@ -35,16 +36,26 @@ class VuePageDispoReservation : Fragment(), IVuePageDispoReservation{
         val vue = inflater.inflate(R.layout.fragment_page_dispo_reservation, container, false)
         présentateur = PresentateurPageDispoReservation(this)
 
+        nomTuteurSelectionnee = vue.findViewById(R.id.nomTuteurDispo)
+        nomTuteurSelectionnee.text = présentateur?.traiterAffichageTuteurselectionner()
 
+        liste_des_dispo = vue.findViewById(R.id.liste_dispo)
+        liste_des_dispo.setOnItemClickListener{ parent, view, position, id ->
+
+        }
         return vue
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         navController = Navigation.findNavController(view)          // Obtient le NavController pour la navigation
+        initialiserListeDispoTuteurSelectionnee(présentateur?.traiterAffichageDispoTuteurSelectionnee()!!)
     }
 
+    override fun initialiserListeDispoTuteurSelectionnee(liste : List<DispoTuteur>){
+        adapter = ArrayAdapter<DispoTuteur>(requireContext(),android.R.layout.simple_list_item_1,liste )
+        this.liste_des_dispo.setAdapter(adapter)
+    }
 
     fun navigerVersmenu_Principal(){
         navController.navigate(R.id.action_page_dispo_reservation_to_menu_principal)

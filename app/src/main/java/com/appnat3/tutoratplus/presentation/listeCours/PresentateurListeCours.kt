@@ -16,7 +16,7 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
     val modele = Modele.Companion
     private var job: Job? = null
     var listeCours = arrayOf<Cours>()
-    @RequiresApi(Build.VERSION_CODES.O)
+
 
     fun traiter_démarrage(){
         job = CoroutineScope( Dispatchers.IO ).launch {
