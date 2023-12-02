@@ -14,16 +14,14 @@ class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
         vue.navigationVersAcceuil()
     }
 
-    var idTuteurLogger = modele.ouvertureSessionTuteur?.id
-
+    fun incrementationIdDispo(): Int{       //méthode pour donner un le id prochain id disponible a une nouvelle dispo tuteur
+        val idSuivant = modele.listeDispoTuteur.size + 1
+        return idSuivant
+    }
 
     fun recuperationTuteur(jour:Int, mois:Int, annee:Int, heure:Int, minute:Int){
-        //modele.jour = jour
-        //modele.mois = mois
-        //modele.annee = annee
-        //modele.heure = heure
-        //modele.minute = minute
-        modele.listeDispoTuteur.add(DispoTuteur(idTuteurLogger!!, jour,mois,annee,heure,minute))
+        val idTuteurLogger = modele.ouvertureSessionTuteur?.id
+        modele.listeDispoTuteur.add(DispoTuteur(incrementationIdDispo(),idTuteurLogger!!, jour,mois,annee,heure,minute))
     }
 
 }
