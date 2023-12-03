@@ -1,7 +1,5 @@
 package com.appnat3.tutoratplus.presentation.listeTuteur
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import kotlinx.coroutines.CoroutineScope
@@ -16,7 +14,6 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs):
     private var job: Job? = null
     var listeTuteurs = arrayOf<Tuteur>()
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override suspend fun traiterListeTuteurs():Array<Tuteur>{
         for(tuteur in modele.retourListeTuteur()) {
             if (tuteur.programme == modele.coursSelectionne?.programme)
@@ -25,7 +22,6 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs):
         return listeTuteurs
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun recuperationTuteur(item:Tuteur){
         modele.tuteurSelectionne = item
     }
@@ -50,5 +46,9 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs):
 
     fun effectuerNavigationAccueil(){
         vue.navigationVersAcceuil()
+    }
+
+    fun effectuerNavigationListeDispoTuteur(){
+        vue.navigationVersListeDispoTuteur()
     }
 }

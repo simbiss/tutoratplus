@@ -17,7 +17,7 @@ class PresentateurPageDispoReservation(var vue : VuePageDispoReservation): IPres
     }
 
     fun traiterAffichageDispoTuteurSelectionnee(): List<DispoTuteur> {
-        var idTuteur = modele.tuteurSelectionne?.id
+        val idTuteur = modele.tuteurSelectionne?.id
         for(item in modele.listeDispoTuteur){
             if (item.idTuteur == idTuteur){
                 listeDisponibiliteTuteurSelectionnee+=item
@@ -30,5 +30,12 @@ class PresentateurPageDispoReservation(var vue : VuePageDispoReservation): IPres
         modele.dispoSelectionnee = item
     }
 
+    fun effectuerNavigationAccueil(){
+        vue.navigerVersmenu_Principal()
+    }
+
+    fun effectuerNavigationVersPageInfoPersonnel(){
+        vue.navigerVersinformation_personnelle()
+    }
 
 }

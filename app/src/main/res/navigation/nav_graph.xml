@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_liste_tuteur_to_menu_principal"
             app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_liste_tuteur_to_page_dispo_reservation"
+            app:destination="@id/page_dispo_reservation" />
     </fragment>
     <fragment
         android:id="@+id/menu_principal"

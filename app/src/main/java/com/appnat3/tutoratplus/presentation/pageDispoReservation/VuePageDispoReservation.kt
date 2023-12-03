@@ -46,7 +46,7 @@ class VuePageDispoReservation : Fragment(), IVuePageDispoReservation{
             if(dispoSelectionnee != null){
                 présentateur?.recuporationDispoSelectionne(dispoSelectionnee)
             }
-            // navigation ...  A termier et implementation de la liste a TERMINER !!!!!!!!!!!!
+            présentateur?.effectuerNavigationVersPageInfoPersonnel()
         }
         return vue
     }
@@ -69,8 +69,4 @@ class VuePageDispoReservation : Fragment(), IVuePageDispoReservation{
     fun navigerVersinformation_personnelle(){
         navController.navigate(R.id.action_page_dispo_reservation_to_informationPersonnlle)
     }
-
-
-
-
 }
