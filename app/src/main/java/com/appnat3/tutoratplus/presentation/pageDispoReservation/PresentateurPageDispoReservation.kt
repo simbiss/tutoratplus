@@ -26,7 +26,9 @@ class PresentateurPageDispoReservation(var vue : VuePageDispoReservation): IPres
         return listeDisponibiliteTuteurSelectionnee
     }
 
-
+    override fun recuporationDispoSelectionne(item:DispoTuteur){
+        modele.dispoSelectionnee = item
+    }
 
 
 }

@@ -41,7 +41,12 @@ class VuePageDispoReservation : Fragment(), IVuePageDispoReservation{
 
         liste_des_dispo = vue.findViewById(R.id.liste_dispo)
         liste_des_dispo.setOnItemClickListener{ parent, view, position, id ->
+            val dispoSelectionnee = adapter.getItem(position)
 
+            if(dispoSelectionnee != null){
+                présentateur?.recuporationDispoSelectionne(dispoSelectionnee)
+            }
+            // navigation ...  A termier et implementation de la liste a TERMINER !!!!!!!!!!!!
         }
         return vue
     }
