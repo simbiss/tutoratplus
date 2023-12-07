@@ -38,4 +38,8 @@ class PresentateurPageDispoReservation(var vue : VuePageDispoReservation): IPres
         vue.navigerVersinformation_personnelle()
     }
 
+    fun effectuerNavigationListeTuteur(){
+        vue.navigationVersPageListeTuteur()
+    }
+
 }

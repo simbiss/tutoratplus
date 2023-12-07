@@ -161,6 +161,9 @@
         <action
             android:id="@+id/action_page_dispo_reservation_to_informationPersonnlle"
             app:destination="@id/informationPersonnlle" />
+        <action
+            android:id="@+id/action_page_dispo_reservation_to_liste_tuteur"
+            app:destination="@id/liste_tuteur" />
     </fragment>
 </navigation>
 

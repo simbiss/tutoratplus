@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.pageConfirmation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,7 @@ class VueConfirmation : Fragment(){
     val modele = Modele.Companion
     var présentateur = PresentateurConfirmation(this)
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
