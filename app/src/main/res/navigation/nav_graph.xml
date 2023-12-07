@@ -67,11 +67,11 @@
             android:id="@+id/action_informationPersonnlle_to_page_confirmation"
             app:destination="@id/page_confirmation" />
         <action
-            android:id="@+id/action_informationPersonnlle_to_pageCalendrier"
-            app:destination="@id/pageCalendrier" />
-        <action
             android:id="@+id/action_informationPersonnlle_to_menu_principal"
             app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_informationPersonnlle_to_page_dispo_reservation"
+            app:destination="@id/page_dispo_reservation" />
     </fragment>
     <fragment
         android:id="@+id/page_confirmation"

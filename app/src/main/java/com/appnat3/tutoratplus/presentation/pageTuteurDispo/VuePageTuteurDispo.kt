@@ -93,8 +93,6 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         }
     }
 
-
-
     override fun onDateSet(view: DatePicker?, annee: Int, mois: Int, jour: Int) {
         sauvegardeAnnee = annee
         sauvegardeMois = mois

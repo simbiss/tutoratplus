@@ -16,10 +16,10 @@ class PresentateurPageDispoReservation(var vue : VuePageDispoReservation): IPres
         return tuteurSelectionnee!!.nomTuteur
     }
 
-    fun traiterAffichageDispoTuteurSelectionnee(): List<DispoTuteur> {
+    override fun traiterAffichageDispoTuteurSelectionnee(): List<DispoTuteur> {
         val idTuteur = modele.tuteurSelectionne?.id
         for(item in modele.listeDispoTuteur){
-            if (item.idTuteur == idTuteur){
+            if (item.idTuteur == idTuteur && !item.reserver){
                 listeDisponibiliteTuteurSelectionnee+=item
             }
         }

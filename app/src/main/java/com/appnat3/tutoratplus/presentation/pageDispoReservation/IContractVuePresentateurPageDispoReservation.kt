@@ -9,6 +9,7 @@ interface IContractVuePresentateurPageDispoReservation {
     }
 
     interface IPresentateurPageDispoReservation{
+        fun traiterAffichageDispoTuteurSelectionnee(): List<DispoTuteur>
         fun traiterAffichageTuteurselectionner(): String
         fun recuporationDispoSelectionne(item:DispoTuteur)
     }

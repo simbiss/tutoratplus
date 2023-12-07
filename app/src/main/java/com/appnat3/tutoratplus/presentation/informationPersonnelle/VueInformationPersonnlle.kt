@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -59,8 +57,6 @@ class VueInformationPersonnlle : Fragment(), IVueInfoPersonnelle{
         navController = Navigation.findNavController(view)
     }
 
-
-    @RequiresApi(Build.VERSION_CODES.O)
     fun collectInformationPersonnelle(vue:View){
         btnSuivant.setOnClickListener {
             var da = vue.findViewById<EditText>(R.id.champDAInfo)
@@ -76,26 +72,11 @@ class VueInformationPersonnlle : Fragment(), IVueInfoPersonnelle{
             présentateur.traiterCreationInfoPerso(txtDa, txtprenom, txtnom, txtcourriel)               //ajout des donnees entrez dans la model
             présentateur.effectuerNaviguationPageConfirmation()                     //changement de page vers pageConfirmation
 
-/**
-            if(da == ""){
-                vue.findViewById<TextInputEditText>(R.id.champDAConfirmation).error = "Invalide"
-            }else if(prenom == ""){
-                vue.findViewById<TextInputEditText>(R.id.champPrenomConfirmation).error = "Invalide"
-            }else if(nom == ""){
-                vue.findViewById<TextInputEditText>(R.id.champNomConfirmation).error = "Invalide"
-            }else if(courriel == ""){
-                vue.findViewById<TextInputEditText>(R.id.champCourrielConfirmation).error = "Invalide"
-            }else{
-                présentateur?.traiterCreationInfoPerso(da, prenom, nom, courriel)               //ajout des donnees entrez dans la model
-                présentateur.effectuerNaviguationPageConfirmation()                     //changement de page vers pageConfirmation
-            }*/
-
-
         }
     }
 
     fun naviguerVerspage_calendrier() {
-       navController.navigate(R.id.action_informationPersonnlle_to_pageCalendrier)
+       navController.navigate(R.id.action_informationPersonnlle_to_page_dispo_reservation)
     }
 
     fun naviguerVerspage_confirmation() {
@@ -105,5 +86,4 @@ class VueInformationPersonnlle : Fragment(), IVueInfoPersonnelle{
     fun naviguerVersmenu_principal() {
        navController.navigate(R.id.action_informationPersonnlle_to_menu_principal)
     }
-
 }

@@ -21,9 +21,8 @@ class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
 
     fun recuperationTuteur(jour:Int, mois:Int, annee:Int, heure:Int, minute:Int){
         val idTuteurLogger = modele.ouvertureSessionTuteur?.id
-        modele.listeDispoTuteur.add(DispoTuteur(incrementationIdDispo(),idTuteurLogger!!, jour,mois,annee,heure,minute))
+        modele.listeDispoTuteur.add(DispoTuteur(incrementationIdDispo(),idTuteurLogger!!,false, jour,mois,annee,heure,minute))
     }
-
 }
 
 
