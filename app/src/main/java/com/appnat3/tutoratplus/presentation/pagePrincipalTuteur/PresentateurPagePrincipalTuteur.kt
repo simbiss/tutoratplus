@@ -17,7 +17,7 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresent
 
     override fun traiderListeDispo():List<DispoTuteur>{
         for (item in modele.listeDispoTuteur){
-            if (idTuteurLogger == item.id){
+            if (idTuteurLogger == item.idDispo){
                 listeDispoTuteur+=item
             }
         }

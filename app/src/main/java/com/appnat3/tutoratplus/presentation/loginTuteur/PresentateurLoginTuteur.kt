@@ -1,7 +1,5 @@
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
@@ -12,7 +10,6 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
 
     val modele = Modele.Companion
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun traiterValidationInfoLogin(username:String, password:String):Boolean{
 
         var listeInfoLogin = modele.retourListInfoLogin()
@@ -26,7 +23,6 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
         return false
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun traiterCollectInformationLogin(username: String){
 
         val listeInfoLogin = modele.retourListInfoLogin()

@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.listeTuteur
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -27,8 +25,6 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
     val modele: Modele = Modele()
 
 
-
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,10 +37,10 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
         liste_tuteurs.setOnItemClickListener { parent, view, position, id ->
             val tuteurSelectionne=adapter.getItem(position)
 
-            présentateur!!.effectuerNavigationCalendrier()
             if (tuteurSelectionne != null) {
                 présentateur?.recuperationTuteur(tuteurSelectionne)
             }
+            présentateur!!.effectuerNavigationListeDispoTuteur()
         }
 
 
@@ -61,7 +57,6 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -85,6 +80,10 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
 
     fun navigationVersAcceuil() {
         navController.navigate(R.id.action_liste_tuteur_to_menu_principal)
+    }
+
+    fun navigationVersListeDispoTuteur(){
+        navController.navigate(R.id.action_liste_tuteur_to_page_dispo_reservation)
     }
 
 

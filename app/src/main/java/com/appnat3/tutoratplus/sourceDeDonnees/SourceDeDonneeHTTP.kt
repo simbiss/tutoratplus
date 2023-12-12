@@ -1,16 +1,15 @@
 package com.appnat3.tutoratplus.sourceDeDonnees
 
-import com.appnat3.tutoratplus.domaine.entite.Cours
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import android.util.JsonReader
+import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.io.StringReader
 import java.time.LocalDate
 import java.time.LocalTime
-import java.util.Date
 
 class SourceDeDonneeHTTP(var context: Modele.Companion){
 
@@ -194,11 +193,6 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         return listeTuteur
 
     }
-
-
-
-
-
 
 
 }

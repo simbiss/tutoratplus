@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_liste_tuteur_to_menu_principal"
             app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_liste_tuteur_to_page_dispo_reservation"
+            app:destination="@id/page_dispo_reservation" />
     </fragment>
     <fragment
         android:id="@+id/menu_principal"
@@ -64,11 +67,11 @@
             android:id="@+id/action_informationPersonnlle_to_page_confirmation"
             app:destination="@id/page_confirmation" />
         <action
-            android:id="@+id/action_informationPersonnlle_to_pageCalendrier"
-            app:destination="@id/pageCalendrier" />
-        <action
             android:id="@+id/action_informationPersonnlle_to_menu_principal"
             app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_informationPersonnlle_to_page_dispo_reservation"
+            app:destination="@id/page_dispo_reservation" />
     </fragment>
     <fragment
         android:id="@+id/page_confirmation"
@@ -146,6 +149,21 @@
         <action
             android:id="@+id/action_demande_tutorat_to_page_principal_tuteur"
             app:destination="@id/page_principal_tuteur" />
+    </fragment>
+    <fragment
+        android:id="@+id/page_dispo_reservation"
+        android:name="com.appnat3.tutoratplus.presentation.pageDispoReservation.VuePageDispoReservation"
+        android:label="fragment_page_dispo_reservation"
+        tools:layout="@layout/fragment_page_dispo_reservation" >
+        <action
+            android:id="@+id/action_page_dispo_reservation_to_menu_principal"
+            app:destination="@id/menu_principal" />
+        <action
+            android:id="@+id/action_page_dispo_reservation_to_informationPersonnlle"
+            app:destination="@id/informationPersonnlle" />
+        <action
+            android:id="@+id/action_page_dispo_reservation_to_liste_tuteur"
+            app:destination="@id/liste_tuteur" />
     </fragment>
 </navigation>
 

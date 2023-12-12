@@ -1,7 +1,5 @@
 package com.appnat3.tutoratplus.presentation
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.DemandeTutorat
 import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
@@ -14,7 +12,7 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 
-@RequiresApi(Build.VERSION_CODES.O)
+
 class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _source:  SourceDeDonnees = SourceBidon()) {
     fun retourListeDesCoursHttpTest(): List<Cours> {
         return source.obtenirListeCours()
@@ -40,11 +38,19 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         var nomInfoPerso: String? = null
         var courrielInfoPerso: String? = null
         var coursSelectionne: Cours? = null
-        var listeDesCours = mutableListOf<Cours>()
-        var listeTuteurs = mutableListOf<Tuteur>()
         var dateSelected: LocalDate? = null
         var heureSelectionne: LocalTime? = null
+        var dispoSelectionnee: DispoTuteur? = null
+
+
+        /**
+         * utilisation liste
+         */
+        var listeDesCours = mutableListOf<Cours>()
+        var listeTuteurs = mutableListOf<Tuteur>()
+
         var listeDispoTuteur = mutableListOf<DispoTuteur>()
+        var listeDemandeTutorat = mutableListOf<DemandeTutorat>()
 
 
         /**
@@ -60,38 +66,18 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
 
         //Méthodes  ----------------------------------
 
-
-        /**
-         * initialisation des different cours de tutorat
-         */
-
-
-
-        fun retourCoursSelectionne(): Cours? {
-            return coursSelectionne
-        }
-
-
         /**
          * Méthode pour retourner tout les cours de tutorat
          */
-      //  fun retourListeDesCours(): List<Cours> {
-      //      return _source.obtenirListeDesCours()
-      //  }
-
 
         fun retourListeDesCours(): List<Cours>{
             listeDesCours = sourceHttp.obtenirListeCours().toMutableList()
             return listeDesCours
         }
 
-
         /**
          * initialisation des different cours de tutorat
          */
-
-
-
         fun retourListeTuteurBidon(): List<Tuteur> {
             return _source.obtenirlisteTuteur()
         }
@@ -100,7 +86,6 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
             listeTuteurs =  sourceHttp.obtenirListeTuteurs().toMutableList()
             return  listeTuteurs
         }
-
 
 
         /**
@@ -114,29 +99,6 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         /**
          * méthode pour retourner les informations entrées choisies par l'utilisateur
          */
-        fun retourDaInfoPerso(): String? {
-            return daInfoPerso
-        }
-
-        fun retourPrenomInfoPerso(): String? {
-            return prenomInfoPerso
-        }
-
-        fun retourNomInfoPerso(): String? {
-            return nomInfoPerso
-        }
-
-        fun retourCourrielInfoPerso(): String? {
-            return courrielInfoPerso
-        }
-
-        fun retourCoursChoisi(): String? {
-            return coursSelectionne?.nomCours
-        }
-
-        fun retourTuteurChoisi(): String? {
-            return tuteurSelectionne?.nomTuteur
-        }
 
         fun retourDateChoisie(): LocalDate? {
             return dateSelected
@@ -150,7 +112,7 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         /**
          * initialisation des variable pour les demandes de tutorat
          */
-        var listeDemandeTutorat = mutableListOf<DemandeTutorat>()
+
 
     }
 }

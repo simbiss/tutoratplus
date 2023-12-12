@@ -1,7 +1,6 @@
 package com.appnat3.tutoratplus.presentation.pageConfirmation
 
 import android.annotation.SuppressLint
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -35,8 +33,7 @@ class VueConfirmation : Fragment(), IVueConfirmation{
     val modele = Modele.Companion
     var présentateur = PresentateurConfirmation(this)
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    @SuppressLint("MissingInflatedId", "CutPasteId", "SuspiciousIndentation")
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -62,58 +59,59 @@ class VueConfirmation : Fragment(), IVueConfirmation{
         txtNomCours = vue.findViewById(R.id.champNomCours)
         // Accédez à la VueListeCours parente pour obtenir le présentateur et le cours sélectionné
 
-        val coursSelectionne = présentateur.collectionCoursSelectionne()
+        val coursSelectionne = présentateur.collectionCoursSelectionnee()
         if (coursSelectionne != null) {
-            txtNomCours.text = "Cours sélectionné : $coursSelectionne"
+            txtNomCours.text = "Cours sélectionné : ${coursSelectionne.nomCours}"
         } else {
             txtNomCours.text = "Aucun cours sélectionné"
         }
 
 
         txtNomTuteur = vue.findViewById(R.id.champNomTuteur)
-        val tuteurSelectionne = présentateur.collectionTuteurSelectionne()
+        val tuteurSelectionne = présentateur.collectionTuteurSelectionnee()
             if(tuteurSelectionne!= null){
-            txtNomTuteur.text = "Tuteur sélectionné : $tuteurSelectionne"
+            txtNomTuteur.text = "Tuteur sélectionné : ${tuteurSelectionne.nomTuteur}"
         }else{
             txtNomTuteur.text = "Aucun tuteur sélectionné"
         }
 
 
         txtDate = vue.findViewById(R.id.champDate)
-        val dateSelectionnee = présentateur.collectionDateSelectionne()
-        val heureChoisie = présentateur.collectionHeureSelectionne()
-        txtDate.text = "Date sélectionné : ${dateSelectionnee} à ${heureChoisie}"
+        //val dateSelectionnee = présentateur.collectionDateSelectionne()
+        //val heureChoisie = présentateur.collectionHeureSelectionne()
+        val reservationChoisie = présentateur.collectionReservationDispo()
+        txtDate.text = "Date sélectionné : ${reservationChoisie}"
 
 
         txtDA = vue.findViewById(R.id.champDAConfirmation)
-        val daInfoPerso = présentateur.collectionDaInfoPerso()
+        val daInfoPerso = présentateur.collectionInfoPerso()
         if (daInfoPerso != null) {
-            txtDA.text = "DA : $daInfoPerso"
+            txtDA.text = "DA : ${daInfoPerso.da}"
         } else {
             txtDA.text = "Aucun DA entrez"
         }
 
 
         txtPrenom = vue.findViewById(R.id.champPrenomConfirmation)
-        val prenomInfoPerso = présentateur.collectionPrenomInfoPerso()
+        val prenomInfoPerso = présentateur.collectionInfoPerso()
         if (prenomInfoPerso != null) {
-            txtPrenom.text = "Prenom : $prenomInfoPerso"
+            txtPrenom.text = "Prenom : ${prenomInfoPerso.prenom}"
         } else {
             txtPrenom.text = "Aucun prenom entrez"
         }
         txtNom = vue.findViewById(R.id.champNomConfirmation)
-        val nomInfoPerso = présentateur.collectionNomInfoPerso()
+        val nomInfoPerso = présentateur.collectionInfoPerso()
         if (nomInfoPerso != null) {
-            txtNom.text = "Nom : $nomInfoPerso"
+            txtNom.text = "Nom : ${nomInfoPerso.nom}"
         } else {
-            txtNom.text = "Aucun nom entrez"
+            txtNom.text = "Aucun nom entrer"
         }
         txtCourriel = vue.findViewById(R.id.champCourrielConfirmation)
-        val courrielInfoPerso = présentateur.collectionCourrielInfoPerso()
+        val courrielInfoPerso = présentateur.collectionInfoPerso()
         if (courrielInfoPerso != null) {
-            txtCourriel.text = "Courriel : $courrielInfoPerso"
+            txtCourriel.text = "Courriel : ${courrielInfoPerso.courriel}"
         } else {
-            txtCourriel.text = "Aucun courriel entrez"
+            txtCourriel.text = "Aucun courriel entrer"
         }
         return vue
     }
@@ -124,15 +122,15 @@ class VueConfirmation : Fragment(), IVueConfirmation{
         navController = Navigation.findNavController(view)
     }
 
-    override fun naviguerversmenu_principal() {
+    fun naviguerversmenu_principal() {
         navController.navigate(R.id.action_page_confirmation_to_menu_principal)
     }
 
-    override fun naviguerversacceuil() {
+    fun naviguerversacceuil() {
         navController.navigate(R.id.action_page_confirmation_to_menu_principal)
     }
 
-    override fun naviguerversinformation_personnelle() {
+    fun naviguerversinformation_personnelle() {
         navController.navigate(R.id.action_page_confirmation_to_informationPersonnlle4)
     }
 }

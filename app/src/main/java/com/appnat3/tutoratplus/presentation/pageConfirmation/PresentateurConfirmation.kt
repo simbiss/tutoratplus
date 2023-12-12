@@ -1,55 +1,35 @@
 package com.appnat3.tutoratplus.presentation.pageConfirmation
 
-import android.os.Build
-import androidx.annotation.RequiresApi
+import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
+import com.appnat3.tutoratplus.domaine.entite.InfoPersonnelle
+import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.pageConfirmation.IContractVuePresentateurConfirmation.IPresentateurConfirmation
-import java.time.LocalDate
-import java.time.LocalTime
 
 class PresentateurConfirmation(var vue: VueConfirmation) : IPresentateurConfirmation{
 
     val modele = Modele.Companion
-    @RequiresApi(Build.VERSION_CODES.O)
 
 
     /**
      * Méthode qui permet de retourner les choisies de l'utilisateur
      */
-    fun collectionDaInfoPerso():String?{
-        return modele.retourDaInfoPerso()
+
+    fun collectionCoursSelectionnee(): Cours {
+        return modele.coursSelectionne!!
     }
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun collectionPrenomInfoPerso(): String?{
-        return modele.retourPrenomInfoPerso()
-    }
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun collectionNomInfoPerso():String?{
-        return modele.retourNomInfoPerso()
-    }
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun collectionCourrielInfoPerso():String?{
-        return modele.retourCourrielInfoPerso()
+    fun collectionTuteurSelectionnee(): Tuteur {
+        return modele.tuteurSelectionne!!
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun collectionCoursSelectionne(): String?{
-        return modele.retourCoursChoisi()
+    fun collectionInfoPerso():InfoPersonnelle{
+        val infoPerso = InfoPersonnelle(modele.daInfoPerso!!, modele.prenomInfoPerso!!, modele.nomInfoPerso!!, modele.courrielInfoPerso!!)
+        return infoPerso
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun collectionTuteurSelectionne():String?{
-        return modele.retourTuteurChoisi()
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun collectionDateSelectionne(): LocalDate?{
-        return modele.retourDateChoisie()
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun collectionHeureSelectionne(): LocalTime?{
-        return modele.retourHeureSelectionne()
+    fun collectionReservationDispo():DispoTuteur{
+        return modele.dispoSelectionnee!!
     }
 
 

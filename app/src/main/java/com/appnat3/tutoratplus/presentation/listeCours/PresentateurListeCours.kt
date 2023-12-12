@@ -1,7 +1,5 @@
 package com.appnat3.tutoratplus.presentation.listeCours
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.listeCours.IContractVuePresentateurListeCours.IPresentateurListeCours
@@ -16,7 +14,7 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
     val modele = Modele.Companion
     private var job: Job? = null
     var listeCours = arrayOf<Cours>()
-    @RequiresApi(Build.VERSION_CODES.O)
+
 
     fun traiter_démarrage(){
         job = CoroutineScope( Dispatchers.IO ).launch {
@@ -35,6 +33,9 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
         return listeCours
     }
 
+    override fun recuperationCours(item:Cours){
+        modele.coursSelectionne = item
+    }
 
     // Méthode pour effectuer la navigation vers l'écran menu_principal
     fun effectuerNavigationMenu() {
@@ -44,10 +45,5 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
     // Méthode pour effectuer la navigation vers l'écran de liste des tuteurs
     fun effectuerNavigationTuteur() {
         vue.naviguerVersTuteurs()
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun recuperationCours(item:Cours){
-        modele.coursSelectionne = item
     }
 }
