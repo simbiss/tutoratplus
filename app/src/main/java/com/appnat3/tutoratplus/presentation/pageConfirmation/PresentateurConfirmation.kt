@@ -3,12 +3,13 @@ package com.appnat3.tutoratplus.presentation.pageConfirmation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.presentation.pageConfirmation.IContractVuePresentateurConfirmation.IPresentateurConfirmation
 import java.time.LocalDate
 import java.time.LocalTime
 
-class PresentateurConfirmation(var vue: VueConfirmation) {
+class PresentateurConfirmation(var vue: VueConfirmation) : IPresentateurConfirmation{
 
-    val modele =Modele.Companion
+    val modele = Modele.Companion
     @RequiresApi(Build.VERSION_CODES.O)
 
 

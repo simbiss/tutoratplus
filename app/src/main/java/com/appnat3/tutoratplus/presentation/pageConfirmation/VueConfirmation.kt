@@ -15,8 +15,9 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.presentation.pageConfirmation.IContractVuePresentateurConfirmation.IVueConfirmation
 
-class VueConfirmation : Fragment(){
+class VueConfirmation : Fragment(), IVueConfirmation{
 
     lateinit var txtNomCours: TextView
     lateinit var navController: NavController
@@ -123,15 +124,15 @@ class VueConfirmation : Fragment(){
         navController = Navigation.findNavController(view)
     }
 
-    fun naviguerversmenu_principal() {
+    override fun naviguerversmenu_principal() {
         navController.navigate(R.id.action_page_confirmation_to_menu_principal)
     }
 
-    fun naviguerversacceuil() {
+    override fun naviguerversacceuil() {
         navController.navigate(R.id.action_page_confirmation_to_menu_principal)
     }
 
-    fun naviguerversinformation_personnelle() {
+    override fun naviguerversinformation_personnelle() {
         navController.navigate(R.id.action_page_confirmation_to_informationPersonnlle4)
     }
 }
