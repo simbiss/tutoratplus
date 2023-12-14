@@ -112,7 +112,5 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         /**
          * initialisation des variable pour les demandes de tutorat
          */
-
-
     }
 }

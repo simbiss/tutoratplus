@@ -53,4 +53,15 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation ("androidx.navigation:navigation-ui-ktx:2.5.3")
+
+    //dependence Calendrier
+    implementation("com.google.api-client:google-api-client-android:1.23.0"){
+        exclude("org.apache.httpcomponents")
+        exclude("com.google.guava")
+    }
+    implementation("com.google.apis:google-api-services-calendar:v3-rev305-1.23.0"){
+        exclude("com.google.guava")
+    }
+
+    implementation("com.google.oauth-client:google-oauth-client-jetty:1.23.0")
 }

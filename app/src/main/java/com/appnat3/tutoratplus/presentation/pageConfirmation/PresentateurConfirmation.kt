@@ -16,20 +16,28 @@ class PresentateurConfirmation(var vue: VueConfirmation) : IPresentateurConfirma
      * Méthode qui permet de retourner les choisies de l'utilisateur
      */
 
-    fun collectionCoursSelectionnee(): Cours {
+    override fun collectionCoursSelectionnee(): Cours {
         return modele.coursSelectionne!!
     }
-    fun collectionTuteurSelectionnee(): Tuteur {
+    override fun collectionTuteurSelectionnee(): Tuteur {
         return modele.tuteurSelectionne!!
     }
 
-    fun collectionInfoPerso():InfoPersonnelle{
+    override fun collectionInfoPerso():InfoPersonnelle{
         val infoPerso = InfoPersonnelle(modele.daInfoPerso!!, modele.prenomInfoPerso!!, modele.nomInfoPerso!!, modele.courrielInfoPerso!!)
         return infoPerso
     }
 
-    fun collectionReservationDispo():DispoTuteur{
+    override fun collectionReservationDispo():DispoTuteur{
         return modele.dispoSelectionnee!!
+    }
+
+    /**
+     * Méthode qui permet d'ajouter la demande de tutorat dans le calendrier local
+     */
+
+    override fun traiterAjoutEvenementCalendrier(){
+
     }
 
 

@@ -4,6 +4,10 @@
 
     <!-- Déclaration de la permission INTERNET -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Ajouter la permission WRITE_CALENDAR -->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
