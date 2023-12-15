@@ -1,32 +1,41 @@
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
+import android.util.Log
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.loginTuteur.IConractVuePresentateurLoginTuteur.IPresentateurLoginTuteur
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlin.collections.mapOf as hashMap
 
 class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteur {
 
     val modele = Modele.Companion
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
+    private var job: Job? = null
 
     override fun traiterValidationInfoLogin(username:String, password:String):Boolean{
         var result = false
-        coroutineScope.launch {
+        job = CoroutineScope(Dispatchers.IO).launch {
             val listeInfoLogin = modele.retourListInfoLogin()
             for (item in listeInfoLogin) {
-                if (item.nomUtilisateur == username) {
-                    if (item.motDePasse == password) {
-                        result = true
-                        break
-                    }
+                if (item.nomUtilisateur == username && item.motDePasse == password) {
+                    result = true
+                    Log.d("LoginTest1", "$result")
                 }
             }
+
         }
+
+        runBlocking {
+            job!!.join()
+        }
+
+
         return result
     }
 

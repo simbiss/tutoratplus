@@ -2,6 +2,7 @@
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,6 +63,7 @@ class VueLoginTuteur : Fragment(), IVueLoginTuteur{
 
             val validationResult = présentateur?.traiterValidationInfoLogin(username,motDePasse)        //validation des information login
 
+            Log.d("testVueLOg", "$validationResult")
             if(validationResult == true) {
                 présentateur?.effectuerNavigationPageTuteur()
             }
