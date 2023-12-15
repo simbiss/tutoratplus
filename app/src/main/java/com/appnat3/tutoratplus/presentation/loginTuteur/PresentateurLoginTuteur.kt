@@ -4,56 +4,76 @@ import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.loginTuteur.IConractVuePresentateurLoginTuteur.IPresentateurLoginTuteur
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlin.collections.mapOf as hashMap
 
 class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteur {
 
     val modele = Modele.Companion
+    private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
     override fun traiterValidationInfoLogin(username:String, password:String):Boolean{
-
-        var listeInfoLogin = modele.retourListInfoLogin()
-        for (item in listeInfoLogin){
-            if(item.nomUtilisateur == username) {
-                if (item.motDePasse == password) {
-                    return true
+        var result = false
+        coroutineScope.launch {
+            val listeInfoLogin = modele.retourListInfoLogin()
+            for (item in listeInfoLogin) {
+                if (item.nomUtilisateur == username) {
+                    if (item.motDePasse == password) {
+                        result = true
+                        break
+                    }
                 }
             }
         }
-        return false
+        return result
     }
 
     override fun traiterCollectInformationLogin(username: String){
 
-        val listeInfoLogin = modele.retourListInfoLogin()
-        val mapInfoLogin = hashMap<Int, InfoLogin>(
-            1 to listeInfoLogin[0],
-            2 to listeInfoLogin[1],
-            3 to listeInfoLogin[2],
-            4 to listeInfoLogin[3],
-            5 to listeInfoLogin[4]
-        )
+        coroutineScope.launch {
 
-        val listeTuteurs = modele.retourListeTuteurBidon()
-        var mapListTuteur = hashMap<Int, Tuteur>(
-            1 to listeTuteurs[0],
-            2 to listeTuteurs[1],
-            3 to listeTuteurs[2],
-            4 to listeTuteurs[3],
-            5 to listeTuteurs[4]
-        )
+            val listeInfoLogin = modele.retourListInfoLogin()
+            val mapInfoLogin = hashMap<Int, InfoLogin>(
+                1 to listeInfoLogin[0],
+                2 to listeInfoLogin[1],
+                3 to listeInfoLogin[2],
+                4 to listeInfoLogin[3],
+                5 to listeInfoLogin[4]
+            )
 
-        for ((key, InfoLogin) in mapInfoLogin){
-            if(InfoLogin.nomUtilisateur == username){       //condition pour trouver la position de la clée du tuteur a logger
-                var idOuvertureSessionLogin = key
+            val listeTuteurs = modele.retourListeTuteurBidon()
+            var mapListTuteur = hashMap<Int, Tuteur>(
+                1 to listeTuteurs[0],
+                2 to listeTuteurs[1],
+                3 to listeTuteurs[2],
+                4 to listeTuteurs[3],
+                5 to listeTuteurs[4]
+            )
 
-                for ((key, Tuteur) in mapListTuteur){
-                    if(key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
-                        modele.ouvertureSessionTuteur = Tuteur
-
-                    }
+            var idOuvertureSessionLogin: Int? = null
+            for ((key, InfoLogin) in mapInfoLogin) {
+                if (InfoLogin.nomUtilisateur == username) {       //condition pour trouver la position de la clée du tuteur a logger
+                    idOuvertureSessionLogin = key
                 }
             }
+            idOuvertureSessionLogin?.let { id ->
+                mapListTuteur[id]?.let { tuteur ->
+                    modele.ouvertureSessionTuteur = tuteur
+                }
+            }
+
+/*
+                    for ((key, Tuteur) in mapListTuteur) {
+                        if (key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
+                            modele.ouvertureSessionTuteur = Tuteur
+
+                        }
+                    }*/
+                //}
+            //}
+
         }
     }
 
