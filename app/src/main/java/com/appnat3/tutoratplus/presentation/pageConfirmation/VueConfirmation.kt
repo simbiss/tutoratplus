@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -28,6 +29,7 @@ import java.util.Calendar
 import java.util.Locale
 import java.util.TimeZone
 
+@Suppress("DEPRECATION")
 class VueConfirmation : Fragment(), IVueConfirmation{
 
     lateinit var txtNomCours: TextView
@@ -125,37 +127,7 @@ class VueConfirmation : Fragment(), IVueConfirmation{
 
         btnAjoutCalendrier = vue.findViewById(R.id.buttonContinuer)
         btnAjoutCalendrier.setOnClickListener {
-
-            // info calendrier
-            val dateStr = reservationChoisie.toString()
-            val titre = "Tuteur: ${tuteurSelectionne.nomTuteur}"
-            val descricption = "Cours: ${coursSelectionne.nomCours}"
-
-            //Convertir la chaine de date au format jj-mm-aaaa hh:mm en objet DAte
-            val dateFormat = SimpleDateFormat ("dd-MM-yyyy HH:mm", Locale.getDefault())
-            val date = dateFormat.parse(dateStr)
-
-            //Creer un objet Calendar et l'initialiser avec la date choisi
-            val calendar = Calendar.getInstance()
-            calendar.time = date
-
-
-
-            var intent = Intent(Intent.ACTION_INSERT)
-            intent.setData(CalendarContract.Events.CONTENT_URI)
-            intent.putExtra(CalendarContract.Events.TITLE, titre)
-            intent.putExtra(CalendarContract.Events.DESCRIPTION, descricption)
-            //intent.putExtra(CalendarContract.Events.ALL_DAY, false)
-            intent.putExtra(CalendarContract.Events.DTSTART, calendar.timeInMillis)
-            intent.putExtra(CalendarContract.Events.DTEND,calendar.timeInMillis + 60 * 60 * 1000)   //Evenement de une heure
-
-
-
-            if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) !=          PackageManager.PERMISSION_GRANTED)
-                ActivityCompat.requestPermissions(requireActivity(),  arrayOf<String>(Manifest.permission.ACCESS_COARSE_LOCATION), 1)
-            ActivityCompat.requestPermissions(requireActivity(),  arrayOf(Manifest.permission.WRITE_CALENDAR), 1)
-            startActivity(intent)
-
+            checkAndRequestCalendarPermission()
             présentateur.effectuerNaviguationMenuConfirmation()
         }
         return vue
@@ -164,6 +136,66 @@ class VueConfirmation : Fragment(), IVueConfirmation{
         super.onViewCreated(view, savedInstanceState)
         // Obtient le NavController pour la navigation
         navController = Navigation.findNavController(view)
+
+    }
+
+    private fun checkAndRequestCalendarPermission() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            // La permission n'est pas accordée, demandez-la
+            requestPermissions(arrayOf(Manifest.permission.WRITE_CALENDAR), CALENDAR_PERMISSION_REQUEST_CODE)
+        } else {
+            // La permission est déjà accordée, procédez à l'ajout de l'événement
+            addEventToCalendar()
+        }
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            CALENDAR_PERMISSION_REQUEST_CODE -> {
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    addEventToCalendar()                                                                        // La permission est accordée
+                } else {
+                    Toast.makeText(context, "Permission refusée", Toast.LENGTH_SHORT).show()            // La permission est refusée
+                }
+            }
+        }
+    }
+
+    private fun addEventToCalendar() {
+        val reservationChoisie = présentateur.collectionReservationDispo()
+        val tuteurSelectionne = présentateur.collectionTuteurSelectionnee()
+        val coursSelectionne = présentateur.collectionCoursSelectionnee()
+        // info calendrier
+        val dateStr = reservationChoisie.toString()
+        val titre = "Tuteur: ${tuteurSelectionne.nomTuteur}"
+        val descricption = "Cours: ${coursSelectionne.nomCours}"
+
+        //Convertir la chaine de date au format jj-mm-aaaa hh:mm en objet DAte
+        val dateFormat = SimpleDateFormat ("dd-MM-yyyy HH:mm", Locale.getDefault())
+        val date = dateFormat.parse(dateStr)
+
+        //Creer un objet Calendar et l'initialiser avec la date choisi
+        val calendar = Calendar.getInstance()
+        calendar.time = date!!
+
+        //Ajouter les spécification du rdv à la création d'évènement
+        val intent = Intent(Intent.ACTION_INSERT)
+        intent.setData(CalendarContract.Events.CONTENT_URI)
+        intent.putExtra(CalendarContract.Events.DTEND,calendar.timeInMillis + 60 * 60 * 1000)   //Evenement de une heure
+        intent.putExtra(CalendarContract.Events.DTSTART, calendar.timeInMillis)
+        intent.putExtra(CalendarContract.Events.TITLE, titre)
+        intent.putExtra(CalendarContract.Events.DESCRIPTION, descricption)
+        //intent.putExtra(CalendarContract.Events.ALL_DAY, false)
+
+
+        if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) !=          PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(requireActivity(),  arrayOf<String>(Manifest.permission.ACCESS_COARSE_LOCATION), 1)
+        ActivityCompat.requestPermissions(requireActivity(),  arrayOf(Manifest.permission.WRITE_CALENDAR), 1)
+        Log.d("dateHeureTest", "$dateStr, $date, ${calendar.time}, ${calendar.timeInMillis}")
+        startActivity(intent)
+
     }
 
     fun ajoutEvenementCalendrier(context : Context, dateStr: String, titre: String, descricption : String){
@@ -193,32 +225,6 @@ class VueConfirmation : Fragment(), IVueConfirmation{
 
         } catch (e: Exception){
             e.printStackTrace()
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            CALENDAR_PERMISSION_REQUEST_CODE -> {
-                // Si la demande est annulée, les tableaux de résultats sont vides.
-                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    // Permission accordée. Vous pouvez continuer avec l'opération sur le calendrier ici.
-                    Log.d("PERMISSION", "Permission accordée pour le calendrier")
-
-                    // Exemple : Vous pouvez appeler ici votre méthode pour ajouter un événement au calendrier
-                    // Assurez-vous d'avoir toutes les informations nécessaires avant d'appeler cette méthode
-                    // ajoutEvenementCalendrier(context, dateStr, titre, description)
-                } else {
-                    // Permission refusée. Vous devez gérer le cas où les permissions ne sont pas accordées.
-                    Log.d("PERMISSION", "Permission refusée pour le calendrier")
-                    // Vous pouvez afficher un message à l'utilisateur expliquant pourquoi cette permission est nécessaire.
-                }
-                return
-            }
         }
     }
 
