@@ -3,6 +3,7 @@ package com.appnat3.tutoratplus.sourceDeDonnees
 import android.util.JsonReader
 import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
+import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import okhttp3.OkHttpClient
@@ -13,7 +14,6 @@ import java.time.LocalTime
 
 class SourceDeDonneeHTTP(var context: Modele.Companion){
 
-    //var listeCourt = mutableListOf<Cours>()
 
     fun connectionHttpRequest(url:String):String{
         val client = OkHttpClient()
@@ -57,8 +57,8 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
     private fun lectureListeCoursJson(jsonRead:JsonReader):List<Cours>{
         var listeDesCours = mutableListOf<Cours>()
-        var nomCours: String = ""
-        var nomProgramme : String = ""
+        var nomCours = ""
+        var nomProgramme = ""
         jsonRead.beginArray()
             while (jsonRead.hasNext()){
                 jsonRead.beginObject()
@@ -105,25 +105,24 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
         //Déclaration de variables---------------------------
         var listeTuteur = mutableListOf<Tuteur>()
-        //println(jsonRead)
 
         //Traitements---------------------------
         jsonRead.beginArray()  //listeDisponibilités
         while (jsonRead.hasNext()){
-            var nomTuteur: String = ""
-            var programme : String = ""
-            var id: Int = 0
+            var nomTuteur = ""
+            var programme = ""
+            var id = 0
             lateinit var tuteur:Tuteur
             var date: LocalDate = LocalDate.now()
-            var heures: MutableList<LocalTime> = mutableListOf<LocalTime>()
-            var disponibilite:Disponibilite = Disponibilite(date, heures)
-            var heure :LocalTime = LocalTime.NOON
+            var heures: MutableList<LocalTime>
+            var disponibilite:Disponibilite
+            var heure :LocalTime
             var listedisponibilites = mutableListOf<Disponibilite>()
-            var year:Int = 0
-            var month:Int = 0
-            var dayOfMonth:Int = 0
-            var hour:Int = 0
-            var minutes:Int = 0
+            var year = 0
+            var month = 0
+            var dayOfMonth = 0
+            var hour = 0
+            var minutes = 0
             jsonRead.beginObject()  //Tuteur
             while (jsonRead.hasNext()) {
                 val cle = jsonRead.nextName()
@@ -195,4 +194,48 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     }
 
 
+
+    //ListeInfoLogin---------------------------------------------------------------------
+    fun obtenirListeInfoLogin():List<InfoLogin>{
+        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/listeInfoLogin"
+
+        val result = connectionHttpRequest(url)
+        try {
+            println("HTTP Request Result : $result")
+        }catch (e: Exception){
+            println("ERREUR: ${e.message}")
+        }
+        return retourListeInfoLogin(result)
+    }
+
+
+    private fun retourListeInfoLogin(json : String):List<InfoLogin>{
+        var jsonRead = JsonReader(StringReader(json))
+        return lectureInfoLogin(jsonRead)
+    }
+
+    private fun lectureInfoLogin(jsonRead:JsonReader): List<InfoLogin>{
+
+        var listeInfoLogin = mutableListOf<InfoLogin>()
+        var nomUtilisateur = ""
+        var motDePasse = ""
+        jsonRead.beginArray()
+        while (jsonRead.hasNext()){
+            jsonRead.beginObject()
+            while (jsonRead.hasNext()) {
+                val name = jsonRead.nextName()
+                when (name) {
+                    "nomUtilisateur" -> nomUtilisateur = jsonRead.nextString()
+                    "motDePasse" -> motDePasse = jsonRead.nextString()
+                    else -> jsonRead.skipValue()
+                }
+            }
+            jsonRead.endObject()
+            var nouveauLogin = InfoLogin(nomUtilisateur,motDePasse)
+            listeInfoLogin.add(nouveauLogin)
+        }
+        jsonRead.endArray()
+
+        return listeInfoLogin
+    }
 }

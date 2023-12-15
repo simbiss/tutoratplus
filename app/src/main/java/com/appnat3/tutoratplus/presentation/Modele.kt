@@ -23,7 +23,7 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
     }
 
     fun retourListInfoLoginTest(): List<InfoLogin> {
-        return _source.obtenirListeInfoLogin()
+        return source.obtenirListeInfoLogin()
     }
 
     companion object {
@@ -49,6 +49,7 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         var listeDesCours = mutableListOf<Cours>()
         var listeTuteurs = mutableListOf<Tuteur>()
 
+        var listeInfoLogin = mutableListOf<InfoLogin>()
         var listeDispoTuteur = mutableListOf<DispoTuteur>()
         var listeDemandeTutorat = mutableListOf<DemandeTutorat>()
 
@@ -93,7 +94,8 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
          */
 
         fun retourListInfoLogin(): List<InfoLogin> {
-            return _source.obtenirListeInfoLogin()
+            listeInfoLogin = sourceHttp.obtenirListeInfoLogin().toMutableList()
+            return listeInfoLogin
         }
 
         /**
