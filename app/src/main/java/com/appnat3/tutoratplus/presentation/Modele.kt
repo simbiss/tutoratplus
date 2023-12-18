@@ -76,9 +76,8 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
             return listeDesCours
         }
 
-        /**
-         * initialisation des different cours de tutorat
-         */
+
+
         fun retourListeTuteurBidon(): List<Tuteur> {
             return _source.obtenirlisteTuteur()
         }
@@ -90,29 +89,12 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
 
 
         /**
-         * initialisation information login tuteur
+         * Méthode pour retourner les informations login tuteur
          */
 
         fun retourListInfoLogin(): List<InfoLogin> {
             listeInfoLogin = sourceHttp.obtenirListeInfoLogin().toMutableList()
             return listeInfoLogin
         }
-
-        /**
-         * méthode pour retourner les informations entrées choisies par l'utilisateur
-         */
-
-        fun retourDateChoisie(): LocalDate? {
-            return dateSelected
-        }
-
-        fun retourHeureSelectionne(): LocalTime? {
-            return heureSelectionne
-        }
-
-
-        /**
-         * initialisation des variable pour les demandes de tutorat
-         */
     }
 }

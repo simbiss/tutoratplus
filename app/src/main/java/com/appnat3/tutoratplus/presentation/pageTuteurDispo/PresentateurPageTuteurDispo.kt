@@ -2,9 +2,12 @@ package com.appnat3.tutoratplus.presentation.pageTuteurDispo
 
 import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import kotlinx.coroutines.Job
 
 class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
     val modele= Modele.Companion
+    private var job: Job? = null
+
 
     fun effectuerNavigationPagePrincipalTuteur() {
         vue.navigationVersPagePrincipalTuteur()

@@ -2,7 +2,6 @@ package com.appnat3.tutoratplus.sourceDeDonnees
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.appnat3.tutoratplus.domaine.entite.Cours
 import com.appnat3.tutoratplus.domaine.entite.Disponibilite
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import java.time.LocalDate
@@ -10,48 +9,6 @@ import java.time.LocalTime
 
 
 class SourceBidon : SourceDeDonnees {
-
-    /**
-     * initialisation des different cours de tutorat
-     */
-
-    /*
-    var listeDesCours = mutableListOf<Cours>()
-
-    init {
-        var cours1 = Cours("Programmation 1", "programmation")
-        var cours2 = Cours("Programmation 2 (Java)", "programmation")
-        var cours3 = Cours("Programmation 2 (Python)", "reseau")
-        var cours4 = Cours("Programmation Autre et BD", "programmation")
-        var cours5 = Cours("Réseautique", "reseau")
-
-        listeDesCours.add(cours1)
-        listeDesCours.add(cours2)
-        listeDesCours.add(cours3)
-        listeDesCours.add(cours4)
-        listeDesCours.add(cours5)
-    }
-
-    override fun obtenirListeDesCours():List<Cours>{
-        return listeDesCours
-    }
-    */
-
-    /**
-     * initialisation et création dispo (Test)
-     */
-
-    var listeDispo = mutableListOf<Cours>()
-
-    /*init {
-        var dispo1 = DispoTuteur(1)
-        var dispo2 = DispoTuteur(1)
-        var dispo3 = DispoTuteur(1)
-        var dispo4 = DispoTuteur(2)
-        var dispo5 = DispoTuteur(3)
-        var dispo6 = DispoTuteur(3)
-        var dispo7 = DispoTuteur(4)
-    }*/
 
     /**
      * Création des different disponibilités
@@ -160,29 +117,6 @@ class SourceBidon : SourceDeDonnees {
     override fun obtenirlisteTuteur():List<Tuteur>{
         return listeTuteurs
     }
-
-    /**
-     * initialisation information login tuteur
-     */
-    /*
-    var listeInfoLogin = mutableListOf<InfoLogin>()
-
-    init {
-        var infoLogin1 = InfoLogin("mohamed", "abc1")
-        var infoLogin2 = InfoLogin("raphael", "abc2")
-        var infoLogin3 = InfoLogin("lakhdar", "abc3")
-        var infoLogin4 = InfoLogin("elliott", "abc4")
-        var infoLogin5 = InfoLogin("antoine", "abc5")
-
-        listeInfoLogin.add(infoLogin1)
-        listeInfoLogin.add(infoLogin2)
-        listeInfoLogin.add(infoLogin3)
-        listeInfoLogin.add(infoLogin4)
-        listeInfoLogin.add(infoLogin5)
-    }
-    override fun obtenirListeInfoLogin(): List<InfoLogin>{
-        return listeInfoLogin
-    }*/
 
 
 
