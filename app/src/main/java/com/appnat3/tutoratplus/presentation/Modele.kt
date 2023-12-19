@@ -12,7 +12,6 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 
-
 class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _source:  SourceDeDonnees = SourceBidon()) {
     fun retourListeDesCoursHttpTest(): List<Cours> {
         return source.obtenirListeCours()
@@ -54,17 +53,6 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         var listeDemandeTutorat = mutableListOf<DemandeTutorat>()
 
 
-        /**
-         * sauvegarde date et heure dispo tuteur
-         */
-        var idtuteurDispo:Int = 0
-        var jour:Int = 0
-        var mois:Int = 0
-        var annee:Int = 0
-        var heure:Int = 0
-        var minute:Int = 0
-
-
         //Méthodes  ----------------------------------
 
         /**
@@ -95,6 +83,10 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         fun retourListInfoLogin(): List<InfoLogin> {
             listeInfoLogin = sourceHttp.obtenirListeInfoLogin().toMutableList()
             return listeInfoLogin
+        }
+
+        fun envoiDispoTuteur(){
+            sourceHttp.postDispoTuteurs(listeDispoTuteur)
         }
     }
 }

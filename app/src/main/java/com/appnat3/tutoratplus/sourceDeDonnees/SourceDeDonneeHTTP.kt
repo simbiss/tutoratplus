@@ -81,7 +81,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
                     }
                 }
                 jsonRead.endObject()
-                var nouveauCours = Cours(nomCours,nomProgramme)
+                val nouveauCours = Cours(nomCours,nomProgramme)
                 listeDesCours.add(nouveauCours)
             }
 
@@ -114,7 +114,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     private fun lectureListeTuteursJson(jsonRead:JsonReader):List<Tuteur>{
 
         //Déclaration de variables---------------------------
-        var listeTuteur = mutableListOf<Tuteur>()
+        val listeTuteur = mutableListOf<Tuteur>()
 
         //Traitements---------------------------
         jsonRead.beginArray()  //listeDisponibilités
@@ -127,7 +127,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
             var heures: MutableList<LocalTime>
             var disponibilite:Disponibilite
             var heure :LocalTime
-            var listedisponibilites = mutableListOf<Disponibilite>()
+            val listedisponibilites = mutableListOf<Disponibilite>()
             var year = 0
             var month = 0
             var dayOfMonth = 0
@@ -220,12 +220,12 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
 
     private fun retourListeInfoLogin(json : String):List<InfoLogin>{
-        var jsonRead = JsonReader(StringReader(json))
+        val jsonRead = JsonReader(StringReader(json))
         return lectureInfoLogin(jsonRead)
     }
 
     private fun lectureInfoLogin(jsonRead:JsonReader): List<InfoLogin>{
-        var listeInfoLogin = mutableListOf<InfoLogin>()
+        val listeInfoLogin = mutableListOf<InfoLogin>()
         var nomUtilisateur = ""
         var motDePasse = ""
         jsonRead.beginArray()
@@ -240,7 +240,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
                 }
             }
             jsonRead.endObject()
-            var nouveauLogin = InfoLogin(nomUtilisateur,motDePasse)
+            val nouveauLogin = InfoLogin(nomUtilisateur,motDePasse)
             listeInfoLogin.add(nouveauLogin)
         }
         jsonRead.endArray()
@@ -250,7 +250,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
 
     //DispoTuteur---------------------------------------------------------------------
 
-    fun dispoTuteursToJson(dispoTuteurs: List<DispoTuteur>): String {
+    fun encodeurDispoTuteursJson(dispoTuteurs: List<DispoTuteur>): String {
         val stringWriter = StringWriter()
         val jsonWriter = JsonWriter(stringWriter)
 
@@ -278,9 +278,9 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     fun postDispoTuteurs(dispoTuteurs: List<DispoTuteur>) {
         val client = OkHttpClient()
         val mediaType = "application/json; charset=utf-8".toMediaType()
-        val requestBody = dispoTuteursToJson(dispoTuteurs).toRequestBody(mediaType)
+        val requestBody = encodeurDispoTuteursJson(dispoTuteurs).toRequestBody(mediaType)
 
-        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/dispoTuteur"
+        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/DispoTuteur"
 
         val request = Request.Builder()
             .url(url)
@@ -288,7 +288,7 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
             .build()
 
         client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {        //sus-----------------------------
+            override fun onFailure(call: Call, e: IOException) {
                 e.printStackTrace()
             }
 
@@ -302,6 +302,56 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
                 }
             }
         })
+    }
+
+    fun obtenirListeDispoTuteur():List<DispoTuteur>{
+        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/DispoTuteur"
+
+        val result = connectionHttpRequest(url)
+        try {
+            println("HTTP Request Result : $result")
+        }catch (e: Exception){
+            println("ERREUR: ${e.message}")
+        }
+        return lectureDispoTuteur(result)
+    }
+
+    fun lectureDispoTuteur(json : String): List<DispoTuteur>{
+
+        val dispoTuteurs = mutableListOf<DispoTuteur>()
+        val reader = JsonReader(StringReader(json))
+        reader.beginArray()
+        while (reader.hasNext()) {
+            var idDispo = 0
+            var idTuteur = 0
+            var reserver = false
+            var jour = 0
+            var mois = 0
+            var annee = 0
+            var heure = 0
+            var minute = 0
+
+            reader.beginObject()
+            while (reader.hasNext()) {
+                when (reader.nextName()) {
+                    "idDispo" -> idDispo = reader.nextInt()
+                    "idTuteur" -> idTuteur = reader.nextInt()
+                    "reserver" -> reserver = reader.nextBoolean()
+                    "jour" -> jour = reader.nextInt()
+                    "mois" -> mois = reader.nextInt()
+                    "annee" -> annee = reader.nextInt()
+                    "heure" -> heure = reader.nextInt()
+                    "minute" -> minute = reader.nextInt()
+                    else -> reader.skipValue()
+                }
+            }
+            reader.endObject()
+            dispoTuteurs.add(DispoTuteur(idDispo, idTuteur, reserver, jour, mois, annee, heure, minute))
+        }
+        reader.endArray()
+        reader.close()
+
+        return dispoTuteurs
     }
 
 

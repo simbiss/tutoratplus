@@ -109,6 +109,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
 
         txt_rdv.text="$sauvegardeJour-$sauvegardeMois-$sauvegardeAnnee \n Heure: $sauvegardeHeure Minute: $sauvegardeMinute"
         présentateur?.recuperationTuteur(sauvegardeJour,sauvegardeMois,sauvegardeAnnee,sauvegardeHeure,sauvegardeMinute)
+        présentateur?.traiterEnvoiDispo()
     }
 
     fun navigationVersAcceuil() {

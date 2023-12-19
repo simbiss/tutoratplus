@@ -26,6 +26,10 @@ class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
         val idTuteurLogger = modele.ouvertureSessionTuteur?.id
         modele.listeDispoTuteur.add(DispoTuteur(incrementationIdDispo(),idTuteurLogger!!,false, jour,mois,annee,heure,minute))
     }
+
+    fun traiterEnvoiDispo(){
+        modele.envoiDispoTuteur()
+    }
 }
 
 
