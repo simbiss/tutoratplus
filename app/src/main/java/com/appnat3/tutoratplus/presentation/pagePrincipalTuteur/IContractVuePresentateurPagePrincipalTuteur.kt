@@ -9,6 +9,6 @@ interface IContractVuePresentateurPagePrincipalTuteur {
     }
 
     interface IPresentateurPagePrincipalTuteur{
-        fun traiderListeDispo():List<DispoTuteur>
+        fun traiterListeDispo():List<DispoTuteur>
     }
 }

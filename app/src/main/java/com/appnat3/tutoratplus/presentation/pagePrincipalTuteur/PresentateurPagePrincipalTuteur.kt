@@ -15,13 +15,17 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresent
         return modele.ouvertureSessionTuteur
     }
 
-    override fun traiderListeDispo():List<DispoTuteur>{
+    override fun traiterListeDispo():List<DispoTuteur>{
         for (item in modele.listeDispoTuteur){
             if (idTuteurLogger == item.idTuteur){
                 listeDispoTuteur+=item
             }
         }
         return listeDispoTuteur
+    }
+
+    fun traiterNbrDemandeTutorat():Int{
+        return modele.listeDemandeTutorat.size
     }
 
     fun effectuerNavigationPageDispo(){

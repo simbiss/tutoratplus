@@ -29,6 +29,7 @@ class PresentateurConfirmation(var vue: VueConfirmation) : IPresentateurConfirma
     }
 
     override fun collectionReservationDispo():DispoTuteur{
+        modele.dispoSelectionnee!!.reserver = true
         return modele.dispoSelectionnee!!
     }
 
