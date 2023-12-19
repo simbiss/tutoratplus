@@ -47,7 +47,6 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_tuteur_page_dispo, container, false)
         présentateur = PresentateurPageTuteurDispo(this)
-
         btn_retour = vue.findViewById(R.id.buttonRetour)
         btn_retour.setOnClickListener {
             présentateur?.effectuerNavigationPagePrincipalTuteur()
@@ -72,7 +71,6 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)              // Obtient le NavController pour la navigation
-
     }
 
     fun collectDateChoisi(){
@@ -95,7 +93,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
 
     override fun onDateSet(view: DatePicker?, annee: Int, mois: Int, jour: Int) {
         sauvegardeAnnee = annee
-        sauvegardeMois = mois
+        sauvegardeMois = mois + 1
         sauvegardeJour = jour
 
         collectDateChoisi()
@@ -109,6 +107,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
 
         txt_rdv.text="$sauvegardeJour-$sauvegardeMois-$sauvegardeAnnee \n Heure: $sauvegardeHeure Minute: $sauvegardeMinute"
         présentateur?.recuperationTuteur(sauvegardeJour,sauvegardeMois,sauvegardeAnnee,sauvegardeHeure,sauvegardeMinute)
+        présentateur?.traiterEnvoiDispo()
     }
 
     fun navigationVersAcceuil() {

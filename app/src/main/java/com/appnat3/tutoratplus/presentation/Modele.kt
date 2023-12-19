@@ -12,7 +12,6 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 
-
 class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _source:  SourceDeDonnees = SourceBidon()) {
     fun retourListeDesCoursHttpTest(): List<Cours> {
         return source.obtenirListeCours()
@@ -54,17 +53,6 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         var listeDemandeTutorat = mutableListOf<DemandeTutorat>()
 
 
-        /**
-         * sauvegarde date et heure dispo tuteur
-         */
-        var idtuteurDispo:Int = 0
-        var jour:Int = 0
-        var mois:Int = 0
-        var annee:Int = 0
-        var heure:Int = 0
-        var minute:Int = 0
-
-
         //Méthodes  ----------------------------------
 
         /**
@@ -76,9 +64,8 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
             return listeDesCours
         }
 
-        /**
-         * initialisation des different cours de tutorat
-         */
+
+
         fun retourListeTuteurBidon(): List<Tuteur> {
             return _source.obtenirlisteTuteur()
         }
@@ -90,7 +77,7 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
 
 
         /**
-         * initialisation information login tuteur
+         * Méthode pour retourner les informations login tuteur
          */
 
         fun retourListInfoLogin(): List<InfoLogin> {
@@ -98,21 +85,8 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
             return listeInfoLogin
         }
 
-        /**
-         * méthode pour retourner les informations entrées choisies par l'utilisateur
-         */
-
-        fun retourDateChoisie(): LocalDate? {
-            return dateSelected
+        fun envoiDispoTuteur(){
+            sourceHttp.postDispoTuteurs(listeDispoTuteur)
         }
-
-        fun retourHeureSelectionne(): LocalTime? {
-            return heureSelectionne
-        }
-
-
-        /**
-         * initialisation des variable pour les demandes de tutorat
-         */
     }
 }

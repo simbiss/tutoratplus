@@ -46,6 +46,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
             présentateur?.effectuerNavigationPageDispo()
         }
         btn_demandeTutorat = vue.findViewById(R.id.btn_demande)
+        btn_demandeTutorat.text = "Demande Tutorat (${présentateur?.traiterNbrDemandeTutorat()})"
         btn_demandeTutorat.setOnClickListener {
             présentateur?.effectuerNavigationDemandeTutorat()
         }
@@ -66,7 +67,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)              // Obtient le NavController pour la navigation
-        initialiserListeDispo(présentateur?.traiderListeDispo())
+        initialiserListeDispo(présentateur?.traiterListeDispo())
     }
 
     override fun initialiserListeDispo(liste: List<DispoTuteur>?) {
