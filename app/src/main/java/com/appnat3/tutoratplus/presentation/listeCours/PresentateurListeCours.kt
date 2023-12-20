@@ -25,7 +25,7 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
                 }
             }catch (e: Exception){
                 CoroutineScope(Dispatchers.Main).launch {
-                    vue.afficherErreur( "Erreur de connexion")
+                    vue.afficherErreur("Veuillez vérifier votre connection internet")
                 }
             }
         }

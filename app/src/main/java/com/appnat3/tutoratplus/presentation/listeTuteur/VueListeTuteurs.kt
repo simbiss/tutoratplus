@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.listeTuteur
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -68,6 +69,16 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
     override fun initialiserListeTuteurs(liste: Array<Tuteur>?){
         adapter = ArrayAdapter<Tuteur>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
         this.liste_tuteurs.setAdapter(adapter)
+    }
+
+    override fun afficherErreur(message: String) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Erreur de connexion")
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, which ->
+                présentateur?.effectuerNavigationAccueil()
+            }
+            .show()
     }
 
     fun navigationVersCalendrier() {

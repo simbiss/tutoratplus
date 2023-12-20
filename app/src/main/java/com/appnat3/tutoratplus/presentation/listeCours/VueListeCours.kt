@@ -86,7 +86,7 @@ class VueListeCours : Fragment(), IVueListeCours{
 
     override fun afficherErreur(message: String) {
         AlertDialog.Builder(requireContext())
-            .setTitle("Erreur")
+            .setTitle("Erreur de connexion")
             .setMessage(message)
             .setPositiveButton("OK") { dialog, which ->
                 présentateur?.effectuerNavigationMenu()

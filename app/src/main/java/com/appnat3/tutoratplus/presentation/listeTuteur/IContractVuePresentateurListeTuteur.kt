@@ -6,6 +6,7 @@ interface IContractVuePresentateurListeTuteur {
 
     interface IVueListeTuteur{
         fun initialiserListeTuteurs(liste: Array<Tuteur>?)
+        fun afficherErreur(message: String)
     }
 
     interface IPresentateurListeTuteur{

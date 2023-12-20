@@ -27,21 +27,22 @@ class PresentateurListeTuteur(var vue: VueListeTuteurs):
     }
 
     override fun traiter_affichageListeTuteur() {
-
-        job = CoroutineScope( Dispatchers.IO ).launch {
-            listeTuteurs = traiterListeTuteurs()
-            CoroutineScope( Dispatchers.Main ).launch {
-                vue.initialiserListeTuteurs(listeTuteurs)
+        job = CoroutineScope(Dispatchers.IO).launch {
+            try {
+                listeTuteurs = traiterListeTuteurs()
+                CoroutineScope(Dispatchers.Main).launch {
+                    vue.initialiserListeTuteurs(listeTuteurs)
+                }
+            } catch (e: Exception) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    vue.afficherErreur("Veuillez vérifier votre connection internet")
+                }
             }
         }
     }
 
     fun effectuerNavigationCours(){
         vue.navigationVersListeCours()
-    }
-
-    fun effectuerNavigationCalendrier(){
-        vue.navigationVersCalendrier()
     }
 
     fun effectuerNavigationAccueil(){
