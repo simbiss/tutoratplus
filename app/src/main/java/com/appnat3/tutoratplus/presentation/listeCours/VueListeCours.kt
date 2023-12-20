@@ -1,5 +1,6 @@
 package com.appnat3.tutoratplus.presentation.listeCours
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -83,7 +84,15 @@ class VueListeCours : Fragment(), IVueListeCours{
         this.liste_des_cours.setAdapter(adapter)
     }
 
-
+    override fun afficherErreur(message: String) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Erreur")
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, which ->
+                présentateur?.effectuerNavigationMenu()
+            }
+            .show()
+    }
 
     fun naviguerVersmenu_principal() {
         navController.navigate(R.id.action_liste_des_cours_menu_principal)

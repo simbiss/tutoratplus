@@ -18,12 +18,17 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
 
     fun traiter_démarrage(){
         job = CoroutineScope( Dispatchers.IO ).launch {
-            listeCours = traiterListeCours()
-            CoroutineScope( Dispatchers.Main ).launch {
-                vue.initialiserListeCours(listeCours)
+            try {
+                listeCours = traiterListeCours()
+                CoroutineScope( Dispatchers.Main ).launch {
+                    vue.initialiserListeCours(listeCours)
+                }
+            }catch (e: Exception){
+                CoroutineScope(Dispatchers.Main).launch {
+                    vue.afficherErreur( "Erreur de connexion")
+                }
             }
         }
-
     }
 
     override suspend fun traiterListeCours(): Array<Cours> {

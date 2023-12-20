@@ -39,7 +39,7 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
         return result
     }
 
-    override fun traiterCollectInformationLogin(username: String){
+    override fun traiterCollectInformationLogin(username: String) {
 
         coroutineScope.launch {
 
@@ -52,7 +52,7 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
                 5 to listeInfoLogin[4]
             )
 
-            val listeTuteurs = modele.retourListeTuteurBidon()
+            val listeTuteurs = modele.retourListeTuteur()
             var mapListTuteur = hashMap<Int, Tuteur>(
                 1 to listeTuteurs[0],
                 2 to listeTuteurs[1],
@@ -61,38 +61,29 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
                 5 to listeTuteurs[4]
             )
 
-            var idOuvertureSessionLogin: Int? = null
+            var idOuvertureSessionLogin: Int?
             for ((key, InfoLogin) in mapInfoLogin) {
                 if (InfoLogin.nomUtilisateur == username) {       //condition pour trouver la position de la clée du tuteur a logger
                     idOuvertureSessionLogin = key
-                }
-            }
-            idOuvertureSessionLogin?.let { id ->
-                mapListTuteur[id]?.let { tuteur ->
-                    modele.ouvertureSessionTuteur = tuteur
-                }
-            }
 
-/*
                     for ((key, Tuteur) in mapListTuteur) {
                         if (key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
                             modele.ouvertureSessionTuteur = Tuteur
+                            Log.d("TuteurLoggger", "${modele.ouvertureSessionTuteur}")
 
                         }
-                    }*/
-                //}
-            //}
-
+                    }
+                }
+            }
         }
     }
 
-    fun effectuerNavigationAcceuil(){
-        vue.naviguerVersmenu_principal()
-    }
+            fun effectuerNavigationAcceuil() {
+                vue.naviguerVersmenu_principal()
+            }
 
-    fun effectuerNavigationPageTuteur(){
-        vue.navigationVerspage_principal_tuteur()
-    }
-
+            fun effectuerNavigationPageTuteur() {
+                vue.navigationVerspage_principal_tuteur()
+            }
 
 }
