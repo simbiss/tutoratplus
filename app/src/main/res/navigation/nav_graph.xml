@@ -35,9 +35,6 @@
             android:id="@+id/action_liste_tuteur_to_liste_des_cours"
             app:destination="@id/liste_des_cours" />
         <action
-            android:id="@+id/action_liste_tuteur_to_pageCalendrier"
-            app:destination="@id/pageCalendrier" />
-        <action
             android:id="@+id/action_liste_tuteur_to_menu_principal"
             app:destination="@id/menu_principal" />
         <action
@@ -84,20 +81,6 @@
         <action
             android:id="@+id/action_page_confirmation_to_informationPersonnlle4"
             app:destination="@id/informationPersonnlle" />
-    </fragment>
-    <fragment
-        android:id="@+id/pageCalendrier"
-        android:name="com.appnat3.tutoratplus.presentation.pageCalendrier.PageCalendrier"
-        android:label="PageCalendrier" >
-        <action
-            android:id="@+id/action_pageCalendrier_to_informationPersonnlle"
-            app:destination="@id/informationPersonnlle" />
-        <action
-            android:id="@+id/action_pageCalendrier_to_liste_tuteur"
-            app:destination="@id/liste_tuteur" />
-        <action
-            android:id="@+id/action_pageCalendrier_to_menu_principal"
-            app:destination="@id/menu_principal" />
     </fragment>
     <fragment
         android:id="@+id/page_principal_tuteur"
