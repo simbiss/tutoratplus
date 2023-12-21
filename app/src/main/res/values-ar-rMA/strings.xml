@@ -19,6 +19,7 @@
     <!-- page liste des cours -->
     <string name="choisissez_un_cours">اختر دورة</string>
     <!-- page liste tuteur -->
+    <string name="choisissez_un_tuteur">اختر مدرسًا</string>
 
     <!-- page information personnelle -->
     <string name="informations_personnelle">معلومات شخصية</string>
@@ -34,6 +35,7 @@
     <string name="pr_nom_hint">الاسم الأول</string>
     <string name="da">رقم DA :</string>
     <string name="da_hint">رقم DA</string>
+
 
 
 </resources>

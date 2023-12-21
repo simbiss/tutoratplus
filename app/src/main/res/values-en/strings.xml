@@ -23,6 +23,7 @@
     <string name="choisissez_un_cours">Choose a course</string>
 
     <!-- page liste tuteur -->
+    <string name="choisissez_un_tuteur">Choose a tutor</string>
 
     <!-- page information personnelle -->
     <string name="informations_personnelle">Personal information</string>

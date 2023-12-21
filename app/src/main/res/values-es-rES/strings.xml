@@ -22,7 +22,9 @@
 
     <!-- page liste des cours -->
     <string name="choisissez_un_cours">Elige un curso</string>
+
     <!-- page liste tuteur -->
+    <string name="choisissez_un_tuteur">Elige un tutor</string>
 
     <!-- page information personnelle -->
     <string name="prenom">Nombre de pila :</string>
@@ -34,6 +36,7 @@
     <string name="pr_nom_hint">Nombre de pila</string>
     <string name="da">DA :</string>
     <string name="da_hint">DA</string>
+
 
 
 </resources>
