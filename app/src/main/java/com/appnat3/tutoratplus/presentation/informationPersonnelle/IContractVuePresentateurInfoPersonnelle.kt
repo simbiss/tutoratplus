@@ -1,8 +1,11 @@
 package com.appnat3.tutoratplus.presentation.informationPersonnelle
 
+import android.view.View
+
 interface IContractVuePresentateurInfoPersonnelle {
 
     interface IVueInfoPersonnelle{
+        fun collectInformationPersonnelle(vue: View)
     }
 
     interface IPresentateurInfoPersonnelle{

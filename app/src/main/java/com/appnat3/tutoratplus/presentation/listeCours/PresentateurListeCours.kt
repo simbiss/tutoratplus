@@ -16,14 +16,19 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
     var listeCours = arrayOf<Cours>()
 
 
-    fun traiter_démarrage(){
+    override fun traiter_démarrage(){
         job = CoroutineScope( Dispatchers.IO ).launch {
-            listeCours = traiterListeCours()
-            CoroutineScope( Dispatchers.Main ).launch {
-                vue.initialiserListeCours(listeCours)
+            try {
+                listeCours = traiterListeCours()
+                CoroutineScope( Dispatchers.Main ).launch {
+                    vue.initialiserListeCours(listeCours)
+                }
+            }catch (e: Exception){
+                CoroutineScope(Dispatchers.Main).launch {
+                    vue.afficherErreur("Veuillez vérifier votre connection internet")
+                }
             }
         }
-
     }
 
     override suspend fun traiterListeCours(): Array<Cours> {

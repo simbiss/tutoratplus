@@ -2,9 +2,10 @@ package com.appnat3.tutoratplus.presentation.pageTuteurDispo
 
 import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.presentation.Modele
+import com.appnat3.tutoratplus.presentation.pageTuteurDispo.IContractVuePresentateurPageTuteurDispo.IPresentateurPageTuteurDispo
 import kotlinx.coroutines.Job
 
-class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
+class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) : IPresentateurPageTuteurDispo{
     val modele= Modele.Companion
     private var job: Job? = null
 
@@ -17,17 +18,17 @@ class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) {
         vue.navigationVersAcceuil()
     }
 
-    fun incrementationIdDispo(): Int{       //méthode pour donner un le id prochain id disponible a une nouvelle dispo tuteur
+    override fun incrementationIdDispo(): Int{       //méthode pour donner un le id prochain id disponible a une nouvelle dispo tuteur
         val idSuivant = modele.listeDispoTuteur.size + 1
         return idSuivant
     }
 
-    fun recuperationTuteur(jour:Int, mois:Int, annee:Int, heure:Int, minute:Int){
+    override fun recuperationTuteur(jour:Int, mois:Int, annee:Int, heure:Int, minute:Int){
         val idTuteurLogger = modele.ouvertureSessionTuteur?.id
         modele.listeDispoTuteur.add(DispoTuteur(incrementationIdDispo(),idTuteurLogger!!,false, jour,mois,annee,heure,minute))
     }
 
-    fun traiterEnvoiDispo(){
+    override fun traiterEnvoiDispo(){
         modele.envoiDispoTuteur()
     }
 }

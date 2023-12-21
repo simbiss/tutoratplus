@@ -1,18 +1,12 @@
 package com.appnat3.tutoratplus.sourceDeDonnees
 
-import android.os.Build
-import androidx.annotation.RequiresApi
-import com.appnat3.tutoratplus.domaine.entite.Disponibilite
-import com.appnat3.tutoratplus.domaine.entite.Tuteur
-import java.time.LocalDate
-import java.time.LocalTime
-
 
 class SourceBidon : SourceDeDonnees {
 
     /**
      * Création des different disponibilités
      */
+    /*
     @RequiresApi(Build.VERSION_CODES.O)
     val date1 = LocalDate.of(2023, 11, 12)
 
@@ -117,16 +111,5 @@ class SourceBidon : SourceDeDonnees {
     override fun obtenirlisteTuteur():List<Tuteur>{
         return listeTuteurs
     }
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 }

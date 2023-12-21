@@ -57,7 +57,7 @@ class VueInformationPersonnlle : Fragment(), IVueInfoPersonnelle{
         navController = Navigation.findNavController(view)
     }
 
-    fun collectInformationPersonnelle(vue:View){
+    override fun collectInformationPersonnelle(vue:View){
         btnSuivant.setOnClickListener {
             var da = vue.findViewById<EditText>(R.id.champDAInfo)
             var prenom = vue.findViewById<EditText>(R.id.champPrenomInfo)
