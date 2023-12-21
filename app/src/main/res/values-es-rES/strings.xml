@@ -7,6 +7,9 @@
 
 
     <!-- menu principal -->
+    <string name="prendre_un_rendez_vous">Pedir hora</string>
+    <string name="propos">A PROPOSITO</string>
+    <string name="connexion">Conexión</string>
 
     <!-- page information -->
 
@@ -24,4 +27,5 @@
     <string name="pr_nom_hint">Nombre de pila</string>
     <string name="da">DA :</string>
     <string name="da_hint">DA</string>
+
 </resources>

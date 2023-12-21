@@ -16,5 +16,8 @@
     <string name="pr_nom_hint">Prénom</string>
     <string name="da">DA :</string>
     <string name="da_hint">DA</string>
+    <string name="prendre_un_rendez_vous">Prendre un rendez-vous</string>
+    <string name="propos">À PROPOS</string>
+    <string name="connexion">Connexion</string>
 
 </resources>

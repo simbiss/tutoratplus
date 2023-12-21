@@ -7,6 +7,9 @@
 
 
     <!-- menu principal -->
+    <string name="prendre_un_rendez_vous">Make an appointment</string>
+    <string name="propos">ABOUT</string>
+    <string name="connexion">Login</string>
 
     <!-- page information -->
 
@@ -28,6 +31,7 @@
     <string name="pr_nom_hint">First name</string>
     <string name="da">DA :</string>
     <string name="da_hint">DA</string>
+
 
     <!-- page confirmation -->
 
