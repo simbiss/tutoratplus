@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
-import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.IContractVuePresentateurPagePrincipalTuteur.IVuePagePrincipalTuteur
 
 
@@ -23,7 +22,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     lateinit var txtNomTuteurLogger: TextView
     lateinit var btn_rdv: Button
     lateinit var btn_demandeTutorat: Button
-    lateinit var adapter: ArrayAdapter<DispoTuteur>
+    lateinit var adapter: ArrayAdapter<String>
     lateinit var listeDispo: ListView
 
     override fun onCreateView(
@@ -64,8 +63,8 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
         initialiserListeDispo(présentateur?.traiterListeDispo())
     }
 
-    override fun initialiserListeDispo(liste: List<DispoTuteur>?) {
-        adapter = ArrayAdapter<DispoTuteur>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
+    override fun initialiserListeDispo(liste: List<String>?) {
+        adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, liste!!)
         this.listeDispo.setAdapter(adapter)
     }
 

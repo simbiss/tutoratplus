@@ -154,13 +154,13 @@ class ModeleTest {
         val listeDispoTuteur_attendu = mutableListOf<DispoTuteur>()
 
 
-        val dispoTuteur1 = DispoTuteur(1,4, false, 15, 4, 2023, 14, 30)
+        val dispoTuteur = DispoTuteur(1,4, false, 15, 4, 2023, 14, 30)
 
-        listeDispoTuteur_attendu.add(dispoTuteur1)
+        listeDispoTuteur_attendu.add(dispoTuteur)
         val retourDispoTuteurs = modele.retourListeDispoTuteur()
 
         // Appel de la méthode à tester
-            assertEquals(listeDispoTuteur_attendu, retourDispoTuteurs)
+        assertEquals(listeDispoTuteur_attendu, retourDispoTuteurs)
 
     }
 }
