@@ -58,9 +58,12 @@
     <string name="disponibilite_btn">Availability</string>
 
 
+
     <!-- page dispo reservation -->
+    <!-- Aucun(pas besoin) -->
 
     <!-- tuteur page dispo -->
+    <string name="ajouter_disponibilite">Add Availability</string>
 
     <!-- page demande tutorat -->
 

@@ -54,9 +54,11 @@
     <string name="demande_tutorat">Solicitud de tutoría</string>
     <string name="disponibilite_btn">Disponibilidad</string>
 
+
     <!-- page dispo reservation -->
 
     <!-- tuteur page dispo -->
+    <string name="ajouter_disponibilite">Agregar disponibilidad</string>
 
     <!-- page demande tutorat -->
 

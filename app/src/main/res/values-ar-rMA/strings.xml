@@ -52,9 +52,12 @@
     <string name="demande_tutorat">طلب التدريس</string>
     <string name="disponibilite_btn">التوفر</string>
 
+
     <!-- page dispo reservation -->
+    <!-- Aucun(pas besoin) -->
 
     <!-- tuteur page dispo -->
+    <string name="ajouter_disponibilite">إضافة التوفر</string>
 
     <!-- page demande tutorat -->
 

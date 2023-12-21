@@ -46,11 +46,13 @@
     <string name="demande_tutorat">Demande Tutorat</string>
     <string name="disponibilite_btn">Disponibilité</string>
 
+
     <!-- page principal tuteur -->
 
     <!-- page dispo reservation -->
 
     <!-- tuteur page dispo -->
+    <string name="ajouter_disponibilite">Ajouter Disponibilité</string>
 
     <!-- page demande tutorat -->
 
