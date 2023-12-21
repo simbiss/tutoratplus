@@ -5,7 +5,7 @@
     <!-- menu principal -->
     <string name="prendre_un_rendez_vous">تحديد موعد</string>
     <string name="propos">عن</string>
-    <string name="connexion">اتصال</string>
+    <string name="connexion">تسجيل الدخول</string>
 
     <!-- page information -->
     <string name="description">وصف</string>
@@ -41,7 +41,10 @@
     <string name="confirmer_votre_s_ance">قم بتأكيد جلستك</string>
     <string name="ajouter_mon_calendrier">أضف إلى التقويم الخاص بي</string>
 
+
     <!-- page login tuteur -->
+    <string name="nom_utilisateur_login">اسم المستخدم</string>
+    <string name="mot_de_passe_login">كلمة السر</string>
 
     <!-- page principal tuteur -->
 

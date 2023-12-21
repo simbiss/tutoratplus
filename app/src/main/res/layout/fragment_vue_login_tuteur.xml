@@ -27,7 +27,7 @@
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:text="Retour" />
+            android:text="@string/retour" />
 
     </LinearLayout>
 
@@ -36,7 +36,7 @@
         android:layout_width="67dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
-        android:text="Tutorat+"
+        android:text="@string/tutorat"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Acceuil"
+        android:text="@string/acceuil"
         android:textColor="@color/bleu"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:hint="Mot de passe"
+        android:hint="@string/mot_de_passe_login"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/entreeUsername"
         tools:ignore="MissingConstraints"
@@ -90,20 +90,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Nom utilisateur"
+        android:hint="@string/nom_utilisateur_login"
         app:layout_constraintTop_toBottomOf="@+id/msgErreurEntre"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="104dp"
-        android:layout_height="61dp"
+        android:layout_width="210dp"
+        android:layout_height="62dp"
         android:layout_marginStart="140dp"
         android:layout_marginTop="112dp"
         android:layout_weight="1"
         android:padding="20dp"
-        android:text="Login"
+        android:text="@string/connexion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/entreePassword"
         tools:ignore="MissingConstraints" />
@@ -128,7 +128,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="56dp"
-        android:text="Connexion"
+        android:text="@string/connexion"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

@@ -46,7 +46,10 @@
     <string name="confirmer_votre_s_ance">Confirm your session</string>
     <string name="ajouter_mon_calendrier">Add to my calendar</string>
 
+
     <!-- page login tuteur -->
+    <string name="nom_utilisateur_login">Username</string>
+    <string name="mot_de_passe_login">Password</string>
 
     <!-- page principal tuteur -->
 

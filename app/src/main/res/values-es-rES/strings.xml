@@ -43,7 +43,10 @@
     <string name="confirmer_votre_s_ance">Confirma tu sesión</string>
     <string name="ajouter_mon_calendrier">Añadir a mi calendario</string>
 
+
     <!-- page login tuteur -->
+    <string name="nom_utilisateur_login">Nombre de usuario</string>
+    <string name="mot_de_passe_login">Contraseña</string>
 
     <!-- page principal tuteur -->
 
