@@ -49,6 +49,9 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation ("org.mockito:mockito-core:3.3.3")
+    testImplementation ("com.squareup.okhttp3:mockwebserver:4.9.0")
+    testImplementation ("org.robolectric:robolectric:4.5.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.5.3")
@@ -62,6 +65,9 @@ dependencies {
     implementation("com.google.apis:google-api-services-calendar:v3-rev305-1.23.0"){
         exclude("com.google.guava")
     }
-
     implementation("com.google.oauth-client:google-oauth-client-jetty:1.23.0")
+
+
+
+
 }

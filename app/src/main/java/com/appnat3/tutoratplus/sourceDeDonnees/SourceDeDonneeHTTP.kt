@@ -232,24 +232,52 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
         })
     }
 
-    fun obtenirListeDispoTuteur():List<DispoTuteur>{
+
+
+
+    /*fun obtenirListeDispoTuteur():List<DispoTuteur>{
+
         val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/DispoTuteur"
 
-        val result = connectionHttpRequest(url)
-        try {
-            println("HTTP Request Result : $result")
+        val result = try {
+            connectionHttpRequest(url)
         }catch (e: Exception){
-            println("ERREUR: ${e.message}")
+            throw e
         }
-        return lectureDispoTuteur(result)
+        return retourListeDispoTuteur(result)
+    }*/
+
+    fun obtenirListeDispoTuteur(): List<DispoTuteur> {
+        val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/DispoTuteur"
+        val client = OkHttpClient()
+
+        val request = Request.Builder()
+            .url(url)
+            .get()
+            .build()
+
+        val response = client.newCall(request).execute()
+        client.dispatcher.executorService.shutdown() // Fermeture de la session
+        client.connectionPool.evictAll() // Éviter les fuites de ressources
+
+        if (!response.isSuccessful) {
+            throw Exception("HTTP request Failed : ${response.code}")
+        }
+
+        val jsonResponse = response.body?.string() ?: ""
+        return retourListeDispoTuteur(jsonResponse)
     }
 
-    fun lectureDispoTuteur(json : String): List<DispoTuteur>{
+    private fun retourListeDispoTuteur(json : String):List<DispoTuteur>{
+        val jsonRead = JsonReader(StringReader(json))
+        return lectureDispoTuteur(jsonRead)
+    }
 
-        val dispoTuteurs = mutableListOf<DispoTuteur>()
-        val reader = JsonReader(StringReader(json))
-        reader.beginArray()
-        while (reader.hasNext()) {
+    private fun lectureDispoTuteur( json: JsonReader): List<DispoTuteur>{
+        val listeDispoTuteur = mutableListOf<DispoTuteur>()
+
+        json.beginArray()
+        while (json.hasNext()) {
             var idDispo = 0
             var idTuteur = 0
             var reserver = false
@@ -259,29 +287,27 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
             var heure = 0
             var minute = 0
 
-            reader.beginObject()
-            while (reader.hasNext()) {
-                when (reader.nextName()) {
-                    "idDispo" -> idDispo = reader.nextInt()
-                    "idTuteur" -> idTuteur = reader.nextInt()
-                    "reserver" -> reserver = reader.nextBoolean()
-                    "jour" -> jour = reader.nextInt()
-                    "mois" -> mois = reader.nextInt()
-                    "annee" -> annee = reader.nextInt()
-                    "heure" -> heure = reader.nextInt()
-                    "minute" -> minute = reader.nextInt()
-                    else -> reader.skipValue()
+            json.beginObject()
+            while (json.hasNext()) {
+                when (json.nextName()) {
+                    "idDispo" -> idDispo = json.nextInt()
+                    "idTuteur" -> idTuteur = json.nextInt()
+                    "reserver" -> reserver = json.nextBoolean()
+                    "jour" -> jour = json.nextInt()
+                    "mois" -> mois = json.nextInt()
+                    "annee" -> annee = json.nextInt()
+                    "heure" -> heure = json.nextInt()
+                    "minute" -> minute = json.nextInt()
+                    else -> json.skipValue()
                 }
             }
-            reader.endObject()
-            dispoTuteurs.add(DispoTuteur(idDispo, idTuteur, reserver, jour, mois, annee, heure, minute))
+            json.endObject()
+            listeDispoTuteur.add(DispoTuteur(idDispo, idTuteur, reserver, jour, mois, annee, heure, minute))
         }
-        reader.endArray()
-        reader.close()
+        json.endArray()
+        json.close()
 
-        return dispoTuteurs
+        return listeDispoTuteur
     }
-
-
 
 }
