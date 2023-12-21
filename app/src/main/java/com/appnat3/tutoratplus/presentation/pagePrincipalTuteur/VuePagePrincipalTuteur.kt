@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.pagePrincipalTuteur
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -28,7 +26,6 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     lateinit var adapter: ArrayAdapter<DispoTuteur>
     lateinit var listeDispo: ListView
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +36,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
 
         listeDispo = vue.findViewById(R.id.listeDispoTuteur)
         txtNomTuteurLogger = vue.findViewById(R.id.afficherNomTuteur)
-        val nomTuteurLogger = présentateur?.traiderNomTuteurLogger()
+        val nomTuteurLogger = présentateur!!.traiderNomTuteurLogger()
 
         btn_rdv = vue.findViewById(R.id.btn_rdv)
         btn_rdv.setOnClickListener {
@@ -51,14 +48,11 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
             présentateur?.effectuerNavigationDemandeTutorat()
         }
 
-
         if (nomTuteurLogger != null) {
             txtNomTuteurLogger.text = "Bienvenue : ${nomTuteurLogger.nomTuteur}"
         }else if(nomTuteurLogger == null) {
             txtNomTuteurLogger.text = "null ...$nomTuteurLogger"
-        }
-
-        else {
+        }else {
             txtNomTuteurLogger.text = "Erreur! Tuteur introuvable :/"
         }
         return vue
@@ -84,6 +78,4 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     fun navigationVers_demande_tutorat(){
         navController.navigate(R.id.action_page_principal_tuteur_to_demande_tutorat2)
     }
-
-
 }

@@ -30,19 +30,14 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
             }
 
         }
-
         runBlocking {
             job!!.join()
         }
-
-
         return result
     }
 
     override fun traiterCollectInformationLogin(username: String) {
-
-        coroutineScope.launch {
-
+        job = coroutineScope.launch {
             val listeInfoLogin = modele.retourListInfoLogin()
             val mapInfoLogin = hashMap<Int, InfoLogin>(
                 1 to listeInfoLogin[0],
@@ -75,6 +70,9 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
                     }
                 }
             }
+        }
+        runBlocking {
+            job!!.join()
         }
     }
 

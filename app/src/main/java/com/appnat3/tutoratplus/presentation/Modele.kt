@@ -64,17 +64,10 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
             return listeDesCours
         }
 
-
-
-        fun retourListeTuteurBidon(): List<Tuteur> {
-            return _source.obtenirlisteTuteur()
-        }
-
         fun retourListeTuteur(): List<Tuteur> {
             listeTuteurs =  sourceHttp.obtenirListeTuteurs().toMutableList()
             return  listeTuteurs
         }
-
 
         /**
          * Méthode pour retourner les informations login tuteur
