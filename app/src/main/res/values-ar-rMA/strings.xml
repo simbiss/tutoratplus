@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- menu principal -->
+    <string name="prendre_un_rendez_vous">تحديد موعد</string>
+    <string name="propos">عن</string>
+    <string name="connexion">تسجيل الدخول</string>
+
+    <!-- page information -->
+    <string name="description">وصف</string>
+    <string name="description_paragraphe">
+        مرحبًا بك في موقع التدريس الخاص بنا، طريقك إلى
+         تفوق. سوف يرشدك مدرسونا المؤهلون نحو النجاح في جميع المواد.
+         إن التخصيص والمرونة والموارد والرضا المضمون هي التزاماتنا. انضم إلينا
+         اليوم من أجل تعليم مصمم خصيصًا ومستقبل مشرق.
+    </string>
+
+    <!-- page liste des cours -->
+    <string name="choisissez_un_cours">اختر دورة</string>
+    <!-- page liste tuteur -->
+    <string name="choisissez_un_tuteur">اختر مدرسًا</string>
+
+    <!-- page information personnelle -->
+    <string name="informations_personnelle">معلومات شخصية</string>
+    <string name="retour">خلف</string>
+    <string name="acceuil">ترحيب</string>
+    <string name="tutorat">Tutorat+</string>
+    <string name="prenom">الاسم الأول :</string>
+    <string name="nom">اسم :</string>
+    <string name="courriel">بريد إلكتروني :</string>
+    <string name="continuer">يكمل</string>
+    <string name="courriel_hint">بريد إلكتروني</string>
+    <string name="nom_hint">اسم</string>
+    <string name="pr_nom_hint">الاسم الأول</string>
+    <string name="da">رقم DA :</string>
+    <string name="da_hint">رقم DA</string>
+
+
+    <!-- page confirmation -->
+    <string name="confirmer_votre_s_ance">قم بتأكيد جلستك</string>
+    <string name="ajouter_mon_calendrier">أضف إلى التقويم الخاص بي</string>
+
+
+    <!-- page login tuteur -->
+    <string name="nom_utilisateur_login">اسم المستخدم</string>
+    <string name="mot_de_passe_login">كلمة السر</string>
+
+
+    <!-- page principal tuteur -->
+    <string name="liste_disponibilite">قائمة التوفر</string>
+    <string name="demande_tutorat">طلب التدريس</string>
+    <string name="disponibilite_btn">التوفر</string>
+
+
+    <!-- page dispo reservation -->
+    <!-- Aucun(pas besoin) -->
+
+    <!-- tuteur page dispo -->
+    <string name="ajouter_disponibilite">إضافة التوفر</string>
+
+    <!-- page demande tutorat -->
+
+
+
+</resources>

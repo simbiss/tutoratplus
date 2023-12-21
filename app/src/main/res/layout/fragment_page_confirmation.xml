@@ -15,7 +15,7 @@
         android:layout_width="304dp"
         android:layout_height="40dp"
         android:layout_marginTop="44dp"
-        android:text="Confirmer votre séance"
+        android:text="@string/confirmer_votre_s_ance"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:text="Retour" />
+            android:text="@string/retour" />
 
     </LinearLayout>
 
@@ -53,7 +53,7 @@
         android:layout_width="67dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
-        android:text="Tutorat+"
+        android:text="@string/tutorat"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Acceuil"
+        android:text="@string/acceuil"
         android:textColor="@color/bleu"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,7 +182,7 @@
         android:layout_height="46dp"
         android:layout_marginBottom="56dp"
         android:background="@color/bleu"
-        android:text="Ajouter à mon calendrier"
+        android:text="@string/ajouter_mon_calendrier"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"

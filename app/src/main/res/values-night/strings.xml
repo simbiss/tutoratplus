@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prendre_un_rendez_vous">Prendre un rendez-vous</string>
+    <string name="propos">À PROPOS</string>
+    <string name="connexion">Connexion</string>
+    <string name="description">Description</string>
+    <string name="description_paragraphe">Bienvenue sur notre site de tutorat, votre chemin vers l\'excellence. Nos tuteurs qualifiés vous guideront vers la réussite dans toutes les matières. Personnalisation, flexibilité, ressources, et satisfaction garantie sont nos engagements. Rejoignez-nous aujourd\'hui pour une éducation sur mesure et un avenir brillant.</string>
+    <string name="choisissez_un_cours">Choisissez un cours</string>
+    <string name="choisissez_un_tuteur">Choisissez un tuteur</string>
+    <string name="confirmer_votre_s_ance">Confirmer votre séance</string>
+    <string name="ajouter_mon_calendrier">Ajouter à mon calendrier</string>
+    <string name="nom_utilisateur_login">Nom utilisateur</string>
+    <string name="mot_de_passe_login">Mot de passe</string>
+    <string name="liste_disponibilit">Liste Disponibilité</string>
+    <string name="demande_tutorat">Demande Tutorat</string>
+    <string name="disponibilite_btn">Disponibilité</string>
+    <string name="ajouter_disponibilite">Ajouter Disponibilité</string>
+</resources>

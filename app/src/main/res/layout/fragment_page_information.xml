@@ -29,7 +29,7 @@
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:text="Retour" />
+            android:text="@string/retour" />
 
     </LinearLayout>
 
@@ -38,7 +38,7 @@
         android:layout_width="67dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
-        android:text="Tutorat+"
+        android:text="@string/tutorat"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Acceuil"
+        android:text="@string/acceuil"
         android:textColor="@color/bleu"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +92,7 @@
         android:layout_height="120dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="4dp"
-        android:text="Bienvenue sur notre site de tutorat, votre chemin vers l'excellence. Nos tuteurs qualifiés vous guideront vers la réussite dans toutes les matières. Personnalisation, flexibilité, ressources, et satisfaction garantie sont nos engagements. Rejoignez-nous aujourd'hui pour une éducation sur mesure et un avenir brillant."
+        android:text="@string/description_paragraphe"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         tools:ignore="MissingConstraints" />
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
-        android:text="Description"
+        android:text="@string/description"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"

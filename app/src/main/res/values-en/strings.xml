@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TutoratPlus</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arriere"><![CDATA[<-]]></string>
+    <string name="avant"><![CDATA[->]]></string>
+
+
+    <!-- menu principal -->
+    <string name="prendre_un_rendez_vous">Make an appointment</string>
+    <string name="propos">ABOUT</string>
+    <string name="connexion">Login</string>
+
+    <!-- page information -->
+    <string name="description">Description</string>
+    <string name="description_paragraphe">
+        Welcome to our tutoring site, your path to excellence. Our qualified tutors will guide you to success
+         in all subjects. Customization, flexibility, resources, and guaranteed satisfaction are our commitments. Join us
+         today for a tailor-made education and a bright future.
+    </string>
+
+    <!-- page liste des cours -->
+    <string name="choisissez_un_cours">Choose a course</string>
+
+    <!-- page liste tuteur -->
+    <string name="choisissez_un_tuteur">Choose a tutor</string>
+
+    <!-- page information personnelle -->
+    <string name="informations_personnelle">Personal information</string>
+    <string name="retour">Back</string>
+    <string name="acceuil">Home</string>
+    <string name="tutorat">Tutorat+</string>
+    <string name="prenom">First name :</string>
+    <string name="nom">Last name :</string>
+    <string name="courriel">E-mail :</string>
+    <string name="continuer">Continue</string>
+    <string name="courriel_hint">E-mail</string>
+    <string name="nom_hint">Last name</string>
+    <string name="pr_nom_hint">First name</string>
+    <string name="da">DA :</string>
+    <string name="da_hint">DA</string>
+
+
+
+    <!-- page confirmation -->
+    <string name="confirmer_votre_s_ance">Confirm your session</string>
+    <string name="ajouter_mon_calendrier">Add to my calendar</string>
+
+
+    <!-- page login tuteur -->
+    <string name="nom_utilisateur_login">Username</string>
+    <string name="mot_de_passe_login">Password</string>
+
+
+    <!-- page principal tuteur -->
+    <string name="liste_disponibilite">Availability List</string>
+    <string name="demande_tutorat">Tutoring Request</string>
+    <string name="disponibilite_btn">Availability</string>
+
+
+
+    <!-- page dispo reservation -->
+    <!-- Aucun(pas besoin) -->
+
+    <!-- tuteur page dispo -->
+    <string name="ajouter_disponibilite">Add Availability</string>
+
+    <!-- page demande tutorat -->
+    <!-- Aucun(pas besoin) -->
+    
+
+</resources>
