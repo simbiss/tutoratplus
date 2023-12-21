@@ -81,9 +81,7 @@ class VueListeTuteurs  : Fragment(), IContractVuePresentateurListeTuteur.IVueLis
             .show()
     }
 
-    fun navigationVersCalendrier() {
-        navController.navigate(R.id.action_liste_tuteur_to_pageCalendrier)
-    }
+
 
     fun navigationVersListeCours(){
         navController.navigate(R.id.action_liste_tuteur_to_liste_des_cours)
