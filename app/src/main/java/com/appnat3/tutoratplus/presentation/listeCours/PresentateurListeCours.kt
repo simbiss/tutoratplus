@@ -16,7 +16,7 @@ class PresentateurListeCours(var vue: VueListeCours): IPresentateurListeCours {
     var listeCours = arrayOf<Cours>()
 
 
-    fun traiter_démarrage(){
+    override fun traiter_démarrage(){
         job = CoroutineScope( Dispatchers.IO ).launch {
             try {
                 listeCours = traiterListeCours()

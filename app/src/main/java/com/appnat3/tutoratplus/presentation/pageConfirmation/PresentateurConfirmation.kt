@@ -34,15 +34,6 @@ class PresentateurConfirmation(var vue: VueConfirmation) : IPresentateurConfirma
     }
 
     /**
-     * Méthode qui permet d'ajouter la demande de tutorat dans le calendrier local
-     */
-
-    override fun traiterAjoutEvenementCalendrier(){
-
-    }
-
-
-    /**
      * Méthode qui permet de rediriger vers d'autre page
      *
      */

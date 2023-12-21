@@ -26,7 +26,7 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresent
         return listeDispoTuteur
     }
 
-    fun traiterNbrDemandeTutorat():Int{
+    override fun traiterNbrDemandeTutorat():Int{
         return modele.listeDemandeTutorat.size
     }
 

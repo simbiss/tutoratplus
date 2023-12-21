@@ -12,5 +12,6 @@ interface IContractVuePresentateurPagePrincipalTuteur {
     interface IPresentateurPagePrincipalTuteur{
         fun traiderNomTuteurLogger(): Tuteur?
         fun traiterListeDispo():List<DispoTuteur>
+        fun traiterNbrDemandeTutorat():Int
     }
 }

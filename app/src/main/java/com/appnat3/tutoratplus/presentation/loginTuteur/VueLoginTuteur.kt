@@ -1,6 +1,7 @@
 
 package com.appnat3.tutoratplus.presentation.loginTuteur
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -55,7 +56,7 @@ class VueLoginTuteur : Fragment(), IVueLoginTuteur{
 
     }
 
-    fun collectInformationLogin(vue :View){
+    override fun collectInformationLogin(vue :View){
         btnConnection.setOnClickListener {
             val username = vue.findViewById<EditText>(R.id.entreeUsername).text.toString()
             val motDePasse = vue.findViewById<EditText>(R.id.entreePassword).text.toString()
@@ -72,6 +73,16 @@ class VueLoginTuteur : Fragment(), IVueLoginTuteur{
                 }
             }
         }
+
+    override fun afficherErreur(message: String) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Erreur de connexion")
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, which ->
+                présentateur?.effectuerNavigationAcceuil()
+            }
+            .show()
+    }
 
     fun naviguerVersmenu_principal(){
         navController.navigate(R.id.action_vueLoginTuteur_to_menu_principal)

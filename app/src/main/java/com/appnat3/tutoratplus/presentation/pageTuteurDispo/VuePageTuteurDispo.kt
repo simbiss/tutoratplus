@@ -15,9 +15,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.appnat3.tutoratplus.R
+import com.appnat3.tutoratplus.presentation.pageTuteurDispo.IContractVuePresentateurPageTuteurDispo.IVuePageTuteurDispo
 import java.util.Calendar
 
-class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+class VuePageTuteurDispo :Fragment(), IVuePageTuteurDispo, DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
 
     var présentateur: PresentateurPageTuteurDispo? = null
@@ -73,7 +74,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
         navController = Navigation.findNavController(view)              // Obtient le NavController pour la navigation
     }
 
-    fun collectDateChoisi(){
+    override fun collectDateChoisi(){
         val cal = Calendar.getInstance()
         jour = cal.get(Calendar.DAY_OF_MONTH)
         mois = cal.get(Calendar.MONTH)
@@ -83,7 +84,7 @@ class VuePageTuteurDispo :Fragment() , DatePickerDialog.OnDateSetListener, TimeP
 
     }
 
-    fun dateChoisi(){
+    override fun dateChoisi(){
         btn_rdv.setOnClickListener{
             collectDateChoisi()
 

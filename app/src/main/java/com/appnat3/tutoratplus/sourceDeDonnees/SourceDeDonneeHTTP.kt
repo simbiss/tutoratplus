@@ -137,12 +137,12 @@ class SourceDeDonneeHTTP(var context: Modele.Companion){
     fun obtenirListeInfoLogin():List<InfoLogin>{
         val url = "https://2050daa9-5ca2-40e1-ad46-34b6203d7bd4.mock.pstmn.io/listeInfoLogin"
 
-        val result = connectionHttpRequest(url)
-        try {
-            println("HTTP Request Result : $result")
+        val result = try {
+            connectionHttpRequest(url)
         }catch (e: Exception){
-            println("ERREUR: ${e.message}")
+            throw e
         }
+        println("HTTP Request Result : $result")
         return retourListeInfoLogin(result)
     }
 

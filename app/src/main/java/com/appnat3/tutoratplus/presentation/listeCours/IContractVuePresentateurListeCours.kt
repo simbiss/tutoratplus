@@ -11,5 +11,6 @@ interface IContractVuePresentateurListeCours {
     interface IPresentateurListeCours{
         suspend fun traiterListeCours():Array<Cours>
         fun recuperationCours(item:Cours)
+        fun traiter_démarrage()
     }
 }

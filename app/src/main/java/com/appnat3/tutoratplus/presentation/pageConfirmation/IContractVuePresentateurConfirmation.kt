@@ -16,7 +16,6 @@ interface IContractVuePresentateurConfirmation {
         fun collectionTuteurSelectionnee(): Tuteur
         fun collectionInfoPerso(): InfoPersonnelle
         fun collectionReservationDispo(): DispoTuteur
-        fun traiterAjoutEvenementCalendrier()
     }
 
 }

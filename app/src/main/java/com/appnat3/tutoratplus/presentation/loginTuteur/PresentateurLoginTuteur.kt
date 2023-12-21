@@ -18,17 +18,22 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
     private var job: Job? = null
 
-    override fun traiterValidationInfoLogin(username:String, password:String):Boolean{
+    override fun traiterValidationInfoLogin(username:String, password:String):Boolean {
         var result = false
         job = CoroutineScope(Dispatchers.IO).launch {
-            val listeInfoLogin = modele.retourListInfoLogin()
-            for (item in listeInfoLogin) {
-                if (item.nomUtilisateur == username && item.motDePasse == password) {
-                    result = true
-                    Log.d("LoginTest1", "$result")
+            try {
+                val listeInfoLogin = modele.retourListInfoLogin()
+                for (item in listeInfoLogin) {
+                    if (item.nomUtilisateur == username && item.motDePasse == password) {
+                        result = true
+                        Log.d("LoginTest1", "$result")
+                    }
+                }
+            } catch (e: Exception) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    vue.afficherErreur("Veuillez vérifier votre connection internet")
                 }
             }
-
         }
         runBlocking {
             job!!.join()
@@ -38,37 +43,41 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
 
     override fun traiterCollectInformationLogin(username: String) {
         job = coroutineScope.launch {
-            val listeInfoLogin = modele.retourListInfoLogin()
-            val mapInfoLogin = hashMap<Int, InfoLogin>(
-                1 to listeInfoLogin[0],
-                2 to listeInfoLogin[1],
-                3 to listeInfoLogin[2],
-                4 to listeInfoLogin[3],
-                5 to listeInfoLogin[4]
-            )
+            try {
+                val listeInfoLogin = modele.retourListInfoLogin()
+                val mapInfoLogin = hashMap<Int, InfoLogin>(
+                    1 to listeInfoLogin[0],
+                    2 to listeInfoLogin[1],
+                    3 to listeInfoLogin[2],
+                    4 to listeInfoLogin[3],
+                    5 to listeInfoLogin[4]
+                )
 
-            val listeTuteurs = modele.retourListeTuteur()
-            var mapListTuteur = hashMap<Int, Tuteur>(
-                1 to listeTuteurs[0],
-                2 to listeTuteurs[1],
-                3 to listeTuteurs[2],
-                4 to listeTuteurs[3],
-                5 to listeTuteurs[4]
-            )
+                val listeTuteurs = modele.retourListeTuteur()
+                val mapListTuteur = hashMap<Int, Tuteur>(
+                    1 to listeTuteurs[0],
+                    2 to listeTuteurs[1],
+                    3 to listeTuteurs[2],
+                    4 to listeTuteurs[3],
+                    5 to listeTuteurs[4]
+                )
 
-            var idOuvertureSessionLogin: Int?
-            for ((key, InfoLogin) in mapInfoLogin) {
-                if (InfoLogin.nomUtilisateur == username) {       //condition pour trouver la position de la clée du tuteur a logger
-                    idOuvertureSessionLogin = key
+                var idOuvertureSessionLogin: Int?
+                for ((key, InfoLogin) in mapInfoLogin) {
+                    if (InfoLogin.nomUtilisateur == username) {       //condition pour trouver la position de la clée du tuteur a logger
+                        idOuvertureSessionLogin = key
 
-                    for ((key, Tuteur) in mapListTuteur) {
-                        if (key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
-                            modele.ouvertureSessionTuteur = Tuteur
-                            Log.d("TuteurLoggger", "${modele.ouvertureSessionTuteur}")
+                        for ((key, Tuteur) in mapListTuteur) {
+                            if (key == idOuvertureSessionLogin) {        //condition pour assigner dans le modele quelle tuteur logger
+                                modele.ouvertureSessionTuteur = Tuteur
+                                Log.d("TuteurLoggger", "${modele.ouvertureSessionTuteur}")
 
+                            }
                         }
                     }
                 }
+            }catch (e: Exception){
+                Log.d("erreur connection", "erreur connection")
             }
         }
         runBlocking {
@@ -76,12 +85,12 @@ class PresentateurLoginTuteur(var vue: VueLoginTuteur ): IPresentateurLoginTuteu
         }
     }
 
-            fun effectuerNavigationAcceuil() {
-                vue.naviguerVersmenu_principal()
-            }
+    fun effectuerNavigationAcceuil() {
+        vue.naviguerVersmenu_principal()
+    }
 
-            fun effectuerNavigationPageTuteur() {
-                vue.navigationVerspage_principal_tuteur()
-            }
+    fun effectuerNavigationPageTuteur() {
+        vue.navigationVerspage_principal_tuteur()
+    }
 
 }
