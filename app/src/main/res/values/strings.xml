@@ -34,4 +34,19 @@
     <string name="choisissez_un_tuteur">Choisissez un tuteur</string>
 
 
+    <!-- page confirmation -->
+    <string name="confirmer_votre_s_ance">Confirmer votre séance</string>
+    <string name="ajouter_mon_calendrier">Ajouter à mon calendrier</string>
+
+    <!-- page login tuteur -->
+
+    <!-- page principal tuteur -->
+
+    <!-- page dispo reservation -->
+
+    <!-- tuteur page dispo -->
+
+    <!-- page demande tutorat -->
+
+
 </resources>

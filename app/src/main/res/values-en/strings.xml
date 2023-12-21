@@ -43,6 +43,8 @@
 
 
     <!-- page confirmation -->
+    <string name="confirmer_votre_s_ance">Confirm your session</string>
+    <string name="ajouter_mon_calendrier">Add to my calendar</string>
 
     <!-- page login tuteur -->
 

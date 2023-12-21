@@ -39,4 +39,20 @@
 
 
 
+    <!-- page confirmation -->
+    <string name="confirmer_votre_s_ance">Confirma tu sesión</string>
+    <string name="ajouter_mon_calendrier">Añadir a mi calendario</string>
+
+    <!-- page login tuteur -->
+
+    <!-- page principal tuteur -->
+
+    <!-- page dispo reservation -->
+
+    <!-- tuteur page dispo -->
+
+    <!-- page demande tutorat -->
+
+
+
 </resources>

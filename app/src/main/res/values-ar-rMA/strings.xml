@@ -37,5 +37,20 @@
     <string name="da_hint">رقم DA</string>
 
 
+    <!-- page confirmation -->
+    <string name="confirmer_votre_s_ance">قم بتأكيد جلستك</string>
+    <string name="ajouter_mon_calendrier">أضف إلى التقويم الخاص بي</string>
+
+    <!-- page login tuteur -->
+
+    <!-- page principal tuteur -->
+
+    <!-- page dispo reservation -->
+
+    <!-- tuteur page dispo -->
+
+    <!-- page demande tutorat -->
+
+
 
 </resources>
