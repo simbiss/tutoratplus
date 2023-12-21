@@ -1,15 +1,11 @@
 package com.appnat3.tutoratplus.presentation
 
-import com.appnat3.tutoratplus.presentation.loginTuteur.PresentateurLoginTuteur
-import com.appnat3.tutoratplus.presentation.loginTuteur.VueLoginTuteur
-import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class PresentateurPageTuteurDispo {
+class PresentateurPageTuteurDispoTest {
 
     @Test
     fun `étant donné un ,alors on obtient la réponse true`() {
