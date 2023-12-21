@@ -6,7 +6,15 @@
     <string name="prendre_un_rendez_vous">تحديد موعد</string>
     <string name="propos">عن</string>
     <string name="connexion">اتصال</string>
+
     <!-- page information -->
+    <string name="description">وصف</string>
+    <string name="description_paragraphe">
+        مرحبًا بك في موقع التدريس الخاص بنا، طريقك إلى
+         تفوق. سوف يرشدك مدرسونا المؤهلون نحو النجاح في جميع المواد.
+         إن التخصيص والمرونة والموارد والرضا المضمون هي التزاماتنا. انضم إلينا
+         اليوم من أجل تعليم مصمم خصيصًا ومستقبل مشرق.
+    </string>
 
     <!-- page liste des cours -->
 

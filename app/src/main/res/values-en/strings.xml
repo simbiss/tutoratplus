@@ -12,6 +12,12 @@
     <string name="connexion">Login</string>
 
     <!-- page information -->
+    <string name="description">Description</string>
+    <string name="description_paragraphe">
+        Welcome to our tutoring site, your path to excellence. Our qualified tutors will guide you to success
+         in all subjects. Customization, flexibility, resources, and guaranteed satisfaction are our commitments. Join us
+         today for a tailor-made education and a bright future.
+    </string>
 
     <!-- page liste des cours -->
 
@@ -31,6 +37,7 @@
     <string name="pr_nom_hint">First name</string>
     <string name="da">DA :</string>
     <string name="da_hint">DA</string>
+
 
 
     <!-- page confirmation -->

@@ -3,4 +3,6 @@
     <string name="prendre_un_rendez_vous">Prendre un rendez-vous</string>
     <string name="propos">À PROPOS</string>
     <string name="connexion">Connexion</string>
+    <string name="description">Description</string>
+    <string name="description_paragraphe">Bienvenue sur notre site de tutorat, votre chemin vers l\'excellence. Nos tuteurs qualifiés vous guideront vers la réussite dans toutes les matières. Personnalisation, flexibilité, ressources, et satisfaction garantie sont nos engagements. Rejoignez-nous aujourd\'hui pour une éducation sur mesure et un avenir brillant.</string>
 </resources>

@@ -12,6 +12,13 @@
     <string name="connexion">Conexión</string>
 
     <!-- page information -->
+    <string name="description">Descripción</string>
+    <string name="description_paragraphe">
+        Bienvenido a nuestro sitio de tutorías, tu camino hacia la excelencia. Nuestros tutores cualificados te guiarán.
+         hacia el éxito en todas las materias. Personalización, flexibilidad, recursos y satisfacción garantizada
+         son nuestros compromisos. Únase a nosotros hoy para una educación personalizada y un futuro brillante.
+    </string>
+
 
     <!-- page liste des cours -->
 
