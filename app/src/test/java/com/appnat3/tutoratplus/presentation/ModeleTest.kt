@@ -156,7 +156,9 @@ class ModeleTest {
 
         val dispoTuteur = DispoTuteur(1,4, false, 15, 4, 2023, 14, 30)
 
+
         listeDispoTuteur_attendu.add(dispoTuteur)
+        Mockito.`when`( sourceHTTP.obtenirListeDispoTuteur()).thenReturn(listeDispoTuteur_attendu)
         val retourDispoTuteurs = modele.retourListeDispoTuteur()
 
         // Appel de la méthode à tester
