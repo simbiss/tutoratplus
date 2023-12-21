@@ -1,6 +1,7 @@
 package com.appnat3.tutoratplus
 
 import com.appnat3.tutoratplus.domaine.entite.Cours
+import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
@@ -143,5 +144,23 @@ class ModeleTest {
         for (itemListe in retourInfoLogin_obtenu.indices) {
             assertEquals(listeInfoLogin_attendu[itemListe].motDePasse, retourInfoLogin_obtenu[itemListe].motDePasse)
         }
+    }
+
+    @Test
+    fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour afficher tous les  disponibilités d'un tuteur,alors on obtient une liste de ces disponibilités`() {
+        //Mise en place
+        val sourceHTTP : SourceDeDonneeHTTP = Mockito.mock( SourceDeDonneeHTTP::class.java )
+        val modele = Modele(source= sourceHTTP)
+        val listeDispoTuteur_attendu = mutableListOf<DispoTuteur>()
+
+
+        val dispoTuteur1 = DispoTuteur(1,4, false, 15, 4, 2023, 14, 30)
+
+        listeDispoTuteur_attendu.add(dispoTuteur1)
+        val retourDispoTuteurs = modele.retourListeDispoTuteur()
+
+        // Appel de la méthode à tester
+            assertEquals(listeDispoTuteur_attendu, retourDispoTuteurs)
+
     }
 }

@@ -25,6 +25,10 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         return source.obtenirListeInfoLogin()
     }
 
+    fun retourListeDispoTuteur(): List<DispoTuteur> {
+        return source.obtenirListeDispoTuteur()
+    }
+
     companion object {
         //Déclaration de variables----------------------------------
         var instance = Modele()
