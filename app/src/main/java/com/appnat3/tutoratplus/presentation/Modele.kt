@@ -5,14 +5,12 @@ import com.appnat3.tutoratplus.domaine.entite.DemandeTutorat
 import com.appnat3.tutoratplus.domaine.entite.DispoTuteur
 import com.appnat3.tutoratplus.domaine.entite.InfoLogin
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
-import com.appnat3.tutoratplus.sourceDeDonnees.SourceBidon
 import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonneeHTTP
-import com.appnat3.tutoratplus.sourceDeDonnees.SourceDeDonnees
 import java.time.LocalDate
 import java.time.LocalTime
 
 
-class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _source:  SourceDeDonnees = SourceBidon()) {
+class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
     fun retourListeDesCoursHttpTest(): List<Cours> {
         return source.obtenirListeCours()
     }
@@ -33,7 +31,6 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this), val _sou
         //Déclaration de variables----------------------------------
         var instance = Modele()
         val sourceHttp = instance.source
-        private val _source = instance._source
         var ouvertureSessionTuteur: Tuteur? = null
         var tuteurSelectionne: Tuteur? = null
         var daInfoPerso: String? = null
