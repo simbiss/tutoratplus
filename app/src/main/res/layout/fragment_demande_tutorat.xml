@@ -27,7 +27,7 @@
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:text="Retour" />
+            android:text="@string/retour" />
 
     </LinearLayout>
 
@@ -37,7 +37,7 @@
         android:layout_height="19dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="16dp"
-        android:text="Tutorat+"
+        android:text="@string/tutorat"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/buttonRetour"
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="Acceuil"
+        android:text="@string/acceuil"
         android:textColor="@color/bleu"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +78,7 @@
         android:layout_marginTop="32dp"
         android:paddingTop="0dp"
         android:paddingBottom="20dp"
-        android:text="Demande Tutorat"
+        android:text="@string/demande_tutorat"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
