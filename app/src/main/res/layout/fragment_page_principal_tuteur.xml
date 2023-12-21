@@ -117,7 +117,8 @@
         android:layout_marginEnd="48dp"
         android:text="@string/demande_tutorat"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="153dp" />
+        tools:layout_editor_absoluteY="153dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_rdv"
@@ -126,6 +127,7 @@
         android:layout_marginStart="36dp"
         android:text="@string/disponibilite_btn"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="153dp" />
+        tools:layout_editor_absoluteY="153dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

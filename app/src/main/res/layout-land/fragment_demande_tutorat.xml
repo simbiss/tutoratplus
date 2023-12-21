@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".presentation.pageDemandeTutorat.VueDemandeTutorat">
+
+    <LinearLayout
+        android:id="@+id/buttonRetour"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/flecheback" />
+
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="@string/retour" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textTitre"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tutorat"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/buttonRetour"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textAcceuil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/acceuil"
+        android:textColor="@color/bleu"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/ligneNoire"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:paddingBottom="2dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="54dp" />
+
+    <TextView
+        android:id="@+id/txt_Demande"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="32dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="20dp"
+        android:text="@string/demande_tutorat"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitre"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/listeDemandeTutorat"
+        android:layout_width="567dp"
+        android:layout_height="332dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Demande"
+        app:layout_constraintVertical_bias="0.021"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
