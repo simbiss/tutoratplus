@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">tutoratPlus</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Bonjour fragment vierge</string>
     <string name="arriere"><![CDATA[<-]]></string>
     <string name="avant"><![CDATA[->]]></string>
+    <string name="informations_personnelle">Informations Personnelle</string>
+    <string name="retour">Retour</string>
+    <string name="acceuil">Acceuil</string>
+    <string name="tutorat">Tutorat+</string>
+    <string name="prenom">Prenom :</string>
+    <string name="nom">Nom :</string>
+    <string name="courriel">Courriel :</string>
+    <string name="continuer">Continuer</string>
+    <string name="courriel_hint">Courriel</string>
+    <string name="nom_hint">Nom</string>
+    <string name="pr_nom_hint">Prénom</string>
+    <string name="da">DA :</string>
+    <string name="da_hint">DA</string>
+
 </resources>

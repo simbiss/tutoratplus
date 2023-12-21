@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="informations_personnelle">Informacion personal</string>
+    <string name="retour">Atrás</string>
+    <string name="acceuil">bienvenida</string>
+    <string name="tutorat">Tutorat+</string>
+
+
+    <!-- menu principal -->
+
+    <!-- page information -->
+
+    <!-- page liste des cours -->
+
+    <!-- page liste tuteur -->
+
+    <!-- page information personnelle -->
+    <string name="prenom">Nombre de pila :</string>
+    <string name="nom">Apellido :</string>
+    <string name="courriel">Correo electrónico :</string>
+    <string name="continuer">Seguir</string>
+    <string name="courriel_hint">Correo electrónico</string>
+    <string name="nom_hint">Apellido</string>
+    <string name="pr_nom_hint">Nombre de pila</string>
+    <string name="da">DA :</string>
+    <string name="da_hint">DA</string>
+</resources>

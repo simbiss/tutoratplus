@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">tutoratPlus</string>
+    <string name="app_name">TutoratPlus</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="arriere"><![CDATA[<-]]></string>
     <string name="avant"><![CDATA[->]]></string>
+
 
     <!-- menu principal -->
 
@@ -14,6 +15,19 @@
     <!-- page liste tuteur -->
 
     <!-- page information personnelle -->
+    <string name="informations_personnelle">Personal information</string>
+    <string name="retour">Back</string>
+    <string name="acceuil">Home</string>
+    <string name="tutorat">Tutorat+</string>
+    <string name="prenom">First name :</string>
+    <string name="nom">Last name :</string>
+    <string name="courriel">E-mail :</string>
+    <string name="continuer">Continue</string>
+    <string name="courriel_hint">E-mail</string>
+    <string name="nom_hint">Last name</string>
+    <string name="pr_nom_hint">First name</string>
+    <string name="da">DA :</string>
+    <string name="da_hint">DA</string>
 
     <!-- page confirmation -->
 

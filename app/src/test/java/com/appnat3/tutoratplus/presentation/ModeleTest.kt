@@ -69,11 +69,11 @@ class ModeleTest {
         val listeDesTuteurs_attendu = mutableListOf<Tuteur>()
         Mockito.`when`( sourceHTTP.obtenirListeTuteurs() ).thenReturn( listeDesTuteurs_attendu )
 
-        var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation", mutableListOf())
-        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "réseau", mutableListOf())
-        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation", mutableListOf())
-        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation", mutableListOf())
-        var tuteur5 = Tuteur(5,"Antoine Lépine", "réseau", mutableListOf())
+        var tuteur1 = Tuteur(1,"Mohamed Fatene", "programmation")
+        var tuteur2 = Tuteur(2,"Raphaël Beyrouthy", "réseau")
+        var tuteur3 = Tuteur(3,"Lakhdar Amine Ouzou", "programmation")
+        var tuteur4 = Tuteur(4,"Elliott Fournier-Robert", "programmation")
+        var tuteur5 = Tuteur(5,"Antoine Lépine", "réseau")
 
         listeDesTuteurs_attendu.add(tuteur1)
         listeDesTuteurs_attendu.add(tuteur2)

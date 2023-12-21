@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="informations_personnelle">معلومات شخصية</string>
+    <string name="retour">خلف</string>
+    <string name="acceuil">ترحيب</string>
+    <string name="tutorat">التدريس+</string>
+    <string name="prenom">الاسم الأول :</string>
+    <string name="nom">اسم :</string>
+    <string name="courriel">بريد إلكتروني :</string>
+    <string name="continuer">يكمل</string>
+    <string name="courriel_hint">بريد إلكتروني</string>
+    <string name="nom_hint">اسم</string>
+    <string name="pr_nom_hint">الاسم الأول</string>
+    <string name="da">رقم DA :</string>
+    <string name="da_hint">رقم DA</string>
+</resources>
