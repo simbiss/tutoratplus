@@ -11,4 +11,7 @@
     <string name="ajouter_mon_calendrier">Ajouter à mon calendrier</string>
     <string name="nom_utilisateur_login">Nom utilisateur</string>
     <string name="mot_de_passe_login">Mot de passe</string>
+    <string name="liste_disponibilit">Liste Disponibilité</string>
+    <string name="demande_tutorat">Demande Tutorat</string>
+    <string name="disponibilite_btn">Disponibilité</string>
 </resources>

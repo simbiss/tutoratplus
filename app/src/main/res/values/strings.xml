@@ -42,6 +42,9 @@
     <!-- page login tuteur -->
     <string name="nom_utilisateur_login">Nom utilisateur</string>
     <string name="mot_de_passe_login">Mot de passe</string>
+    <string name="liste_disponibilite">Liste Disponibilité</string>
+    <string name="demande_tutorat">Demande Tutorat</string>
+    <string name="disponibilite_btn">Disponibilité</string>
 
     <!-- page principal tuteur -->
 

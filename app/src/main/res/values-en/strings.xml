@@ -51,7 +51,12 @@
     <string name="nom_utilisateur_login">Username</string>
     <string name="mot_de_passe_login">Password</string>
 
+
     <!-- page principal tuteur -->
+    <string name="liste_disponibilite">Availability List</string>
+    <string name="demande_tutorat">Tutoring Request</string>
+    <string name="disponibilite_btn">Availability</string>
+
 
     <!-- page dispo reservation -->
 

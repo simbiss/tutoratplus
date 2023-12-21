@@ -46,7 +46,11 @@
     <string name="nom_utilisateur_login">اسم المستخدم</string>
     <string name="mot_de_passe_login">كلمة السر</string>
 
+
     <!-- page principal tuteur -->
+    <string name="liste_disponibilite">قائمة التوفر</string>
+    <string name="demande_tutorat">طلب التدريس</string>
+    <string name="disponibilite_btn">التوفر</string>
 
     <!-- page dispo reservation -->
 
