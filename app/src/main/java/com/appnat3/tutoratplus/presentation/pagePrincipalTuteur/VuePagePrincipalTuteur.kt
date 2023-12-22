@@ -24,6 +24,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     lateinit var btn_demandeTutorat: Button
     lateinit var adapter: ArrayAdapter<String>
     lateinit var listeDispo: ListView
+    lateinit var txtDeconnexion: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,11 +42,16 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
         btn_rdv.setOnClickListener {
             présentateur?.effectuerNavigationPageDispo()
         }
+
+
         btn_demandeTutorat = vue.findViewById(R.id.btn_demande)
         btn_demandeTutorat.text = "Demande Tutorat (${présentateur?.traiterNbrDemandeTutorat()})"
         btn_demandeTutorat.setOnClickListener {
             présentateur?.effectuerNavigationDemandeTutorat()
         }
+
+        txtDeconnexion = vue.findViewById(R.id.textDeconnexion)
+
 
         if (nomTuteurLogger != null) {
             txtNomTuteurLogger.text = "Bienvenue : ${nomTuteurLogger.nomTuteur}"
@@ -68,7 +74,7 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
         this.listeDispo.setAdapter(adapter)
     }
 
-    //fun naviguerVersmenu_principal(){}
+
 
     fun navigationVerstuteur_page_dispo(){
         navController.navigate(R.id.action_page_principal_tuteur_to_tuteur_page_dispo)
@@ -76,5 +82,9 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
 
     fun navigationVers_demande_tutorat(){
         navController.navigate(R.id.action_page_principal_tuteur_to_demande_tutorat2)
+    }
+
+    fun navigationVersAcceuil(){
+        navController.navigate(R.id.action_page_principal_tuteur_to_vueLoginTuteur)
     }
 }

@@ -78,61 +78,66 @@
         android:id="@+id/entreePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="40dp"
         android:hint="@string/mot_de_passe_login"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/entreeUsername"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="31dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/entreeUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/nom_utilisateur_login"
-        app:layout_constraintTop_toBottomOf="@+id/msgErreurEntre"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="210dp"
         android:layout_height="62dp"
-        android:layout_marginStart="184dp"
         android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:padding="20dp"
         android:text="@string/connexion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/entreePassword"
+        app:layout_constraintVertical_bias="0.16"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/msgErreurEntre"
         android:layout_width="368dp"
         android:layout_height="58dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="276dp"
         android:layout_weight="1"
         android:padding="20dp"
         android:textColor="@color/rouge"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="75dp" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="172dp"
         android:layout_height="43dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
         android:text="@string/connexion"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/msgErreurEntre"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ligneNoire"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRetour"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

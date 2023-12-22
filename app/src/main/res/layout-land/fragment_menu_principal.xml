@@ -13,7 +13,7 @@
         android:layout_gravity="center"
 
         android:layout_marginTop="15dp"
-        android:text="TextView" />
+        android:text="@string/tutorat" />
 
     <TextView
         android:id="@+id/ligneNoire"
@@ -60,7 +60,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="50dp"
                 android:paddingBottom="20dp"
-                android:text="Button" />
+                android:text="@string/prendre_un_rendez_vous" />
 
             <Button
                 android:id="@+id/btn_a_propos"
@@ -70,7 +70,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="50dp"
                 android:paddingBottom="20dp"
-                android:text="Button" />
+                android:text="@string/propos" />
 
             <Button
                 android:id="@+id/btn_login"
@@ -80,7 +80,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="50dp"
                 android:paddingBottom="20dp"
-                android:text="Button" />
+                android:text="@string/connexion" />
         </LinearLayout>
 
     </LinearLayout>

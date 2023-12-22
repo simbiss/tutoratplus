@@ -36,7 +36,13 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresent
         return modele.listeDemandeTutorat.size
     }
 
+
+
     fun effectuerNavigationPageDispo(){
+        vue.navigationVerstuteur_page_dispo()
+    }
+
+    fun effectuerNavigationAcceuil(){
         vue.navigationVerstuteur_page_dispo()
     }
 
