@@ -39,12 +39,17 @@ class VuePageDispoReservation : Fragment(), IVuePageDispoReservation{
         nomTuteurSelectionnee = vue.findViewById(R.id.nomTuteurDispo)
         nomTuteurSelectionnee.text = présentateur?.traiterAffichageTuteurselectionner()
 
-        /*
+
         btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener{
             présentateur!!.effectuerNavigationListeTuteur()
         }
-        */
+
+        btnAcceuil= vue.findViewById(R.id.textAcceuil)
+        btnAcceuil.setOnClickListener{
+            présentateur!!.effectuerNavigationAccueil()
+        }
+
 
         liste_des_dispo = vue.findViewById(R.id.liste_dispo)
         liste_des_dispo.setOnItemClickListener{ parent, view, position, id ->

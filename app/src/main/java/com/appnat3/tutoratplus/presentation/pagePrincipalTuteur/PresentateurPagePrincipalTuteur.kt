@@ -1,6 +1,5 @@
 package com.appnat3.tutoratplus.presentation.pagePrincipalTuteur
 
-import android.util.Log
 import com.appnat3.tutoratplus.domaine.entite.Tuteur
 import com.appnat3.tutoratplus.presentation.Modele
 import com.appnat3.tutoratplus.presentation.pagePrincipalTuteur.IContractVuePresentateurPagePrincipalTuteur.IPresentateurPagePrincipalTuteur
@@ -12,7 +11,7 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresent
     var listeDispoTuteur = arrayListOf<String>()
 
     override fun traiderNomTuteurLogger(): Tuteur? {
-        Log.d("retournTuteurLogger","${modele.ouvertureSessionTuteur}")
+        //Log.d("retournTuteurLogger","${modele.ouvertureSessionTuteur}")
         return modele.ouvertureSessionTuteur
     }
 
