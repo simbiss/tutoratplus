@@ -4,7 +4,7 @@
     <string name="retour">Atrás</string>
     <string name="acceuil">bienvenida</string>
     <string name="tutorat">Tutorat+</string>
-
+    <string name="deconnection">CerrarSesión</string>
 
     <!-- menu principal -->
     <string name="prendre_un_rendez_vous">Pedir hora</string>

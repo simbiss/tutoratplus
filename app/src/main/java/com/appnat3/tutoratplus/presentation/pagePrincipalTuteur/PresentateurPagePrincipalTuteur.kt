@@ -42,7 +42,7 @@ class PresentateurPagePrincipalTuteur(var vue: VuePagePrincipalTuteur): IPresent
     }
 
     fun effectuerNavigationAcceuil(){
-        vue.navigationVerstuteur_page_dispo()
+        vue.navigationVersAcceuil()
     }
 
     fun effectuerNavigationDemandeTutorat(){

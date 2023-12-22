@@ -51,6 +51,9 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
         }
 
         txtDeconnexion = vue.findViewById(R.id.textDeconnexion)
+        txtDeconnexion.setOnClickListener {
+            présentateur?.effectuerNavigationAcceuil()
+        }
 
 
         if (nomTuteurLogger != null) {
@@ -85,6 +88,6 @@ class VuePagePrincipalTuteur : Fragment(), IVuePagePrincipalTuteur {
     }
 
     fun navigationVersAcceuil(){
-        navController.navigate(R.id.action_page_principal_tuteur_to_vueLoginTuteur)
+        navController.navigate(R.id.action_page_principal_tuteur_to_menu_principal)
     }
 }

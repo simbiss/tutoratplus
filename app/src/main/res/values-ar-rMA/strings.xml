@@ -6,6 +6,7 @@
     <string name="prendre_un_rendez_vous">تحديد موعد</string>
     <string name="propos">عن</string>
     <string name="connexion">تسجيل الدخول</string>
+    <string name="deconnection"> تسجيل خروج</string>
 
     <!-- page information -->
     <string name="description">وصف</string>

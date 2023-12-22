@@ -4,12 +4,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="arriere"><![CDATA[<-]]></string>
     <string name="avant"><![CDATA[->]]></string>
+    <string name="deconnection">Logout</string>
 
 
     <!-- menu principal -->
     <string name="prendre_un_rendez_vous">Make an appointment</string>
     <string name="propos">ABOUT</string>
     <string name="connexion">Login</string>
+
 
     <!-- page information -->
     <string name="description">Description</string>

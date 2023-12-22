@@ -88,14 +88,14 @@
         android:label="fragment_page_principal_tuteur"
         tools:layout="@layout/fragment_page_principal_tuteur" >
         <action
-            android:id="@+id/action_page_principal_tuteur_to_vueLoginTuteur"
-            app:destination="@id/vueLoginTuteur" />
-        <action
             android:id="@+id/action_page_principal_tuteur_to_tuteur_page_dispo"
             app:destination="@id/tuteur_page_dispo" />
         <action
             android:id="@+id/action_page_principal_tuteur_to_demande_tutorat2"
             app:destination="@id/demande_tutorat" />
+        <action
+            android:id="@+id/action_page_principal_tuteur_to_menu_principal"
+            app:destination="@id/menu_principal" />
     </fragment>
     <fragment
         android:id="@+id/vueLoginTuteur"
