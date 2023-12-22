@@ -6,7 +6,7 @@ import com.appnat3.tutoratplus.presentation.pageTuteurDispo.IContractVuePresenta
 import kotlinx.coroutines.Job
 
 class PresentateurPageTuteurDispo(var vue:VuePageTuteurDispo) : IPresentateurPageTuteurDispo{
-    val modele= Modele.Companion
+    val modele= Modele
     private var job: Job? = null
 
 

@@ -165,4 +165,26 @@ class ModeleTest {
         assertEquals(listeDispoTuteur_attendu, retourDispoTuteurs)
 
     }
+
+    @Test
+    fun `étant donné un modèle nouvellement instancié, losqu'on fait une demande pour ajouter tous une  disponibilités d'un tuteur,alors on obtient la disponibilité qu'omn vient d'ajouter`() {
+        //Mise en place
+        val sourceHTTP: SourceDeDonneeHTTP = Mockito.mock(SourceDeDonneeHTTP::class.java)
+        val modele = Modele(source = sourceHTTP)
+        val listeDispoTuteur_attendu = mutableListOf<DispoTuteur>()
+        val dispoTuteur = DispoTuteur(2, 5, true, 16, 5, 2023, 0, 30)
+        listeDispoTuteur_attendu.add(dispoTuteur)
+        // Appel de la méthode à tester
+        modele.envoiDispoTuteurTest(listeDispoTuteur_attendu)
+
+        // Vérification que la méthode postDispoTuteurs a bien été appelée avec la bonne DispoTuteur
+        Mockito.verify(sourceHTTP).postDispoTuteurs(listOf(dispoTuteur))
+
+        val retourDispoTuteurs = modele.retourListeDispoTuteur()
+
+        // Appel de la méthode à tester
+        Mockito.verify(sourceHTTP).postDispoTuteurs(listeDispoTuteur_attendu)
+
+
+    }
 }

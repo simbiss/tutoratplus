@@ -27,6 +27,13 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
         return source.obtenirListeDispoTuteur()
     }
 
+
+
+    fun envoiDispoTuteurTest(p_listeDispoTuteur: List<DispoTuteur>){
+         sourceHttp.postDispoTuteurs(p_listeDispoTuteur)
+    }
+
+
     companion object {
         //Déclaration de variables----------------------------------
         var instance = Modele()
@@ -82,5 +89,7 @@ class Modele(val source: SourceDeDonneeHTTP = SourceDeDonneeHTTP(this)) {
         fun envoiDispoTuteur(){
             sourceHttp.postDispoTuteurs(listeDispoTuteur)
         }
+
+
     }
 }
