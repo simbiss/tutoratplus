@@ -17,12 +17,14 @@
         android:id="@+id/langueSpinner"
         android:layout_width="172dp"
         android:layout_height="57dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sujetPage"
         tools:ignore="MissingConstraints" />
+
+
 
     <TextView
         android:id="@+id/sujetPage"
@@ -101,6 +103,42 @@
         app:layout_constraintTop_toBottomOf="@+id/textTitre"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textLangue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/langues"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/langueSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/blanc"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/langueSpinner"
+        tools:ignore="MissingConstraints" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Switch"
+        app:layout_constraintTop_toBottomOf="@+id/textTheme"
+        tools:layout_editor_absoluteX="161dp" />
 
     <!-- ################################ Titre  ########################################## -->
 

@@ -59,6 +59,8 @@
     <!-- page préférence -->
 
     <string name="titrepreference">Préference</string>
+    <string name="langues">Langues</string>
+    <string name="blanc">Blanc</string>
 
 
 </resources>
