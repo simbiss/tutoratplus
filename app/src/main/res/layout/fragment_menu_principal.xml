@@ -10,6 +10,15 @@
 
     <!-- ################################ Titre  ########################################## -->
 
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:background="@drawable/settings"
+        tools:layout_editor_absoluteX="345dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textTitre"

@@ -153,7 +153,7 @@
     </fragment>
     <fragment
         android:id="@+id/page_preference"
-        android:name="com.appnat3.tutoratplus.page_preference"
+        android:name="com.appnat3.tutoratplus.presentation.pagePreference.page_preference"
         android:label="fragment_page_preference"
         tools:layout="@layout/fragment_page_preference" >
         <action
