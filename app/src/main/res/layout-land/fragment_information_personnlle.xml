@@ -24,14 +24,12 @@
         android:id="@+id/champPrenomInfo"
         android:layout_width="198dp"
         android:layout_height="47dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginEnd="292dp"
         android:hint="@string/pr_nom_hint"
         app:layout_constraintBottom_toTopOf="@+id/champNomInfo"
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
-        app:layout_constraintHorizontal_bias="0.221"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/champDAInfo"
-        app:layout_constraintVertical_bias="0.21"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -152,8 +150,8 @@
         android:id="@+id/lignedroite"
         android:layout_width="1sp"
         android:layout_height="230dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="256dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="20dp"
         android:background="#000000"
         android:paddingBottom="2dp"
         android:textSize="16sp"
@@ -176,33 +174,32 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
-        app:layout_constraintVertical_bias="0.797"
+        app:layout_constraintVertical_bias="0.982"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonContinuer"
         android:layout_width="222dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="432dp"
+        android:layout_marginTop="160dp"
         android:background="@color/bleu"
         android:text="@string/continuer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ligneBas"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/ligneGauche"
+        app:layout_constraintTop_toBottomOf="@+id/textAcceuil"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="123dp"
         android:layout_height="33dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
         android:text="@string/da"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
@@ -213,10 +210,13 @@
         android:layout_width="148dp"
         android:layout_height="33dp"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
         android:text="@string/prenom"
+        app:layout_constraintEnd_toStartOf="@+id/lignedroite"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="199dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView5"
@@ -233,11 +233,13 @@
         android:id="@+id/textView6"
         android:layout_width="163dp"
         android:layout_height="31dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="48dp"
         android:layout_marginBottom="36dp"
         android:text="@string/courriel"
         app:layout_constraintBottom_toBottomOf="@+id/ligneBas"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <EditText

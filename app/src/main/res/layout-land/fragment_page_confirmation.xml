@@ -112,8 +112,8 @@
 
     <TextView
         android:id="@+id/champNomCours"
-        android:layout_width="297dp"
-        android:layout_height="23dp"
+        android:layout_width="333dp"
+        android:layout_height="20dp"
         android:layout_marginTop="4dp"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
@@ -134,9 +134,9 @@
 
     <TextView
         android:id="@+id/ligneGauche"
-        android:layout_width="0dp"
-        android:layout_height="244dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="2dp"
+        android:layout_height="210dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="124dp"
         android:background="#000000"
         android:paddingBottom="2dp"
@@ -151,17 +151,19 @@
     <TextView
         android:id="@+id/lignedroite"
         android:layout_width="1sp"
-        android:layout_height="250dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="28dp"
+        android:layout_height="220dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="24dp"
         android:background="#000000"
         android:paddingBottom="2dp"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.924"
-        app:layout_constraintStart_toEndOf="@+id/ligneGauche"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toEndOf="@+id/buttonContinuer"
         app:layout_constraintTop_toBottomOf="@+id/textAcceuil"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -170,104 +172,99 @@
         android:layout_height="1dp"
 
 
-        android:layout_marginBottom="50dp"
-
+        android:layout_marginTop="224dp"
         android:background="#000000"
         android:paddingBottom="2dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
-        app:layout_constraintVertical_bias="0.804"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonContinuer"
         android:layout_width="222dp"
         android:layout_height="46dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginBottom="120dp"
         android:background="@color/bleu"
         android:text="@string/ajouter_mon_calendrier"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.721"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ligneBas"
-        app:layout_constraintVertical_bias="0.238"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/champNomTuteur"
-        android:layout_width="39dp"
-        android:layout_height="13dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="329dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="28dp"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toEndOf="@+id/ligneGauche"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/champDate"
-        android:layout_width="315dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="331dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="60dp"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toEndOf="@+id/ligneGauche"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/champDAConfirmation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_width="331dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="96dp"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toEndOf="@+id/ligneGauche"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/champPrenomConfirmation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_width="359dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="152dp"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
-        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toEndOf="@+id/ligneGauche"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/champNomConfirmation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
+        android:layout_width="356dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="172dp"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toEndOf="@+id/ligneGauche"
         app:layout_constraintTop_toBottomOf="@+id/ligneHaut2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/champCourrielConfirmation"
-        android:layout_width="52dp"
-        android:layout_height="0dp"
+        android:layout_width="356dp"
+        android:layout_height="31dp"
         android:layout_marginBottom="72dp"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/ligneBas"
         app:layout_constraintEnd_toStartOf="@+id/lignedroite"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toEndOf="@+id/ligneGauche"
         tools:ignore="MissingConstraints" />
 
