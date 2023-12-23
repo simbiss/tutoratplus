@@ -60,8 +60,9 @@
     <!-- tuteur page dispo -->
     <string name="ajouter_disponibilite">Agregar disponibilidad</string>
 
-    <!-- page demande tutorat -->
 
+    <!-- page demande tutorat -->
+    <string name="titrepreference">Preferencia</string>
 
 
 </resources>

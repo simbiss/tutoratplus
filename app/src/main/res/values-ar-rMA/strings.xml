@@ -60,8 +60,9 @@
     <!-- tuteur page dispo -->
     <string name="ajouter_disponibilite">إضافة التوفر</string>
 
-    <!-- page demande tutorat -->
 
+    <!-- page préférence -->
+    <string name="titrepreference">التفضيل</string>
 
 
 </resources>

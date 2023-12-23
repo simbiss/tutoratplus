@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_menu_principal_to_vueLoginTuteur"
             app:destination="@id/vueLoginTuteur" />
+        <action
+            android:id="@+id/action_menu_principal_to_page_preference"
+            app:destination="@id/page_preference" />
     </fragment>
     <fragment
         android:id="@+id/informationPersonnlle"
@@ -147,6 +150,15 @@
         <action
             android:id="@+id/action_page_dispo_reservation_to_liste_tuteur"
             app:destination="@id/liste_tuteur" />
+    </fragment>
+    <fragment
+        android:id="@+id/page_preference"
+        android:name="com.appnat3.tutoratplus.page_preference"
+        android:label="fragment_page_preference"
+        tools:layout="@layout/fragment_page_preference" >
+        <action
+            android:id="@+id/action_page_preference_to_menu_principal"
+            app:destination="@id/menu_principal" />
     </fragment>
 </navigation>
 

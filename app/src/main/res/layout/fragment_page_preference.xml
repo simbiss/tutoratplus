@@ -11,31 +11,6 @@
 
     <!-- ################################ Titre  ########################################## -->
 
-    <EditText
-        android:id="@+id/champNomInfo"
-        android:layout_width="202dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="8dp"
-        android:hint="@string/nom_hint"
-
-
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/champPrenomInfo"
-        android:layout_width="198dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="64dp"
-        android:hint="@string/pr_nom_hint"
-        app:layout_constraintBottom_toTopOf="@+id/champNomInfo"
-
-        app:layout_constraintHorizontal_bias="0.85"
-
-
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/sujetPage"
         android:layout_width="304dp"

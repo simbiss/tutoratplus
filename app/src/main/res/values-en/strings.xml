@@ -67,8 +67,9 @@
     <!-- tuteur page dispo -->
     <string name="ajouter_disponibilite">Add Availability</string>
 
+
     <!-- page demande tutorat -->
-    <!-- Aucun(pas besoin) -->
+    <string name="titrepreference">Preference</string>
     
 
 </resources>
