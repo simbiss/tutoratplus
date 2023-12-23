@@ -63,8 +63,9 @@
 
     <!-- page préférence -->
     <string name="titrepreference">التفضيل</string>
-    <string name="langues">Langues</string>
-    <string name="blanc">Blanc</string>
+    <string name="langues">اللغات</string>
+    <string name="blanc">ابيض</string>
+    <string name="enregistrer">يحفظ.</string>
 
 
 </resources>

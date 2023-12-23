@@ -70,8 +70,9 @@
 
     <!-- page demande tutorat -->
     <string name="titrepreference">Preference</string>
-    <string name="langues">Langues</string>
-    <string name="blanc">Blanc</string>
+    <string name="langues">Language</string>
+    <string name="blanc">White</string>
+    <string name="enregistrer">Save</string>
 
 
 </resources>

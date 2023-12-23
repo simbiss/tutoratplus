@@ -63,6 +63,9 @@
 
     <!-- page demande tutorat -->
     <string name="titrepreference">Preferencia</string>
+    <string name="langues">idiomas</string>
+    <string name="blanc">Blanca</string>
+    <string name="enregistrer">Registrador</string>
 
 
 </resources>

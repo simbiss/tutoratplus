@@ -1,6 +1,8 @@
 package com.appnat3.tutoratplus.presentation.pagePreference
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,11 +33,12 @@ class page_preference : Fragment(), AdapterView.OnItemSelectedListener {
     //Déclaration de variables
     val modele : Modele = Modele()
     lateinit var navController: NavController
-    lateinit var btnSuivant: Button
+    lateinit var btnEnregistrer: Button
     lateinit var btnRetour: LinearLayout
     lateinit var btnAcceuil: TextView
     var présentateur = PresentateurPagePreference(this)
     lateinit var spinLangue : Spinner
+    lateinit var txtLangue: TextView
 
 
 
@@ -60,6 +63,12 @@ class page_preference : Fragment(), AdapterView.OnItemSelectedListener {
         btnRetour = vue.findViewById(R.id.buttonRetour)
         btnRetour.setOnClickListener {
             présentateur.effectuerNaviguationAcceuil()
+        }
+        txtLangue = vue.findViewById(R.id.textTheme)
+
+        btnEnregistrer = vue.findViewById(R.id.buttonEnregistrer)
+        btnEnregistrer.setOnClickListener {
+            saveData()
         }
 
         spinLangue = vue.findViewById(R.id.langueSpinner) as Spinner
@@ -88,7 +97,28 @@ class page_preference : Fragment(), AdapterView.OnItemSelectedListener {
             présentateur.effectuerNaviguationAcceuil()
         }
 
+        chargerDonnées()
+
         return  vue
+    }
+
+    private fun saveData() {
+        txtLangue.text = spinLangue.selectedItem.toString()
+        val  selectedLanguage = spinLangue.selectedItem.toString()
+
+        val sharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("NomDeVosPreferences", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString("LANGUE_SELECTIONNEE", selectedLanguage)
+        editor.apply()
+
+        Toast.makeText(requireContext(), "Langue enregistrée: $selectedLanguage", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun chargerDonnées() {
+        val sharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("NomDeVosPreferences", Context.MODE_PRIVATE)
+        val savedString:String? = sharedPreferences.getString("LANGUE_SELECTIONNEE", null)
+        txtLangue.text = savedString
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -99,7 +129,7 @@ class page_preference : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?,
-                                view: View, position: Int,
+                                view: View?, position: Int,
                                 id: Long) {
         // make toastof name of course
         // which is selected in spinner

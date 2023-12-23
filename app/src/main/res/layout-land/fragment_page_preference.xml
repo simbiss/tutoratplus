@@ -17,14 +17,12 @@
         android:id="@+id/langueSpinner"
         android:layout_width="172dp"
         android:layout_height="57dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sujetPage"
         tools:ignore="MissingConstraints" />
-
-
 
     <TextView
         android:id="@+id/sujetPage"
@@ -108,39 +106,41 @@
         android:id="@+id/textLangue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/langues"
-        android:textSize="20sp"
         android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/langueSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="40dp"
         android:text="@string/blanc"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/langueSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/sujetPage"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonEnregistrer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="140dp"
         android:text="@string/enregistrer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTheme" />
+        app:layout_constraintTop_toBottomOf="@+id/textAcceuil"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- ################################ Titre  ########################################## -->
 
