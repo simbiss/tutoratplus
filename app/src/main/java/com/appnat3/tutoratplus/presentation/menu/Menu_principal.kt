@@ -18,6 +18,7 @@ class menu_principal : Fragment() {
     lateinit var btnPriseRendezVous: Button
     lateinit var btnApropos: Button
     lateinit var btnLoginTuteur: Button
+    lateinit var btnPreference: Button
     var présentateur = PresentateurMenu(this)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +26,11 @@ class menu_principal : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val vue =  inflater.inflate(R.layout.fragment_menu_principal, container, false)
+
+        btnPreference = vue.findViewById(R.id.btnSettings)
+        btnPreference.setOnClickListener {
+            présentateur.effectuerNavigationPagePreference()
+        }
 
         btnPriseRendezVous = vue.findViewById(R.id.btn_reservation)
         btnPriseRendezVous.setOnClickListener {
@@ -61,5 +67,9 @@ class menu_principal : Fragment() {
 
     fun naviguerVerslogin_tuteur(){
         navController.navigate(R.id.action_menu_principal_to_vueLoginTuteur)
+    }
+
+    fun naviguerVerspage_preference(){
+        navController.navigate(R.id.action_menu_principal_to_page_preference)
     }
 }

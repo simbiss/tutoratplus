@@ -15,4 +15,8 @@
     <string name="demande_tutorat">Demande Tutorat</string>
     <string name="disponibilite_btn">Disponibilité</string>
     <string name="ajouter_disponibilite">Ajouter Disponibilité</string>
+    <string name="titrepreference">TitrePreference</string>
+    <string name="langues">Langues</string>
+    <string name="blanc">Blanc</string>
+    <string name="enregistrer">Enregistrer</string>
 </resources>
