@@ -85,7 +85,7 @@
         android:textColor="@color/bleu"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toEndOf="@+id/textTitre"
         app:layout_constraintTop_toTopOf="parent" />
 

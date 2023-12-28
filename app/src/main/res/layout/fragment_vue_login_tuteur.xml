@@ -53,7 +53,6 @@
         android:textColor="@color/bleu"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toEndOf="@+id/textTitre"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,24 +75,26 @@
 
     <EditText
         android:id="@+id/entreePassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_width="333dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
         android:hint="@string/mot_de_passe_login"
         android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/entreeUsername"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/entreeUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="331dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:hint="@string/nom_utilisateur_login"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/msgErreurEntre"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnLogin"

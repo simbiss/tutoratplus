@@ -7,24 +7,29 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/textTitre"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:orientation="horizontal">
 
-        android:layout_marginTop="15dp"
-        android:text="@string/tutorat" />
+        <TextView
+            android:id="@+id/textTitre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/tutorat" />
 
-    <Button
-        android:id="@+id/btnSettings"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/settings"
-        tools:layout_editor_absoluteX="345dp"
-        tools:layout_editor_absoluteY="0dp" />
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:background="@drawable/settings" />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/ligneNoire"
@@ -35,7 +40,8 @@
         android:background="#000000"
         android:paddingBottom="2dp"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,17 +55,16 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="343dp"
-                android:layout_height="237dp"
-
-                android:layout_marginTop="30dp"
-                android:paddingLeft="20dp"
+                android:layout_width="272dp"
+                android:layout_height="238dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="30dp"
                 android:src="@drawable/logo_menu" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="443dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <Button
@@ -67,9 +72,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 android:paddingBottom="20dp"
                 android:text="@string/prendre_un_rendez_vous" />
 
@@ -79,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 android:paddingBottom="20dp"
                 android:text="@string/propos" />
 
@@ -89,17 +94,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 android:paddingBottom="20dp"
                 android:text="@string/connexion" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
 
     </LinearLayout>
 

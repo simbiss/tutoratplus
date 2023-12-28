@@ -55,7 +55,7 @@
         android:textColor="@color/bleu"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toEndOf="@+id/textTitre"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,8 +88,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="315dp"
-        android:layout_height="120dp"
+        android:layout_width="300dp"
+        android:layout_height="131dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="4dp"
         android:text="@string/description_paragraphe"
