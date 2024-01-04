@@ -1,0 +1,94 @@
+* Sprints
+** Coéquipiers :
+1. Achraf
+2. Simon
+
+** Sprint 1
+|                                           | Note |  1 |  2 | 3 | 4 | 5 |
+| Qualité du prototype d'interface :        | A    |    |    |   |   |   |
+|                                           |      |    |    |   |   |   |
+| Présentation :                            | A    |    |    |   |   |   |
+|                                           |      |    |    |   |   |   |
+| Évaluation du travail par les pairs (50%) | ×    |  A |  A |   |   |   |
+| Participation à la présentation     (50%) | ×    |  A |  A |   |   |   |
+|-------------------------------------------+------+----+----+---+---+---|
+| Total                                     |      | 10 | 10 |   |   |   |
+
+** Sprint 2
+|                                            | Note |  1 |  2 | 3 | 4 | 5 |
+| Qualité du développement :                 | A    |    |    |   |   |   |
+|                                            |      |    |    |   |   |   |
+| Présentation :                             | A    |    |    |   |   |   |
+|                                            |      |    |    |   |   |   |
+| Évaluation du travail par les pairs (50%): | ×    |  A |  A |   |   |   |
+| Part du travail commité sur Gitlab (50%):  | ×    |  A |  A |   |   |   |
+|--------------------------------------------+------+----+----+---+---+---|
+| Total                                      |      | 10 | 10 |   |   |   |
+
+** Sprint 3
+|                                            | Note |  1 |  2 | 3 | 4 | 5 |
+| Qualité du développement :                 | A    |    |    |   |   |   |
+|                                            |      |    |    |   |   |   |
+| Présentation :                             | A    |    |    |   |   |   |
+|                                            |      |    |    |   |   |   |
+| Évaluation du travail par les pairs (50%): | ×    |  A |  A |   |   |   |
+| Part du travail commité sur Gitlab (50%):  | ×    |  A |  A |   |   |   |
+|--------------------------------------------+------+----+----+---+---+---|
+| Total                                      |      | 10 | 10 |   |   |   |
+
+** Sprint 4
+|                                            | Note |  1 |  2 | 3 | 4 | 5 |
+| Qualité du développement :                 | A    |    |    |   |   |   |
+|                                            |      |    |    |   |   |   |
+| Présentation :                             | A    |    |    |   |   |   |
+|                                            |      |    |    |   |   |   |
+| Évaluation du travail par les pairs (50%): | ×    |  A |  A |   |   |   |
+| Part du travail commité sur Gitlab (50%):  | ×    |  A |  A |   |   |   |
+|--------------------------------------------+------+----+----+---+---+---|
+| Total                                      |      | 10 | 10 |   |   |   |
+
+** Livraison finale
+|                                            |     | Note |    1 |    2 |
+| Éléments techniques                        |     |      |      |      |
+| - 2 écrans fonctionnels                    | /5  | A    |      |      |
+| - Échange de données                       | /5  | B    |      |      |
+| - Sauvegardes locales                      | /3  | X    |      |      |
+| - Interaction Android                      | /3  | A    |      |      |
+|                                            |     |      |      |      |
+| IU                                         |     |      |      |      |
+| - Ergonomie                                | /5  | A    |      |      |
+| - I18n                                     | /3  | A    |      |      |
+|                                            |     |      |      |      |
+| Architecture                               |     |      |      |      |
+| - 3-tiers                                  |     |      |      |      |
+| -- Séparation MVP                          | /5  | B    |      |      |
+| -- Source de données                       | /5  | A    |      |      |
+| -- Abstractions                            | /5  | C    |      |      |
+| - Utilisation de fils d'exécution          | /5  | A    |      |      |
+|                                            |     |      |      |      |
+| Assurance qualité                          |     |      |      |      |
+| - Tests Présentateurs/Modèles              | /2  | C    |      |      |
+| - Tests Interacteurs/Entités               | /2  | X    |      |      |
+| - Tests Accès aux données                  | /2  | X    |      |      |
+|                                            |     |      |      |      |
+| Présentation                               |     |      |      |      |
+| - Démontre la présence des fonctionnalités | /5  | A    |      |      |
+| - Démontre la robustesse                   | /5  | A    |      |      |
+| - Qualité de l'interface utilisateur       | /5  | A    |      |      |
+| - Clarté de la présentation                | /5  | A    |      |      |
+| - Pertinence des démonstrations            | /5  | A    |      |      |
+|                                            | /75 | 63.2 |      |      |
+| Participation                              |     |      |      |      |
+|--------------------------------------------+-----+------+------+------+
+| Participation à la présentation            | ×½  |      |    A |    A |
+| Participation au projet                    | ×½  |      |    A |    A |
+|                                            |     |      | 84.3 | 84.3 |
+
+* Légende :
+A=100%
+B=80%
+C=60%
+D=40%
+E=0%
+X=Absent ou non rendu
+
